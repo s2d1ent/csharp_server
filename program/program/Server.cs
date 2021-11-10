@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,9 @@ namespace program
         TcpListener Listener;
         int Port;
         public bool Active;
+        public string Domain;
+        public List<string> FileFormats = new List<string> { ".php", ".html", ".htm", ".html5" };
+        public List<string> CloseFolder = new List<string>();
         public Server(int port)
         {
             this.Port = port;
@@ -29,24 +33,38 @@ namespace program
         }
         public void Start()
         {
-            Listener.Start();
-            Console.WriteLine(GetInfo());
-            Task.Run(()=> {
-                while(true)
+            if (!Active)
+            {
+                Listener.Start();
+                Active = true;
+                Console.WriteLine(GetInfo());
+                Task.Run(() =>
                 {
-                    try
+                    while (true)
                     {
-                        ThreadPool.SetMinThreads(2, 2);
-                        ThreadPool.SetMinThreads(4, 4);
-                        ThreadPool.QueueUserWorkItem(new WaitCallback(ClientThread), Listener.AcceptTcpClient());
+                        try
+                        {
+                            ThreadPool.SetMinThreads(2, 2);
+                            ThreadPool.SetMinThreads(4, 4);
+                            ThreadPool.QueueUserWorkItem(new WaitCallback(ClientThread), Listener.AcceptTcpClient());
+                        }
+                        catch (Exception ex) { }
                     }
-                    catch (Exception ex) { }
-                }
-            });
+                });
+            }
+            else
+                Console.WriteLine("Server was started");
         }
         public void Stop()
         {
-            Listener.Stop();
+            if (Active)
+            {
+                Listener.Stop();
+                Active = false;
+            }
+                
+            else
+                Console.WriteLine("Server was started");
         }
         public string GetInfo()
         {
@@ -60,9 +78,17 @@ Ip: {Ip}    Port: {Port}
         {
             return $"Server active: {Active}";
         }
+        public void OpenDocumentation()
+        {
+
+        }
         public void ClientThread(object client)
         {
             new Client((TcpClient)client);
+        }
+        public void JsonConfig()
+        {
+
         }
     }
 }

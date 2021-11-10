@@ -1,0 +1,9 @@
+{
+    "server":
+    {
+        "Ip" : "",
+        "Port" :"",
+        "Domain" : "",
+        "CloseFolder" : ""
+    }
+}

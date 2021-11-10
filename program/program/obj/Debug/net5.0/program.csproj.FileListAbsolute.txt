@@ -14,3 +14,19 @@ C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\program.dl
 C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\ref\program.dll
 C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\program.pdb
 C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\program.genruntimeconfig.cache
+D:\Моё портфолио\csharp_server\program\program\bin\Debug\net5.0\program.exe
+D:\Моё портфолио\csharp_server\program\program\bin\Debug\net5.0\program.deps.json
+D:\Моё портфолио\csharp_server\program\program\bin\Debug\net5.0\program.runtimeconfig.json
+D:\Моё портфолио\csharp_server\program\program\bin\Debug\net5.0\program.runtimeconfig.dev.json
+D:\Моё портфолио\csharp_server\program\program\bin\Debug\net5.0\program.dll
+D:\Моё портфолио\csharp_server\program\program\bin\Debug\net5.0\ref\program.dll
+D:\Моё портфолио\csharp_server\program\program\bin\Debug\net5.0\program.pdb
+D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\program.csprojAssemblyReference.cache
+D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\program.GeneratedMSBuildEditorConfig.editorconfig
+D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\program.AssemblyInfoInputs.cache
+D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\program.AssemblyInfo.cs
+D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\program.csproj.CoreCompileInputs.cache
+D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\program.dll
+D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\ref\program.dll
+D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\program.pdb
+D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\program.genruntimeconfig.cache

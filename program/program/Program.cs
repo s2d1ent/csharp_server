@@ -34,6 +34,14 @@ namespace program
                     {
                         Console.WriteLine(server.GetStatus());
                     }
+                    if (cmd.IndexOf("--status") != -1)
+                    {
+                        server.OpenDocumentation();
+                    }
+                }
+                if (cmd.IndexOf("help") != -1)
+                {
+
                 }
             }
             Console.ReadKey();
