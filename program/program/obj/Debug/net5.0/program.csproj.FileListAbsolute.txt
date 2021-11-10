@@ -1,0 +1,16 @@
+C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\program.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\program.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\program.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\program.AssemblyInfo.cs
+C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\program.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\program.exe
+C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\program.deps.json
+C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\program.runtimeconfig.json
+C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\program.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\program.dll
+C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\ref\program.dll
+C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\program.pdb
+C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\program.dll
+C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\ref\program.dll
+C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\program.pdb
+C:\Users\Admin\Desktop\csharp_server\program\program\obj\Debug\net5.0\program.genruntimeconfig.cache
