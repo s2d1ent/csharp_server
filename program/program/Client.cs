@@ -14,7 +14,8 @@ namespace program
     class Client
     {
         TcpClient client;
-        string site = @"D:\Моё портфолио\csharp_server\www";
+        //string site = @"D:\Моё портфолио\csharp_server\www";
+        string site = @"C:\Users\Admin\Desktop\csharp_server\www";
         public Client(TcpClient c)
         {
             this.client = c;
@@ -83,15 +84,15 @@ namespace program
         {
             try
             {
+                Console.WriteLine($"File link: {link} Exist: {File.Exists(link)}");
                 if (!File.Exists(link))
                 {
                     SendError(400);
                     return;
                 }
-                //Console.WriteLine($"File link: {link} Exist: {File.Exists(link)}");
                 string html = File.ReadAllText(link);
                 string content_type = GetContentType(link);
-                FileExplorer(link);
+                //FileExplorer(link);
                 FileStream fs = new FileStream(link, FileMode.Open, FileAccess.Read, FileShare.Read);
                 string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";
                 //Console.WriteLine($"{headers}{link}");

@@ -68,7 +68,7 @@ namespace program
         }
         public string GetInfo()
         {
-            string info = @$"Tesr server C# .Net
+            string info = @$"Tesr server C# .Net Core
 Host name: {Dns.GetHostName()}
 Ip: {Ip}    Port: {Port}
             ";

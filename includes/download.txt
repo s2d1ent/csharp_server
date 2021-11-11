@@ -1,0 +1,2 @@
+https://www.php.net/downloads.php - интерпритатор php под Windows
+https://www.python.org/downloads/ - интерпритатор python под Windows
