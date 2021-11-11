@@ -58,13 +58,12 @@ namespace program
                 return;
             }
             FilePath += $"{file}";
-            GetSheet(FilePath);
+            GetSheet(FilePath, file);
             //Console.WriteLine($"Path: {FilePath} - Exist: {File.Exists(FilePath)}");
             client.Close();
         }
         public void SendError(int code)
         {
-            Console.WriteLine($"Error {code}");
             string html = $"<html><head><title></title></head><body><h1>Error {code}</h1></body></html>";
             string headers = $"HTTP/1.1 200 OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
             byte[] data = Encoding.UTF8.GetBytes(headers);
@@ -73,19 +72,20 @@ namespace program
         }
         public void SendError(string message, int code)
         {
-            Console.WriteLine($"{client.Client.RemoteEndPoint} error: {code} message: {message}");
             string html = $"<html><head><title></title></head><body><h1>Error {code}</h1><div>{message}</div></body></html>";
             string headers = $"HTTP/1.1 200 OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
             byte[] data = Encoding.UTF8.GetBytes(headers);
             client.GetStream().Write(data, 0, data.Length);
             client.Close();
         }
-        public void GetSheet(string link)
+        public void GetSheet(string link, string address)
         {
             try
             {
-                Console.WriteLine($"File link: {link} Exist: {File.Exists(link)}");
-                if (!File.Exists(link))
+                bool IsFile = File.Exists(link);
+                bool IsFolder = Directory.Exists(link);
+                Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
+                if (!IsFile)
                 {
                     SendError(400);
                     return;
