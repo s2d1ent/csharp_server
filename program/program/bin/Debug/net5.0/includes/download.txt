@@ -1,0 +1,4 @@
+https://www.php.net/downloads.php - интерпритатор php под Windows
+https://www.python.org/downloads/ - интерпритатор python под Windows
+https://github.com/ONLYOFFICE - onlyoffice git
+https://www.onlyoffice.com/ - onlyoffice

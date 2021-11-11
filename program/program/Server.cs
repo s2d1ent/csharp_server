@@ -12,22 +12,27 @@ namespace program
 {
     class Server
     {
-        IPAddress Ip;
+        public IPAddress Ip;
         TcpListener Listener;
-        int Port;
+        public int Listen { get; set; }
         public bool Active;
-        public string Domain;
-        public List<string> FileFormats = new List<string> { ".php", ".html", ".htm", ".html5" };
-        public List<string> CloseFolder = new List<string>();
+        public Global global;
+        public string Domain { get; set; }
+        public string Path { get; set; }
+        public string[] Extensions { get; set; }
+
+        public string Framework_py { get; set; }
+        
+        public Server(){ }
         public Server(int port)
         {
-            this.Port = port;
+            this.Listen = port;
             this.Ip = Dns.GetHostAddresses(Dns.GetHostName())[0];
             Listener = new TcpListener(this.Ip, port);
         }
         public Server(string ip, int port)
         {
-            this.Port = port;
+            this.Listen = port;
             this.Ip = IPAddress.Parse(ip);
             Listener = new TcpListener(IPAddress.Parse(ip), port);
         }
@@ -35,25 +40,27 @@ namespace program
         {
             if (!Active)
             {
+                if (Listener == null)
+                    Listener = new TcpListener(Ip, Listen);
                 Listener.Start();
                 Active = true;
                 Console.WriteLine(GetInfo());
-                Task.Run(() =>
+                while (true)
                 {
-                    while (true)
+                    try
                     {
-                        try
-                        {
-                            ThreadPool.SetMinThreads(2, 2);
-                            ThreadPool.SetMinThreads(4, 4);
-                            ThreadPool.QueueUserWorkItem(new WaitCallback(ClientThread), Listener.AcceptTcpClient());
-                        }
-                        catch (Exception ex) { }
+                        //Console.WriteLine(1);
+                        ThreadPool.QueueUserWorkItem(new WaitCallback(ClientThread), new ArrayList() { Listener.AcceptTcpClient(), this });
                     }
-                });
+                    catch (Exception ex) { }
+                }
             }
             else
                 Console.WriteLine("Server was started");
+        }
+        public async void StartAsync()
+        {
+            await Task.Run(()=> { Start(); });
         }
         public void Stop()
         {
@@ -61,16 +68,16 @@ namespace program
             {
                 Listener.Stop();
                 Active = false;
-            }
-                
+                global.GlobalSeserialize();
+            }  
             else
                 Console.WriteLine("Server was started");
         }
         public string GetInfo()
         {
-            string info = @$"Tesr server C# .Net Core
-Host name: {Dns.GetHostName()}
-Ip: {Ip}    Port: {Port}
+            string info = @$"Domain: {Domain}
+Ip: {Ip}    Port: {Listen}
+Active: {Active}
             ";
             return info;
         }
@@ -84,7 +91,9 @@ Ip: {Ip}    Port: {Port}
         }
         public void ClientThread(object client)
         {
-            new Client((TcpClient)client);
+            TcpClient c = (TcpClient)((ArrayList)client)[0];
+            Server s = (Server)((ArrayList)client)[1];
+            new Client(c, s);
         }
         public void JsonConfig()
         {

@@ -14,11 +14,15 @@ namespace program
     class Client
     {
         TcpClient client;
-        //string site = @"D:\Моё портфолио\csharp_server\www";
-        string site = @"C:\Users\Admin\Desktop\csharp_server\www";
-        public Client(TcpClient c)
+        Server server;
+        string site = @"";
+        Interpreter php = new Interpreter();
+        //string site = @"C:\Users\Admin\Desktop\csharp_server\www";
+        public Client(TcpClient c, Server s)
         {
             this.client = c;
+            this.server = s;
+            site = server.Path;
             string FilePath = $"{site}";
             NetworkStream stream = client.GetStream();
             string request = "";
@@ -48,9 +52,22 @@ namespace program
                         ), "")
                 .Replace(" ", "");
             }
+            /*if (file.Length == 0)
+            {
+                return;
+            }*/
+                
             if (file == "/" || file == "\\")
             {
-                file = "/index.html";
+                foreach(var ext in server.Extensions)
+                {
+                    if (File.Exists($"{site}/index{ext}"))
+                    {
+                        Console.WriteLine($"/index{ext}");
+                        file = $"/index{ext}";
+                        break;
+                    }
+                }
             }
             if (file.IndexOf("..") != -1)
             {
@@ -90,11 +107,16 @@ namespace program
                     SendError(400);
                     return;
                 }
-                string html = File.ReadAllText(link);
+                if (GetFormat(link) == "php")
+                {
+                    GetPhpSheet(link, address);
+                    return;
+                }
                 string content_type = GetContentType(link);
                 //FileExplorer(link);
                 FileStream fs = new FileStream(link, FileMode.Open, FileAccess.Read, FileShare.Read);
-                string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";
+                string headers = "";
+                headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";
                 //Console.WriteLine($"{headers}{link}");
                 // OUTPUT HEADERS
                 byte[] data_headers = Encoding.UTF8.GetBytes(headers);
@@ -106,6 +128,56 @@ namespace program
                     int length = fs.Read(data, 0, data.Length);
                     client.GetStream().Write(data, 0, length);
                 }
+                ///
+                ///
+                ///
+
+                ///
+                ///
+                ///
+                client.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Func: GetSheet()    link: {link}\nException: {ex}/nMessage: {ex.Message}");
+            }
+        }
+        public void GetPhpSheet(string link, string address)
+        {
+            try
+            {
+                bool IsFile = File.Exists(link);
+                bool IsFolder = Directory.Exists(link);
+                bool IsPhp = false;
+                string html = "";
+                if (!IsFile)
+                {
+                    SendError(400);
+                    return;
+                }
+                if (address.LastIndexOf(".php") != -1)
+                {
+                    html = PhpFile(link);
+                    IsPhp = true;
+                }
+                string content_type = GetContentType(link);
+                //FileExplorer(link);
+                FileStream fs = new FileStream(link, FileMode.Open, FileAccess.Read, FileShare.Read);
+                string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n";
+                //Console.WriteLine($"{headers}{link}");
+                // OUTPUT HEADERS
+                byte[] data_headers = Encoding.UTF8.GetBytes(headers);
+                client.GetStream().Write(data_headers, 0, data_headers.Length);
+                // OUTPUT CONTENT
+
+                byte[] data = Encoding.UTF8.GetBytes(html);
+                client.GetStream().Write(data, 0, data.Length);
+
+                byte[] data_ = new byte[1024];
+                while (client.GetStream().DataAvailable)
+                {
+
+                }
 
                 client.Close();
             }
@@ -114,21 +186,19 @@ namespace program
                 Console.WriteLine($"Func: GetSheet()    link: {link}\nException: {ex}/nMessage: {ex.Message}");
             }
         }
-        bool FileExplorer(string link)
+        string PhpFile(string address)
         {
-            string format = link.Substring(link.LastIndexOf("."));
-            format = format.Replace(".", "").ToLower();
-            Console.WriteLine($"{format} - {link}");
-            if (format.Length == 0)
+            string interpretator = "";
+            foreach(var i in server.global.Interpreters)
             {
-                Console.WriteLine("Length 0");
+                if (i.Value.Name == "php")
+                    if (i.Value.Version == server.global.System["Bit"])
+                        interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
             }
-            return false;
-        }
-        string GetHeaders(string content_type)
-        {
-            string result = "";
-
+            byte[] data = Encoding.ASCII.GetBytes(address);
+            string addrss = Encoding.ASCII.GetString(data);
+            // @"C:\index.php"
+            string result = php.PerformPhp(interpretator , $"{addrss}");
             return result;
         }
         string GetContentType(string link)
@@ -249,7 +319,6 @@ namespace program
                     case "cvs":
                     case "html":
                     case "plain":
-                    case "php":
                     case "markdown":
                     case "md":
                         result = $"text/{format}";
@@ -257,6 +326,9 @@ namespace program
                     case "javascript":
                     case "js":
                         result = $"text/javascript";
+                        break;
+                    case "php":
+                        result = $"text/html";
                         break;
                     //video
                     //vnd
@@ -271,6 +343,135 @@ namespace program
             else
             {
                 result = "application/unknown";
+            }
+            return result;
+        }
+        string GetFormat(string link)
+        {
+            string result = "";
+            if (File.Exists(link))
+            {
+                string format = link.Substring(link.LastIndexOf("."));
+                format = format.Replace(".", "").ToLower();
+                switch (format)
+                {
+                    //application
+                    case "xml":
+                    case "json":
+                    case "ogg":
+                    case "pdf":
+                    case "postscript":
+                    case "zip":
+                    case "gzip":
+                    case "doc":
+                        result = $"{format}";
+                        break;
+                    case "EDI":
+                    case "EDI-X12":
+                    case "EDIFACT":
+                        result = $"{format}"; break;
+                    case "atom":
+                        result = $"{format}"; break;
+                    case "soap":
+                        result = $"{format}"; break;
+                    case "woff":
+                        result = $"{format}"; break;
+                    case "xhtml":
+                        result = $"{format}"; break;
+                    case "torrent":
+                    case "bittorrent":
+                        result = $"{format}"; break;
+                    case "tex":
+                        result = $"{format}"; break;
+                    //audio
+                    case "basic":
+                    case "l24":
+                    case "mp4":
+                    case "acc":
+                    case "mpeg":
+                    case "vorbis":
+                    case "webm":
+                        result = $"{format}"; break;
+                    case "wma":
+                        result = $"{format}"; break;
+                    case "rm":
+                        result = $"{format}"; break;
+                    case "wav":
+                    case "wave":
+                        result = $"{format}"; break;
+                    //image
+                    case "gif":
+                    case "jpeg":
+                    case "pjpeg":
+                    case "png":
+                    case "tiff":
+                    case "webp":
+                        result = $"{format}"; break;
+                    case "svg":
+                        result = $"image/svg+xml";
+                        break;
+                    case "ico":
+                        result = $"image/vnd.microsoft.icon";
+                        break;
+                    case "wbmp":
+                        result = $"image/vnd.map.wbmp";
+                        break;
+                    case "jpg":
+                        result = $"image/jpeg";
+                        break;
+                    //message
+                    case "eml":
+                    case "mime":
+                    case "mth":
+                    case "mhtml":
+                        result = $"message/ftc822";
+                        break;
+                    //model
+                    case "iges":
+                    case "mesh":
+                    case "vrml":
+                    case "wrl":
+                    case "silo":
+                    case "igs":
+                    case "msh":
+                    case "example":
+                        result = $"{format}"; break;
+                    case "x3db":
+                        result = $"model/x3d+binary";
+                        break;
+                    case "x3dv":
+                        result = $"model/x3d+vrml";
+                        break;
+                    case "x3d":
+                        result = $"model/x3d+xml";
+                        break;
+                    //multipart
+                    //text
+                    case "cmd":
+                    case "css":
+                    case "cvs":
+                    case "html":
+                    case "plain":
+                    case "markdown":
+                    case "md":
+                        result = $"{format}"; break;
+                    case "javascript":
+                    case "js":
+                        result = $"{format}"; break;
+                    case "php":
+                        result = $"{format}"; break;
+                    //video
+                    //vnd
+                    //x
+                    //x-pkcs
+                    default:
+                        result = $"{format}"; break;
+                }
+                //Console.WriteLine($"link: {link} format: {format} content-type: {result}");
+            }
+            else
+            {
+                result = $"unknown";
             }
             return result;
         }

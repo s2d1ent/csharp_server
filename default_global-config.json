@@ -1,0 +1,19 @@
+{
+    "IPv4" : "127.0.0.1",
+        "Configs" : [
+            "D:\Моё портфолио\csharp_server\program\program\bin\Debug\net5.0\servers\default_config.server.json",
+            "path/your_second_server.server.json"
+        ],
+        "Includes": {
+            "Python": "3.9.8",
+            "PHP" : "8.0.12",
+            "Intptr_python" : "D:/Моё портфолио/csharp_server/includes/php",
+            "Intptr_php" : "D:/Моё портфолио/csharp_server/includes/python"
+        },
+        "System" :{
+            "OS" : "",
+            "Bit" : "",
+            "Processor":"",
+            "RAM": ""
+        }
+}

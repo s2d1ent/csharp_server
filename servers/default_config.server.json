@@ -1,0 +1,13 @@
+{
+    "Listen" : 80,
+    "Domain" : "test-domain",
+    "Path":"D:\Моё портфолио\csharp_server\www",
+    "Extensions" : [
+            ".php", ".html", ".htm", ".xhtml"
+    ],
+    "Framework_py": "",
+    "PoolMin_worker" : "2",
+    "PoolMin_async" : "2",
+    "PoolMax_worker" : "",
+    "PoolMax_async" : ""
+}

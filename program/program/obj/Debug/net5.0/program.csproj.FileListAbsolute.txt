@@ -30,3 +30,21 @@ D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\prog
 D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\ref\program.dll
 D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\program.pdb
 D:\Моё портфолио\csharp_server\program\program\obj\Debug\net5.0\program.genruntimeconfig.cache
+D:\csharp_server\program\program\bin\Debug\net5.0\program.exe
+D:\csharp_server\program\program\bin\Debug\net5.0\program.deps.json
+D:\csharp_server\program\program\bin\Debug\net5.0\program.runtimeconfig.json
+D:\csharp_server\program\program\bin\Debug\net5.0\program.runtimeconfig.dev.json
+D:\csharp_server\program\program\bin\Debug\net5.0\program.dll
+D:\csharp_server\program\program\bin\Debug\net5.0\ref\program.dll
+D:\csharp_server\program\program\bin\Debug\net5.0\program.pdb
+D:\csharp_server\program\program\obj\Debug\net5.0\program.csprojAssemblyReference.cache
+D:\csharp_server\program\program\obj\Debug\net5.0\program.GeneratedMSBuildEditorConfig.editorconfig
+D:\csharp_server\program\program\obj\Debug\net5.0\program.AssemblyInfoInputs.cache
+D:\csharp_server\program\program\obj\Debug\net5.0\program.AssemblyInfo.cs
+D:\csharp_server\program\program\obj\Debug\net5.0\program.csproj.CoreCompileInputs.cache
+D:\csharp_server\program\program\obj\Debug\net5.0\program.dll
+D:\csharp_server\program\program\obj\Debug\net5.0\ref\program.dll
+D:\csharp_server\program\program\obj\Debug\net5.0\program.pdb
+D:\csharp_server\program\program\obj\Debug\net5.0\program.genruntimeconfig.cache
+D:\csharp_server\program\program\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\csharp_server\program\program\obj\Debug\net5.0\program.csproj.CopyComplete
