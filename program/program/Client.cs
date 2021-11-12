@@ -52,10 +52,11 @@ namespace program
                         ), "")
                 .Replace(" ", "");
             }
-            /*if (file.Length == 0)
+            if (file.Length == 0)
             {
+                client.Close();
                 return;
-            }*/
+            }
                 
             if (file == "/" || file == "\\")
             {

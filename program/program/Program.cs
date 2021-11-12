@@ -18,8 +18,7 @@ namespace program
             ThreadPool.SetMinThreads(global.ThreadPoolMin_worker, global.ThreadPoolMin_async);
             ThreadPool.SetMinThreads(global.ThreadPoolMax_worker, global.ThreadPoolMax_async);
             global.ServerSerialize();
-            foreach (var i in global.Servers)
-                i.StartAsync();
+            Console.WriteLine(global.GetInfo());
             //Server server = new Server(80);
             //server.Start();
                 while (true)
@@ -32,7 +31,7 @@ namespace program
                 if(cmd == "start")
                 {
                     foreach (var i in global.Servers)
-                        i.Start();
+                        i.StartAsync();
                 }
                 if(cmd == "stop")
                 {

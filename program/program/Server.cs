@@ -45,12 +45,12 @@ namespace program
                 Listener.Start();
                 Active = true;
                 Console.WriteLine(GetInfo());
-                while (true)
+                while (Active)
                 {
                     try
                     {
                         //Console.WriteLine(1);
-                        ThreadPool.QueueUserWorkItem(new WaitCallback(ClientThread), new ArrayList() { Listener.AcceptTcpClient(), this });
+                        ThreadPool.QueueUserWorkItem(new WaitCallback(ClientThread), new ArrayList() { Listener.AcceptTcpClientAsync().Result, this });
                     }
                     catch (Exception ex) { }
                 }
