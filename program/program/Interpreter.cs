@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 //using Newtonsoft.Json;
 
@@ -15,12 +15,6 @@ namespace program
         public string Version { get; set; }
         public string Name { get; set; }
         public string Path { get; set; }
-        [JsonIgnore]
-        public string Reponse { get; set; }
-        [JsonIgnore]
-        public bool Error;
-        [JsonIgnore]
-        public string Error_message;
         public Interpreter() 
         {
             //this.Path = @"D:\csharp_server\program\program\bin\Debug\net5.0\includes\php\win64\php.exe";

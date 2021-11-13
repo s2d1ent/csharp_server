@@ -1,12 +1,5 @@
 # Web-Server C# .Net Core
-Этот сервер представляет собой простую реализацию C# .Net Core Веб-сервер, созданный с целью получения нового опыта в разработке программного обеспечения.
-
-Список субъектов:<br>
-Сервер как класс программного обеспечения и программное обеспечение в целом - Server <br>
-Клиент - Client <br>
-Глобальное надстройка - Global<br>
-Interpreter - Interpreter
-<br><br>
+Этот сервер представляет собой простую реализацию C# .Net Core Веб-сервер, созданный с целью получения нового опыта в разработке программного обеспечения
 
 ## Таблица 1 - Реализованные технологии сервера
 
@@ -16,8 +9,8 @@ Php     |Partially implemented          | 8.0.12 |
 Python  |Unrealized                     | 3.9.8 |
 Online Office              | Unrealized  | -    |
 Multithreaded processing   | Implemented |  -   |
-Domain system   | Unrealized |  -   |
-Multiple site   | Unrealized |  -   |
+Domain system   | Implemented |  -   |
+Multiple site   | Implemented |  -   |
 <br><br>
 
 ## Список используемых библиотек проекта
@@ -26,23 +19,99 @@ using System;
 using System.IO;
 using System.Collections;
 using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.Diagnostics;
+using Newtonsoft.Json;
 ```
 <br>
 
-## Принцип работы
+# Принцип работы(в кратце)
 Данный сервер работает по принципу прослушивания TCP запроса по определенному IPv4 аддресу и порту.
-В начале работы сервера инициализируется класс Global, который берет данные из global-config.json и производит основную надстройку сервера. Инициализируются такие аспекты сервера как:
-- Interpreter - разные интерпритаторы, которые работают на разных разрядностях Windows OS
+В начале работы сервера инициализируется класс Global, который берет данные из global-config.json и производит основную настройку сервера инициализируя следующие классы:
 
-- Server - сервера с глобальной настройкой IPv4 в классе Global и выбранным портом(Listen) у сервера. Сервер настраивается на конфиге сервера в папке /servers/server_config.serve.json
+- Interpreter - класс, обозначает интерпритаторы которые использует сервер на Windows OS
 
-- Client - инициализация данного класса происходит при получении запроса по сети, как только TCPListener получает запрос на подключение, происходит добавление запроса в ThreadPool и клиент ожидает своей очереди для обработки запроса
+- Server - класс, обозначает программную часть сервера, которая ведет прослушивание с помощью TCPListener по паре IPv4:port(127.0.0.1:80)
 
+- Client - класс, обозначает подключенного пользователя. Данный класс инициализируется в процессе прослушивания в классе Server
+
+**Если global-config.json будет отсутствовать, то сервер выдаст ошибку и не запустится**
+<br><br>
+# Структура global-config.json
+``` json
+{
+  "IPv4": "your_ip", 
+  "Listen": 80, 
+  "Server": {
+    "Path": "www", 
+    "Extensions": [ 
+      ".php",
+      ".html",
+      ".htm",
+      ".xhtml"
+    ],
+    "Framework_py": null 
+  },
+  "System": { 
+    "OS": "Windows", 
+    "Bit": "x64", 
+    "Processor": "", 
+    "RAM": ""
+  },
+  "Interpreters": {
+    "phpx64": {
+      "Error": false,
+      "Error_message": null,
+      "Version": "x64",
+      "Name": "php",
+      "Path": "includes/php/win64/php.exe",
+      "Reponse": null
+    },
+    "phpx86": {
+      "Error": false,
+      "Error_message": null,
+      "Version": "x86",
+      "Name": "php",
+      "Path": "includes/php/win86/php.exe",
+      "Reponse": null
+    },
+    "pyx64": {
+      "Error": false,
+      "Error_message": null,
+      "Version": "x64",
+      "Name": "py",
+      "Path": "includes/python/win64/python.exe",
+      "Reponse": null
+    }
+  },
+  "PoolMin_worker": "2",
+  "PoolMin_async": "2",
+  "PoolMax_worker": "4",
+  "PoolMax_async": "4"
+}
+```
+## Описание структуры
+- IPv4 - адресс в формате IPv4, если он не установлен, то по стандарту идет 127.0.0.1
+- Listen - порт по которому прослушивает сервер
+- Server - сервер, программная часть
+    - Path - директория с сайтами, относительно проекта
+    - Extensions - форматы файлов, поддерживаемы сервером
+    - Framework_py - фреймворк для Python, на котором работает сайт
+- System - описывает систему
+    - OS - ОС пользователя
+    - Bit - разрядность системы
+    - Processor - процессор пользователя
+    - Ram - кол-во оперативной памяти пользователя
+- Interpreters - Описывает интерпритаторы используемые сервером
+    - phpx64, phpx86 и тд - названия интерпритаторов в списке Dictionary<string, Interpreter>
+    - Version - разрядность интерпритатора
+    - Name - полное или кратное название языка
+    - Path - расположения исполняемого файла интерпритатора
+- PoolMin_worker - минимальное кол-во работающих ядер, минимальное значение не должно быть меньше 2
+- PoolMin_async - минимальное число параллельно работающих ядер, минимальное значение не должно быть меньше 2
+- PoolMax_worker - максимальное число работающих ядер, устанавливается пользователем относительно используемого процессора
+- PoolMax_async - максимальное число параллельно работающих ядер, устанавливается пользователем относительно используемого процессора

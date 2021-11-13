@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FoodyCalc</title>
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <!-- firebase -->
+    <script type="text/javascript" src="firebase/firebase-app.js"></script>
+    <script type="text/javascript" src="firebase/firebase-auth.js"></script>
+    <script type="text/javascript" src="firebase/firebase-firestore.js"></script>
+    <script type="text/javascript" src="firebase/firebase-database.js"></script>
+
+
+    <link rel="stylesheet" href="style/profile.css">
+    <link rel="stylesheet" href="style/profile__mobile.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="src/favicon.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <section class="modal" id="modal_settings">
+      <div class="modal__background1"></div>
+      <div class="setting__container">
+
+      </div>
+    </section>
+    <section class="modal" id="modal">
+      <div class="modal__background"></div>
+      <div class="modal__container"></div>
+    </section>
+    <section class="view">
+      <section class="view__right">
+        <div class="user__wrapper">
+          <div class="user__function">
+            <div class="left__points" id="modal-recipeAdd">
+            <img src="src/feather_plant_leaf_icon_177629.svg" class="left__points-ic">
+            </div>
+            <div class="left__points" id="modal-callback">
+            <img src="src/call_phone_icon_176658.svg" class="left__points-ic">
+            </div>
+            <div class="left__settings" id="modal-settings">
+              <img src="src/settings_icon_177667.svg" class="left__settings-ic">
+            </div>
+            <span  class="logout" id="logout">
+              <img src="src/door_exit_icon_176418.svg" class="left__settings-ic">
+            </span>
+          </div>
+          <div class="user__icon">
+            <img src="src/avatar_people_bald_man_boy_icon_178885.svg" class="user__icon-img">
+          </div>
+          <div class="user__data">
+            <span class="user__data-name" id="user-name">
+              UserNAme
+            </span>
+            <span class="user__data-email" id="user-email">
+              UserEmail
+            </span>
+            <span class="user__data-date" id="user-birth">
+              day.month.year
+            </span>
+          </div>
+          <div class="user__data-new">
+            <ul>
+              <li class="data-title">Вес:</li>
+              <li class="data-items">79</li>
+              <li class="data-title">Рост:</li>
+              <li class="data-items">172</li>
+              <li class="data-title">Пол:</li>
+              <li class="data-items">Мужской</li>
+              <li class="data-title">Физ.активность:</li>
+              <li class="data-items">1.38</li>
+            </ul>
+          </div>
+        </div>
+        <div class="view__right-container">
+          <div class="view__right_container-top">
+            <div class="right__container-block " id="chat">
+                  <div class="chatAll__container-chat"></div>
+                  <form class="chatAll__container-input">
+                    <textarea name="chattAllMessage" class="chattAllMessage" placeholder="Введите ваше сообщение..."></textarea>
+                    <button type="button" class="chattAllBtn" id="chattAllBtn">Отправить</button>
+                  </form>
+            </div>
+            <div class="right__container-block " id="recipe">
+              <header class="right__container_block-header" >
+                <span class="block__header-title">Рецепты</span>
+                <img src="src/notebook_icon_175059.svg" class="block__header-img">
+              </header>
+              <div id="recipe-out">
+              </div>
+            </div>
+            <div class="right__container-block " id="calories">
+              <header class="right__container_block-header" >
+                <span class="block__header-title">Норма калорий </span>
+                <img src="src/calendar_icon_177613.svg" class="block__header-img">
+              </header>
+              <div id="calories-stats">
+                  <div class="calories__stats-first">
+                    <span class="calories__stats-number"></span>
+                    <span class="calories__stats-title">Норма калорий</span>
+                  </div>
+                  <div class="calories__stats-second">
+                    <span class="calories__stats_second-title">Рост:</span>
+                    <span class="calories__stats_second-subtitle" id="height"></span>
+                    <span class="calories__stats_second-title">Вес:</span>
+                    <span class="calories__stats_second-subtitle" id="weight"></span>
+                  </div>
+                  <span class="labelCalories__container">
+                  <label class="labelCalories">Физическая активность</label>
+                  <span class="radioWrapper">
+                    <label class="labelRad" for="radio" value="1.2">1,2</label>
+                    <label class="labelRad" for="radio" value="1.38">1,38</label>
+                    <label class="labelRad" for="radio" value="1.46">1,46</label>
+                    <label class="labelRad" for="radio" value="1.55">1,55</label>
+                    <label class="labelRad" for="radio" value="1.64">1,64</label>
+                    <label class="labelRad" for="radio" value="1.73">1,73</label>
+                    <label class="labelRad" for="radio" value="1.9">1,9</label>
+                  </span>
+                  <span class="calcMes"></span>
+                  </span>
+              </div>
+            </div>
+            <div class="right__container-block" id="bluda">
+              <header class="right__container_block-header">
+                <span class="block__header-title">Блюда на 3 дня</span>
+                <img src="src/019plate1_114171.svg" class="block__header-img">
+              </header>
+              <div id="bluda__container">
+                <div class="bluda__container-items" data-id="">Временно не работает</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <script type="text/javascript" src="firebase/configDFB.js"></script>
+    <script type="text/javascript" src="firebase/exit.js"></script>
+    <script id="firebase-profileJs" type="text/javascript" src="firebase/firebase-profile.js"></script>
+    <script type="text/javascript" src="scripts/linkAdd.js"></script>
+  </body>
+</html>

@@ -17,11 +17,12 @@ namespace program
             // min&max thread will be used
             ThreadPool.SetMinThreads(global.ThreadPoolMin_worker, global.ThreadPoolMin_async);
             ThreadPool.SetMinThreads(global.ThreadPoolMax_worker, global.ThreadPoolMax_async);
-            global.ServerSerialize();
+            // create 
+            global.GetServer();
             Console.WriteLine(global.GetInfo());
             //Server server = new Server(80);
             //server.Start();
-                while (true)
+            while (true)
                 {
                 string cmd = Console.ReadLine();
                 if(cmd == "clear")
@@ -30,19 +31,16 @@ namespace program
                 }
                 if(cmd == "start")
                 {
-                    foreach (var i in global.Servers)
-                        i.StartAsync();
+                    global.Server.StartAsync();
                 }
                 if(cmd == "stop")
                 {
-                    foreach (var i in global.Servers)
-                        i.Stop();
+                    global.Server.Stop();
                 }
                 if(cmd == "exit")
                 {
-                    foreach (var i in global.Servers)
-                        i.Stop();
-                    global.GlobalSeserialize();
+                    global.Server.Stop();
+                    global.SerializeConfig();
                     return;
                 }
                 if(cmd.IndexOf("server") != -1)
@@ -54,17 +52,17 @@ namespace program
                     if(cmd.IndexOf("--status") != -1)
                     {
                         
-                        for (var i = 0; i < global.Servers.Count; i++)
+                        /*for (var i = 0; i < global.Servers.Count; i++)
                         {
-                            Console.WriteLine($"{i}: {global.Servers[i].Domain} active: {global.Servers[i].Active}");
-                        }
+                            //Console.WriteLine($"{i}: {global.Servers[i].Domain} active: {global.Servers[i].Active}");
+                        }*/
                     }
                     if (cmd.IndexOf("show")!=-1)
                     {
-                        for(var i = 0; i < global.Servers.Count; i++)
+                        /*for(var i = 0; i < global.Servers.Count; i++)
                         {
-                            Console.WriteLine($"{i}: {global.Servers[i].Domain}\nIp: {global.Servers[i].Ip} Port: {global.Servers[i].Listen}/nPath: {global.Servers[i].Path}");
-                        }
+                            //Console.WriteLine($"{i}: {global.Servers[i].Domain}\nIp: {global.Servers[i].Ip} Port: {global.Servers[i].Listen}/nPath: {global.Servers[i].Path}");
+                        }*/
                     }
                 }
                 if (cmd.IndexOf("help") != -1)

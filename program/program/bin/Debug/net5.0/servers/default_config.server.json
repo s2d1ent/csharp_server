@@ -1,8 +1,0 @@
-{
-    "Listen" : 80,
-    "Domain" : "test-domain",
-    "Path":"D:\csharp_server\www",
-    "Extensions" : [
-            ".php", ".html", ".htm", ".xhtml"
-    ]
-}

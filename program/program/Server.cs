@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,21 +8,29 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using Newtonsoft.Json;
 
 namespace program
 {
     class Server
     {
+        [JsonIgnore]
         public IPAddress Ip;
-        TcpListener Listener;
+        [JsonIgnore]
         public int Listen { get; set; }
+        [JsonIgnore]
+        TcpListener Listener;
+        [JsonIgnore]
         public bool Active;
+        [JsonIgnore]
         public Global global;
-        public string Domain { get; set; }
+        [JsonIgnore]
+        public List<string> Domains = new List<string>();
         public string Path { get; set; }
         public string[] Extensions { get; set; }
 
         public string Framework_py { get; set; }
+        string registry = "";
         
         public Server(){ }
         public Server(int port)
@@ -44,6 +53,8 @@ namespace program
                     Listener = new TcpListener(Ip, Listen);
                 Listener.Start();
                 Active = true;
+                GetDomains();
+                DomainsRegister();
                 Console.WriteLine(GetInfo());
                 while (Active)
                 {
@@ -68,14 +79,15 @@ namespace program
             {
                 Listener.Stop();
                 Active = false;
-                global.GlobalSeserialize();
+                global.SerializeConfig();
+                DomainsClear();
             }  
             else
                 Console.WriteLine("Server was started");
         }
         public string GetInfo()
         {
-            string info = @$"Domain: {Domain}
+            string info = @$"Domain: {Domains}
 Ip: {Ip}    Port: {Listen}
 Active: {Active}
             ";
@@ -98,6 +110,40 @@ Active: {Active}
         public void JsonConfig()
         {
 
+        }
+        public void GetDomains()
+        {
+            foreach (var folder in Directory.GetDirectories($"{AppDomain.CurrentDomain.BaseDirectory}{Path}/"))
+            {
+                var dom = folder.Substring(folder.IndexOf("www/")).Replace("www/", "");
+                if (Domains.IndexOf(dom) == -1)
+                    Domains.Add(dom);
+            }
+        }
+        public void DomainsRegister()
+        {
+            string hosts = "";
+            string hosts_path = @"C:\Windows\System32\drivers\etc\hosts";
+            hosts = File.ReadAllText(hosts_path);
+            
+            if(Domains != null || Domains.Count != 0)
+            {
+                foreach(var domain in Domains)
+                {
+                    hosts += $"   {Ip}       {domain}\n";
+                    registry += $"   {Ip}       {domain}\n";
+                }
+            }
+
+            File.WriteAllText(hosts_path, hosts);
+        }
+        public void DomainsClear()
+        {
+            string hosts = "";
+            string hosts_path = @"C:\Windows\System32\drivers\etc\hosts";
+            hosts = File.ReadAllText(hosts_path);
+            hosts = hosts.Replace(registry, "");
+            File.WriteAllText(hosts_path, hosts);
         }
     }
 }

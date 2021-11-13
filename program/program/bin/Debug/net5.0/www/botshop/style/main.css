@@ -1,0 +1,25 @@
+* {
+box-sizing: 0;
+border: 0;
+outline: 0;
+margin: 0;
+padding: 0;
+}
+li {
+  text-decoration-style: none;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color:var(--TextColor);
+}
+body {
+  font-family: "Play", Arial, Helvetica, sans-serif;
+  color:var(--TextColor);
+  background:#f3f3f3;
+  min-height: 100vh;
+}
+:root {
+  --Text: #353A40 ;
+  --Fiol: #8E54E9 ;
+}

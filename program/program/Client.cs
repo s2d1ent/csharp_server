@@ -23,7 +23,7 @@ namespace program
             this.client = c;
             this.server = s;
             site = server.Path;
-            string FilePath = $"{site}";
+            string FilePath = $"{AppDomain.CurrentDomain.BaseDirectory}{site}";
             NetworkStream stream = client.GetStream();
             string request = "";
             byte[] data = new byte[1024];
@@ -33,8 +33,12 @@ namespace program
                 stream.Read(data, 0, data.Length);
                 request += Encoding.UTF8.GetString(data);
             }
+            
             // берет первую строку заголовков
             Match ReqMatch = Regex.Match(request, @"^\w+\s+([^\s\?]+)[^\s]*\s+HTTP/.*|");
+            string domain = Regex.Match(request, @"Host:\s[a-z]+").Value
+                .Replace("Host:","")
+                .Replace(" ", "");
             if (ReqMatch == Match.Empty)
             {
                 SendError(400);
@@ -42,6 +46,11 @@ namespace program
             }
             string file = ReqMatch.ToString();
             Console.WriteLine(ReqMatch);
+            if(domain == null || domain.Length == 0)
+            {
+                SendError(404);
+                return;
+            }
             if(file.Length != 0)
             {
                 file = file.Replace("GET", "")
@@ -62,7 +71,7 @@ namespace program
             {
                 foreach(var ext in server.Extensions)
                 {
-                    if (File.Exists($"{site}/index{ext}"))
+                    if (File.Exists($"{site}/{domain}/index{ext}"))
                     {
                         Console.WriteLine($"/index{ext}");
                         file = $"/index{ext}";
@@ -72,10 +81,10 @@ namespace program
             }
             if (file.IndexOf("..") != -1)
             {
-                SendError(400);
+                SendError(404);
                 return;
             }
-            FilePath += $"{file}";
+            FilePath += $"/{domain}{file}";
             GetSheet(FilePath, file);
             //Console.WriteLine($"Path: {FilePath} - Exist: {File.Exists(FilePath)}");
             client.Close();
@@ -329,6 +338,9 @@ namespace program
                         result = $"text/javascript";
                         break;
                     case "php":
+                        result = $"text/html";
+                        break;
+                    case "htm":
                         result = $"text/html";
                         break;
                     //video
