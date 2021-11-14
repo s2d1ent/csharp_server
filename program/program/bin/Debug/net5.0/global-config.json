@@ -19,28 +19,19 @@
   },
   "Interpreters": {
     "phpx64": {
-      "Error": false,
-      "Error_message": null,
       "Version": "x64",
       "Name": "php",
-      "Path": "includes/php/win64/php.exe",
-      "Reponse": null
+      "Path": "includes/php/win64/php.exe"
     },
     "phpx86": {
-      "Error": false,
-      "Error_message": null,
       "Version": "x86",
       "Name": "php",
-      "Path": "includes/php/win86/php.exe",
-      "Reponse": null
+      "Path": "includes/php/win86/php.exe"
     },
     "pyx64": {
-      "Error": false,
-      "Error_message": null,
       "Version": "x64",
       "Name": "py",
-      "Path": "includes/python/win64/python.exe",
-      "Reponse": null
+      "Path": "includes/python/win64/python.exe"
     }
   },
   "PoolMin_worker": "2",

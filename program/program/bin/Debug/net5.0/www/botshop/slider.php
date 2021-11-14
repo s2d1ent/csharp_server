@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="style/slider.css" />
 <section class="section__banner">
   <div class="banner">
     <a href="/" class="banner-elem" style="background:url('src/17632384.jpg');">

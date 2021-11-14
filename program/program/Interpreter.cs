@@ -39,8 +39,10 @@ namespace program
             StreamReader output = p.StandardOutput;
             StreamReader error = p.StandardError;
 
+            byte[] cp866_byte = output.CurrentEncoding.GetBytes(output.ReadToEnd());
+            string cp866_byte_to_utf8 = Encoding.UTF8.GetString(cp866_byte);
 
-            return output.ReadToEnd();
+            return cp866_byte_to_utf8;
         }
     }
 }

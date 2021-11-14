@@ -12,6 +12,7 @@ namespace program
         /**/
         static void Main(string[] args)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             string path = AppDomain.CurrentDomain.BaseDirectory;
             Global global = SerialaizeGlobal($@"{path}/global-config.json");
             // min&max thread will be used

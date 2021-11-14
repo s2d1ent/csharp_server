@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "WcGGIMBHgHfaz0gR0Jktls95SFFRHdpwoTkDq4/dCkg1opDSXWo0FsGGcNtvOHqOkxE5+RhLtgloDhu2TgnH6A==",
+  "dgSpecHash": "Uv+ZUEXdIe4v+EZkEmLpGcsqvGmo62COQDcieeCBbl5nZ4HX0oPuRKTr353rttp6P0/VUMDpnrHorgbGis0hDg==",
   "success": true,
   "projectFilePath": "D:\\csharp_server\\program\\program\\program.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\tumen\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\tumen\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\tumen\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\tumen\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

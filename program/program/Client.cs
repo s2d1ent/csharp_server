@@ -17,6 +17,7 @@ namespace program
         Server server;
         string site = @"";
         Interpreter php = new Interpreter();
+        string params_request = "";
         //string site = @"C:\Users\Admin\Desktop\csharp_server\www";
         public Client(TcpClient c, Server s)
         {
@@ -27,6 +28,7 @@ namespace program
             NetworkStream stream = client.GetStream();
             string request = "";
             byte[] data = new byte[1024];
+            string get_post_data = "";
             //Console.WriteLine($"Client ip: {client.Client.RemoteEndPoint}");
             while (stream.DataAvailable)
             {
@@ -44,8 +46,8 @@ namespace program
                 SendError(400);
                 return;
             }
+            Console.WriteLine(request);
             string file = ReqMatch.ToString();
-            Console.WriteLine(ReqMatch);
             if(domain == null || domain.Length == 0)
             {
                 SendError(404);
@@ -60,6 +62,12 @@ namespace program
                         file.IndexOf("HTTP")
                         ), "")
                 .Replace(" ", "");
+            }
+            if(file.IndexOf("?")!=-1)
+            {
+                Console.WriteLine(file);
+                this.params_request = file.Substring(file.IndexOf("?"));
+                file = file.Replace(file.Substring(file.IndexOf("?")),"");
             }
             if (file.Length == 0)
             {
@@ -109,9 +117,10 @@ namespace program
         {
             try
             {
+                //Console.WriteLine(link);
                 bool IsFile = File.Exists(link);
                 bool IsFolder = Directory.Exists(link);
-                Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
+                //Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
                 if (!IsFile)
                 {
                     SendError(400);
@@ -138,13 +147,6 @@ namespace program
                     int length = fs.Read(data, 0, data.Length);
                     client.GetStream().Write(data, 0, length);
                 }
-                ///
-                ///
-                ///
-
-                ///
-                ///
-                ///
                 client.Close();
             }
             catch (Exception ex)
@@ -158,18 +160,15 @@ namespace program
             {
                 bool IsFile = File.Exists(link);
                 bool IsFolder = Directory.Exists(link);
-                bool IsPhp = false;
                 string html = "";
                 if (!IsFile)
                 {
                     SendError(400);
                     return;
                 }
-                if (address.LastIndexOf(".php") != -1)
-                {
-                    html = PhpFile(link);
-                    IsPhp = true;
-                }
+                html = PhpFile(link);
+                Console.WriteLine(html);
+                //Console.WriteLine($"Params: {params_request}");
                 string content_type = GetContentType(link);
                 //FileExplorer(link);
                 FileStream fs = new FileStream(link, FileMode.Open, FileAccess.Read, FileShare.Read);
@@ -183,18 +182,19 @@ namespace program
                 byte[] data = Encoding.UTF8.GetBytes(html);
                 client.GetStream().Write(data, 0, data.Length);
 
-                byte[] data_ = new byte[1024];
-                while (client.GetStream().DataAvailable)
-                {
-
-                }
-
                 client.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Func: GetSheet()    link: {link}\nException: {ex}/nMessage: {ex.Message}");
             }
+        }
+        string HttpParametrizeRequest(string param)
+        {
+            string result = "";
+
+
+            return result;
         }
         string PhpFile(string address)
         {
@@ -205,10 +205,8 @@ namespace program
                     if (i.Value.Version == server.global.System["Bit"])
                         interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
             }
-            byte[] data = Encoding.ASCII.GetBytes(address);
-            string addrss = Encoding.ASCII.GetString(data);
-            // @"C:\index.php"
-            string result = php.PerformPhp(interpretator , $"{addrss}");
+            //string result = php.PerformPhp(interpretator , $"{address}");
+            string result = php.PerformPhp(interpretator, address);
             return result;
         }
         string GetContentType(string link)
