@@ -97,6 +97,10 @@ namespace program
             //Console.WriteLine($"Path: {FilePath} - Exist: {File.Exists(FilePath)}");
             client.Close();
         }
+        ~Client()
+        {
+            GC.Collect(2, GCCollectionMode.Forced);
+        }
         public void GetSheet(string link, string file)
         {
             // link = C:\...
@@ -112,16 +116,17 @@ namespace program
                     string content_type = GetContentType(link);
                     string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n{html}";
                     // OUTPUT HEADERS
-                    byte[] data_headers = Encoding.UTF8.GetBytes(headers);
-                    client.GetStream().Write(data_headers, 0, data_headers.Length);
+                    /*byte[] data_headers = Encoding.UTF8.GetBytes(headers);
+                    client.GetStream().Write(data_headers, 0, data_headers.Length);*/
                     // OUTPUT CONTENT
                     /*byte[] data = Encoding.UTF8.GetBytes(html);
                     client.GetStream().Write(data, 0, data.Length);*/
+                    File.WriteAllText(@$"{AppDomain.CurrentDomain.BaseDirectory}/www/html_time_file_php.html", html);
+                    GetSheet(@$"{AppDomain.CurrentDomain.BaseDirectory}/www/html_time_file_php.html","");
                     IsFile = false;
                 }
                 if (IsFile)
                 {
-                    
                     string content_type = GetContentType(link);
                     FileStream fs = new FileStream(link, FileMode.Open, FileAccess.Read, FileShare.Read);
                     string headers = "";

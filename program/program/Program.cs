@@ -32,16 +32,19 @@ namespace program
                 {
                     global.Server.StartAsync();
                 }
-                if (cmd == "restart")
+                if (cmd.IndexOf("restart")!=-1)
                 {
-                    Console.Clear();
-                    global.Server.Stop();
-                    global = SerialaizeGlobal($@"{path}/global-config.json");
-                    ThreadPool.SetMinThreads(global.ThreadPoolMin_worker, global.ThreadPoolMin_async);
-                    ThreadPool.SetMinThreads(global.ThreadPoolMax_worker, global.ThreadPoolMax_async);
-                    global.GetServer();
-                    Console.WriteLine(global.GetInfo());
-                    global.Server.StartAsync();
+                    if(cmd == "restart")
+                    {
+                        Console.Clear();
+                        global.Server.Stop();
+                        global = SerialaizeGlobal($@"{path}/global-config.json");
+                        ThreadPool.SetMinThreads(global.ThreadPoolMin_worker, global.ThreadPoolMin_async);
+                        ThreadPool.SetMinThreads(global.ThreadPoolMax_worker, global.ThreadPoolMax_async);
+                        global.GetServer();
+                        Console.WriteLine(global.GetInfo());
+                        global.Server.StartAsync();
+                    }
                 }
                 if (cmd == "stop")
                 {
@@ -61,18 +64,7 @@ namespace program
                     }
                     if(cmd.IndexOf("--status") != -1)
                     {
-                        
-                        /*for (var i = 0; i < global.Servers.Count; i++)
-                        {
-                            //Console.WriteLine($"{i}: {global.Servers[i].Domain} active: {global.Servers[i].Active}");
-                        }*/
-                    }
-                    if (cmd.IndexOf("show")!=-1)
-                    {
-                        /*for(var i = 0; i < global.Servers.Count; i++)
-                        {
-                            //Console.WriteLine($"{i}: {global.Servers[i].Domain}\nIp: {global.Servers[i].Ip} Port: {global.Servers[i].Listen}/nPath: {global.Servers[i].Path}");
-                        }*/
+                        Console.WriteLine(global.Server.GetStatus());
                     }
                 }
                 if (cmd.IndexOf("help") != -1)

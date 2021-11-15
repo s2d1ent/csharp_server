@@ -1,0 +1,7 @@
+﻿clear - console clear
+start - start server
+restart - restart server
+stop - stop server
+exit - stop server and close application
+server - [--status]
+help - give this file =)
