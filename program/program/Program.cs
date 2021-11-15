@@ -21,7 +21,7 @@ namespace program
             // create 
             global.GetServer();
             Console.WriteLine(global.GetInfo());
-            //Server server = new Server(80);
+            //Server server = new Server(80);рррррррррррррь4умвч
             //server.Start();
             while (true)
                 {

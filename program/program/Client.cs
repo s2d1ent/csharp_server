@@ -167,7 +167,6 @@ namespace program
                     return;
                 }
                 html = PhpFile(link);
-                Console.WriteLine(html);
                 //Console.WriteLine($"Params: {params_request}");
                 string content_type = GetContentType(link);
                 //FileExplorer(link);
@@ -181,6 +180,12 @@ namespace program
 
                 byte[] data = Encoding.UTF8.GetBytes(html);
                 client.GetStream().Write(data, 0, data.Length);
+                if (params_request != null || params_request.Length != 0)
+                {
+                    byte[] rapams_byte = Encoding.UTF8.GetBytes(params_request);
+                    string params_header = $"HTTP/1.1 200 OK\nContent-type: application/x-www-form-urlencoded\nContent-Length: {params_request.Length}\n\n";
+                    client.GetStream().Write(rapams_byte, 0, rapams_byte.Length);
+                }
 
                 client.Close();
             }
