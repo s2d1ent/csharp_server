@@ -38,21 +38,21 @@ namespace program
             
             // берет первую строку заголовков
             Match ReqMatch = Regex.Match(request, @"^\w+\s+([^\s\?]+)[^\s]*\s+HTTP/.*|");
-            string domain = Regex.Match(request, @"Host:\s[a-z]+").Value
-                .Replace("Host:","")
-                .Replace(" ", "");
+            string domain = Regex.Match(request, @"Host:\s[a-z]+").Value.Replace("Host:", "").Replace(" ", "");
             if (ReqMatch == Match.Empty)
             {
+                Console.WriteLine($"ReqMatch = Empty");
                 SendError(400);
                 return;
             }
             Console.WriteLine(request);
             string file = ReqMatch.ToString();
-            if(domain == null || domain.Length == 0)
+            /*if(domain == "" || domain.Length == 0)
             {
+                Console.WriteLine($"domain = null");
                 SendError(404);
                 return;
-            }
+            }*/
             if(file.Length != 0)
             {
                 file = file.Replace("GET", "")
@@ -74,7 +74,6 @@ namespace program
                 client.Close();
                 return;
             }
-                
             if (file == "/" || file == "\\")
             {
                 foreach(var ext in server.Extensions)
@@ -89,65 +88,57 @@ namespace program
             }
             if (file.IndexOf("..") != -1)
             {
-                SendError(404);
+                client.Close();
                 return;
             }
             FilePath += $"/{domain}{file}";
+            
             GetSheet(FilePath, file);
             //Console.WriteLine($"Path: {FilePath} - Exist: {File.Exists(FilePath)}");
             client.Close();
         }
-        public void SendError(int code)
+        public void GetSheet(string link, string file)
         {
-            string html = $"<html><head><title></title></head><body><h1>Error {code}</h1></body></html>";
-            string headers = $"HTTP/1.1 200 OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
-            byte[] data = Encoding.UTF8.GetBytes(headers);
-            client.GetStream().Write(data, 0, data.Length);
-            client.Close();
-        }
-        public void SendError(string message, int code)
-        {
-            string html = $"<html><head><title></title></head><body><h1>Error {code}</h1><div>{message}</div></body></html>";
-            string headers = $"HTTP/1.1 200 OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
-            byte[] data = Encoding.UTF8.GetBytes(headers);
-            client.GetStream().Write(data, 0, data.Length);
-            client.Close();
-        }
-        public void GetSheet(string link, string address)
-        {
+            // link = C:\...
+            // address = file.html
             try
             {
-                //Console.WriteLine(link);
                 bool IsFile = File.Exists(link);
-                bool IsFolder = Directory.Exists(link);
+                //bool IsFolder = Directory.Exists(link);
                 //Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
-                if (!IsFile)
+                if (IsFile && GetFormat(link) == "php")
                 {
-                    SendError(400);
-                    return;
+                    string html = PhpFile(link);
+                    string content_type = GetContentType(link);
+                    string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n{html}";
+                    // OUTPUT HEADERS
+                    byte[] data_headers = Encoding.UTF8.GetBytes(headers);
+                    client.GetStream().Write(data_headers, 0, data_headers.Length);
+                    // OUTPUT CONTENT
+                    /*byte[] data = Encoding.UTF8.GetBytes(html);
+                    client.GetStream().Write(data, 0, data.Length);*/
+                    IsFile = false;
                 }
-                if (GetFormat(link) == "php")
+                if (IsFile)
                 {
-                    GetPhpSheet(link, address);
-                    return;
+                    
+                    string content_type = GetContentType(link);
+                    FileStream fs = new FileStream(link, FileMode.Open, FileAccess.Read, FileShare.Read);
+                    string headers = "";
+                    headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";
+                    // OUTPUT HEADERS
+                    byte[] data_headers = Encoding.UTF8.GetBytes(headers);
+                    client.GetStream().Write(data_headers, 0, data_headers.Length);
+                    // OUTPUT CONTENT
+                    while (fs.Position < fs.Length)
+                    {
+                        byte[] data = new byte[1024];
+                        int length = fs.Read(data, 0, data.Length);
+                        client.GetStream().Write(data, 0, length);
+                    }
+                    //client.Close();
                 }
-                string content_type = GetContentType(link);
-                //FileExplorer(link);
-                FileStream fs = new FileStream(link, FileMode.Open, FileAccess.Read, FileShare.Read);
-                string headers = "";
-                headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";
-                //Console.WriteLine($"{headers}{link}");
-                // OUTPUT HEADERS
-                byte[] data_headers = Encoding.UTF8.GetBytes(headers);
-                client.GetStream().Write(data_headers, 0, data_headers.Length);
-                // OUTPUT CONTENT
-                while (fs.Position < fs.Length)
-                {
-                    byte[] data = new byte[1024];
-                    int length = fs.Read(data, 0, data.Length);
-                    client.GetStream().Write(data, 0, length);
-                }
-                client.Close();
+                
             }
             catch (Exception ex)
             {
@@ -158,48 +149,21 @@ namespace program
         {
             try
             {
-                bool IsFile = File.Exists(link);
-                bool IsFolder = Directory.Exists(link);
-                string html = "";
-                if (!IsFile)
-                {
-                    SendError(400);
-                    return;
-                }
-                html = PhpFile(link);
-                //Console.WriteLine($"Params: {params_request}");
+                string html = PhpFile(link);
                 string content_type = GetContentType(link);
-                //FileExplorer(link);
-                FileStream fs = new FileStream(link, FileMode.Open, FileAccess.Read, FileShare.Read);
-                string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n";
-                //Console.WriteLine($"{headers}{link}");
+                string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n{html}";
                 // OUTPUT HEADERS
                 byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                 client.GetStream().Write(data_headers, 0, data_headers.Length);
                 // OUTPUT CONTENT
-
-                byte[] data = Encoding.UTF8.GetBytes(html);
-                client.GetStream().Write(data, 0, data.Length);
-                if (params_request != null || params_request.Length != 0)
-                {
-                    byte[] rapams_byte = Encoding.UTF8.GetBytes(params_request);
-                    string params_header = $"HTTP/1.1 200 OK\nContent-type: application/x-www-form-urlencoded\nContent-Length: {params_request.Length}\n\n";
-                    client.GetStream().Write(rapams_byte, 0, rapams_byte.Length);
-                }
-
+                /*byte[] data = Encoding.UTF8.GetBytes(html);
+                client.GetStream().Write(data, 0, data.Length);*/
                 client.Close();
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Func: GetSheet()    link: {link}\nException: {ex}/nMessage: {ex.Message}");
+                Console.WriteLine($"Func: GetPhpSheet()    link: {link}\nException: {ex}/nMessage: {ex.Message}");
             }
-        }
-        string HttpParametrizeRequest(string param)
-        {
-            string result = "";
-
-
-            return result;
         }
         string PhpFile(string address)
         {
@@ -490,6 +454,22 @@ namespace program
                 result = $"unknown";
             }
             return result;
+        }
+        public void SendError(int code)
+        {
+            string html = $"<html><head><title></title></head><body><h1>Error {code}</h1></body></html>";
+            string headers = $"HTTP/1.1 200 OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
+            byte[] data = Encoding.UTF8.GetBytes(headers);
+            client.GetStream().Write(data, 0, data.Length);
+            client.Close();
+        }
+        public void SendError(string message, int code)
+        {
+            string html = $"<html><head><title></title></head><body><h1>Error {code}</h1><div>{message}</div></body></html>";
+            string headers = $"HTTP/1.1 200 OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
+            byte[] data = Encoding.UTF8.GetBytes(headers);
+            client.GetStream().Write(data, 0, data.Length);
+            client.Close();
         }
         void Close()
         {

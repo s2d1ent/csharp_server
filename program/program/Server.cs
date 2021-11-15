@@ -87,7 +87,19 @@ namespace program
         }
         public string GetInfo()
         {
-            string info = @$"Domain: {Domains}
+            string domain = "";
+            if(Domains != null)
+            {
+                foreach(var elem in Domains)
+                {
+                    domain += $"{elem} */*";
+                }
+            }
+            else
+            {
+                domain = "Error outpt domains";
+            }
+            string info = @$"Domain: {domain}
 Ip: {Ip}    Port: {Listen}
 Active: {Active}
             ";
@@ -130,8 +142,8 @@ Active: {Active}
             {
                 foreach(var domain in Domains)
                 {
-                    hosts += $"   {Ip}       {domain}\n";
-                    registry += $"   {Ip}       {domain}\n";
+                    hosts += $"\n   {Ip}       {domain}";
+                    registry += $"\n   {Ip}       {domain}";
                 }
             }
 

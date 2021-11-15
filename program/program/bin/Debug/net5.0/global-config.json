@@ -36,6 +36,6 @@
   },
   "PoolMin_worker": "2",
   "PoolMin_async": "2",
-  "PoolMax_worker": "4",
-  "PoolMax_async": "4"
+  "PoolMax_worker": "2",
+  "PoolMax_async": "2"
 }

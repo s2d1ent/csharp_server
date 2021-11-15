@@ -18,11 +18,9 @@ namespace program
             // min&max thread will be used
             ThreadPool.SetMinThreads(global.ThreadPoolMin_worker, global.ThreadPoolMin_async);
             ThreadPool.SetMinThreads(global.ThreadPoolMax_worker, global.ThreadPoolMax_async);
-            // create 
+            // get server
             global.GetServer();
             Console.WriteLine(global.GetInfo());
-            //Server server = new Server(80);рррррррррррррь4умвч
-            //server.Start();
             while (true)
                 {
                 string cmd = Console.ReadLine();
@@ -34,7 +32,18 @@ namespace program
                 {
                     global.Server.StartAsync();
                 }
-                if(cmd == "stop")
+                if (cmd == "restart")
+                {
+                    Console.Clear();
+                    global.Server.Stop();
+                    global = SerialaizeGlobal($@"{path}/global-config.json");
+                    ThreadPool.SetMinThreads(global.ThreadPoolMin_worker, global.ThreadPoolMin_async);
+                    ThreadPool.SetMinThreads(global.ThreadPoolMax_worker, global.ThreadPoolMax_async);
+                    global.GetServer();
+                    Console.WriteLine(global.GetInfo());
+                    global.Server.StartAsync();
+                }
+                if (cmd == "stop")
                 {
                     global.Server.Stop();
                 }
