@@ -45,7 +45,7 @@ namespace program
                 SendError(400);
                 return;
             }
-            Console.WriteLine(request);
+            //Console.WriteLine(request);
             string file = ReqMatch.ToString();
             /*if(domain == "" || domain.Length == 0)
             {
@@ -107,22 +107,38 @@ namespace program
             // address = file.html
             try
             {
+                Console.WriteLine($"Link: {link} file: {file}");
                 bool IsFile = File.Exists(link);
                 //bool IsFolder = Directory.Exists(link);
                 //Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
-                if (IsFile && GetFormat(link) == "php")
+                if (IsFile && GetFormat(link) == "py")
                 {
-                    string html = PhpFile(link);
+                    string html = AnyFile(link);
                     string content_type = GetContentType(link);
                     string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n{html}";
                     // OUTPUT HEADERS
-                    /*byte[] data_headers = Encoding.UTF8.GetBytes(headers);
-                    client.GetStream().Write(data_headers, 0, data_headers.Length);*/
+                    byte[] data_headers = Encoding.UTF8.GetBytes(headers);
+                    client.GetStream().Write(data_headers, 0, data_headers.Length);
                     // OUTPUT CONTENT
-                    /*byte[] data = Encoding.UTF8.GetBytes(html);
-                    client.GetStream().Write(data, 0, data.Length);*/
-                    File.WriteAllText(@$"{AppDomain.CurrentDomain.BaseDirectory}/www/html_time_file_php.html", html);
-                    GetSheet(@$"{AppDomain.CurrentDomain.BaseDirectory}/www/html_time_file_php.html","");
+                    byte[] data = Encoding.UTF8.GetBytes(html);
+                    client.GetStream().Write(data, 0, data.Length);
+                    /*File.WriteAllText(@$"{AppDomain.CurrentDomain.BaseDirectory}/www/py_timed.html", html);
+                    GetSheet(@$"{AppDomain.CurrentDomain.BaseDirectory}/www/py_timed.html", "");*/
+                    IsFile = false;
+                }
+                if (IsFile && GetFormat(link) == "php")
+                {
+                    string html = AnyFile(link);
+                    string content_type = GetContentType(link);
+                    string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n{html}";
+                    // OUTPUT HEADERS
+                    byte[] data_headers = Encoding.UTF8.GetBytes(headers);
+                    client.GetStream().Write(data_headers, 0, data_headers.Length);
+                    // OUTPUT CONTENT
+                    byte[] data = Encoding.UTF8.GetBytes(html);
+                    client.GetStream().Write(data, 0, data.Length);
+                    /*File.WriteAllText(@$"{AppDomain.CurrentDomain.BaseDirectory}/www/php_timed.html", html);
+                    GetSheet(@$"{AppDomain.CurrentDomain.BaseDirectory}/www/php_timed.html","");*/
                     IsFile = false;
                 }
                 if (IsFile)
@@ -143,7 +159,6 @@ namespace program
                     }
                     //client.Close();
                 }
-                
             }
             catch (Exception ex)
             {
@@ -154,7 +169,7 @@ namespace program
         {
             try
             {
-                string html = PhpFile(link);
+                string html = AnyFile(link);
                 string content_type = GetContentType(link);
                 string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n{html}";
                 // OUTPUT HEADERS
@@ -170,7 +185,7 @@ namespace program
                 Console.WriteLine($"Func: GetPhpSheet()    link: {link}\nException: {ex}/nMessage: {ex.Message}");
             }
         }
-        string PhpFile(string address)
+        string AnyFile(string address)
         {
             string interpretator = "";
             foreach(var i in server.global.Interpreters)
@@ -178,11 +193,15 @@ namespace program
                 if (i.Value.Name == "php")
                     if (i.Value.Version == server.global.System["Bit"])
                         interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
+                if (i.Value.Name == "py")
+                    if (i.Value.Version == server.global.System["Bit"])
+                        interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
             }
             //string result = php.PerformPhp(interpretator , $"{address}");
             string result = php.PerformPhp(interpretator, address);
             return result;
         }
+
         string GetContentType(string link)
         {
             string result = "";
@@ -315,6 +334,9 @@ namespace program
                     case "htm":
                         result = $"text/html";
                         break;
+                    case "py":
+                        result = $"text/html";
+                        break;
                     //video
                     //vnd
                     //x
@@ -393,23 +415,23 @@ namespace program
                     case "webp":
                         result = $"{format}"; break;
                     case "svg":
-                        result = $"image/svg+xml";
+                        result = $"svg+xml";
                         break;
                     case "ico":
-                        result = $"image/vnd.microsoft.icon";
+                        result = $"vnd.microsoft.icon";
                         break;
                     case "wbmp":
-                        result = $"image/vnd.map.wbmp";
+                        result = $"vnd.map.wbmp";
                         break;
                     case "jpg":
-                        result = $"image/jpeg";
+                        result = $"jpeg";
                         break;
                     //message
                     case "eml":
                     case "mime":
                     case "mth":
                     case "mhtml":
-                        result = $"message/ftc822";
+                        result = $"ftc822";
                         break;
                     //model
                     case "iges":
@@ -422,13 +444,13 @@ namespace program
                     case "example":
                         result = $"{format}"; break;
                     case "x3db":
-                        result = $"model/x3d+binary";
+                        result = $"x3d+binary";
                         break;
                     case "x3dv":
-                        result = $"model/x3d+vrml";
+                        result = $"x3d+vrml";
                         break;
                     case "x3d":
-                        result = $"model/x3d+xml";
+                        result = $"x3d+xml";
                         break;
                     //multipart
                     //text
@@ -444,6 +466,8 @@ namespace program
                     case "js":
                         result = $"{format}"; break;
                     case "php":
+                        result = $"{format}"; break;
+                    case "py":
                         result = $"{format}"; break;
                     //video
                     //vnd

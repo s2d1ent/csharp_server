@@ -4,6 +4,7 @@
   "Server": {
     "Path": "www",
     "Extensions": [
+      ".py",
       ".php",
       ".html",
       ".htm",
