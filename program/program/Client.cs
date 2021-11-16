@@ -18,6 +18,7 @@ namespace program
         string site = @"";
         Interpreter php = new Interpreter();
         string params_request = "";
+        List<string> Temp = new List<string>();
         //string site = @"C:\Users\Admin\Desktop\csharp_server\www";
         public Client(TcpClient c, Server s)
         {
@@ -45,7 +46,7 @@ namespace program
                 SendError(400);
                 return;
             }
-            //Console.WriteLine(request);
+            Console.WriteLine(request);
             string file = ReqMatch.ToString();
             /*if(domain == "" || domain.Length == 0)
             {
@@ -74,7 +75,7 @@ namespace program
                 client.Close();
                 return;
             }
-            if (file == "/" || file == "\\")
+            if (file == "/" || file == "\\" || file == "")
             {
                 foreach(var ext in server.Extensions)
                 {
@@ -92,7 +93,6 @@ namespace program
                 return;
             }
             FilePath += $"/{domain}{file}";
-            
             GetSheet(FilePath, file);
             //Console.WriteLine($"Path: {FilePath} - Exist: {File.Exists(FilePath)}");
             client.Close();
@@ -107,10 +107,20 @@ namespace program
             // address = file.html
             try
             {
-                Console.WriteLine($"Link: {link} file: {file}");
                 bool IsFile = File.Exists(link);
                 //bool IsFolder = Directory.Exists(link);
                 //Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
+                if (!IsFile)
+                {
+                    string html = " ";
+                    string headers = $"HTTP/1.1 200 OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
+                    // OUTPUT HEADERS
+                    byte[] data_headers = Encoding.UTF8.GetBytes(headers);
+                    client.GetStream().Write(data_headers, 0, data_headers.Length);
+                    // OUTPUT CONTENT
+                    byte[] data = Encoding.UTF8.GetBytes(html);
+                    client.GetStream().Write(data, 0, data.Length);
+                }
                 if (IsFile && GetFormat(link) == "py")
                 {
                     string html = AnyFile(link);
@@ -122,23 +132,30 @@ namespace program
                     // OUTPUT CONTENT
                     byte[] data = Encoding.UTF8.GetBytes(html);
                     client.GetStream().Write(data, 0, data.Length);
-                    /*File.WriteAllText(@$"{AppDomain.CurrentDomain.BaseDirectory}/www/py_timed.html", html);
-                    GetSheet(@$"{AppDomain.CurrentDomain.BaseDirectory}/www/py_timed.html", "");*/
                     IsFile = false;
                 }
                 if (IsFile && GetFormat(link) == "php")
                 {
                     string html = AnyFile(link);
                     string content_type = GetContentType(link);
-                    string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n{html}";
+                    Console.WriteLine(html);
+                    string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n";
                     // OUTPUT HEADERS
-                    byte[] data_headers = Encoding.UTF8.GetBytes(headers);
+                    /*byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                     client.GetStream().Write(data_headers, 0, data_headers.Length);
                     // OUTPUT CONTENT
                     byte[] data = Encoding.UTF8.GetBytes(html);
-                    client.GetStream().Write(data, 0, data.Length);
-                    /*File.WriteAllText(@$"{AppDomain.CurrentDomain.BaseDirectory}/www/php_timed.html", html);
-                    GetSheet(@$"{AppDomain.CurrentDomain.BaseDirectory}/www/php_timed.html","");*/
+                    client.GetStream().Write(data, 0, data.Length);*/
+                    string temp = "";
+                    for(var i = 0; i < 8; i++)
+                    {
+                        byte rnd = (byte)new Random().Next(66, 90);
+                        temp += Encoding.UTF8.GetString(new byte[]{ rnd });
+                    }
+                    temp += ".html";
+                    string temp_link = $"{AppDomain.CurrentDomain.BaseDirectory}/temp/{temp}";
+                    File.WriteAllText(temp_link, html);
+                    GetSheet(temp_link, temp);
                     IsFile = false;
                 }
                 if (IsFile)
@@ -159,6 +176,7 @@ namespace program
                     }
                     //client.Close();
                 }
+                
             }
             catch (Exception ex)
             {
@@ -188,20 +206,28 @@ namespace program
         string AnyFile(string address)
         {
             string interpretator = "";
-            foreach(var i in server.global.Interpreters)
+            string result = "";
+            string ext = address.Substring(address.LastIndexOf("."))
+                .Replace(".","")
+                .Replace(" ", "");
+            lock(new object())
             {
-                if (i.Value.Name == "php")
-                    if (i.Value.Version == server.global.System["Bit"])
-                        interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
-                if (i.Value.Name == "py")
-                    if (i.Value.Version == server.global.System["Bit"])
-                        interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
+                foreach (var i in server.global.Interpreters)
+                {
+                    if (i.Value.Name == ext)
+                        if (i.Value.Version == server.global.System["Bit"])
+                            interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
+                }
+                //string result = php.PerformPhp(interpretator , $"{address}");
+                //Console.WriteLine(interpretator);
+                result = php.PerformPhp(interpretator, address);
             }
-            //string result = php.PerformPhp(interpretator , $"{address}");
-            string result = php.PerformPhp(interpretator, address);
             return result;
         }
+        void OutHtml(string html)
+        { 
 
+        }
         string GetContentType(string link)
         {
             string result = "";
