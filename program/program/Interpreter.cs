@@ -19,7 +19,7 @@ namespace program
         {
             //this.Path = @"D:\csharp_server\program\program\bin\Debug\net5.0\includes\php\win64\php.exe";
         }
-        public string PerformPhp(string php, string file)
+        public string UseInterpreter(string php, string file)
         {
             ProcessStartInfo info = new ProcessStartInfo(php, file);
             info.UseShellExecute = false;

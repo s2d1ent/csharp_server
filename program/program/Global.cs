@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace program
 {
@@ -32,6 +33,7 @@ namespace program
         public Dictionary<string, string> Alias { get; set; }
 
         public Dictionary<string, Interpreter> Interpreters { get; set; }
+        public string[] MySql_path { get; set; }
 
         // ThreadPool
         public string PoolMin_worker { get; set; }
@@ -153,7 +155,46 @@ namespace program
             }
             
         }
-        
+        public void MySqlServerStart()
+        {
+            ProcessStartInfo info = new ProcessStartInfo($"{AppDomain.CurrentDomain.BaseDirectory}{MySql_path[0]}");
+            info.UseShellExecute = false;
+            info.ErrorDialog = false;
+            info.RedirectStandardError = true;
+            info.RedirectStandardInput = true;
+            info.RedirectStandardOutput = true;
+            info.CreateNoWindow = true;
+
+
+            Process p = new Process();
+            p.StartInfo = info;
+
+            bool pStarted = p.Start();
+        }
+        public void MySqlServerClose()
+        {
+            ProcessStartInfo info = new ProcessStartInfo($"{AppDomain.CurrentDomain.BaseDirectory}{MySql_path[0]}");
+            info.UseShellExecute = false;
+            info.ErrorDialog = false;
+            info.RedirectStandardError = true;
+            info.RedirectStandardInput = true;
+            info.RedirectStandardOutput = true;
+            info.CreateNoWindow = true;
+
+
+            Process p = new Process();
+            p.StartInfo = info;
+
+            p.Close();
+        }
+        public async void MySqlServerStartAsync()
+        {
+            await Task.Run(()=> { MySqlServerStart(); });
+        }
+        public async void MySqlServerCloseAsync()
+        {
+            await Task.Run(() => { MySqlServerClose(); });
+        }
         public string GetInfo()
         {
             string domains = "";

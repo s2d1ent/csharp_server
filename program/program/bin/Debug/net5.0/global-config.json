@@ -38,6 +38,10 @@
       "Path": "includes/python/win64/python.exe"
     }
   },
+  "MySql_path": [
+    "includes/mysql/mysql/bin/mysqld.exe",
+    "includes/mysql/mysql/bin/mysqladmin.exe"
+  ],
   "PoolMin_worker": "2",
   "PoolMin_async": "2",
   "PoolMax_worker": "2",

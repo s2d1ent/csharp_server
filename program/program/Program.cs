@@ -21,6 +21,7 @@ namespace program
             // get server
             global.GetServer();
             Console.WriteLine(global.GetInfo());
+            Console.WriteLine($"{AppDomain.CurrentDomain.BaseDirectory}{global.MySql_path[0]}");
             while (true)
                 {
                 string cmd = Console.ReadLine();
@@ -31,12 +32,14 @@ namespace program
                 if(cmd == "start")
                 {
                     global.Server.StartAsync();
+                    global.MySqlServerStartAsync();
                 }
                 if (cmd.IndexOf("restart")!=-1)
                 {
                     if(cmd == "restart")
                     {
                         Console.Clear();
+                        global.MySqlServerClose();
                         global.Server.Stop();
                         global = SerialaizeGlobal($@"{path}/global-config.json");
                         ThreadPool.SetMinThreads(global.ThreadPoolMin_worker, global.ThreadPoolMin_async);
@@ -44,14 +47,17 @@ namespace program
                         global.GetServer();
                         Console.WriteLine(global.GetInfo());
                         global.Server.StartAsync();
+                        global.MySqlServerStartAsync();
                     }
                 }
                 if (cmd == "stop")
                 {
                     global.Server.Stop();
+                    global.MySqlServerCloseAsync();
                 }
                 if(cmd == "exit")
                 {
+                    global.MySqlServerClose();
                     global.Server.Stop();
                     global.SerializeConfig();
                     return;

@@ -16,7 +16,7 @@ namespace program
         TcpClient client;
         Server server;
         string site = @"";
-        Interpreter php = new Interpreter();
+        Interpreter interpreter = new Interpreter();
         string params_request = "";
         List<string> Temp = new List<string>();
         //string site = @"C:\Users\Admin\Desktop\csharp_server\www";
@@ -203,7 +203,7 @@ namespace program
                 }
                 //string result = php.PerformPhp(interpretator , $"{address}");
                 //Console.WriteLine(interpretator);
-                result = php.PerformPhp(interpretator, address);
+                result = interpreter.UseInterpreter(interpretator, address);
             }
             return result;
         }

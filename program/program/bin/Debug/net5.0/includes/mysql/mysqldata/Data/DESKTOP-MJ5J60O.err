@@ -1,0 +1,25 @@
+2021-11-17T21:02:04.708883Z 0 [Warning] [MY-010915] [Server] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'ERROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will be merged with strict mode in a future release.
+2021-11-17T21:02:04.718086Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe (mysqld 8.0.27) starting as process 12460
+2021-11-17T21:02:04.805358Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-17T21:02:06.206366Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-17T21:02:08.653279Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-17T21:02:08.698200Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-17T21:02:08.700694Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-17T21:02:08.701391Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-17T21:02:08.918422Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-17T21:02:08.918897Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-17T21:36:31.197347Z 0 [Warning] [MY-010915] [Server] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'ERROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will be merged with strict mode in a future release.
+2021-11-17T21:36:31.218936Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe (mysqld 8.0.27) starting as process 5412
+2021-11-17T21:36:31.945087Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-17T21:36:33.913067Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-17T21:36:36.497164Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-17T21:36:36.506457Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-17T21:36:37.120553Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-17T21:36:37.121212Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-17T21:36:37.327487Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-17T21:36:37.328484Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-17T21:36:37.572965Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-17T21:36:37.573204Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-17T21:42:58.572517Z 11 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.27).
+2021-11-17T21:42:58.573387Z 0 [System] [MY-013105] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe: Normal shutdown.
+2021-11-17T21:42:59.887346Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.

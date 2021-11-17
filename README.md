@@ -1,17 +1,26 @@
 # Web-Server C# .Net Core
-Этот сервер представляет собой простую реализацию C# .Net Core Веб-сервер, созданный с целью получения нового опыта в разработке программного обеспечения
+**Подготовил:** студент 3ИСП Тюменев Виктор<br>
+**Код специальности:**  09.02.07<br>
+**Факультет:**  Прикладная информатика<br>
+**Год:** 2021 <br>
+**Описание проекта:**<br>
+Данный проект представляет собой простую реализацию Веб-сервера на платформе C#.Net Core, созданный с целью преобретения нового опыта в разработке ПО и изучения внутреннего, программного устройства сервера.
+
+<br>
 
 ## Таблица 1 - Реализованные технологии сервера
 
-Title   | Realization   | Version       | 
-:---    |   :---        |   :---:       |  
-Php     |Partially implemented          | 8.0.12 | 
-Python  |Unrealized                     | 3.9.8 |
-Online Office              | Unrealized  | -    |
-Multithreaded processing   | Implemented |  -   |
-Domain system   | Implemented |  -   |
-Custom alias  | Implemented |  -   |
-Multiple site   | Implemented |  -   |
+Название   | Реализация   | Версия      | Разрядность системы|
+:---       |   :---       |   :---:     |  :---:             |
+Php        |Partially implemented       | 8.0.12             | x86/x64
+Python     |Partially implemented       | 3.9.8              | x86/x64
+MySql      |Unrealized                  | 5.7.36/8.0.27      | x86/x64
+Django     |Unrealized                  | -                  | -
+Onlly Office               | Unrealized  |  -   |-
+Multithreaded processing   | Implemented |  -   |-
+Domain system              | Implemented |  -   |-
+Custom alias               | Implemented |  -   |-
+Multiple site              | Implemented |  -   |-
 
 <br>
 
