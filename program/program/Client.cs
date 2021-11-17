@@ -48,6 +48,9 @@ namespace program
             }
             Console.WriteLine(request);
             string file = ReqMatch.ToString();
+            foreach(var i in server.global.Alias)
+                if(i.Value == domain)
+                    domain = i.Key;
             /*if(domain == "" || domain.Length == 0)
             {
                 Console.WriteLine($"domain = null");
@@ -183,26 +186,6 @@ namespace program
                 Console.WriteLine($"Func: GetSheet()    link: {link}\nException: {ex}/nMessage: {ex.Message}");
             }
         }
-        public void GetPhpSheet(string link, string address)
-        {
-            try
-            {
-                string html = AnyFile(link);
-                string content_type = GetContentType(link);
-                string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n{html}";
-                // OUTPUT HEADERS
-                byte[] data_headers = Encoding.UTF8.GetBytes(headers);
-                client.GetStream().Write(data_headers, 0, data_headers.Length);
-                // OUTPUT CONTENT
-                /*byte[] data = Encoding.UTF8.GetBytes(html);
-                client.GetStream().Write(data, 0, data.Length);*/
-                client.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Func: GetPhpSheet()    link: {link}\nException: {ex}/nMessage: {ex.Message}");
-            }
-        }
         string AnyFile(string address)
         {
             string interpretator = "";
@@ -223,10 +206,6 @@ namespace program
                 result = php.PerformPhp(interpretator, address);
             }
             return result;
-        }
-        void OutHtml(string html)
-        { 
-
         }
         string GetContentType(string link)
         {
@@ -524,10 +503,6 @@ namespace program
             string headers = $"HTTP/1.1 200 OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
             byte[] data = Encoding.UTF8.GetBytes(headers);
             client.GetStream().Write(data, 0, data.Length);
-            client.Close();
-        }
-        void Close()
-        {
             client.Close();
         }
     }

@@ -18,6 +18,9 @@
     "Processor": "",
     "RAM": ""
   },
+  "Alias": {
+    "python": "kidalovo"
+  },
   "Interpreters": {
     "phpx64": {
       "Version": "x64",

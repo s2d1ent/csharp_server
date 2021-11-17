@@ -29,6 +29,7 @@ namespace program
         }
         public Server Server { get; set; }
         public Dictionary<string, string> System { get; set; }
+        public Dictionary<string, string> Alias { get; set; }
 
         public Dictionary<string, Interpreter> Interpreters { get; set; }
 

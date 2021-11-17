@@ -119,15 +119,16 @@ Active: {Active}
             Server s = (Server)((ArrayList)client)[1];
             new Client(c, s);
         }
-        public void JsonConfig()
-        {
-
-        }
         public void GetDomains()
         {
             foreach (var folder in Directory.GetDirectories($"{AppDomain.CurrentDomain.BaseDirectory}{Path}/"))
             {
                 var dom = folder.Substring(folder.IndexOf("www/")).Replace("www/", "");
+                if(global.Alias.ContainsKey(dom))
+                {
+                    Domains.Add(global.Alias[dom]);
+                    continue;
+                }
                 if (Domains.IndexOf(dom) == -1)
                     Domains.Add(dom);
             }
