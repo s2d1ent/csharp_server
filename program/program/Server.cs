@@ -83,7 +83,7 @@ namespace program
                 DomainsClear();
             }  
             else
-                Console.WriteLine("Server was started");
+                Console.WriteLine("Server was stopped");
         }
         public string GetInfo()
         {

@@ -21,7 +21,6 @@ namespace program
             // get server
             global.GetServer();
             Console.WriteLine(global.GetInfo());
-            Console.WriteLine($"{AppDomain.CurrentDomain.BaseDirectory}{global.MySql_path[0]}");
             while (true)
                 {
                 string cmd = Console.ReadLine();
