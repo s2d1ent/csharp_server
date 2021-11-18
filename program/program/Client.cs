@@ -19,6 +19,7 @@ namespace program
         Interpreter interpreter = new Interpreter();
         string params_request = "";
         List<string> Temp = new List<string>();
+        bool django = false;
         //string site = @"C:\Users\Admin\Desktop\csharp_server\www";
         public Client(TcpClient c, Server s)
         {
@@ -78,7 +79,7 @@ namespace program
                 client.Close();
                 return;
             }
-            if (file == "/" || file == "\\" || file == "")
+            if (file == "/" || file == "\\" || file == " " || file == "")
             {
                 foreach(var ext in server.Extensions)
                 {
@@ -88,6 +89,11 @@ namespace program
                         file = $"/index{ext}";
                         break;
                     }
+                }
+                if(File.Exists($"{site}/{domain}/manage.py"))
+                {
+                    file = $"/manage.py";
+                    django = true;
                 }
             }
             if (file.IndexOf("..") != -1)
@@ -144,12 +150,12 @@ namespace program
                     Console.WriteLine(html);
                     string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n";
                     // OUTPUT HEADERS
-                    /*byte[] data_headers = Encoding.UTF8.GetBytes(headers);
+                    byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                     client.GetStream().Write(data_headers, 0, data_headers.Length);
                     // OUTPUT CONTENT
                     byte[] data = Encoding.UTF8.GetBytes(html);
-                    client.GetStream().Write(data, 0, data.Length);*/
-                    string temp = "";
+                    client.GetStream().Write(data, 0, data.Length);
+                    /*string temp = "";
                     for(var i = 0; i < 8; i++)
                     {
                         byte rnd = (byte)new Random().Next(66, 90);
@@ -159,7 +165,7 @@ namespace program
                     string temp_link = $"{AppDomain.CurrentDomain.BaseDirectory}/temp/{temp}";
                     File.WriteAllText(temp_link, html);
                     GetSheet(temp_link, temp);
-                    IsFile = false;
+                    IsFile = false;*/
                 }
                 if (IsFile)
                 {

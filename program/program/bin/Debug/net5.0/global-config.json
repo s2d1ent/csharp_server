@@ -10,7 +10,7 @@
       ".htm",
       ".xhtml"
     ],
-    "Framework_py": null
+    "Django": true
   },
   "System": {
     "OS": "Microsoft Windows NT 10.0.18363.0",

@@ -1,0 +1,401 @@
+2021-11-18T16:04:31.031910Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7936
+2021-11-18T16:04:31.302601Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T16:04:33.897532Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T16:04:34.701991Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T16:04:34.718055Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T16:04:35.932897Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T16:04:35.935449Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T16:04:36.500845Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T16:04:36.501591Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T16:04:37.098510Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T16:04:37.099155Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T16:05:19.483935Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 12760
+2021-11-18T16:05:20.035166Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T16:05:20.037910Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T16:05:20.038703Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T16:05:20.039514Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T16:05:20.053644Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T16:05:20.060020Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T16:05:20.070224Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T16:50:18.621497Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 3636
+2021-11-18T16:50:18.708735Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T16:50:18.719308Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T16:50:18.719987Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T16:50:18.720728Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T16:50:18.723398Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T16:50:18.724747Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T16:50:18.726093Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:01:35.111384Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13392
+2021-11-18T17:01:35.171589Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:01:35.173696Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:01:35.174352Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:01:35.175005Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:01:35.176204Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:01:35.176982Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:01:35.178770Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:02:30.046656Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8748
+2021-11-18T17:02:30.135201Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:02:30.139057Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:02:30.141378Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:02:30.142793Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:02:30.168358Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:02:30.169077Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:02:30.172021Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:03:06.478237Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13580
+2021-11-18T17:03:06.539084Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:03:06.541729Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:03:06.542379Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:03:06.543019Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:03:06.544368Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:03:06.545132Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:03:06.546556Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:07:48.219729Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 11552
+2021-11-18T17:07:48.280903Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:07:48.282865Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:07:48.283477Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:07:48.285198Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:07:48.287083Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:07:48.287799Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:07:48.289655Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:09:01.538168Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 11424
+2021-11-18T17:09:01.583487Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:09:01.585514Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:09:01.586207Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:09:01.586848Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:09:01.587988Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:09:01.588622Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:09:01.590164Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:09:45.989590Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10204
+2021-11-18T17:09:46.030936Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:09:46.033289Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:09:46.033930Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:09:46.034613Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:09:46.035840Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:09:46.036423Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:09:46.037625Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:10:27.048205Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13856
+2021-11-18T17:10:27.147295Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:10:27.149662Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:10:27.150384Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:10:27.151026Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:10:27.154240Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:10:27.154923Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:10:27.158371Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:11:23.652698Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7512
+2021-11-18T17:11:23.827417Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:11:23.832894Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:11:23.833559Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:11:23.834204Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:11:23.851252Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:11:23.852935Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:11:23.857193Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:11:46.724584Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 11268
+2021-11-18T17:11:46.890718Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:11:46.893120Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:11:46.893861Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:11:46.894591Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:11:46.895861Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:11:46.896520Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:11:46.897899Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:17:15.162358Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6276
+2021-11-18T17:17:15.197454Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:17:15.200457Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:17:15.203297Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:17:15.204968Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:17:15.206426Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:17:15.207054Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:17:15.208378Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:18:12.420483Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6540
+2021-11-18T17:18:12.487870Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:18:12.489949Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:18:12.490617Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:18:12.491252Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:18:12.492419Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:18:12.493165Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:18:12.494490Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:19:00.354999Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 5848
+2021-11-18T17:19:00.474574Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:19:00.476796Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:19:00.477463Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:19:00.478123Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:19:00.492137Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:19:00.492793Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:19:00.494195Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:19:42.044569Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 892
+2021-11-18T17:19:42.126899Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:19:42.132801Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:19:42.135119Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:19:42.136028Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:19:42.138422Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:19:42.139137Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:19:42.145915Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:22:21.735037Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14524
+2021-11-18T17:22:21.798031Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:22:21.800397Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:22:21.801285Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:22:21.801911Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:22:21.803404Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:22:21.804515Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:22:21.806547Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:22:55.243101Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1472
+2021-11-18T17:22:55.347607Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:22:55.349685Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:22:55.350553Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:22:55.351224Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:22:55.352221Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:22:55.352836Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:22:55.354265Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:24:06.454948Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 15324
+2021-11-18T17:24:06.584790Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:24:06.587071Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:24:06.587804Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:24:06.588496Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:24:06.589840Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:24:06.590954Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:24:06.593689Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:24:49.981480Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14108
+2021-11-18T17:24:50.025211Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:24:50.027914Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:24:50.028662Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:24:50.029314Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:24:50.030307Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:24:50.030905Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:24:50.033109Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:26:28.190508Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13080
+2021-11-18T17:26:28.438924Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:26:28.441039Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:26:28.441687Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:26:28.442418Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:26:28.443576Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:26:28.444188Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:26:28.446220Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:42:15.319222Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13736
+2021-11-18T17:42:15.353993Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:42:15.356034Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:42:15.356669Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:42:15.357454Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:42:15.358737Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:42:15.359461Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:42:15.360905Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:43:46.924995Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 15988
+2021-11-18T17:43:46.955728Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:43:46.957872Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:43:46.958740Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:43:46.959917Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:43:46.961658Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:43:46.962263Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:43:46.963493Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:45:53.365992Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7432
+2021-11-18T17:45:53.629356Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:45:53.632062Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:45:53.632774Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:45:53.633403Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:45:53.634422Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:45:53.635135Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:45:53.636602Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:48:02.189167Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16276
+2021-11-18T17:48:02.262860Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:48:02.264965Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:48:02.265598Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:48:02.281506Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:48:02.283633Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:48:02.284342Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:48:02.291925Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T17:49:17.401051Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16024
+2021-11-18T17:49:17.456234Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T17:49:17.462106Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:49:17.462756Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T17:49:17.463396Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T17:49:17.464455Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T17:49:17.465254Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T17:49:17.467477Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T18:08:04.831757Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13968
+2021-11-18T18:08:04.921397Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T18:08:08.705378Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T18:08:09.494196Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T18:08:09.511290Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T18:08:10.051014Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T18:08:10.051902Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T18:08:10.055044Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T18:08:10.055782Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T18:08:10.373767Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T18:08:10.374386Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T18:14:52.419818Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 12412
+2021-11-18T18:14:52.553532Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T18:14:56.066151Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T18:14:56.890111Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T18:14:56.909646Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T18:14:57.829157Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T18:14:57.829976Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T18:14:57.837178Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T18:14:57.838054Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T18:14:58.039834Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T18:14:58.040358Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T18:16:06.790099Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14460
+2021-11-18T18:16:06.848130Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T18:16:08.826502Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T18:16:10.464285Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T18:16:10.479903Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T18:16:10.975253Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T18:16:10.976409Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T18:16:10.979806Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T18:16:10.980755Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T18:16:11.109847Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T18:16:11.110726Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T18:17:03.088163Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13760
+2021-11-18T18:17:03.209874Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T18:17:03.220101Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T18:17:03.220821Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T18:17:03.223651Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T18:17:03.230711Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T18:17:03.231339Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T18:17:03.232663Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T18:19:28.060637Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 15768
+2021-11-18T18:19:28.125208Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T18:19:28.128970Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T18:19:28.129611Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T18:19:28.130269Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T18:19:28.131369Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T18:19:28.131969Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T18:19:28.133349Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T18:21:00.641266Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9348
+2021-11-18T18:21:00.789430Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T18:21:00.791500Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T18:21:00.792135Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T18:21:00.792843Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T18:21:00.804331Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T18:21:00.825363Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T18:21:00.827589Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T18:34:25.322831Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1440
+2021-11-18T18:34:25.418386Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T18:34:28.629205Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T18:34:29.340414Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T18:34:29.355738Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T18:34:29.732431Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T18:34:29.733528Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T18:34:29.738280Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T18:34:29.739202Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T18:34:30.264310Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T18:34:30.265044Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T18:36:12.663676Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1896
+2021-11-18T18:36:12.735008Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T18:36:12.739201Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T18:36:12.741409Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T18:36:12.744618Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T18:36:12.748346Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T18:36:12.749511Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T18:36:12.751319Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T18:42:11.197155Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14440
+2021-11-18T18:42:11.259421Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T18:42:14.104567Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T18:42:15.468980Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T18:42:15.490680Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T18:42:16.144590Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T18:42:16.145429Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T18:42:16.149878Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T18:42:16.150704Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T18:42:16.537943Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T18:42:16.538277Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T19:01:35.755427Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 3768
+2021-11-18T19:01:35.818921Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T19:01:37.498518Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T19:01:39.048274Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T19:01:39.061575Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T19:01:39.574396Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T19:01:39.575072Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T19:01:39.577829Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T19:01:39.578496Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T19:01:39.754422Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T19:01:39.755204Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T19:02:11.801578Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1440
+2021-11-18T19:02:11.888891Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T19:02:11.890915Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T19:02:11.891854Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T19:02:11.892477Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T19:02:11.893763Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T19:02:11.894444Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T19:02:11.895787Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T19:05:39.354226Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 15504
+2021-11-18T19:05:39.416986Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T19:05:41.328516Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T19:05:43.081066Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T19:05:43.094783Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T19:05:43.668729Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T19:05:43.670294Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T19:05:43.675309Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T19:05:43.676683Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T19:05:44.073409Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T19:05:44.073928Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T19:08:41.952971Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6268
+2021-11-18T19:08:42.120679Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T19:08:42.125837Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T19:08:42.126695Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T19:08:42.127336Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T19:08:42.150597Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T19:08:42.151341Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T19:08:42.152726Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T19:10:41.720714Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 18164
+2021-11-18T19:10:41.817519Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T19:10:41.825284Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T19:10:41.825966Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-18T19:10:41.826621Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-18T19:10:41.830038Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-18T19:10:41.830689Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-18T19:10:41.832053Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-18T19:23:55.141228Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13864
+2021-11-18T19:23:55.185144Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T19:23:58.617612Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T19:23:59.255028Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T19:23:59.270997Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T19:23:59.612558Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T19:23:59.613671Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T19:23:59.618281Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T19:23:59.619222Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T19:24:00.077228Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T19:24:00.077685Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T19:27:08.813288Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe (mysqld 8.0.27) starting as process 18368
+2021-11-18T19:27:08.855251Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T19:27:12.033083Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T19:27:12.792548Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T19:27:12.805103Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T19:27:13.285050Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T19:27:13.286022Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T19:27:13.288933Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T19:27:13.289507Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T19:27:13.654536Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T19:27:13.655039Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T19:28:01.184757Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe (mysqld 8.0.27) starting as process 12304
+2021-11-18T19:28:01.240076Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T19:28:04.331686Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T19:28:05.078897Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T19:28:05.092479Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T19:28:05.577522Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T19:28:05.579655Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T19:28:05.585039Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T19:28:05.585806Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T19:28:05.939909Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T19:28:05.940429Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T19:29:48.727616Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe (mysqld 8.0.27) starting as process 8556
+2021-11-18T19:29:48.760040Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T19:29:51.726904Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T19:29:53.099057Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T19:29:53.113439Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T19:29:53.405622Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T19:29:53.406285Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T19:29:53.408781Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T19:29:53.409340Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T19:29:53.504377Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T19:29:53.504825Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T19:30:47.320764Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1936
+2021-11-18T19:30:47.363729Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-18T19:30:50.066544Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-18T19:30:50.793882Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-18T19:30:50.807274Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-18T19:30:51.315091Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-18T19:30:51.316013Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-18T19:30:51.318937Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-18T19:30:51.319578Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-18T19:30:51.707992Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-18T19:30:51.709394Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-18T19:32:27.530724Z 13 [Warning] [MY-013360] [Server] Plugin sha256_password reported: ''sha256_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2021-11-18T19:32:31.899398Z 14 [Warning] [MY-013360] [Server] Plugin sha256_password reported: ''sha256_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'

@@ -173,6 +173,7 @@ namespace program
                     global.MySqlServerClose();
                     global.Server.Stop();
                     global.SerializeConfig();
+                    cmd_bool = false;
                     return;
                 }
                 if(cmd.IndexOf("server") != -1 && cmd_bool)

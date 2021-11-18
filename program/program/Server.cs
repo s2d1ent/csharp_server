@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace program
 {
@@ -29,7 +31,9 @@ namespace program
         public string Path { get; set; }
         public string[] Extensions { get; set; }
 
-        public string Framework_py { get; set; }
+        public bool Django { get; set; }
+        private string django_path;
+        private string django_domain;
         string registry = "";
         
         public Server(){ }
@@ -49,12 +53,12 @@ namespace program
         {
             if (!Active)
             {
-                if (Listener == null)
-                    Listener = new TcpListener(Ip, Listen);
+                Listener = new TcpListener(Ip, Listen);
                 Listener.Start();
                 Active = true;
                 GetDomains();
                 DomainsRegister();
+                Task.Run(()=> { FindDjango(); });
                 Console.WriteLine(GetInfo());
                 while (Active)
                 {
@@ -77,10 +81,11 @@ namespace program
         {
             if (Active)
             {
+                Task.Run(() => { DjangoClose(); });
+                DomainsClear();
                 Listener.Stop();
                 Active = false;
                 global.SerializeConfig();
-                DomainsClear();
             }  
             else
                 Console.WriteLine("Server was stopped");
@@ -109,21 +114,32 @@ Active: {Active}
         {
             return $"Server active: {Active}";
         }
-        public void OpenDocumentation()
-        {
-
-        }
         public void ClientThread(object client)
         {
             TcpClient c = (TcpClient)((ArrayList)client)[0];
             Server s = (Server)((ArrayList)client)[1];
             new Client(c, s);
         }
+        // поиск Dkango
+        public void FindDjango()
+        {
+            if (Django)
+                foreach(var dir in Directory.GetDirectories($"{AppDomain.CurrentDomain.BaseDirectory}{Path}"))
+                    foreach(var dir_e in Directory.GetFiles($"{dir}"))
+                        if (dir_e.IndexOf("manage.py") != -1)
+                            django_path = dir;
+            if (Django && django_path != null || django_path != "")
+                DjangoStart(django_path);
+        }
         public void GetDomains()
         {
             foreach (var folder in Directory.GetDirectories($"{AppDomain.CurrentDomain.BaseDirectory}{Path}/"))
             {
                 var dom = folder.Substring(folder.IndexOf("www/")).Replace("www/", "");
+                /*if(django_path.IndexOf(folder) != -1)
+                {
+                    Console.WriteLine($"django getdomains");
+                }*/
                 if(global.Alias.ContainsKey(dom))
                 {
                     Domains.Add(global.Alias[dom]);
@@ -131,6 +147,30 @@ Active: {Active}
                 }
                 if (Domains.IndexOf(dom) == -1)
                     Domains.Add(dom);
+            }
+        }
+        public void DjangoStart(string path)
+        {
+            if (Django)
+            {
+                string response = "";
+                foreach (var elem in global.Interpreters)
+                    if (elem.Value.Name == "py")
+                        if (elem.Value.Version == global.System["Bit"])
+                        {
+                            response = elem.Value.UseInterpreter(elem.Value.Path, $"{django_path}/manage.py runserver");
+                            Console.WriteLine(response);
+                        }
+            }
+        }
+        public void DjangoClose()
+        {
+            if (Django)
+            {
+                foreach (var elem in global.Interpreters)
+                    if (elem.Value.Name == "py")
+                        if (elem.Value.Version == global.System["Bit"])
+                            elem.Value.UseInterpreter(elem.Value.Path, $"exit()");
             }
         }
         public void DomainsRegister()
