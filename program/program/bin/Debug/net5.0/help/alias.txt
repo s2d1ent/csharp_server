@@ -1,0 +1,1 @@
+﻿alias - [add [folder_name] [alias_name]] [remove(-rm) [folder_name]] [show]

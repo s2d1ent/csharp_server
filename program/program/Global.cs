@@ -173,7 +173,7 @@ namespace program
         }
         public void MySqlServerClose()
         {
-            ProcessStartInfo info = new ProcessStartInfo($"{AppDomain.CurrentDomain.BaseDirectory}{MySql_path[0]}");
+            ProcessStartInfo info = new ProcessStartInfo($"{AppDomain.CurrentDomain.BaseDirectory}{MySql_path[1]}", "-u root shutdown");
             info.UseShellExecute = false;
             info.ErrorDialog = false;
             info.RedirectStandardError = true;
