@@ -23,6 +23,8 @@ namespace program
             // get server
             global.GetServer();
             Console.WriteLine(global.GetInfo());
+            global.Server.StartAsync();
+            global.MySqlServerStart();
             while (true)
                 {
                 string cmd = Console.ReadLine();
@@ -73,24 +75,7 @@ namespace program
                 if(cmd == "start" || cmd == "-st" && cmd_bool)
                 {
                     global.Server.StartAsync();
-                    global.MySqlServerStartAsync();
-                    cmd_bool = false;
-                }
-                if (cmd.IndexOf("restart")!=-1 && cmd_bool)
-                {
-                    if(cmd == "restart")
-                    {
-                        Console.Clear();
-                        global.MySqlServerClose();
-                        global.Server.Stop();
-                        global = SerialaizeGlobal($@"{path}/global-config.json");
-                        ThreadPool.SetMinThreads(global.ThreadPoolMin_worker, global.ThreadPoolMin_async);
-                        ThreadPool.SetMinThreads(global.ThreadPoolMax_worker, global.ThreadPoolMax_async);
-                        global.GetServer();
-                        Console.WriteLine(global.GetInfo());
-                        global.Server.StartAsync();
-                        global.MySqlServerStartAsync();
-                    }
+                    //global.MySqlServerStartAsync();
                     cmd_bool = false;
                 }
                 if(cmd.IndexOf("alias") != -1 && cmd_bool)
@@ -168,18 +153,36 @@ namespace program
                         }
                     }
                     cmd_bool = false;
+                    //cmd = "restart";
+                }
+                if (cmd.IndexOf("restart") != -1 && cmd_bool)
+                {
+                    if (cmd == "restart")
+                    {
+                        Console.Clear();
+                        global.MySqlServerClose();
+                        global.Server.Stop();
+                        global = SerialaizeGlobal($@"{path}/global-config.json");
+                        ThreadPool.SetMinThreads(global.ThreadPoolMin_worker, global.ThreadPoolMin_async);
+                        ThreadPool.SetMinThreads(global.ThreadPoolMax_worker, global.ThreadPoolMax_async);
+                        global.GetServer();
+                        Console.WriteLine(global.GetInfo());
+                        global.Server.StartAsync();
+                        global.MySqlServerStartAsync();
+                    }
+                    cmd_bool = false;
                 }
                 if (cmd == "stop"  && cmd_bool)
                 {
                     global.Server.Stop();
-                    global.MySqlServerCloseAsync();
+                    //global.MySqlServerCloseAsync();
                     cmd_bool = false;
                 }
                 if(cmd == "exit" || cmd == "-e" && cmd_bool)
                 {
-                    global.MySqlServerClose();
+                    //global.MySqlServerClose();
                     global.Server.Stop();
-                    global.SerializeConfig();
+                    //global.SerializeConfig();
                     cmd_bool = false;
 
                     return;

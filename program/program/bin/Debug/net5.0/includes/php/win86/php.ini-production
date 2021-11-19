@@ -901,12 +901,12 @@ default_socket_timeout = 60
 ;
 ; For example:
 ;
-;   extension=mysqli
+   extension=mysqli
 ;
 ; When the extension library to load is not located in the default extension
 ; directory, You may specify an absolute path to the library file:
 ;
-;   extension=/path/to/extension/mysqli.so
+   extension=/path/to/extension/mysqli.so
 ;
 ; Note : The syntax used in previous PHP versions ('extension=<ext>.so' and
 ; 'extension='php_<ext>.dll') is supported for legacy reasons and may be
@@ -936,7 +936,7 @@ default_socket_timeout = 60
 ;extension=oci8_12c  ; Use with Oracle Database 12c Instant Client
 ;extension=oci8_19  ; Use with Oracle Database 19 Instant Client
 ;extension=odbc
-;extension=openssl
+extension=openssl
 ;extension=pdo_firebird
 ;extension=pdo_mysql
 ;extension=pdo_oci
@@ -1148,7 +1148,7 @@ odbc.defaultbinmode = 1
 ; Maximum number of persistent links.  -1 means no limit.
 ; http://php.net/mysqli.max-persistent
 mysqli.max_persistent = -1
-
+;extension = php_mysqli.dll
 ; Allow accessing, from PHP's perspective, local files with LOAD DATA statements
 ; http://php.net/mysqli.allow_local_infile
 ;mysqli.allow_local_infile = On

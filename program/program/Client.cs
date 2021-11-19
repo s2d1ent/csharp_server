@@ -20,6 +20,7 @@ namespace program
         string params_request = "";
         List<string> Temp = new List<string>();
         bool django = false;
+        string domain;
         //string site = @"C:\Users\Admin\Desktop\csharp_server\www";
         public Client(TcpClient c, Server s)
         {
@@ -40,24 +41,18 @@ namespace program
             
             // берет первую строку заголовков
             Match ReqMatch = Regex.Match(request, @"^\w+\s+([^\s\?]+)[^\s]*\s+HTTP/.*|");
-            string domain = Regex.Match(request, @"Host:\s[a-z]+").Value.Replace("Host:", "").Replace(" ", "");
+            domain = Regex.Match(request, @"Host:\s[a-z]+").Value.Replace("Host:", "").Replace(" ", "");
             if (ReqMatch == Match.Empty)
             {
                 Console.WriteLine($"ReqMatch = Empty");
                 SendError(400);
                 return;
             }
-            Console.WriteLine(request);
+            Console.WriteLine(ReqMatch);
             string file = ReqMatch.ToString();
-            foreach(var i in server.global.Alias)
+            foreach (var i in server.global.Alias)
                 if(i.Value == domain)
                     domain = i.Key;
-            /*if(domain == "" || domain.Length == 0)
-            {
-                Console.WriteLine($"domain = null");
-                SendError(404);
-                return;
-            }*/
             if(file.Length != 0)
             {
                 file = file.Replace("GET", "")
@@ -74,25 +69,18 @@ namespace program
                 this.params_request = file.Substring(file.IndexOf("?"));
                 file = file.Replace(file.Substring(file.IndexOf("?")),"");
             }
-            if (file.Length == 0)
-            {
-                client.Close();
-                return;
-            }
-            if (file == "/" || file == "\\" || file == " " || file == "")
+            if (file == "/" || file == "\\" || file == " " || file == "" || file[file.Length - 1] == '/' || file[file.Length - 1] == '\\')
             {
                 foreach(var ext in server.Extensions)
-                {
                     if (File.Exists($"{site}/{domain}/index{ext}"))
                     {
-                        Console.WriteLine($"/index{ext}");
                         file = $"/index{ext}";
                         break;
                     }
-                }
             }
             if (file.IndexOf("..") != -1)
             {
+                SendError(404);
                 client.Close();
                 return;
             }
@@ -112,7 +100,6 @@ namespace program
             try
             {
                 bool IsFile = File.Exists(link);
-                bool phpmyadmin = false;
                 //bool IsFolder = Directory.Exists(link);
                 //Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
                 if (!IsFile)
@@ -142,6 +129,7 @@ namespace program
                 if (IsFile)
                 {
                     string content_type = GetContentType(link);
+                    Console.WriteLine(link);
                     FileStream fs = new FileStream(link, FileMode.Open, FileAccess.Read, FileShare.Read);
                     string headers = "";
                     headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";
@@ -157,7 +145,7 @@ namespace program
                     }
                     //client.Close();
                 }
-                
+
             }
             catch (Exception ex)
             {

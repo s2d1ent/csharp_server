@@ -55,6 +55,7 @@ namespace program
                 Active = true;
                 GetDomains();
                 DomainsRegister();
+                global.MySqlServerStartAsync();
                 Console.WriteLine(GetInfo());
                 while (Active)
                 {
@@ -81,6 +82,7 @@ namespace program
                 Listener.Stop();
                 Active = false;
                 global.SerializeConfig();
+                global.MySqlServerCloseAsync();
             }  
             else
                 Console.WriteLine("Server was stopped");
