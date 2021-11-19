@@ -185,7 +185,7 @@ namespace program
             Process p = new Process();
             p.StartInfo = info;
 
-            p.Close();
+            bool pStarted = p.Start();
         }
         public async void MySqlServerStartAsync()
         {

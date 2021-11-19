@@ -31,9 +31,6 @@ namespace program
         public string Path { get; set; }
         public string[] Extensions { get; set; }
 
-        public bool Django { get; set; }
-        private string django_path;
-        private string django_domain;
         string registry = "";
         
         public Server(){ }
@@ -58,7 +55,6 @@ namespace program
                 Active = true;
                 GetDomains();
                 DomainsRegister();
-                Task.Run(()=> { FindDjango(); });
                 Console.WriteLine(GetInfo());
                 while (Active)
                 {
@@ -81,7 +77,6 @@ namespace program
         {
             if (Active)
             {
-                Task.Run(() => { DjangoClose(); });
                 DomainsClear();
                 Listener.Stop();
                 Active = false;
@@ -121,25 +116,11 @@ Active: {Active}
             new Client(c, s);
         }
         // поиск Dkango
-        public void FindDjango()
-        {
-            if (Django)
-                foreach(var dir in Directory.GetDirectories($"{AppDomain.CurrentDomain.BaseDirectory}{Path}"))
-                    foreach(var dir_e in Directory.GetFiles($"{dir}"))
-                        if (dir_e.IndexOf("manage.py") != -1)
-                            django_path = dir;
-            if (Django && django_path != null || django_path != "")
-                DjangoStart(django_path);
-        }
         public void GetDomains()
         {
             foreach (var folder in Directory.GetDirectories($"{AppDomain.CurrentDomain.BaseDirectory}{Path}/"))
             {
                 var dom = folder.Substring(folder.IndexOf("www/")).Replace("www/", "");
-                /*if(django_path.IndexOf(folder) != -1)
-                {
-                    Console.WriteLine($"django getdomains");
-                }*/
                 if(global.Alias.ContainsKey(dom))
                 {
                     Domains.Add(global.Alias[dom]);
@@ -147,26 +128,6 @@ Active: {Active}
                 }
                 if (Domains.IndexOf(dom) == -1)
                     Domains.Add(dom);
-            }
-        }
-        public void DjangoStart(string path)
-        {
-            if (Django)
-            {
-                string response = "";
-                foreach (var elem in global.Interpreters)
-                    if (elem.Value.Name == "py")
-                            response = elem.Value.UseInterpreter(elem.Value.Path, $"{django_path}/manage.py runserver");
-                            Console.WriteLine(response);
-            }
-        }
-        public void DjangoClose()
-        {
-            if (Django)
-            {
-                foreach (var elem in global.Interpreters)
-                    if (elem.Value.Name == "py")
-                            elem.Value.UseInterpreter(elem.Value.Path, $"exit()");
             }
         }
         public void DomainsRegister()

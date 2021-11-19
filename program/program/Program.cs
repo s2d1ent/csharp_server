@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace program
 {
@@ -42,7 +43,12 @@ namespace program
                     }
                     if(cmd.IndexOf("shell") != -1)
                     {
-
+                        if(global.Server.Active)
+                        {
+                            Interpreter open = new Interpreter();
+                            open.OpenApplication($"{AppDomain.CurrentDomain.BaseDirectory}{global.MySql_path[2]}", "-u root");
+                            //open.OpenApplication($@"C:\Windows\System32\cmd.exe", "");
+                        }
                     }
                     if (cmd.IndexOf("start") != -1)
                     {
@@ -57,6 +63,7 @@ namespace program
                         global.MySqlServerClose();
                         global.MySqlServerStart();
                     }
+                    cmd_bool = false;
                 }
                 if (cmd == "clear" || cmd == "-c" && cmd_bool)
                 {
@@ -174,6 +181,7 @@ namespace program
                     global.Server.Stop();
                     global.SerializeConfig();
                     cmd_bool = false;
+
                     return;
                 }
                 if(cmd.IndexOf("server") != -1 && cmd_bool)

@@ -1,0 +1,8 @@
+LICENSE.txt
+Django.egg-info/PKG-INFO
+Django.egg-info/SOURCES.txt
+Django.egg-info/dependency_links.txt
+Django.egg-info/entry_points.txt
+Django.egg-info/not-zip-safe
+Django.egg-info/requires.txt
+Django.egg-info/top_level.txt

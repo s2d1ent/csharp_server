@@ -44,5 +44,27 @@ namespace program
 
             return cp866_byte_to_utf8;
         }
+        public void OpenApplication(string path, string options)
+        {
+            ProcessStartInfo info = new ProcessStartInfo(path, options);
+            info.UseShellExecute = false;
+            info.ErrorDialog = false;
+            info.RedirectStandardError = true;
+            info.RedirectStandardInput = true;
+            info.RedirectStandardOutput = true;
+            info.CreateNoWindow = true ;
+            info.WindowStyle = ProcessWindowStyle.Normal;
+            
+
+
+            Process p = new Process();
+            p.StartInfo = info;
+
+            bool pStarted = p.Start();
+
+            StreamWriter input = p.StandardInput;
+            StreamReader output = p.StandardOutput;
+            StreamReader error = p.StandardError;
+        }
     }
 }

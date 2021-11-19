@@ -3,6 +3,7 @@ clear	-c - console clear
 start	-st - start server 
 restart - restart server
 stop - stop server
+mysql - [start] [stop] [restart] [shell]
 exit	-e - stop server and close application
 server - server info [--status]
 help - give this file =)

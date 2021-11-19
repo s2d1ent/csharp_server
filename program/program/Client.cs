@@ -90,11 +90,6 @@ namespace program
                         break;
                     }
                 }
-                if(File.Exists($"{site}/{domain}/manage.py"))
-                {
-                    file = $"/manage.py";
-                    django = true;
-                }
             }
             if (file.IndexOf("..") != -1)
             {
@@ -117,6 +112,7 @@ namespace program
             try
             {
                 bool IsFile = File.Exists(link);
+                bool phpmyadmin = false;
                 //bool IsFolder = Directory.Exists(link);
                 //Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
                 if (!IsFile)
@@ -130,7 +126,7 @@ namespace program
                     byte[] data = Encoding.UTF8.GetBytes(html);
                     client.GetStream().Write(data, 0, data.Length);
                 }
-                if (IsFile && GetFormat(link) == "py")
+                if (IsFile && GetFormat(link) == "py" || GetFormat(link) == "php")
                 {
                     string html = AnyFile(link);
                     string content_type = GetContentType(link);
@@ -142,30 +138,6 @@ namespace program
                     byte[] data = Encoding.UTF8.GetBytes(html);
                     client.GetStream().Write(data, 0, data.Length);
                     IsFile = false;
-                }
-                if (IsFile && GetFormat(link) == "php")
-                {
-                    string html = AnyFile(link);
-                    string content_type = GetContentType(link);
-                    Console.WriteLine(html);
-                    string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n";
-                    // OUTPUT HEADERS
-                    byte[] data_headers = Encoding.UTF8.GetBytes(headers);
-                    client.GetStream().Write(data_headers, 0, data_headers.Length);
-                    // OUTPUT CONTENT
-                    byte[] data = Encoding.UTF8.GetBytes(html);
-                    client.GetStream().Write(data, 0, data.Length);
-                    /*string temp = "";
-                    for(var i = 0; i < 8; i++)
-                    {
-                        byte rnd = (byte)new Random().Next(66, 90);
-                        temp += Encoding.UTF8.GetString(new byte[]{ rnd });
-                    }
-                    temp += ".html";
-                    string temp_link = $"{AppDomain.CurrentDomain.BaseDirectory}/temp/{temp}";
-                    File.WriteAllText(temp_link, html);
-                    GetSheet(temp_link, temp);
-                    IsFile = false;*/
                 }
                 if (IsFile)
                 {
