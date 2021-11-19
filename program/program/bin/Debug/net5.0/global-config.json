@@ -22,25 +22,15 @@
     "python": "kidalovo"
   },
   "Interpreters": {
-    "phpx64": {
-      "Version": "x64",
-      "Name": "php",
-      "Path": "includes/php/win64/php.exe"
-    },
-    "phpx86": {
+    "php": {
       "Version": "x86",
       "Name": "php",
       "Path": "includes/php/win86/php.exe"
     },
-    "pyx64": {
-      "Version": "x64",
+    "python": {
+      "Version": "x86",
       "Name": "py",
-      "Path": "includes/python/win64/python.exe"
-    },
-    "pyx86": {
-      "Version": "x64",
-      "Name": "py",
-      "Path": "includes/python/win64/python.exe"
+      "Path": "includes/python/win86/python.exe"
     }
   },
   "MySql_path": [

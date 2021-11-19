@@ -204,7 +204,6 @@ namespace program
                 foreach (var i in server.global.Interpreters)
                 {
                     if (i.Value.Name == ext)
-                        if (i.Value.Version == server.global.System["Bit"])
                             interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
                 }
                 //string result = php.PerformPhp(interpretator , $"{address}");

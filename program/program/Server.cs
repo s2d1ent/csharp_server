@@ -156,11 +156,8 @@ Active: {Active}
                 string response = "";
                 foreach (var elem in global.Interpreters)
                     if (elem.Value.Name == "py")
-                        if (elem.Value.Version == global.System["Bit"])
-                        {
                             response = elem.Value.UseInterpreter(elem.Value.Path, $"{django_path}/manage.py runserver");
                             Console.WriteLine(response);
-                        }
             }
         }
         public void DjangoClose()
@@ -169,7 +166,6 @@ Active: {Active}
             {
                 foreach (var elem in global.Interpreters)
                     if (elem.Value.Name == "py")
-                        if (elem.Value.Version == global.System["Bit"])
                             elem.Value.UseInterpreter(elem.Value.Path, $"exit()");
             }
         }
