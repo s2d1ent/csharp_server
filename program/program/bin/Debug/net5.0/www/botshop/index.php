@@ -5,6 +5,7 @@
       include_once "head.php" ;
     ?>
     <link rel="stylesheet" href="/style/index.css">
+    <link rel="stylesheet" href="/style/slider.css">
 </head>
 <body>
   <?php
@@ -22,22 +23,22 @@
           </div>
         </div>
         <div class="minicatalog-cards">
-          <a href="/" class="minicatalog-card" style="background-image:url('src/wow.jpg');">
+          <a href="/" class="minicatalog-card" style="background-image:url('/src/wow.jpg');">
             <div class="card-title">
               World of Warcraft
             </div>
           </a>
-          <a href="/" class="minicatalog-card" style="background-image:url('src/eve.jpg');">
+          <a href="/" class="minicatalog-card" style="background-image:url('/src/eve.jpg');">
             <div class="card-title">
               Eve Online
             </div>
           </a>
-          <a href="/" class="minicatalog-card" style="background-image:url('src/bd.jpg');">
+          <a href="/" class="minicatalog-card" style="background-image:url('/src/bd.jpg');">
             <div class="card-title">
               Black Desert
             </div>
           </a>
-          <a href="catalog" class="minicatalog-card" style="background-image:url('src/bots.png');">
+          <a href="catalog" class="minicatalog-card" style="background-image:url('/src/bots.png');">
             <div class="card-title">
               Смотреть весь каталог
             </div>
@@ -55,22 +56,22 @@
           </div>
         </div>
         <div class="minicatalog-cards">
-          <a href="/" class="minicatalog-card" style="background-image:url('src/wow.jpg');">
+          <a href="/" class="minicatalog-card" style="background-image:url('/src/wow.jpg');">
             <div class="card-title">
               World of Warcraft
             </div>
           </a>
-          <a href="/" class="minicatalog-card" style="background-image:url('src/eve.jpg');">
+          <a href="/" class="minicatalog-card" style="background-image:url('/src/eve.jpg');">
             <div class="card-title">
               Eve Online
             </div>
           </a>
-          <a href="/" class="minicatalog-card" style="background-image:url('src/bd.jpg');">
+          <a href="/" class="minicatalog-card" style="background-image:url('/src/bd.jpg');">
             <div class="card-title">
               Black Desert
             </div>
           </a>
-          <a href="catalog" class="minicatalog-card" style="background-image:url('src/bots.png');">
+          <a href="catalog" class="minicatalog-card" style="background-image:url('/src/bots.png');">
             <div class="card-title">
               Смотреть весь каталог
             </div>

@@ -12,16 +12,16 @@
               </a>
         </div>
         <nav class="header__nav">
-          <a href="\catalog.php" class="header__menu-item nav-item">
+          <a href="\catalog" class="header__menu-item nav-item">
             Каталог
           </a>
-          <a href="\news.php" class="header__menu-item nav-item">
+          <a href="\news" class="header__menu-item nav-item">
             Новости
           </a>
-          <a href="\history.php" class="header__menu-item nav-item">
+          <a href="\profile\history.php" class="header__menu-item nav-item">
             Мои покупки
           </a>
-          <a href="\help.php" class="header__menu-item nav-item">
+          <a href="\help" class="header__menu-item nav-item">
             Поддержка
           </a>
         </nav>
@@ -36,11 +36,11 @@
             </defs>
             </svg>
           </div>
-          <div class="header__menu-item menu-basket">
+          <a href="/profile/basket.php" class="header__menu-item menu-basket">
             <svg class="header__menu-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M27.5 11.25H21.5125L16.0375 3.05C15.8 2.7 15.4 2.525 15 2.525C14.6 2.525 14.2 2.7 13.9625 3.0625L8.4875 11.25H2.5C1.8125 11.25 1.25 11.8125 1.25 12.5C1.25 12.6125 1.2625 12.725 1.3 12.8375L4.475 24.425C4.7625 25.475 5.725 26.25 6.875 26.25H23.125C24.275 26.25 25.2375 25.475 25.5375 24.425L28.7125 12.8375L28.75 12.5C28.75 11.8125 28.1875 11.25 27.5 11.25ZM15 6L18.5 11.25H11.5L15 6ZM23.125 23.75L6.8875 23.7625L4.1375 13.75H25.875L23.125 23.75ZM15 16.25C13.625 16.25 12.5 17.375 12.5 18.75C12.5 20.125 13.625 21.25 15 21.25C16.375 21.25 17.5 20.125 17.5 18.75C17.5 17.375 16.375 16.25 15 16.25Z" fill="#353A40"/>
             </svg>
-          </div>
+          </a>
           <div class="header__menu-item menu-user">
             <svg class="header__menu-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15 2.5C8.1 2.5 2.5 8.1 2.5 15C2.5 21.9 8.1 27.5 15 27.5C21.9 27.5 27.5 21.9 27.5 15C27.5 8.1 21.9 2.5 15 2.5ZM8.8375 22.85C9.375 21.725 12.65 20.625 15 20.625C17.35 20.625 20.6375 21.725 21.1625 22.85C19.4625 24.2 17.325 25 15 25C12.675 25 10.5375 24.2 8.8375 22.85ZM22.95 21.0375C21.1625 18.8625 16.825 18.125 15 18.125C13.175 18.125 8.8375 18.8625 7.05 21.0375C5.775 19.3625 5 17.275 5 15C5 9.4875 9.4875 5 15 5C20.5125 5 25 9.4875 25 15C25 17.275 24.225 19.3625 22.95 21.0375ZM15 7.5C12.575 7.5 10.625 9.45 10.625 11.875C10.625 14.3 12.575 16.25 15 16.25C17.425 16.25 19.375 14.3 19.375 11.875C19.375 9.45 17.425 7.5 15 7.5ZM15 13.75C13.9625 13.75 13.125 12.9125 13.125 11.875C13.125 10.8375 13.9625 10 15 10C16.0375 10 16.875 10.8375 16.875 11.875C16.875 12.9125 16.0375 13.75 15 13.75Z" fill="#323232"/>
@@ -51,14 +51,17 @@
     <div class="header__user_menu">
       <ul class="user_menu">
         <li class="user_item" id="profile">
-          Мой аккаунт
-        </li>
-        <li class="user_item" id="settings">
-          Настройки
-        </li>
-        <li class="user_item" id="exit">
-          Выйти
-        </li>
+            <a href="/profile">Мой аккаунт</a>
+          </li>
+          <li class="user_item" id="settings">
+            <a href="/profile/settings.php">Настройки</a>
+          </li>
+          <li class="user_item" id="exit">
+            <form action="/php/exit.php">
+              <input type="submit" name="exit" value="Выйти">
+            </form>
+          </li>
       </ul>
     </div>
 </section>
+<script type="text/javascript" src="/scripts/user-menu.js"></script>

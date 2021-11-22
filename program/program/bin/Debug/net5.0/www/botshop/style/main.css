@@ -17,9 +17,12 @@ body {
   font-family: "Play", Arial, Helvetica, sans-serif;
   color:var(--TextColor);
   background:#f3f3f3;
+  background-size: cover;
+  //background-image: url("../src/s1200.jpg") ;
   min-height: 100vh;
 }
 :root {
   --Text: #353A40 ;
   --Fiol: #8E54E9 ;
+  --D1: #1D1F22;
 }

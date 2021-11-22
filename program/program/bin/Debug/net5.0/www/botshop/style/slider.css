@@ -19,7 +19,7 @@
   margin-top: 70px;
 }
 .banner-elem {
-  width: 100%;
+  height: 100%;
   background-size: cover;
   display: flex;
   align-items: flex-end;
@@ -30,4 +30,48 @@
   color: #fff;
   font-weight: 700;
   font-size: 24px;
+}
+@media screen and (max-width:1680px)
+{
+
+}
+@media screen and (max-width:1600px)
+{
+
+}
+@media screen and (max-width:1440px)
+{
+
+}
+@media screen and (max-width:1366px)
+{
+
+}
+@media screen and (max-width:1280px)
+{
+
+}
+@media screen and (max-width:1200px)
+{
+
+}
+@media screen and (max-width:1152px)
+{
+
+}
+@media screen and (max-width:1024px)
+{
+  .banner{
+  max-width: 1024px;
+  width: 100%;
+  height: 254px;
+  }
+}
+@media screen and (max-width:800px)
+{
+  .banner{
+  max-width: 1024px;
+  width: 100%;
+  height: 250px;
+  }
 }

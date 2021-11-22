@@ -151,11 +151,15 @@ Active: {Active}
         }
         public void DomainsClear()
         {
-            string hosts = "";
-            string hosts_path = @"C:\Windows\System32\drivers\etc\hosts";
-            hosts = File.ReadAllText(hosts_path);
-            hosts = hosts.Replace(registry, "");
-            File.WriteAllText(hosts_path, hosts);
+            try
+            {
+                string hosts = "";
+                string hosts_path = @"C:\Windows\System32\drivers\etc\hosts";
+                hosts = File.ReadAllText(hosts_path);
+                hosts = hosts.Replace(registry, "");
+                File.WriteAllText(hosts_path, hosts);
+            }
+            catch { }
         }
     }
 }

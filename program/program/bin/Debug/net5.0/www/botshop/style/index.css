@@ -63,3 +63,43 @@
   margin-left: 10px;
   margin-bottom: 12px;
 }
+@media screen and (max-width:1680px)
+{
+  
+}
+@media screen and (max-width:1600px)
+{
+  
+}
+@media screen and (max-width:1440px)
+{
+  
+}
+@media screen and (max-width:1366px)
+{
+  
+}
+@media screen and (max-width:1280px)
+{
+  
+}
+@media screen and (max-width:1200px)
+{
+  
+}
+@media screen and (max-width:1152px)
+{
+  
+}
+@media screen and (max-width:1024px)
+{
+  .minicatalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+}
+@media screen and (max-width:800px)
+{
+
+}

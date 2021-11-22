@@ -19,7 +19,6 @@ namespace program
         Interpreter interpreter = new Interpreter();
         string params_request = "";
         List<string> Temp = new List<string>();
-        bool django = false;
         string domain;
         //string site = @"C:\Users\Admin\Desktop\csharp_server\www";
         public Client(TcpClient c, Server s)
@@ -49,6 +48,7 @@ namespace program
                 return;
             }
             Console.WriteLine(ReqMatch);
+            Console.WriteLine(request);
             string file = ReqMatch.ToString();
             foreach (var i in server.global.Alias)
                 if(i.Value == domain)
@@ -66,8 +66,8 @@ namespace program
             if(file.IndexOf("?")!=-1)
             {
                 Console.WriteLine(file);
-                this.params_request = file.Substring(file.IndexOf("?"));
-                file = file.Replace(file.Substring(file.IndexOf("?")),"");
+                params_request = file.Substring(file.IndexOf("?"));
+                file = file.Replace(params_request,"");
             }
             if (file == "/" || file == "\\" || file == " " || file == "" || file[file.Length - 1] == '/' || file[file.Length - 1] == '\\')
             {
@@ -100,8 +100,16 @@ namespace program
             try
             {
                 bool IsFile = File.Exists(link);
+                string sheet_params = "";
                 //bool IsFolder = Directory.Exists(link);
                 //Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
+                if(IsFile && params_request != "")
+                {
+                    sheet_params = params_request;
+                    /*sheet_params.Replace("?", "")
+                        .Replace("&", "\n");*/
+                    Console.WriteLine(sheet_params);
+                }
                 if (!IsFile)
                 {
                     string html = " ";
@@ -109,9 +117,6 @@ namespace program
                     // OUTPUT HEADERS
                     byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                     client.GetStream().Write(data_headers, 0, data_headers.Length);
-                    // OUTPUT CONTENT
-                    byte[] data = Encoding.UTF8.GetBytes(html);
-                    client.GetStream().Write(data, 0, data.Length);
                 }
                 if (IsFile && GetFormat(link) == "py" || GetFormat(link) == "php")
                 {
@@ -121,15 +126,11 @@ namespace program
                     // OUTPUT HEADERS
                     byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                     client.GetStream().Write(data_headers, 0, data_headers.Length);
-                    // OUTPUT CONTENT
-                    byte[] data = Encoding.UTF8.GetBytes(html);
-                    client.GetStream().Write(data, 0, data.Length);
                     IsFile = false;
                 }
                 if (IsFile)
                 {
                     string content_type = GetContentType(link);
-                    Console.WriteLine(link);
                     FileStream fs = new FileStream(link, FileMode.Open, FileAccess.Read, FileShare.Read);
                     string headers = "";
                     headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";

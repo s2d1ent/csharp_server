@@ -1,1 +1,1 @@
-<title>BOTSHOP</title>
+<title>Lazy BOTSHOP</title>

@@ -1,7 +1,7 @@
 <?php
   include_once "title.php" ;
 ?>
-<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="/scripts/jquery.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

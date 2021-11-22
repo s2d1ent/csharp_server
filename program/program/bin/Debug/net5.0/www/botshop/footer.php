@@ -25,7 +25,7 @@
           </a>
         </li>
         <li class="footer-item">
-          <a href="/help">
+          <a href="/help.php">
             Поддержка
           </a>
         </li>

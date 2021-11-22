@@ -1221,3 +1221,542 @@
 2021-11-19T20:00:17.910233Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
 2021-11-19T20:00:18.087478Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
 2021-11-19T20:00:18.088108Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-19T20:00:23.297346Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:00:23.298122Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:00:33.300138Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:00:33.301049Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:00:43.303372Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:00:43.304124Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:00:53.306447Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:00:53.307241Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:01:03.311103Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:01:03.311882Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:01:13.314215Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:01:13.315038Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:01:23.316879Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:01:23.317718Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:01:33.320440Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:01:33.321455Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:01:43.323657Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:01:43.324471Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:01:53.326976Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:01:53.328476Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:02:03.332128Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:02:03.333077Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:02:13.336244Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:02:13.337583Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:02:23.351075Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:02:23.351996Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:02:33.353816Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:02:33.354555Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:02:43.357604Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:02:43.358330Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:02:53.360780Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:02:53.361512Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:03:03.364109Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:03:03.364964Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:03:13.367721Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:03:13.368441Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:03:23.370327Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:03:23.370970Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:03:33.373114Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:03:33.373874Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:03:43.376511Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:03:43.377266Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:03:53.379790Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:03:53.380528Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:04:03.382150Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:04:03.383020Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:04:13.384779Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:04:13.385586Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:04:23.387590Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:04:23.388344Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:04:33.390223Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:04:33.390971Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:04:43.392782Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:04:43.393495Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:04:53.395492Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:04:53.396240Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:05:03.398717Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:05:03.399708Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:05:13.401829Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:05:13.402474Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:05:23.405066Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:05:23.405881Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:05:33.408258Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:05:33.408990Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:05:43.410944Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:05:43.411685Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:05:53.415786Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:05:53.417063Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:06:03.420206Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:06:03.421044Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:06:13.422869Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:06:13.423633Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:06:23.425821Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:06:23.426986Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:06:33.457290Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:06:33.463550Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:06:43.467070Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:06:43.467864Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:06:53.471735Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:06:53.472560Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:07:03.474566Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:07:03.475279Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:07:13.477970Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:07:13.478972Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:07:23.489332Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:07:23.495290Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:07:33.499154Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:07:33.500044Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:07:43.502403Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:07:43.503250Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:07:53.506649Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:07:53.507461Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:08:03.510235Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:08:03.510973Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:08:13.513349Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:08:13.514198Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:08:23.516602Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:08:23.517658Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:08:33.521465Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:08:33.522203Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:08:43.524454Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:08:43.525222Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:08:53.527488Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:08:53.528330Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:09:03.530263Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:09:03.530990Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:09:13.533776Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:09:13.534611Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:09:23.539361Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:09:23.540515Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:09:33.542895Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:09:33.543653Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:09:43.545932Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:09:43.549284Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:09:53.551852Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:09:53.552548Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:10:03.554533Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:10:03.555352Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:10:13.557569Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:10:13.558597Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:10:23.561161Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:10:23.561903Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:10:33.563733Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:10:33.564544Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:10:43.567106Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:10:43.567869Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:10:53.569761Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:10:53.570502Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:11:03.572209Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:11:03.572937Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:11:13.601794Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:11:13.602904Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:11:23.605824Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:11:23.606572Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:11:33.608678Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:11:33.609274Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:11:43.610914Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:11:43.611632Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:11:53.613949Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:11:53.614698Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:12:03.616843Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:12:03.617682Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:12:13.620170Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:12:13.620924Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:12:23.622705Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:12:23.623402Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:12:33.625199Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:12:33.626011Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:12:43.629038Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:12:43.629806Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:12:53.631685Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:12:53.632433Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:13:03.635092Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:13:03.635833Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:13:13.638276Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:13:13.639085Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:13:23.640953Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:13:23.641676Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:13:33.644236Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:13:33.645001Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:13:43.647240Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:13:43.647973Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:13:53.649776Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:13:53.650508Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:14:03.652170Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:14:03.652890Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:14:13.655557Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:14:13.656312Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:14:23.658106Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:14:23.658841Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:14:33.660671Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:14:33.661450Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:14:43.663821Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:14:43.664567Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:14:53.667136Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:14:53.667757Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:15:03.669417Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:15:03.670123Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:15:16.087430Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:15:16.088201Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:15:26.091121Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:15:26.091823Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:15:36.093655Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:15:36.094373Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:15:46.096565Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:15:46.097386Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:15:56.099344Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:15:56.100084Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:16:06.101841Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:16:06.102573Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:16:16.104404Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:16:16.105110Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:16:26.107022Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:16:26.107950Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:16:36.110310Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:16:36.111068Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:16:46.113143Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:16:46.114231Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:16:56.116260Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:16:56.117119Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:17:06.120195Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:17:06.120954Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:17:16.122958Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:17:16.124074Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:17:26.125786Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:17:26.126486Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:17:36.128680Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:17:36.129414Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:17:46.131472Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:17:46.132570Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:17:56.134848Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:17:56.135610Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:18:06.137810Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:18:06.138515Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:18:16.140386Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:18:16.141087Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:18:26.143325Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:18:26.144101Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:18:36.146423Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:18:36.147328Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:18:46.149569Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:18:46.150296Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:18:56.152217Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:18:56.152957Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:19:06.155614Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:19:06.156360Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:19:16.159738Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:19:16.160849Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:19:26.163207Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:19:26.164107Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:19:36.166508Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:19:36.167409Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:19:46.169451Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:19:46.170035Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:19:56.172191Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:19:56.172925Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:20:06.174685Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:20:06.175585Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:20:16.177534Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:20:16.178255Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:20:26.180555Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:20:26.181369Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:20:36.184125Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:20:36.184910Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:20:46.186890Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:20:46.187631Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:20:56.190255Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:20:56.191050Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:21:06.192999Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:21:06.193699Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:21:16.196159Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:21:16.196918Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:21:26.199208Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:21:26.200015Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:21:36.202854Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:21:36.203496Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:21:46.205965Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:21:46.206821Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:21:56.209161Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:21:56.209966Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:22:06.212783Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:22:06.213747Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:22:16.216354Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:22:16.217100Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:22:26.219538Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:22:26.220265Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:22:36.222017Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:22:36.222736Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:22:46.224676Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:22:46.225436Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:22:56.227313Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:22:56.228058Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-19T20:23:06.230002Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-19T20:23:06.230808Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2221021-11-22T14:23:43.784Z 0Z[System] [MY-010116] [Server] D:\csharp_serv 0 [Sygram\psotemm\bin\]ebug\n t5.[\inclMdY-010116] [Serveir] Dsqld.earp_server\progra7) starting as process 4940\includes8
+mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 5700
+2021-11-22T14:23:44.699550Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T14:23:44.700444Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T14:23:44.827628Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T14:23:44.829351Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T14:23:44.859865Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T14:23:44.861935Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T14:23:44.862586Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T14:23:44.903452Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T14:23:48.007062Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-22T14:23:48.780719Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-22T14:23:48.791630Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-22T14:23:49.431075Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-22T14:23:49.431844Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-22T14:23:50.632258Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-22T14:23:50.632945Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-22T14:23:51.114358Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-22T14:23:51.114948Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-22T14:37:56.560100Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10804
+2021-11-22T14:37:56.639093Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T14:37:56.641007Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T14:37:56.641792Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T14:37:56.643155Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T14:37:56.661750Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T14:37:56.662506Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T14:37:56.663520Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T14:37:56.905112Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 4472
+2021-11-22T14:37:57.117878Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T14:37:57.120000Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T14:37:57.120733Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T14:37:57.122302Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T14:37:57.140139Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T14:37:57.140741Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T14:37:57.142260Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:35:26.248923Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6004
+2021-11-22T15:35:26.370555Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:35:26.372532Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:35:26.373227Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:35:26.373903Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:35:26.379171Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:35:26.379896Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:35:26.381455Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:35:26.542863Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 11220
+2021-11-22T15:35:26.621075Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:35:26.623095Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:35:26.623729Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:35:26.624367Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:35:26.627022Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:35:26.627634Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:35:26.629286Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:36:12.799124Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10252
+2021-11-22T15:36:12.847355Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:36:12.849509Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:36:12.850241Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:36:12.850922Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:36:12.851951Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:36:12.852666Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:36:12.853955Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:36:12.902218Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9444
+2021-11-22T15:36:12.969272Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:36:12.971515Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:36:12.972280Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:36:12.973042Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:36:12.974362Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:36:12.974963Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:36:12.976025Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:38:18.506616Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10520
+2021-11-22T15:38:18.560997Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:38:18.562868Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:38:18.563669Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:38:18.564772Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:38:18.568154Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:38:18.568779Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:38:18.570764Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:38:18.777738Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8184
+2021-11-22T15:38:18.941355Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:38:18.944766Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:38:18.945457Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:38:18.946245Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:38:18.950222Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:38:18.950922Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:38:18.951988Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:38:52.806523Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 12928
+2021-11-22T15:38:52.900620Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:38:52.902540Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:38:52.903152Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:38:52.903788Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:38:52.926451Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:38:52.928659Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:38:52.931163Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:38:52.959030Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7464
+2021-11-22T15:38:53.003304Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:38:53.006810Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:38:53.007847Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:38:53.008523Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:38:53.009491Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:38:53.010092Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:38:53.011206Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:40:40.064008Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9928
+2021-11-22T15:40:40.112591Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:40:40.114503Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:40:40.115427Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:40:40.116099Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:40:40.117430Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:40:40.118065Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:40:40.119174Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:40:40.280191Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14556
+2021-11-22T15:40:40.349435Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:40:40.351547Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:40:40.352277Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:40:40.353026Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:40:40.354034Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:40:40.354791Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:40:40.356007Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:41:54.511993Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 2540
+2021-11-22T15:41:54.561132Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:41:54.563207Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:41:54.563846Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:41:54.564522Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:41:54.565433Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:41:54.566031Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:41:54.567082Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:42:19.599746Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 12972
+2021-11-22T15:42:19.653580Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:42:19.655570Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:42:19.656232Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:42:19.656898Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:42:19.657934Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:42:19.658544Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:42:19.659672Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:42:19.715276Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 4616
+2021-11-22T15:42:19.743876Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:42:19.746044Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:42:19.746794Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:42:19.747554Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:42:19.748594Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:42:19.749298Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:42:19.750481Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:43:21.754005Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13432
+2021-11-22T15:43:21.795006Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:43:21.797183Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:43:21.797787Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:43:21.798455Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:43:21.799439Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:43:21.799995Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:43:21.801300Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:43:21.885816Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7868
+2021-11-22T15:43:21.930827Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:43:21.933140Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:43:21.933946Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:43:21.935010Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:43:21.935927Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:43:21.937206Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:43:21.938722Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:53:43.284276Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 17860
+2021-11-22T15:53:43.368764Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:53:43.370846Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:53:43.371484Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:53:43.372124Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:53:43.373065Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:53:43.373694Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:53:43.374953Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:54:00.268099Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6520
+2021-11-22T15:54:00.355346Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:54:00.357281Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:54:00.357926Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:54:00.358579Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:54:00.359497Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:54:00.360685Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:54:00.361752Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:54:00.463927Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14024
+2021-11-22T15:54:00.516362Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:54:00.518715Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:54:00.519476Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:54:00.520218Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:54:00.521354Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:54:00.522058Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:54:00.523288Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:58:05.805514Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 11064
+2021-11-22T15:58:05.937324Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:58:05.942454Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:58:05.943522Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:58:05.944218Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:58:05.953278Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:58:05.953972Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:58:05.955274Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:58:10.981739Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16916
+2021-11-22T15:58:11.016940Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:58:11.019265Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:58:11.020029Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:58:11.022902Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:58:11.024003Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:58:11.024861Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:58:11.025964Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T15:58:11.239928Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8196
+2021-11-22T15:58:11.290867Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T15:58:11.292818Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:58:11.293647Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T15:58:11.294402Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T15:58:11.295427Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T15:58:11.296157Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T15:58:11.298082Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T16:02:17.529933Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10912
+2021-11-22T16:02:17.571141Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T16:02:17.574107Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T16:02:17.574870Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T16:02:17.575593Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T16:02:17.576852Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T16:02:17.577488Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T16:02:17.578579Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T16:02:17.723293Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8696
+2021-11-22T16:02:17.824689Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T16:02:17.826642Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T16:02:17.827251Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T16:02:17.827869Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T16:02:17.828750Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T16:02:17.829418Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T16:02:17.830531Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T16:06:04.968408Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 5156
+2021-11-22T16:06:05.001030Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T16:06:05.002990Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T16:06:05.003711Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T16:06:05.004307Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T16:06:05.005166Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T16:06:05.005821Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T16:06:05.006930Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T16:06:05.122948Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 3304
+2021-11-22T16:06:05.150807Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T16:06:05.152757Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T16:06:05.153520Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-22T16:06:05.154296Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-22T16:06:05.155313Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-22T16:06:05.155892Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-22T16:06:05.157047Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T16:10:40.080535Z 10 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.27).
+2021-11-22T16:10:40.081296Z 0 [System] [MY-013105] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Normal shutdown.
+2021-11-22T16:10:41.439162Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-22T16:14:14.296822Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 17724
+2021-11-22T16:14:14.300353Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16296
+2021-11-22T16:14:16.732589Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T16:14:16.736433Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-22T16:14:17.147084Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-22T16:14:17.148286Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-22T16:14:27.151136Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-22T16:14:27.151966Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-22T16:14:37.153793Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-22T16:14:37.154638Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-22T16:14:47.156640Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-22T16:14:47.157263Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-22T16:14:54.830433Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-22T16:14:58.958420Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-22T16:14:58.959251Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-22T16:15:08.961840Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-22T16:15:08.962569Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-22T16:15:18.968280Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-22T16:15:18.969321Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-22T16:15:28.971429Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-22T16:15:28.972159Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-22T16:15:38.789422Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-22T16:15:38.790181Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-22T16:15:38.793066Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-22T16:15:38.793901Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-22T16:15:39.619288Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-11-22T16:15:39.620215Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.

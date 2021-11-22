@@ -9,7 +9,7 @@
 .footer {
   width: 100%;
   height: 200px;
-  background: #1D1F22;
+  background: var(--D1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,3 +42,5 @@
   font-weight: 400;
   font-size: 14px;
 }
+
+
