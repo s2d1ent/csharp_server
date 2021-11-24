@@ -5547,3 +5547,11 @@ mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 5700
 2021-11-23T22:34:27.940172Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
 2021-11-23T22:34:37.947724Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
 2021-11-23T22:34:37.948947Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-11-24T14:17:42.636793Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe (mysqld 8.0.27) starting as process 9544
+2021-11-24T14:17:43.199846Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-24T14:17:45.270767Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-11-24T14:17:46.380375Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-11-24T14:17:46.380892Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-11-24T14:17:46.381761Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-24T14:17:48.129235Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.

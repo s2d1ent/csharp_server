@@ -26,6 +26,11 @@
       "Name": "php",
       "Path": "includes/php/win86/php.exe"
     },
+    "phpcgi": {
+      "Version": "x86",
+      "Name": "php",
+      "Path": "includes/php/win86/php-cgi.exe"
+    },
     "python": {
       "Version": "x86",
       "Name": "py",

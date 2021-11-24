@@ -11,15 +11,37 @@ using System.Text.RegularExpressions;
 
 namespace program
 {
+    struct HTTPHeaders
+    {
+        public string Method;
+        public string ReadlPath;
+        public static string RedirectStatus = false.ToString();
+        public string ContentType;
+        public string ContentLength;
+        public string QueryString;
+        public string CGI;
+        public bool UseCGI;
+
+        public string Domain;
+
+        public static HTTPHeaders Parse(string headers)
+        {
+            HTTPHeaders result;
+            result.Method = Regex.Match(headers, @"\A\w[a-zA-Z]+").Value;
+            result.Domain = Regex.Match(headers, @"^Host:\s\w[a-zA-Z0-1]+").Value.Replace("Host:","").Replace(" ","");
+            result.ReadlPath = $"{AppDomain.CurrentDomain.BaseDirectory}www/{domain}";
+            return this;
+        }
+
+    }
     class Client
     {
         TcpClient client;
         Server server;
         string site = @"";
         Interpreter interpreter = new Interpreter();
-        string params_request = "";
-        List<string> Temp = new List<string>();
         string domain;
+        HTTPHeaders Headers;
         //string site = @"C:\Users\Admin\Desktop\csharp_server\www";
         public Client(TcpClient c, Server s)
         {
@@ -30,7 +52,6 @@ namespace program
             NetworkStream stream = client.GetStream();
             string request = "";
             byte[] data = new byte[1024];
-            string get_post_data = "";
             //Console.WriteLine($"Client ip: {client.Client.RemoteEndPoint}");
             while (stream.DataAvailable)
             {
@@ -40,13 +61,20 @@ namespace program
             
             // берет первую строку заголовков
             Match ReqMatch = Regex.Match(request, @"^\w+\s+([^\s\?]+)[^\s]*\s+HTTP/.*|");
-            domain = Regex.Match(request, @"Host:\s[a-z]+").Value.Replace("Host:", "").Replace(" ", "");
             if (ReqMatch == Match.Empty)
             {
                 Console.WriteLine($"ReqMatch = Empty");
                 SendError(400);
                 return;
             }
+            domain = Regex.Match(request, @"Host:\s[a-z]+").Value.Replace("Host:", "").Replace(" ", "");
+            string content_type = Regex.Match(request, @"Content-Type:\s[a-z]+\/[a-z]-[a-z]+-[a-z]+-[a-z]+").Value;
+            Headers = HTTPHeaders.Parse(request);
+            /*if(content_type != "")
+                if(content_type.IndexOf("application/x-www-form-urlencoded") !=-1)
+                {
+                    var a = Regex.Match(request, @"^[\s\S]+$\n",RegexOptions.Multiline);
+                }*/
             Console.WriteLine(ReqMatch);
             Console.WriteLine(request);
             string file = ReqMatch.ToString();
@@ -103,13 +131,7 @@ namespace program
                 string sheet_params = "";
                 //bool IsFolder = Directory.Exists(link);
                 //Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
-                if(IsFile && params_request != "")
-                {
-                    sheet_params = params_request;
-                    /*sheet_params.Replace("?", "")
-                        .Replace("&", "\n");*/
-                    Console.WriteLine(sheet_params);
-                }
+                
                 if (!IsFile)
                 {
                     string html = " ";
@@ -122,7 +144,9 @@ namespace program
                 {
                     string html = AnyFile(link);
                     string content_type = GetContentType(link);
-                    string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n{html}";
+                    int length = html.Length;
+                    string headers1 = "";
+                    string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {length}\n\n{headers1}{html}";
                     // OUTPUT HEADERS
                     byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                     client.GetStream().Write(data_headers, 0, data_headers.Length);

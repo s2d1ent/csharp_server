@@ -463,3 +463,808 @@ information that should help you find out what is causing the crash.
 2021-11-19T12:39:11.958541Z 8 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.27).
 2021-11-19T12:39:11.959946Z 0 [System] [MY-013105] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Normal shutdown.
 2021-11-19T12:39:12.651121Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:13:57.551712Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13188
+2021-11-23T05:13:57.638573Z 0 [Warning] [MY-010091] [Server] Can't create test file C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\data\mysqld_tmp_file_case_insensitive_test.lower-test
+2021-11-23T05:13:57.551762Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 5892
+2021-11-23T05:13:58.210330Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:13:58.210820Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:13:58.214138Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:13:58.214701Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:13:58.216780Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:13:58.218787Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:13:58.219326Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:13:58.230169Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:14:00.550246Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-23T05:14:01.544857Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-23T05:14:01.554425Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-23T05:14:01.854737Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-23T05:14:01.859792Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-23T05:14:02.061719Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-23T05:14:02.062536Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-23T05:14:02.426870Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-23T05:14:02.427111Z 0 [System] [MY-010931] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2001-21-21-11-23T05:1521590Z 636[SyZ 0stem]t[em] [MY-010116] [Server] C:\Users\Admin\oesktop\chharp_server\pro\program\parogram\bin\Debug\net5.0\includes/mysql//ybin/mysqld.exd.exe (mysqld 8.0727))sstarting as process 14660
+
+20021-1123T05:20:0:0.284810Z 1 [System] [MMY-013576] [InnoDB]] InnnoDBB initiallizattion n hs startrted.
+
+2021-11-23T05:20:00.2.888691Z 1 [ERRORO] [MY-Y-012271] [Inn[InnooB] T The indnody_system data fiile 'ibdata11' musst bbe writtable
+
+2021-11-23T05:20:000.228989Z9Z 1[ERERRO] ][MY-0112278] [InnoDDB] The innnoddb__sytem m data ile ' 'idata1' must t bewritababl
+e
+2021-210231-11-23T05:20:00.292492Z 1 [ERROR] [MY-]0[10334] [Saileer] F iaiiiaedize Dinitialize  DD Sterage Engine
+2221-1-1121T05:T25::00.2.9944828ZZ 0 [ERROR] [MY-01000022] ][[Serverr ]ata Dictiiotnoary  initiiallizaatioon faalid.l
+ed.
+2021-11023T05:20:000:209:500729 05 3ZE RO RER O[MY-010119] [Servervr]er] Abort
+ing
+20221-11-23T0::20:00.302156Z 0 [System] [MY-010910] [Server] C:\Useers\Admin\Desktop\charp_server\program\program\bin\Debug\net5.0\includes/mysql/mysqml/bin/imysqld.exe: Shuhuttdon complcte (mysqld 8.0.2 )  MySQL CMySQL Community Server 
+- GPL.
+2021-11-23T05:21:33.805627Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\pr2gra0\pr1gram\23T05:21:33.790408Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16272
+in\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16340
+2021-11-23T05:21:34.114633Z 1 [System] [M2021-110213576] [InnoD48] InnoDB initializat0o13576] [Irted.
+nnoDB] InnoDB initialization has started.
+2021-11-23T05:21:34.118145Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:21:34.118668Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:21:34.123966Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:21:34.126030Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibda2021-11-23T05:21:34.126512Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:21:34.127009Z 0 [ERROR] [MY-010119] [Server] Aborting
+ta1' must be writable
+2021-11-23T05:21:34.127436Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:21:34.128823Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:21:34.144736Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:21:34.146986Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:21:34.152522Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:21:34.153392Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:23:36.602003Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10876
+2021-11-23T05:23:36.583516Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 17960
+2021211-23T05:233T05:23:366. 983369Z m] [SyY-013576] -01357DB] [InnoDB ininnoDB iniiian has stn has s
+tarted.
+2021-11-223T05:23:36.986742Z 1 [ERROR] [MMY-012271]][ [InnoDB]he hnnoe innstem dysta file a'file '1' must be writable
+itabl20
+21-11-021-15:23:36.987402. 987432Z 1 [MYRRO1227[M] [Inno78] [The inn]oTdb_snynodb_systefile 'aifbdata1' must be writa'le
+data1' must be writable
+20021-11-3T3T05:23:36.989496Z 1[ERROR]R] MY-Y-10304] 4] [rver] Faileile to initializeiDD tialage Engitnrag
+e Engine
+2021-11-23T05:23:36.991275Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:23:36.991772Z 0 [ERROR] [2Y-010119]2[Server] Abor9ing
+4Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:23:36.992517Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:23:36.997920Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_serve982r\prog[System] [MY-0109D0] [Server.0\includes/mysql/Dmysql/bin/mys_server\: Shutdown comm\bein\Dmybqld 8.0.27)  MySQL Cmommunity Serin/mysqld.Gexe:
+ Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:32:28.571796Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14096
+2021-11-23T05:32:28.397965Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13172
+222021-11-23T05:32:28.938514Z [SySystem] [MY-013576] s[In] [MY-013576] [InnoDB] Iion has istarted.io
+n has started.
+2021-11-23T05:32:28.948694Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:32:28.949240Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:32:28.950059Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:32:28.950622Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:32:28.921652Z 1 [ERROR] [MY-010334] [SeERRver] Failed to initialize DDOR] raMYe-010334]
+ [Server] Failed to initialize DD Storage Engine
+2021-11-23T25032:-11.95491:5Z 0 [E54935Z 0 [-01ROR0] [SY-010020] [Serveri Data Dictionary initializatioi failed.
+n failed.
+2021-11-232T05:323T05:32:28.9558E3RZ 0 [ERR-0R] [MY-010119] [[Server] Aborting
+2021-11-13T05:325:32.:287954798Z 0 [Sem] [MY-0y0910] [SeY-010910]Users\Admin\Deskers\csharp\Desktop\cseharp_server\proggram\bin\Debug\net5.g\net5.des\inc/umysql/myl/mysql/bin/md.exld.exe: Shn compln compleeete ysqld 8d 0.27.)  M MyLSCom munitunity Server -- GPL.
+ GPL.
+2021-11-23T05:33:04.106168Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13124
+2021-11-23T05:33:04.340648Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:33:04.344502Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:33:04.345158Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:33:04.348127Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:33:04.350300Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:33:04.350886Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:33:04.361933Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:33:04.390720Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13620
+2021-11-23T05:33:04.520953Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:33:04.523442Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:33:04.523994Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:33:04.524964Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:33:04.525970Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:33:04.526467Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:33:04.527557Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:34:11.606563Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9524
+2021-11-23T05:34:11.800568Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:34:11.803565Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:34:11.804093Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:34:11.806100Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:34:11.807752Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:34:11.808249Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:34:11.812709Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:34:12.087848Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10448
+2021-11-23T05:34:12.115741Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:34:12.117883Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:34:12.118404Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:34:12.118923Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:34:12.119654Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:34:12.120140Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:34:12.120937Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:34:53.302821Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6752
+2021-11-23T05:34:53.902835Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:34:53.906859Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:34:53.907417Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:34:53.912762Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:34:53.916406Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:34:53.916929Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:34:53.933551Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:34:53.893677Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14208
+2021-11-23T05:34:53.955565Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:34:53.959298Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:34:53.959831Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:34:53.960355Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:34:53.961103Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:34:53.961586Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:34:53.962423Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:36:18.840315Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 11784
+2021-11-23T05:36:19.087733Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:36:19.090985Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:36:19.091910Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:36:19.096917Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:36:19.098549Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:36:19.099049Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:36:19.105579Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:36:19.000260Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 17156
+2021-11-23T05:36:19.132224Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:36:19.134434Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:36:19.134969Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:36:19.135494Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:36:19.136213Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:36:19.136707Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:36:19.137586Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:39:33.162279Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1260
+2021-11-23T05:39:33.220863Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7612
+2021-11-23T05:39:33.362118Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:39:33.362838Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:39:33.365883Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:39:33.366439Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:39:33.368351Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:39:33.369522Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdat2021-11-23T05:39:33.370525Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+a1' must b2021-11-23
+05:39:33.271062Z 0 [ERROR] 33Y-01371160Z 10119] [] [MY-012278t [In
+oDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:39:33.371803Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:39:33.373130Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:39:33.373757Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:39:33.379641Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:39:33.380711Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:40:17.229770Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 2388
+2021-11-23T05:40:17.495547Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:40:17.503102Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:40:17.503731Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:40:17.517750Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:40:17.669187Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:40:17.669716Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:40:17.680922Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:40:17.669154Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14084
+2021-11-23T05:40:18.053674Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:40:18.056044Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:40:18.056826Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:40:18.057462Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:40:18.058295Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:40:18.058800Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:40:18.059785Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:41:27.848190Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 18268
+2021-11-23T05:41:27.897713Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:41:27.899778Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:41:27.900261Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:41:27.900745Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:41:27.901400Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:41:27.901857Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:41:27.902626Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:41:28.174071Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 3212
+2021-11-23T05:41:28.203012Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:41:28.205046Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:41:28.205523Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:41:28.206004Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:41:28.206884Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:41:28.207327Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:41:28.208109Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:42:42.209733Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 17876
+2021-11-23T05:42:42.243134Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:42:42.245964Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:42:42.246480Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:42:42.247211Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:42:42.331974Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:42:42.332460Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:42:42.333299Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:42:42.367639Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6620
+2021-11-23T05:42:42.455179Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:42:42.457652Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:42:42.458153Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:42:42.458641Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:42:42.459648Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:42:42.460104Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:42:42.460922Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:46:18.114074Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 15188
+2021-11-23T05:46:18.390934Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:46:18.394347Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:46:18.394899Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:46:18.398647Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:46:18.454738Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:46:18.455230Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:46:18.459976Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:46:18.509541Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10492
+2021-11-23T05:46:18.985061Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:46:18.987934Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:46:18.988442Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:46:18.989011Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:46:18.989727Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:46:18.990827Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:46:18.991693Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:47:11.529164Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8076
+2021-11-23T05:47:11.962015Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:47:11.976846Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:47:11.977346Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:47:11.979756Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:47:12.015575Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:47:12.016063Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:47:12.029293Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:47:11.718375Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13048
+2021-11-23T05:47:12.214934Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:47:12.217112Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:47:12.217618Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:47:12.218124Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:47:12.233608Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:47:12.235637Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:47:12.236471Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:48:09.390765Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 3168
+2021-11-23T05:48:09.630479Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16984
+2021-11-23T05:48:10.044578Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:48:10.045039Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:48:10.047478Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-20T015:48:10.5:47981Z. 1 [02Z 1 [ERROR] [MY-0 [Inn1]DB[]nnThDB] Thedb_snodb_m datem ditle iie 'ibdata1' must be writabl
+e
+2021-11-23T05:48:10.048886Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:48:10.051305Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:48:10.051816Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:48:10.055801Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:48:10.056258Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:48:10.056563Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:48:10.057345Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:48:10.060887Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:48:10.061866Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:51:26.822755Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 12292
+2021-11-23T05:51:27.145670Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 17784
+2021-11-23T05:51:27.213310Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:51:27.220556Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:51:27.221078Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:51:27.226120Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:51:27.228239Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:51:27.240222Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:51:27.241108Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:51:27.241740Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:51:27.246290Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:51:27.246818Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:51:27.247397Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:51:27.247996Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:51:27.259055Z 0 [System] [MY-010910] [Serve2]021\U-ers\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysq1/bin/mys:51:27.25946qld. [SystemShutdow0 complete (m1sqld 8.0.27)  MySQL Community Server - GPL.
+_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:53:29.274988Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_se2ver\pr0gram\progTr5am\bin\Debug\net5.0\sncludes/mystem] [MY-010/1ys6] [Ser ver] C:\Users7) st\rtdmin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7120
+ing as process 7028
+2021-11-23T05:53:30.102470Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:53:30.106775Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:53:30.107272Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:53:30.109621Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:53:30.148745Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:53:30.163831Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:53:30.164312Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:53:30.165782Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:53:30.172979Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:53:30.174465Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:53:30.180594Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:53:30.181116Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:53:30.189641Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:53:30.194075Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:56:19.786568Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 2780
+2021-11-23T05:56:19.909734Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:56:19.913256Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:56:19.913745Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:56:19.916084Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:56:19.938871Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:56:19.939346Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:56:19.959840Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:56:19.954012Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 18264
+2021-11-23T05:56:20.034125Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:56:20.036591Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:56:20.037141Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:56:20.037958Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:56:20.038793Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:56:20.039303Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:56:20.040204Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:58:08.419937Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 18344
+2021-11-23T05:58:08.605776Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:58:08.613942Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:58:08.614435Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:58:08.616337Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:58:08.618265Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:58:08.618742Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:58:08.625872Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:58:08.598958Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 5552
+2021-11-23T05:58:08.740816Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T05:58:08.743358Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:58:08.743845Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:58:08.744332Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:58:08.795774Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:58:08.796653Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:58:08.797492Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T05:59:41.142828Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 17048
+2021-11-23T05:59:41.165820Z 0 [Warning] [MY-010091] [Server] Can't create test file C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\data\mysqld_tmp_file_case_insensitive_test.lower-test
+2021-11-23T05:59:41.165954Z 0 [Warning] [MY-010091] [Server] Can't create test file C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\data\mysqld_tmp_file_case_insensitive_test.lower-test
+2021-11-23T05:59:40.959426Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 12340
+2021-11-23T05:59:41.480752Z 1 [System] [MYY-013576] [InnoDB] InnoDB initialization has started
+
+2021-11-23T05:59:41.486493Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:59:41.487007Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:59:41.487712Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:59:41.488202Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T05:59:41.490790Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:59:41.491354Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T05:59:41.495695Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:59:41.496174Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:59:41.496499Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T05:59:41.497015Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T05:59:41.508145Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.02i021-11-23T05:59:41.508666Z 0 [System] [MYown complete (mysqld 8.0.27) d MySQL Community Server - GPo.
+gram\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:01:01.856521Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desk2op\csharp_server\prog.ram\program\bin\Debug\net5.0\includes/1ysql/mysql0116] [Serd.exe (myUseqld 8.0.27) star\cstinp as process 9764
+_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9356
+2021-11123-23T06:02.018821Z 1 [System] [MY-013576] :I01:02.018832Z 1 [Syatem] [MY-013576] [InnoDB] InnoDB initializatilnizationarted.
+tarted.
+2021-11-23T06:01:02.022163Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:01:02.022670Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:01:02.024086Z 1 [ERROR] [MY-012271] [InnoDB] The inno2b_system data file 'ibda78Z 1 [ must be writable
+2021-11-23T06:01:02.024772Z 1 [ERROR] [MY-012278] [InnoDB] The ERROR]_ ystem data file 'ibda a1'Fmust b  writable
+2021-11-23T06:01:02.025398Z 1 iEtiOalize DD1 334] [Server]nFailed to initialez
+e DD Storage Engine
+2021-11-23T26:01:02.027577Z01 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+:02.0276422 0 [ERROR3T06:01:02.028108Z erver] R] [MY-010119] [Server] Aborting
+Data Dictionary initialization failed.
+2021-11-23T06:01:02.028712Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:01:02.036818Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/m2sql/1i-11-2qld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+3T06:01:02.037449Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:01:36.189449Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 18052
+2021-11-23T06:01:36.235372Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:01:36.237515Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:01:36.238023Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:01:36.243233Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:01:36.246540Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:01:36.247018Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:01:36.247882Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:01:36.497363Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13168
+2021-11-23T06:01:36.545981Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:01:36.548639Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:01:36.549126Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:01:36.549608Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:01:36.550284Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:01:36.550726Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:01:36.551499Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:02:00.670911Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16968
+2021-11-23T06:02:00.901224Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:02:00.904273Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:02:00.904797Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:02:00.908969Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:02:00.912725Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:02:00.913203Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:02:00.919460Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:02:00.872414Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1260
+2021-11-23T06:02:00.939936Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:02:00.943069Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:02:00.943567Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:02:00.944057Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:02:00.944752Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:02:00.945218Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:02:00.946039Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:02:49.930595Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7240
+2021-11-23T06:02:50.031743Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:02:50.033928Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:02:50.034444Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:02:50.034940Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:02:50.035628Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:02:50.036084Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:02:50.036908Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:02:50.187334Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14160
+2021-11-23T06:02:50.325812Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:02:50.329005Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:02:50.329770Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:02:50.330545Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:02:50.331594Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:02:50.332289Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:02:50.334025Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:03:32.705782Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 204
+2021-11-23T06:03:32.768224Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:03:32.770784Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:03:32.771311Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:03:32.771822Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:03:32.780607Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:03:32.781119Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:03:32.781953Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:03:33.227448Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9048
+2021-11-23T06:03:33.301370Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:03:33.303515Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:03:33.304030Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:03:33.304565Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:03:33.305311Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:03:33.305772Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:03:33.306613Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:04:17.907229Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 12996
+2021-11-23T06:04:17.936482Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:04:17.938605Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:04:17.939095Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:04:17.939580Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:04:17.940253Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:04:17.940700Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:04:17.941476Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:04:18.332134Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9000
+2021-11-23T06:04:18.436409Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:04:18.438459Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:04:18.438937Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:04:18.439418Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:04:18.440138Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:04:18.440869Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:04:18.442848Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:04:51.144585Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 17464
+2021-11-23T06:04:51.822288Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:04:51.834397Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:04:51.834894Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:04:51.844330Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:04:51.917252Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:04:51.917847Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:04:51.923795Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:04:51.674340Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7276
+2021-11-23T06:04:52.034952Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:04:52.037863Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:04:52.038733Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:04:52.039332Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:04:52.044871Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:04:52.048504Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:04:52.049376Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:05:58.274128Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14952
+2021-11-23T06:05:58.142615Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 4544
+2021-11-23T06:05:58.361915Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization ha2 s0arted.
+23T06:05:58.362291Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:05:58.365305Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:05:58.365801Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:05:58.366796Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:05:58.367308Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-2-T06:05:58.367778Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DDi Storage Engine
+led to initialize DD Storage Engine
+2021-11-23T06:05:58.370349Z 0 2ER0OR21-11-23T06:05:58.370] DaZ 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:05:58.371014Z 0 [ERROR] [MY-010119] [Server] Aborting
+ta Dictionary initialization failed.
+2021-11-23T06:05:58.371521Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:05:58.329021-11-23T0tem] [MY-010910]Z 0 [System] [MY- [Server] C:\Users\Admin\Desktop\cshaorp_server\progr\pam\progrrogram\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe:aShutdo\wn cgm\net5.0\isclulddes/my7)  MySQL Community Server - GPL.
+sql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+202211-11-23T06:08:27.605644Z 0 [Syetem] [MY-010116] [Server] C:\Users\Amin\mDesktoktop\csharserver\erroproram\pm\ogram\bm\n\Din\Debuet5.0\inclindesudmys/ql/mysql/bin/mysqldql/mysql/xb (nmmysqld .e.0e 27) starting as process 860
+(mysqld 8.0.27) starting as process 5360
+2021-11-23T06::08:227.7691155 1 [ [Systm] ] [MY013576] ] [InnDB] InnoDB i initilization n hss started.
+2021-11-23T06208:27117723T20Z :18:[2RR.O7R591Z MY-012271] [IYnnoDB] The innodb_sys iem data file 'ibdata1'  'ust be writable
+e writ2ble
+-11-23T026-:08:27.7738285Z 1 [ERROR] ERROR122[MY-0[1n278DB]I The innodb_system data fdatae 'file 'i' mdata 1e  wuritable
+itable
+2221-11-11-23606:08:27.775262Z7.7 1259EZ 1 []ERMY-0] [MY-0 [Server] Faier] Failed to lize iD lize DgD Stornge
+Engine
+2221-1-1-23T06:08::27.7776992Z 0 [ERERROR[MY-010020] [Server] Data Dictionary initializatiatno failed.
+
+2220-11-23T06:6:027.:277.39Z7 4 [ER0R[R] R[RM -010119] [S] [rverve Abortrtni
+ng
+2021-11-23T066:08:27.782578Z 0 [System] [MY-010910] [Server]  C:\Users\Admin\DDesktop\cssharp_seerver\program\program\bin\Debuug\net5.0\includes/mysql/mysql/bin/mysqld.exe:  Shuutdown complete (mysqld 8.0.27)  MySQL Community Server -  GPL.
+2021-11-23T06:16:11.599559Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7516
+2021-11-23T06:16:12.298590Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 12800
+2021-11-23T06:16:14.331940Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:16:14.335348Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:16:14.335896Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:16:14.338682Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:16:14.340346Z 1 [Syste021-11-23T06:16:14.345330Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:16:14.345881Z 0 [ERROR] [MY-010119] [Server] Aborting
+m] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:16:14.350730Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:16:14.351285Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:16:14.351851Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:16:14.354247Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:16:14.363506Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:16:14.364158Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:16:14.365426Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:21:46.352052Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10548
+2021-11-23T06:21:46.922925Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:21:46.955130Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:21:46.955748Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:21:46.992734Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:21:47.029837Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:21:47.030364Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:21:46.974486Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) s2021-11-23T06:21:4 .295807
+Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:21:47.306800Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:21:47.309667Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:21:47.310970Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:21:47.311586Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:21:47.312725Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:21:47.313302Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:21:47.314220Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:23:17.442765Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 12996
+2021-11-23T06:23:17.651743Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:23:17.658767Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:23:17.659353Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:23:17.663286Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:23:17.668461Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:23:17.668980Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:23:17.687961Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:23:17.660345Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1260
+2021-11-23T06:23:17.735264Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:23:17.739668Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:23:17.740243Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:23:17.740833Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:23:17.741699Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:23:17.742245Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:23:17.743081Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:24:25.259593Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1416
+2021-11-23T06:24:25.682603Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:24:25.688669Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:24:25.689210Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:24:25.693454Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:24:25.658303Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6780
+2021-11-23T06:24:25.713310Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:24:25.713845Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:24:25.722849Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:24:25.727069Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:24:25.727623Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:24:25.728272Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:24:25.729908Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:24:25.730441Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:24:25.731301Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:24:25.738178Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:27:31.262877Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 15032
+2021-11-23T06:27:31.561206Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:27:31.565729Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:27:31.566296Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:27:31.570812Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:27:31.574268Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:27:31.575015Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:27:31.589794Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:27:31.611646Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13760
+2021-11-23T06:27:32.115558Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:27:32.117882Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:27:32.118471Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:27:32.119045Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:27:32.124180Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:27:32.124856Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:27:32.125819Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:29:11.293906Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8660
+2021-11-23T06:29:11.615026Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:29:11.631949Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:29:11.632523Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:29:11.649786Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:29:11.666589Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:29:11.667212Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:29:11.748652Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:29:11.563382Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7272
+2021-11-23T06:29:11.871442Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:29:11.874324Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:29:11.874877Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:29:11.875409Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:29:11.876851Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:29:11.877667Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:29:11.878502Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:31:59.894079Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 4436
+2021-11-23T06:31:59.879065Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8136
+2021-11-23T06:32:00.264685Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:32:00.269864Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:32:00.270411Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:32:00.271138Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:32:00.272403Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:32:00.274019Z 1 [ERR021-11-23T06:32:00.274649Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:32:00.275154Z 0 [ERROR] [MY-010119] [Server] Aborting
+OR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:32:00.275955Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:32:00.276541Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:32:00.286497Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:32:00.287637Z 0 [ERROR] [MY-010119] [021-11-23T06:32:00.288010Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_serSeerver] Abortingam
+\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:32:00.289163Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+222021-11-T06:32:243.1774232Z    [System] [MY-010116] [Serrer]ver]UC:\Us\Admin\Desktop\cop\csharp_srr\pr\program\program\biin\Debug\net5.0\includes/mysql/myssql/bin/mysql.exd.(mysqld 8.0.27) 27) starting as process03932
+8
+2021-11-23T06:32:43.401392Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:32:43.401932Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:32:43.404543Z 1 [ERROR] [M2-012271] [InnoDB] The innodb_syste1-11-23T06:32:43.404740Z 1 [E RwritablY-0
+122712 [InnoDB] T06:32:43.40518eZ 1 [ERROile 'Ybdata1' musInnoDBritable
+2021-11-23T06:32:43.4 The innodbERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+_system data file 'ibdata1' must be writable
+2021-11-23T06:32:43.407566Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:32:43.408222Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:32:43.409270Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:32:43.409811Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:32:43.410169Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:32:43.410760Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:32:43.415044Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:32:43.424900Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-111-23T606::33:05.709011Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\D7bug05435.0Z 0 [System]sq [MY-010116] [Sqld.exe (mysqld 8.0.27) starting as process 1e620
+rver] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8660
+2021-11-23T06:33:05.914532Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:33:05.915100Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:33:05.917930Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:33:05.918511Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:33:05.919736Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:33:05.921415Z 1 2021-11-23T06:33:[5.ERR741Z 1 [-01O2278]Y-010o34] [Server] Failed to initialize DD Storage Engine
+DB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:33:05.922740Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:33:05.925387Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:33:05.925979Z 0 [ERROR] [MY-010129]02S1r11-23T06orting926176Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:33:05.926727Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:33:05.931949Z 0 [System] [MY-010910] [Se2v021-C11-23T06:33:0\5e.932p2csha 0 [Servys\pr]gram\program\bin\Debug] C:\Use\net5.0\includes/mysql/mysql/rbpiogram\prdoegeam\bhutdown complebug\(mysqld inc0lud)s/m  MySmL Csql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+ommunity Server - GPL.
+2021-11-23T06:37:48.263053Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14132
+2021-11-23T06:37:48.270578Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14740
+2021-11-23T06:37:48.977825Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:37:48.979377Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:37:48.996601Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:37:48.997583Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:37:49.003768Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:37:49.004416Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:37:49.023130Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:37:49.023648Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:37:49.050347Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:37:49.050907Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:37:49.051638Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:37:49.052216Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:37:49.224544Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:37:49.253016Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:38:36.847197Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14016
+2021-11-23T06:38:37.006156Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:38:37.008339Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:38:37.008895Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:38:37.009430Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:38:37.048459Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:38:37.049010Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:38:37.063486Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:38:37.262390Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 4000
+2021-11-23T06:38:37.350280Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:38:37.352414Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:38:37.352979Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:38:37.353506Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:38:37.354220Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:38:37.354701Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:38:37.355492Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:40:34.571951Z 0 [System] [MY-010116] [Server] C:\Users\Admin\De2kto0\csharp_3Terver\prog.am\p609955Z i0\[System] [MY-010116] [Serv\r]ncludes/mysql/mysql/bin/ y:\sqld.exe in\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/my(qlysqld 8.0.27) starting as process 5332
+d.exe (mysqld 8.0.27) starting as process 16800
+2021-11-23T06:40:35.479764Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:40:35.483953Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:40:35.484516Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:40:35.486182Z 1 [System] [MY-013576] [InnoDB] InnoDB i2021-11-23T06:40:35.487328Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+itialization has started.
+2021-11-23T06:40:35.491401Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:40:35.491975Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:40:35.492526Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:40:35.510506Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:40:35.511055Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:40:35.521152Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:40:35.521814Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:40:35.526138Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:40:35.528034Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2001-11-23T06:41:566.016567Z 0 [System] [MY-010116] [Server] C:\User\s\Admin\Desktop\harp_server\progrpropram\ogramram\bin\Debug\net5.0\includee/s/mysql/mys/binb/mysysqld.ex (mysqld  8.0.27) starting as process  13888
+
+2021-11-23T06:41:56.034826Z 0 [Warning] [MY-010091] [Server] Can't create test file C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\data\mysqld_tmp_file_case_insensitive_test.lower-test
+2021-11-23T06:41:56.186370Z 1 [System] [MY-013576] [Inn2D021-11-23T06:4ializ186359Z 1 [Sarted.
+ [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:41:56.189596Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:41:56.190139Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:41:56.192023Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:41:56.193661Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:41:56.194414Z 1 [ERROR] [MY-0021-11-23T06:41:56.194637Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:41:56.195160Z 0 [ERROR] [MY-010119] [Server] Aborting
+12278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:41:56.196001Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:41:56.196973Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:41:56.197565Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23TT06:41:56.203888Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+ 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:45:12.725162Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 11260
+2021-11-23T06:45:12.838087Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13496
+2021-11-23T06:45:12.949426Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:45:12.950784Z 1 [System] [MY-013576] [InnoDB] InnoDB init021lization0 has start3007Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:45:12.953558Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+ed.
+2021-11-23T06:45:12.956061Z 2 [021-11-23T06:45:12.956195Z 1 [iled to]iniMialize DD Storage Engine
+nodb_system data file 'ibdata1' must be writable
+2021-11-23T06:45:12.956808Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:45:12.957543Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:45:12.961385Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:45:12.961901Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:45:12.962623Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:45:12.963118Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:45:12.972181Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:45:12.973185Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:49:16.548103Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 17460
+2021-11-23T06:49:16.332440Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14104
+2021-11-23T06:49:17.052640Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:49:17.053134Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:49:17.061261Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:49:17.063772Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:49:17.068423Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:49:17.093676Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:49:17.094170Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:49:17.094653Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:49:17.106931Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:49:17.107429Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:49:17.107910Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:49:17.108447Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:49:17.189322Z 0 [System] [MY-010910] [Serv2r]021-\11-23T06:4n9:17.18956sharp_server\program\program\bin\Debug\net7Z0\in0 [uystemmysqMl/mysql/bin/mysqr] C:xeUsersutAdowinn\comelete (mysqlharp_0.e27)  MySQL Commogniam\bierver u GPLt5.
+0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:50:55.683009Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13456
+2021-11-23T06:50:56.016152Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:50:56.019774Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:50:56.020281Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:50:56.022717Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:50:56.025069Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:50:56.025551Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:50:56.041454Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-23T06:50:56.024257Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8220
+2021-11-23T06:50:56.158874Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-23T06:50:56.192748Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:50:56.193263Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-23T06:50:56.193766Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-23T06:50:56.219325Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-23T06:50:56.219817Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-23T06:50:56.220730Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-24T09:23:43.007255Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6468
+2021-11-24T09:23:43.018997Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8512
+2021-11-24T09:23:43.714116Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+021-11-24T09:23:43.713167Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-24T09:23:43.736284Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:23:43.746932Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:23:43.759562Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-24T09:23:43.824275Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-24T09:23:43.825732Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-24T09:23:43.836916Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-24T09:23:46.676116Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-24T09:23:47.192935Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-24T09:23:47.203701Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-24T09:23:47.305044Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-24T09:23:47.305669Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-24T09:23:47.357247Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-24T09:23:47.357778Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-24T09:23:48.173086Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-24T09:23:48.173748Z 0 [System] [MY-010931] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-24T09:27:00.428878Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14216
+2021-11-24T09:27:00.919683Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8100
+2021-11-24T09:27:01.333714Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-24T09:27:01.338874Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:27:01.339403Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:27:01.343803Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-24T09:27:01.347386Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-24T09:27:01.359251Z 0 [ERROR] [MY-010020] [Serve20r1-11-24T09:27:01.361362Z 1 [ERROR] [MY-]12271] [InnoDB] The inno b_system data file 'ibdata1' must be writable
+2021-11-24T09:27:01.361950Z 1 [ERROR] [MY-01D278ata Dictionary initialization failed.
+2021-11-24T09:27:01.362532Z 0 [ERROR] [MY-010119] [Server] Aborting
+] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:27:01.367152Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-24T09:27:01.370395Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-24T09:27:01.371589Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-24T09:27:01.376131Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-24T09:27:01.377922Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-24T09:29:32.557453Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 15336
+2021-11-24T09:29:32.973020Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-24T09:29:33.179876Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:29:33.180378Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:29:33.183602Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-24T09:29:33.255341Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-24T09:29:33.255848Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-24T09:29:33.370833Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-24T09:29:32.893062Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9536
+2021-11-24T09:29:33.778187Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-24T09:29:33.780812Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:29:33.789417Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:29:33.789926Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-24T09:29:33.795805Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-24T09:29:33.796539Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-24T09:29:33.798129Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-24T09:33:23.494970Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Deb2g\net5.1-24\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13436
+T09:33:23.452675Z 0 [System] [MY-010116] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 2564
+2021-11-24T09:33:23.771351Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-24T09:33:23.771830Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-24T09:33:23.777601Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:33:23.778110Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:33:23.780458Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:33:23.780968Z 1 [ERROR2021-11-24T09:33:23.782588Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-24T09:33:23.783479Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-24T09:33:23.792071Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-24T09:33:23.792560Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-24T09:33:23.792927Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-24T09:33:23.793445Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-24T09:33:23.807458Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-24T09:33:23.808487Z 0 [System] [MY-010910] [Server] C:\Users\Admin\Desktop\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
