@@ -1,8 +1,0 @@
-# BotShop
-### Design
-
-
-### Languages
-
-
-### Programmers

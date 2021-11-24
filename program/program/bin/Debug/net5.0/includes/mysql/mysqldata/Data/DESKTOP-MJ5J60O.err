@@ -79,3 +79,5 @@
 2021-11-23T04:03:47.562823Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
 2021-11-23T04:03:47.712667Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
 2021-11-23T04:03:47.713347Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-23T04:03:47.898173Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-23T04:03:47.898746Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
