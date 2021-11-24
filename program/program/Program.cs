@@ -23,6 +23,7 @@ namespace program
             // get server
             global.GetServer();
             Console.WriteLine(global.GetInfo());
+            // start
             global.Server.StartAsync();
             global.MySqlServerStart();
             while (true)

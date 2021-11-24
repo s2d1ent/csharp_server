@@ -117,7 +117,6 @@ Active: {Active}
             Server s = (Server)((ArrayList)client)[1];
             new Client(c, s);
         }
-        // поиск Dkango
         public void GetDomains()
         {
             foreach (var folder in Directory.GetDirectories($"{AppDomain.CurrentDomain.BaseDirectory}{Path}/"))

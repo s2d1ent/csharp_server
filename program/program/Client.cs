@@ -18,6 +18,7 @@ namespace program
         string site = @"";
         Interpreter interpreter = new Interpreter();
         string params_request = "";
+        string params_ct = "";
         List<string> Temp = new List<string>();
         string domain;
         //string site = @"C:\Users\Admin\Desktop\csharp_server\www";
@@ -30,7 +31,6 @@ namespace program
             NetworkStream stream = client.GetStream();
             string request = "";
             byte[] data = new byte[1024];
-            string get_post_data = "";
             //Console.WriteLine($"Client ip: {client.Client.RemoteEndPoint}");
             while (stream.DataAvailable)
             {
@@ -41,14 +41,23 @@ namespace program
             // берет первую строку заголовков
             Match ReqMatch = Regex.Match(request, @"^\w+\s+([^\s\?]+)[^\s]*\s+HTTP/.*|");
             domain = Regex.Match(request, @"Host:\s[a-z]+").Value.Replace("Host:", "").Replace(" ", "");
+            string content_type = Regex.Match(request, @"Content-Type:\s[a-z]+\/[a-z]-[a-z]+-[a-z]+-[a-z]+").Value;
             if (ReqMatch == Match.Empty)
             {
                 Console.WriteLine($"ReqMatch = Empty");
                 SendError(400);
                 return;
             }
+            if(content_type != "")
+                if(content_type.IndexOf("application/x-www-form-urlencoded") !=-1)
+                {
+                    var a = Regex.Match(request, @"^[\s\S]+$\n",RegexOptions.Multiline);
+                    params_ct = "application/x-www-form-urlencoded";
+                    params_request = request.Replace(a.Value, "");
+                }
             Console.WriteLine(ReqMatch);
             Console.WriteLine(request);
+            //Console.WriteLine(content_type);
             string file = ReqMatch.ToString();
             foreach (var i in server.global.Alias)
                 if(i.Value == domain)
@@ -103,13 +112,7 @@ namespace program
                 string sheet_params = "";
                 //bool IsFolder = Directory.Exists(link);
                 //Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
-                if(IsFile && params_request != "")
-                {
-                    sheet_params = params_request;
-                    /*sheet_params.Replace("?", "")
-                        .Replace("&", "\n");*/
-                    Console.WriteLine(sheet_params);
-                }
+                
                 if (!IsFile)
                 {
                     string html = " ";
@@ -122,7 +125,19 @@ namespace program
                 {
                     string html = AnyFile(link);
                     string content_type = GetContentType(link);
-                    string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {html.Length}\n\n{html}";
+                    int length = html.Length;
+                    string headers1 = "";
+                    /*if (params_request != "")
+                    {
+                        sheet_params = params_request;
+                        content_type += ",application/x-www-form-urlencoded";
+                        length += sheet_params.Length;
+                        headers1 = sheet_params;
+                        //Console.WriteLine(sheet_params);
+                        //headers1 = $"Content-type: application/x-www-form-urlencoded\nContent-Length: {sheet_params.Length}\n\n{sheet_params}\n";
+                    }*/
+                    //Console.WriteLine(html);
+                    string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {length}\n\n{headers1}{html}";
                     // OUTPUT HEADERS
                     byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                     client.GetStream().Write(data_headers, 0, data_headers.Length);

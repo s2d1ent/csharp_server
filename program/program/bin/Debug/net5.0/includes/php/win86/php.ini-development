@@ -782,7 +782,7 @@ enable_dl = Off
 ; turn it off here AT YOUR OWN RISK
 ; **You CAN safely turn this off for IIS, in fact, you MUST.**
 ; http://php.net/cgi.force-redirect
-;cgi.force_redirect = 1
+cgi.force_redirect = 0
 
 ; if cgi.nph is enabled it will force cgi to always sent Status: 200 with
 ; every request. PHP's default behavior is to disable this feature.
