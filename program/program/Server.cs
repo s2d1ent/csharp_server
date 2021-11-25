@@ -28,7 +28,7 @@ namespace program
         public Global global;
         [JsonIgnore]
         public List<string> Domains = new List<string>();
-        public string Path { get; set; }
+        public string Path = "www";
         public string[] Extensions { get; set; }
 
         string registry = "";

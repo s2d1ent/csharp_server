@@ -15,6 +15,7 @@ namespace program
         public string Version { get; set; }
         public string Name { get; set; }
         public string Path { get; set; }
+        public string Type { get; set; }
         public Interpreter() 
         {
             //this.Path = @"D:\csharp_server\program\program\bin\Debug\net5.0\includes\php\win64\php.exe";
@@ -45,7 +46,7 @@ namespace program
         }
         static string UseCGI(HTTPHeaders headers)
         {
-            ProcessStartInfo info = new ProcessStartInfo(headers.CGI);
+            ProcessStartInfo info = new ProcessStartInfo(headers.Cgi);
             // параметры процесса
             info.UseShellExecute = false;
             info.ErrorDialog = false;
@@ -55,7 +56,7 @@ namespace program
             info.CreateNoWindow = true;
             // переменны среды
             info.EnvironmentVariables.Add("REQUEST_METHOD", headers.Method);
-            info.EnvironmentVariables.Add("REDIRECT_STATUS", headers.RedirectStatus);
+            info.EnvironmentVariables.Add("REDIRECT_STATUS", headers.Redirect);
             info.EnvironmentVariables.Add("GETAWAY_INTERFACE", "CGI");
             info.EnvironmentVariables.Add("CONTENT_TYPE", headers.ContentType);
             info.EnvironmentVariables.Add("HTTP_ACCEPT", "*.*");

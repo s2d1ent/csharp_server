@@ -15,105 +15,90 @@ namespace program
     {
         public string Method;
         public string ReadlPath;
-        public static string RedirectStatus = false.ToString();
+        public string File;
+        private static string RedirectStatus = false.ToString();
+        public string Redirect;
         public string ContentType;
         public string ContentLength;
         public string QueryString;
-        public string CGI;
+        private static string CGI = "CGI";
+        public string Cgi;
         public bool UseCGI;
 
         public string Domain;
+        public static string WWW = "www";
+        public Match FirstHead;
 
         public static HTTPHeaders Parse(string headers)
         {
-            HTTPHeaders result;
-            result.Method = Regex.Match(headers, @"\A\w[a-zA-Z]+").Value;
-            result.Domain = Regex.Match(headers, @"^Host:\s\w[a-zA-Z0-1]+").Value.Replace("Host:","").Replace(" ","");
-            result.ReadlPath = $"{AppDomain.CurrentDomain.BaseDirectory}www/{domain}";
-            return this;
+            HTTPHeaders result = new HTTPHeaders();
+            result.FirstHead = Regex.Match(headers, @"^\w+\s+([^\s\?]+)[^\s]*\s+HTTP/.*|", RegexOptions.Multiline);
+            result.Method = Regex.Match(headers, @"\A\w[a-zA-Z]+", RegexOptions.Multiline).Value;
+            result.Domain = Regex.Match(headers, @"Host:\s[a-z|A-Z|0-9]+", RegexOptions.Multiline).Value.Replace("Host:", "").Replace(" ", "");
+            result.File = Regex.Match(headers, @"(?<=\w\s)([\Wa-zA-Z0-9]+)(?=\sHTTP)", RegexOptions.Multiline).Value;
+            result.Redirect = RedirectStatus;
+            result.QueryString = Regex.Match(headers, @"(?<=[\?\n])([^\:]+?[&%\=])+\w+", RegexOptions.Multiline).Value;
+            result.ContentType = Regex.Match(headers, @"(?<=^Content-Type:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
+            result.ContentLength = Regex.Match(headers, @"(?<=^Content-Length:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
+            if (result.QueryString != "" && result.QueryString != "" || result.QueryString != null)
+                result.QueryString = result.QueryString.Replace(" ", "");
+            if (result.File.IndexOf("?") != -1)
+                result.File = result.File.Replace("?", "");
+            result.ReadlPath = $"{AppDomain.CurrentDomain.BaseDirectory}{WWW}/{result.Domain}{result.File}";
+            result.Cgi = CGI;
+            return result;
         }
-
     }
     class Client
     {
         TcpClient client;
         Server server;
-        string site = @"";
         Interpreter interpreter = new Interpreter();
-        string domain;
         HTTPHeaders Headers;
         //string site = @"C:\Users\Admin\Desktop\csharp_server\www";
         public Client(TcpClient c, Server s)
         {
-            this.client = c;
-            this.server = s;
-            site = server.Path;
-            string FilePath = $"{AppDomain.CurrentDomain.BaseDirectory}{site}";
+            client = c;
+            server = s;
+            string FilePath = $"{AppDomain.CurrentDomain.BaseDirectory}{HTTPHeaders.WWW}";
             NetworkStream stream = client.GetStream();
             string request = "";
             byte[] data = new byte[1024];
-            //Console.WriteLine($"Client ip: {client.Client.RemoteEndPoint}");
             while (stream.DataAvailable)
             {
                 stream.Read(data, 0, data.Length);
                 request += Encoding.UTF8.GetString(data);
             }
-            
-            // берет первую строку заголовков
-            Match ReqMatch = Regex.Match(request, @"^\w+\s+([^\s\?]+)[^\s]*\s+HTTP/.*|");
-            if (ReqMatch == Match.Empty)
+            // Парсим заголовки
+            Headers = HTTPHeaders.Parse(request);
+            if (Headers.FirstHead == Match.Empty)
             {
                 Console.WriteLine($"ReqMatch = Empty");
                 SendError(400);
                 return;
             }
-            domain = Regex.Match(request, @"Host:\s[a-z]+").Value.Replace("Host:", "").Replace(" ", "");
             string content_type = Regex.Match(request, @"Content-Type:\s[a-z]+\/[a-z]-[a-z]+-[a-z]+-[a-z]+").Value;
-            Headers = HTTPHeaders.Parse(request);
-            /*if(content_type != "")
-                if(content_type.IndexOf("application/x-www-form-urlencoded") !=-1)
-                {
-                    var a = Regex.Match(request, @"^[\s\S]+$\n",RegexOptions.Multiline);
-                }*/
-            Console.WriteLine(ReqMatch);
-            Console.WriteLine(request);
-            string file = ReqMatch.ToString();
+            //Console.WriteLine(ReqMatch);
+            //Console.WriteLine(request);
             foreach (var i in server.global.Alias)
-                if(i.Value == domain)
-                    domain = i.Key;
-            if(file.Length != 0)
-            {
-                file = file.Replace("GET", "")
-                .Replace("POST", "")
-                .Replace(
-                    file.Substring(
-                        file.IndexOf("HTTP")
-                        ), "")
-                .Replace(" ", "");
-            }
-            if(file.IndexOf("?")!=-1)
-            {
-                Console.WriteLine(file);
-                params_request = file.Substring(file.IndexOf("?"));
-                file = file.Replace(params_request,"");
-            }
-            if (file == "/" || file == "\\" || file == " " || file == "" || file[file.Length - 1] == '/' || file[file.Length - 1] == '\\')
+                if(i.Value == Headers.Domain)
+                    Headers.Domain = i.Key;
+            if (Headers.File == "/" || Headers.File == "\\" || Headers.File == " " || Headers.File == "" || Headers.File[Headers.File.Length - 1] == '/' || Headers.File[Headers.File.Length - 1] == '\\')
             {
                 foreach(var ext in server.Extensions)
-                    if (File.Exists($"{site}/{domain}/index{ext}"))
+                    if (File.Exists($"{HTTPHeaders.WWW}/{Headers.Domain}/index{ext}"))
                     {
-                        file = $"/index{ext}";
+                        Headers.File = $"/index{ext}";
                         break;
                     }
             }
-            if (file.IndexOf("..") != -1)
+            if (Headers.File.IndexOf("..") != -1)
             {
                 SendError(404);
                 client.Close();
                 return;
             }
-            FilePath += $"/{domain}{file}";
-            GetSheet(FilePath, file);
+            GetSheet(Headers);
             //Console.WriteLine($"Path: {FilePath} - Exist: {File.Exists(FilePath)}");
             client.Close();
         }
@@ -121,13 +106,13 @@ namespace program
         {
             GC.Collect(2, GCCollectionMode.Forced);
         }
-        public void GetSheet(string link, string file)
+        public void GetSheet(HTTPHeaders head)
         {
             // link = C:\...
             // address = file.html
             try
             {
-                bool IsFile = File.Exists(link);
+                bool IsFile = File.Exists(head.ReadlPath);
                 string sheet_params = "";
                 //bool IsFolder = Directory.Exists(link);
                 //Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
@@ -140,10 +125,10 @@ namespace program
                     byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                     client.GetStream().Write(data_headers, 0, data_headers.Length);
                 }
-                if (IsFile && GetFormat(link) == "py" || GetFormat(link) == "php")
+                if (IsFile && GetFormat(head.ReadlPath) == "py" || GetFormat(head.ReadlPath) == "php")
                 {
-                    string html = AnyFile(link);
-                    string content_type = GetContentType(link);
+                    string html = AnyFile(head);
+                    string content_type = GetContentType(head);
                     int length = html.Length;
                     string headers1 = "";
                     string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {length}\n\n{headers1}{html}";
@@ -154,8 +139,8 @@ namespace program
                 }
                 if (IsFile)
                 {
-                    string content_type = GetContentType(link);
-                    FileStream fs = new FileStream(link, FileMode.Open, FileAccess.Read, FileShare.Read);
+                    string content_type = GetContentType(head);
+                    FileStream fs = new FileStream(head.ReadlPath, FileMode.Open, FileAccess.Read, FileShare.Read);
                     string headers = "";
                     headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";
                     // OUTPUT HEADERS
@@ -174,14 +159,15 @@ namespace program
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Func: GetSheet()    link: {link}\nException: {ex}/nMessage: {ex.Message}");
+                Console.WriteLine($"Func: GetSheet()    link: {head.ReadlPath}\nException: {ex}/nMessage: {ex.Message}");
             }
         }
-        string AnyFile(string address)
+        //TODO CGI
+        string AnyFile(HTTPHeaders head)
         {
             string interpretator = "";
             string result = "";
-            string ext = address.Substring(address.LastIndexOf("."))
+            string ext = head.ReadlPath.Substring(head.ReadlPath.LastIndexOf("."))
                 .Replace(".","")
                 .Replace(" ", "");
             lock(new object())
@@ -190,19 +176,20 @@ namespace program
                 {
                     if (i.Value.Name == ext)
                             interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
+                    if (i.Value.Name == ext && i.Value.Type == "cgi" && head.QueryString.Length == 0 || head.QueryString != "" || head.QueryString != null )
+                            interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
                 }
-                //string result = php.PerformPhp(interpretator , $"{address}");
-                //Console.WriteLine(interpretator);
-                result = interpreter.UseInterpreter(interpretator, address);
+                Console.WriteLine(interpretator);
+                result = interpreter.UseInterpreter(interpretator, head.ReadlPath);
             }
             return result;
         }
-        string GetContentType(string link)
+        string GetContentType(HTTPHeaders head)
         {
             string result = "";
-            if(File.Exists(link))
+            if(File.Exists(head.ReadlPath))
             {
-                string format = link.Substring(link.LastIndexOf("."));
+                string format = head.ReadlPath.Substring(head.ReadlPath.LastIndexOf("."));
                 format = format.Replace(".","").ToLower();
                 switch(format)
                 {
@@ -354,123 +341,7 @@ namespace program
             if (File.Exists(link))
             {
                 string format = link.Substring(link.LastIndexOf("."));
-                format = format.Replace(".", "").ToLower();
-                switch (format)
-                {
-                    //application
-                    case "xml":
-                    case "json":
-                    case "ogg":
-                    case "pdf":
-                    case "postscript":
-                    case "zip":
-                    case "gzip":
-                    case "doc":
-                        result = $"{format}";
-                        break;
-                    case "EDI":
-                    case "EDI-X12":
-                    case "EDIFACT":
-                        result = $"{format}"; break;
-                    case "atom":
-                        result = $"{format}"; break;
-                    case "soap":
-                        result = $"{format}"; break;
-                    case "woff":
-                        result = $"{format}"; break;
-                    case "xhtml":
-                        result = $"{format}"; break;
-                    case "torrent":
-                    case "bittorrent":
-                        result = $"{format}"; break;
-                    case "tex":
-                        result = $"{format}"; break;
-                    //audio
-                    case "basic":
-                    case "l24":
-                    case "mp4":
-                    case "acc":
-                    case "mpeg":
-                    case "vorbis":
-                    case "webm":
-                        result = $"{format}"; break;
-                    case "wma":
-                        result = $"{format}"; break;
-                    case "rm":
-                        result = $"{format}"; break;
-                    case "wav":
-                    case "wave":
-                        result = $"{format}"; break;
-                    //image
-                    case "gif":
-                    case "jpeg":
-                    case "pjpeg":
-                    case "png":
-                    case "tiff":
-                    case "webp":
-                        result = $"{format}"; break;
-                    case "svg":
-                        result = $"svg+xml";
-                        break;
-                    case "ico":
-                        result = $"vnd.microsoft.icon";
-                        break;
-                    case "wbmp":
-                        result = $"vnd.map.wbmp";
-                        break;
-                    case "jpg":
-                        result = $"jpeg";
-                        break;
-                    //message
-                    case "eml":
-                    case "mime":
-                    case "mth":
-                    case "mhtml":
-                        result = $"ftc822";
-                        break;
-                    //model
-                    case "iges":
-                    case "mesh":
-                    case "vrml":
-                    case "wrl":
-                    case "silo":
-                    case "igs":
-                    case "msh":
-                    case "example":
-                        result = $"{format}"; break;
-                    case "x3db":
-                        result = $"x3d+binary";
-                        break;
-                    case "x3dv":
-                        result = $"x3d+vrml";
-                        break;
-                    case "x3d":
-                        result = $"x3d+xml";
-                        break;
-                    //multipart
-                    //text
-                    case "cmd":
-                    case "css":
-                    case "cvs":
-                    case "html":
-                    case "plain":
-                    case "markdown":
-                    case "md":
-                        result = $"{format}"; break;
-                    case "javascript":
-                    case "js":
-                        result = $"{format}"; break;
-                    case "php":
-                        result = $"{format}"; break;
-                    case "py":
-                        result = $"{format}"; break;
-                    //video
-                    //vnd
-                    //x
-                    //x-pkcs
-                    default:
-                        result = $"{format}"; break;
-                }
+                result = format.Replace(".", "").ToLower();
                 //Console.WriteLine($"link: {link} format: {format} content-type: {result}");
             }
             else

@@ -24,16 +24,19 @@
     "php": {
       "Version": "x86",
       "Name": "php",
+      "Type": "int",
       "Path": "includes/php/win86/php.exe"
     },
     "phpcgi": {
       "Version": "x86",
       "Name": "php",
+      "Type": "cgi",
       "Path": "includes/php/win86/php-cgi.exe"
     },
     "python": {
       "Version": "x86",
       "Name": "py",
+      "Type": "int",
       "Path": "includes/python/win86/python.exe"
     }
   },
