@@ -28,25 +28,40 @@ namespace program
         public string Domain;
         public static string WWW = "www";
         public Match FirstHead;
-
+        private static Global global;
+        public static HTTPHeaders Parse(Global Global,string headers)
+        {
+            global = Global;
+            return Parse(headers);
+        }
+        //TODO
         public static HTTPHeaders Parse(string headers)
         {
             HTTPHeaders result = new HTTPHeaders();
             result.FirstHead = Regex.Match(headers, @"^\w+\s+([^\s\?]+)[^\s]*\s+HTTP/.*|", RegexOptions.Multiline);
             result.Method = Regex.Match(headers, @"\A\w[a-zA-Z]+", RegexOptions.Multiline).Value;
-            result.Domain = Regex.Match(headers, @"Host:\s[a-z|A-Z|0-9]+", RegexOptions.Multiline).Value.Replace("Host:", "").Replace(" ", "");
+            result.Domain = Regex.Match(headers, @"(?<=Host:\s)[\w]+", RegexOptions.Multiline).Value;
             result.File = Regex.Match(headers, @"(?<=\w\s)([\Wa-zA-Z0-9]+)(?=\sHTTP)", RegexOptions.Multiline).Value;
             result.Redirect = RedirectStatus;
-            result.QueryString = Regex.Match(headers, @"(?<=[\?\n])([^\:]+?[&%\=])+\w+", RegexOptions.Multiline).Value;
+            result.QueryString = Regex.Match(headers, @"(?<=[\?\n])([^\:]+?[&%\=])+[\W\w]", RegexOptions.Multiline).Value;
             result.ContentType = Regex.Match(headers, @"(?<=^Content-Type:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
             result.ContentLength = Regex.Match(headers, @"(?<=^Content-Length:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
-            if (result.QueryString != "" && result.QueryString != "" || result.QueryString != null)
+            if (result.QueryString != "")
                 result.QueryString = result.QueryString.Replace(" ", "");
+            if(result.QueryString != "" && result.File.IndexOf(result.QueryString)!=-1)
+                result.File = result.File.Replace(result.QueryString, "");
             if (result.File.IndexOf("?") != -1)
                 result.File = result.File.Replace("?", "");
+            foreach (var i in global.Alias)
+                if (i.Value == result.Domain)
+                    result.Domain = i.Key;
             result.ReadlPath = $"{AppDomain.CurrentDomain.BaseDirectory}{WWW}/{result.Domain}{result.File}";
             result.Cgi = CGI;
             return result;
+        }
+        public static string FileExtention(string file)
+        {
+            return Regex.Match(file, @"(?<=[\W])\w+(?=[\W]{0,}$)").Value;
         }
     }
     class Client
@@ -70,25 +85,22 @@ namespace program
                 request += Encoding.UTF8.GetString(data);
             }
             // Парсим заголовки
-            Headers = HTTPHeaders.Parse(request);
+            Headers = HTTPHeaders.Parse(server.global, request);
             if (Headers.FirstHead == Match.Empty)
             {
                 Console.WriteLine($"ReqMatch = Empty");
                 SendError(400);
                 return;
             }
-            string content_type = Regex.Match(request, @"Content-Type:\s[a-z]+\/[a-z]-[a-z]+-[a-z]+-[a-z]+").Value;
             //Console.WriteLine(ReqMatch);
-            //Console.WriteLine(request);
-            foreach (var i in server.global.Alias)
-                if(i.Value == Headers.Domain)
-                    Headers.Domain = i.Key;
+            //Console.WriteLine(request); 
+            //TODO
             if (Headers.File == "/" || Headers.File == "\\" || Headers.File == " " || Headers.File == "" || Headers.File[Headers.File.Length - 1] == '/' || Headers.File[Headers.File.Length - 1] == '\\')
             {
                 foreach(var ext in server.Extensions)
                     if (File.Exists($"{HTTPHeaders.WWW}/{Headers.Domain}/index{ext}"))
                     {
-                        Headers.File = $"/index{ext}";
+                        Headers.ReadlPath += $"index{ext}";
                         break;
                     }
             }
@@ -110,13 +122,18 @@ namespace program
         {
             // link = C:\...
             // address = file.html
+            
             try
             {
                 bool IsFile = File.Exists(head.ReadlPath);
                 string sheet_params = "";
                 //bool IsFolder = Directory.Exists(link);
                 //Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
-                
+                Console.WriteLine(head.Method);
+                Console.WriteLine(head.File);
+                Console.WriteLine(head.Domain);
+                Console.WriteLine(head.QueryString);
+                Console.WriteLine(head.ReadlPath);
                 if (!IsFile)
                 {
                     string html = " ";
@@ -125,7 +142,7 @@ namespace program
                     byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                     client.GetStream().Write(data_headers, 0, data_headers.Length);
                 }
-                if (IsFile && GetFormat(head.ReadlPath) == "py" || GetFormat(head.ReadlPath) == "php")
+                if (IsFile && HTTPHeaders.FileExtention(head.File)== "py" || HTTPHeaders.FileExtention(head.File) == "php")
                 {
                     string html = AnyFile(head);
                     string content_type = GetContentType(head);
@@ -167,20 +184,24 @@ namespace program
         {
             string interpretator = "";
             string result = "";
-            string ext = head.ReadlPath.Substring(head.ReadlPath.LastIndexOf("."))
-                .Replace(".","")
-                .Replace(" ", "");
+            string ext = HTTPHeaders.FileExtention(head.File);
             lock(new object())
             {
                 foreach (var i in server.global.Interpreters)
                 {
+                    Console.WriteLine($"INT.NAME: {i.Value.Name} - ext: {ext}");
                     if (i.Value.Name == ext)
+                    {
+                        if(head.QueryString == "" && i.Value.Type == "int")
                             interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
-                    if (i.Value.Name == ext && i.Value.Type == "cgi" && head.QueryString.Length == 0 || head.QueryString != "" || head.QueryString != null )
+                        if (head.QueryString != "" && i.Value.Type == "cgi")
                             interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
+                        
+                    }
+
                 }
                 Console.WriteLine(interpretator);
-                result = interpreter.UseInterpreter(interpretator, head.ReadlPath);
+                //result = interpreter.UseInterpreter(interpretator, head.ReadlPath);
             }
             return result;
         }
@@ -335,13 +356,14 @@ namespace program
             }
             return result;
         }
-        string GetFormat(string link)
+        /*string GetFormat(string link)
         {
             string result = "";
             if (File.Exists(link))
             {
                 string format = link.Substring(link.LastIndexOf("."));
                 result = format.Replace(".", "").ToLower();
+                Console.WriteLine($"Format: {format}");
                 //Console.WriteLine($"link: {link} format: {format} content-type: {result}");
             }
             else
@@ -349,7 +371,7 @@ namespace program
                 result = $"unknown";
             }
             return result;
-        }
+        }*/
         public void SendError(int code)
         {
             string html = $"<html><head><title></title></head><body><h1>Error {code}</h1></body></html>";

@@ -24,20 +24,20 @@
     "php": {
       "Version": "x86",
       "Name": "php",
-      "Type": "int",
-      "Path": "includes/php/win86/php.exe"
+      "Path": "includes/php/win86/php.exe",
+      "Type": "int"
     },
     "phpcgi": {
       "Version": "x86",
       "Name": "php",
-      "Type": "cgi",
-      "Path": "includes/php/win86/php-cgi.exe"
+      "Path": "includes/php/win86/php-cgi.exe",
+      "Type": "cgi"
     },
     "python": {
       "Version": "x86",
       "Name": "py",
-      "Type": "int",
-      "Path": "includes/python/win86/python.exe"
+      "Path": "includes/python/win86/python.exe",
+      "Type": "int"
     }
   },
   "MySql_path": [
