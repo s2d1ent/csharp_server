@@ -14,7 +14,7 @@ namespace program
     struct HTTPHeaders
     {
         public string Method;
-        public string ReadlPath;
+        public string RealPath;
         public string File;
         private static string RedirectStatus = false.ToString();
         public string Redirect;
@@ -55,8 +55,9 @@ namespace program
             foreach (var i in global.Alias)
                 if (i.Value == result.Domain)
                     result.Domain = i.Key;
-            result.ReadlPath = $"{AppDomain.CurrentDomain.BaseDirectory}{WWW}/{result.Domain}{result.File}";
+            result.RealPath = $"{AppDomain.CurrentDomain.BaseDirectory}{WWW}/{result.Domain}{result.File}";
             result.Cgi = CGI;
+            Console.WriteLine($"Methond: {result.Method}\nFile: {result.File}\nDomain: {result.Domain}\nQueryString: {result.QueryString}\nRedirect: {result.Redirect}\nCT: {result.ContentType}\nCL: {result.ContentLength}");
             return result;
         }
         public static string FileExtention(string file)
@@ -93,17 +94,16 @@ namespace program
                 return;
             }
             //Console.WriteLine(ReqMatch);
-            //Console.WriteLine(request); 
+            Console.WriteLine(request); 
             //TODO
             if (Headers.File == "/" || Headers.File == "\\" || Headers.File == " " || Headers.File == "" || Headers.File[Headers.File.Length - 1] == '/' || Headers.File[Headers.File.Length - 1] == '\\')
-            {
                 foreach(var ext in server.Extensions)
-                    if (File.Exists($"{HTTPHeaders.WWW}/{Headers.Domain}/index{ext}"))
+                    if (File.Exists($"{Headers.RealPath}index{ext}"))
                     {
-                        Headers.ReadlPath += $"index{ext}";
+                        Headers.RealPath += $"index{ext}";
+                        Headers.File = $"index{ext}";
                         break;
                     }
-            }
             if (Headers.File.IndexOf("..") != -1)
             {
                 SendError(404);
@@ -111,29 +111,24 @@ namespace program
                 return;
             }
             GetSheet(Headers);
-            //Console.WriteLine($"Path: {FilePath} - Exist: {File.Exists(FilePath)}");
             client.Close();
         }
         ~Client()
         {
             GC.Collect(2, GCCollectionMode.Forced);
         }
+        // TODO - REWRITE
         public void GetSheet(HTTPHeaders head)
         {
-            // link = C:\...
-            // address = file.html
-            
             try
             {
-                bool IsFile = File.Exists(head.ReadlPath);
-                string sheet_params = "";
-                //bool IsFolder = Directory.Exists(link);
-                //Console.WriteLine($"File link: {link} File: {IsFile} Folder: {IsFolder}");
-                Console.WriteLine(head.Method);
+                bool IsFile = File.Exists(head.RealPath);
+                string extention = HTTPHeaders.FileExtention(head.RealPath);
+                /*Console.WriteLine(head.Method);
                 Console.WriteLine(head.File);
                 Console.WriteLine(head.Domain);
-                Console.WriteLine(head.QueryString);
-                Console.WriteLine(head.ReadlPath);
+                Console.WriteLine(head.QueryString);*/
+                Console.WriteLine($"IsFile: {IsFile} - {head.RealPath} - {extention}");
                 if (!IsFile)
                 {
                     string html = " ";
@@ -142,13 +137,13 @@ namespace program
                     byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                     client.GetStream().Write(data_headers, 0, data_headers.Length);
                 }
-                if (IsFile && HTTPHeaders.FileExtention(head.File)== "py" || HTTPHeaders.FileExtention(head.File) == "php")
+                if (IsFile && extention == "py" || extention == "php")
                 {
                     string html = AnyFile(head);
+                    Console.WriteLine(html);
                     string content_type = GetContentType(head);
                     int length = html.Length;
-                    string headers1 = "";
-                    string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {length}\n\n{headers1}{html}";
+                    string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {length}\n\n{html}";
                     // OUTPUT HEADERS
                     byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                     client.GetStream().Write(data_headers, 0, data_headers.Length);
@@ -157,7 +152,8 @@ namespace program
                 if (IsFile)
                 {
                     string content_type = GetContentType(head);
-                    FileStream fs = new FileStream(head.ReadlPath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                    Console.WriteLine($"Path: {head.RealPath}");
+                    FileStream fs = new FileStream(head.RealPath, FileMode.Open, FileAccess.Read, FileShare.Read);
                     string headers = "";
                     headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";
                     // OUTPUT HEADERS
@@ -172,45 +168,49 @@ namespace program
                     }
                     //client.Close();
                 }
-
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Func: GetSheet()    link: {head.ReadlPath}\nException: {ex}/nMessage: {ex.Message}");
+                Console.WriteLine($"Func: GetSheet()    link: {head.RealPath}\nException: {ex}/nMessage: {ex.Message}");
             }
         }
         //TODO CGI
         string AnyFile(HTTPHeaders head)
         {
-            string interpretator = "";
             string result = "";
-            string ext = HTTPHeaders.FileExtention(head.File);
-            lock(new object())
+            lock (new object())
             {
+                string ext = HTTPHeaders.FileExtention(head.RealPath);
+                string interpretator = "";
+                string type = "";
                 foreach (var i in server.global.Interpreters)
                 {
-                    Console.WriteLine($"INT.NAME: {i.Value.Name} - ext: {ext}");
                     if (i.Value.Name == ext)
                     {
-                        if(head.QueryString == "" && i.Value.Type == "int")
+                        interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
+                        type = i.Value.Type;
+                        /*if (head.QueryString == "" && i.Value.Type == "int")
+                        {
                             interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
+                            type = i.Value.Type;
+                        }
                         if (head.QueryString != "" && i.Value.Type == "cgi")
-                            interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
-                        
+                        {
+                            
+                        }*/
                     }
-
                 }
-                Console.WriteLine(interpretator);
-                //result = interpreter.UseInterpreter(interpretator, head.ReadlPath);
+                Console.WriteLine($"Interpreter: {interpretator} - Path: {head.RealPath} - Type: {type}");
+                result = interpreter.UseInterpreter(interpretator, head.RealPath);
             }
             return result;
         }
         string GetContentType(HTTPHeaders head)
         {
             string result = "";
-            if(File.Exists(head.ReadlPath))
+            if(File.Exists(head.RealPath))
             {
-                string format = head.ReadlPath.Substring(head.ReadlPath.LastIndexOf("."));
+                string format = head.RealPath.Substring(head.RealPath.LastIndexOf("."));
                 format = format.Replace(".","").ToLower();
                 switch(format)
                 {
@@ -356,22 +356,6 @@ namespace program
             }
             return result;
         }
-        /*string GetFormat(string link)
-        {
-            string result = "";
-            if (File.Exists(link))
-            {
-                string format = link.Substring(link.LastIndexOf("."));
-                result = format.Replace(".", "").ToLower();
-                Console.WriteLine($"Format: {format}");
-                //Console.WriteLine($"link: {link} format: {format} content-type: {result}");
-            }
-            else
-            {
-                result = $"unknown";
-            }
-            return result;
-        }*/
         public void SendError(int code)
         {
             string html = $"<html><head><title></title></head><body><h1>Error {code}</h1></body></html>";

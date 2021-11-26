@@ -60,7 +60,7 @@ namespace program
             info.EnvironmentVariables.Add("GETAWAY_INTERFACE", "CGI");
             info.EnvironmentVariables.Add("CONTENT_TYPE", headers.ContentType);
             info.EnvironmentVariables.Add("HTTP_ACCEPT", "*.*");
-            info.EnvironmentVariables.Add("SCRIPT_FILENAME", headers.ReadlPath);
+            info.EnvironmentVariables.Add("SCRIPT_FILENAME", headers.RealPath);
             if(headers.Method == "POST" || headers.Method == "put")
                 info.EnvironmentVariables.Add("CONTENT_LENGTH", headers.ContentLength);
             if (headers.Method == "GET")
