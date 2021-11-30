@@ -48,9 +48,7 @@ namespace program
                     {
                         if(global.Server.Active)
                         {
-                            Interpreter open = new Interpreter();
-                            open.OpenApplication($"{AppDomain.CurrentDomain.BaseDirectory}{global.MySql_path[2]}", "-u root");
-                            //open.OpenApplication($@"C:\Windows\System32\cmd.exe", "");
+                            
                         }
                     }
                     if (cmd.IndexOf("start") != -1)

@@ -24,9 +24,9 @@ namespace program
         {
             GC.Collect(2, GCCollectionMode.Forced);
         }
-        public string UseInterpreter(string php, string file)
+        public string UseInterpreter(string pathexe, string file)
         {
-            ProcessStartInfo info = new ProcessStartInfo(php, file);
+            ProcessStartInfo info = new ProcessStartInfo(pathexe, file);
             info.UseShellExecute = false;
             info.ErrorDialog = false;
             info.RedirectStandardError = true;
@@ -83,28 +83,6 @@ namespace program
             string cp866_byte_to_utf8 = Encoding.UTF8.GetString(cp866_byte);
 
             return cp866_byte_to_utf8;
-        }
-        public void OpenApplication(string path, string options)
-        {
-            ProcessStartInfo info = new ProcessStartInfo(path, options);
-            info.UseShellExecute = false;
-            info.ErrorDialog = false;
-            info.RedirectStandardError = true;
-            info.RedirectStandardInput = true;
-            info.RedirectStandardOutput = true;
-            info.CreateNoWindow = true ;
-            info.WindowStyle = ProcessWindowStyle.Normal;
-            
-
-
-            Process p = new Process();
-            p.StartInfo = info;
-
-            bool pStarted = p.Start();
-
-            StreamWriter input = p.StandardInput;
-            StreamReader output = p.StandardOutput;
-            StreamReader error = p.StandardError;
         }
     }
 }

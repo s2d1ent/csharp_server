@@ -6716,3 +6716,19 @@ mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS er
 2021-11-30T20:29:49.224492Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
 2021-11-30T20:29:49.225260Z 0 [ERROR] [MY-010119] [Server] Aborting
 2021-11-30T20:29:50.549510Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-11-30T20:58:35.068221Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6428
+2021-11-30T20:58:35.092662Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-30T20:58:37.382191Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-30T20:58:37.883393Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 12120
+2021-11-30T20:58:38.115905Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-30T20:58:38.118586Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-30T20:58:38.119333Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-11-30T20:58:38.119950Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-11-30T20:58:38.131717Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-11-30T20:58:38.133178Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-30T20:58:38.134685Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-11-30T20:58:38.971507Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-11-30T20:58:38.972057Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-11-30T20:58:38.972843Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-11-30T20:58:39.648945Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
