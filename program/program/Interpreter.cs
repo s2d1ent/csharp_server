@@ -20,6 +20,10 @@ namespace program
         {
             //this.Path = @"D:\csharp_server\program\program\bin\Debug\net5.0\includes\php\win64\php.exe";
         }
+        ~Interpreter()
+        {
+            GC.Collect(2, GCCollectionMode.Forced);
+        }
         public string UseInterpreter(string php, string file)
         {
             ProcessStartInfo info = new ProcessStartInfo(php, file);

@@ -81,3 +81,15 @@
 2021-11-23T04:03:47.713347Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
 2021-11-23T04:03:47.898173Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
 2021-11-23T04:03:47.898746Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-11-28T19:27:03.742583Z 0 [Warning] [MY-010915] [Server] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'ERROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will be merged with strict mode in a future release.
+2021-11-28T19:27:03.763991Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe (mysqld 8.0.27) starting as process 4916
+2021-11-28T19:27:04.366533Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-11-28T19:27:06.116772Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-11-28T19:27:07.008391Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-11-28T19:27:07.018096Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-11-28T19:27:07.681739Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2021-11-28T19:27:07.682631Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2021-11-28T19:27:07.838750Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-11-28T19:27:07.839535Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-11-28T19:27:08.064368Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-11-28T19:27:08.064906Z 0 [System] [MY-010931] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe: ready for connections. Version: '8.0.27'  socket: ''  port: 3306  MySQL Community Server - GPL.

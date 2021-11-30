@@ -46,6 +46,9 @@ namespace program
             this.Ip = IPAddress.Parse(ip);
             Listener = new TcpListener(IPAddress.Parse(ip), port);
         }
+        ~Server(){
+            GC.Collect(2, GCCollectionMode.Forced);
+        }
         public void Start()
         {
             if (!Active)
@@ -62,7 +65,11 @@ namespace program
                     try
                     {
                         //Console.WriteLine(1);
-                        ThreadPool.QueueUserWorkItem(new WaitCallback(ClientThread), new ArrayList() { Listener.AcceptTcpClientAsync().Result, this });
+                        ThreadPool.QueueUserWorkItem(
+                            new WaitCallback(ClientThread),
+                            new ArrayList() { Listener.AcceptTcpClient(), this }
+                            );
+
                     }
                     catch (Exception ex) { }
                 }

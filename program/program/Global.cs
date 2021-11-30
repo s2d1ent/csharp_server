@@ -121,6 +121,10 @@ namespace program
             }
         }
         public Global(){}
+        ~Global()
+        {
+            GC.Collect(2, GCCollectionMode.Forced);
+        }
         public void GetServer()
         {
             Server.global = this;
@@ -205,8 +209,7 @@ namespace program
             else
                 domains = "not init";
             string info = $@"Server C# .Net Core
-Ip: {Ipv4}  Post: {Listen}
-
+Ip: {Ipv4}  Port: {Listen}
 ";
             return info;
         }
