@@ -25,7 +25,7 @@ namespace program
             Console.WriteLine(global.GetInfo());
             // start
             global.Server.StartAsync();
-            global.MySqlServerStart();
+            //global.MySqlServerStart();
             while (true)
                 {
                 string cmd = Console.ReadLine();

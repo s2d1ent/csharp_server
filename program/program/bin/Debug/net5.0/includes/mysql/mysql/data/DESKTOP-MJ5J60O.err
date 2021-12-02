@@ -6732,3 +6732,790 @@ mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS er
 2021-11-30T20:58:38.972057Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
 2021-11-30T20:58:38.972843Z 0 [ERROR] [MY-010119] [Server] Aborting
 2021-11-30T20:58:39.648945Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T19:54:47.822189Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7584
+2021-12-01T19:54:47.820459Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 12824
+2021-12-01T19:54:48.158896Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T19:54:48.178898Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T19:54:48.187764Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T19:54:48.188467Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T19:54:48.189162Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T19:54:48.215514Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T19:54:48.216660Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T19:54:48.243088Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T19:54:51.525154Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T19:54:52.397115Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T19:54:52.397566Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T19:54:52.398213Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T19:54:53.416053Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T19:56:07.472095Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16884
+2021-12-01T19:56:07.509226Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T19:56:07.565147Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1344
+2021-12-01T19:56:07.677796Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T19:56:07.733018Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T19:56:07.734423Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T19:56:07.737567Z 1 [Warning] [MY-012093] [InnoDB] Cannot open '.\ibdata1'. Have you deleted .ibd files under a running mysqld server?
+2021-12-01T19:56:07.739031Z 1 [ERROR] [MY-013183] [InnoDB] Assertion failure: fil0fil.cc:3717:0 thread 12216
+InnoDB: We intentionally generate a memory trap.
+InnoDB: Submit a detailed bug report to http://bugs.mysql.com.
+InnoDB: If you get repeated assertion failures or crashes, even
+InnoDB: immediately after the mysqld startup, there may be
+InnoDB: corruption in the InnoDB tablespace. Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/8.0/en/forcing-innodb-recovery.html
+InnoDB: about forcing recovery.
+19:56:07 UTC - mysqld got exception 0x80000003 ;
+Most likely, you have hit a bug, but this error can also be caused by malfunctioning hardware.
+Thread pointer: 0x1e8c5015bb0
+Attempting backtrace. You can use the following information to find out
+where mysqld died. If you see no messages after this, something went
+terribly wrong...
+2021-12-01T19:56:07.824875Z 1 [ERROR] [MY-012884] [InnoDB] .\ib_logfile0 can't be opened in read-write mode.
+2021-12-01T19:56:07.825593Z 1 [ERROR] [MY-012930] [InnoDB] Plugin initialization aborted with error Generic error.
+2021-12-01T19:56:07.839466Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T19:56:07.856326Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T19:56:07.857803Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T19:56:07.859096Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+7ff654ff24b2    mysqld.exe!?my_errno@@YAHXZ()
+7fff8a80caad    ucrtbase.dll!raise()
+7fff8a80dab1    ucrtbase.dll!abort()
+7ff65521820a    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff65518ad5a    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff65518a5c1    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff6551d7e9b    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff6550cc520    mysqld.exe!?set_compression_level@Zstd_comp@compression@transaction@binary_log@@UEAAXI@Z()
+7ff6550c71ae    mysqld.exe!?set_compression_level@Zstd_comp@compression@transaction@binary_log@@UEAAXI@Z()
+7ff654f6e039    mysqld.exe!?init@Rpl_info_values@@QEAA_NXZ()
+7ff654e9ec19    mysqld.exe!?init@Rpl_info_values@@QEAA_NXZ()
+7ff6540b4e1d    mysqld.exe!?run_bootstrap_thread@bootstrap@@YA_NPEBDPEAUMYSQL_FILE@@P6A_NPEAVTHD@@@ZW4enum_thread_type@@@Z()
+7ff65540d1cf    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff654ff244c    mysqld.exe!?my_thread_self_setname@@YAXPEBD@Z()
+7fff8a7c10b2    ucrtbase.dll!_beginthreadex()
+7fff8bf67c24    KERNEL32.DLL!BaseThreadInitThunk()
+7fff8c8ed721    ntdll.dll!RtlUserThreadStart()
+
+Trying to get some variables.
+Some pointers may be invalid and cause the dump to abort.
+Query (0): 
+Connection ID (thread ID): 1
+Status: NOT_KILLED
+
+The manual page at http://dev.mysql.com/doc/mysql/en/crashing.html contains
+information that should help you find out what is causing the crash.
+2021-12-01T19:56:41.281764Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8912
+2021-12-01T19:56:41.329832Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T19:56:41.446547Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 15092
+2021-12-01T19:56:41.740554Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T19:56:41.743353Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T19:56:41.744029Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T19:56:41.744658Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T19:56:41.760059Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T19:56:41.760809Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T19:56:41.761888Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T19:56:43.639779Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T19:56:44.076271Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T19:56:44.076804Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T19:56:44.077542Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T19:56:45.468481Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:02:10.063308Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9704
+2021-12-01T20:02:10.163878Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:02:10.233242Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13120
+2021-12-01T20:02:10.349624Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:02:10.450527Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:02:10.451231Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:02:13.667030Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:02:14.387703Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:02:14.388216Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:02:14.388960Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:02:15.573941Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:02:22.912288Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:02:23.750887Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:02:23.751356Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:02:23.752034Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:02:24.929006Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:03:16.357638Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 4568
+2021-12-01T20:03:16.423593Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:03:16.526729Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 2208
+2021-12-01T20:03:16.587329Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:03:16.674921Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:03:16.675762Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:03:19.750302Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:03:20.579422Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:03:20.579943Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:03:20.580764Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:03:21.771409Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:03:29.171501Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:03:29.885997Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:03:29.886508Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:03:29.887241Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:03:31.190327Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:05:05.845501Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 3284
+2021-12-01T20:05:06.026793Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:05:06.047741Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 11316
+2021-12-01T20:05:06.162141Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:05:06.433865Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:05:06.434583Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:05:09.311013Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:05:09.945813Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:05:09.946444Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:05:09.947343Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:05:11.177338Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:05:18.766589Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:05:19.607047Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:05:19.607474Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:05:19.608122Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:05:20.715515Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:06:52.947207Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6688
+2021-12-01T20:06:53.065213Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:06:53.163679Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16092
+2021-12-01T20:06:53.222806Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:06:53.434606Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:06:53.436929Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:06:55.887432Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:06:56.613022Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:06:56.613927Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:06:56.614879Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:06:57.888333Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:07:05.806291Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:07:07.624634Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:07:07.625291Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:07:07.625990Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:07:08.156201Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:17:24.199131Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8316
+2021-12-01T20:17:24.250894Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:17:24.278162Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9300
+2021-12-01T20:17:24.317032Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:17:24.377228Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:17:24.377913Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:17:26.593676Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:17:27.702668Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:17:27.703299Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:17:27.704205Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:17:28.919950Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:17:36.653413Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:17:37.351497Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:17:37.352025Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:17:37.352753Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:17:38.438610Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:20:17.233399Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8880
+2021-12-01T20:20:17.279378Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:20:17.300060Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 5092
+2021-12-01T20:20:17.332207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:20:17.374889Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:20:17.375601Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:20:19.586985Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:20:20.447665Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:20:20.448263Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:20:20.449056Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:20:21.526816Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:20:29.885761Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:20:30.592900Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:20:30.593506Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:20:30.594327Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:20:31.890744Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:21:40.257567Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9388
+2021-12-01T20:21:40.330487Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:21:40.638990Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6872
+2021-12-01T20:21:40.694598Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:21:40.697612Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T20:21:40.698219Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T20:21:40.698838Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T20:21:40.699711Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T20:21:40.700405Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:21:40.701556Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:21:42.992095Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:21:44.611537Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:21:44.612041Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:21:44.612789Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:21:45.412993Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:23:23.708855Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1208
+2021-12-01T20:23:23.817771Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:23:23.828114Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 512
+2021-12-01T20:23:23.904945Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:23:23.973574Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:23:23.974254Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:23:26.749067Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:23:27.350726Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:23:27.351287Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:23:27.352027Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:23:28.577320Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:23:36.609339Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:23:37.399019Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:23:37.399486Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:23:37.400360Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:23:38.617004Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:25:55.586147Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 536
+2021-12-01T20:25:55.637238Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:25:55.852486Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7492
+2021-12-01T20:25:55.912911Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:25:55.914977Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T20:25:55.915655Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T20:25:55.916338Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T20:25:55.917328Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T20:25:55.918318Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:25:55.919890Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:25:58.340682Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:25:59.272979Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:25:59.273544Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:25:59.274307Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:26:00.434978Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:26:49.739591Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6028
+2021-12-01T20:26:49.846979Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:26:49.897873Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 5308
+2021-12-01T20:26:49.961961Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:26:50.044826Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:26:50.045757Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:26:52.512224Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:26:53.442610Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:26:53.443174Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:26:53.444028Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:26:54.665850Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:27:02.292881Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:27:03.187778Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:27:03.188362Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:27:03.189167Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:27:04.401996Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:32:02.642269Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1984
+2021-12-01T20:32:02.695396Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:32:03.244714Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 11812
+2021-12-01T20:32:03.393149Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:32:03.561465Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:32:03.562507Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:32:05.615428Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:32:06.388222Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:32:06.388801Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:32:06.389721Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:32:07.585584Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:32:15.740545Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:32:16.534951Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:32:16.537275Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:32:16.538992Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:32:17.648369Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:32:50.249219Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 15144
+2021-12-01T20:32:50.379764Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:32:50.568509Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1792
+2021-12-01T20:32:50.674409Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:32:50.771241Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:32:50.772105Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:32:52.363706Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:32:53.025110Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:32:53.025716Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:32:53.026493Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:32:54.153954Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:33:02.649023Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:33:03.591067Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:33:03.591594Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:33:03.592359Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:33:04.866015Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:34:52.602478Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6380
+2021-12-01T20:34:52.737738Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:34:52.892391Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1108
+2021-12-01T20:34:53.019994Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:34:53.230234Z 1 [ERROR] [MY-012884] [InnoDB] .\ib_logfile0 can't be opened in read-write mode.
+2021-12-01T20:34:53.230884Z 1 [ERROR] [MY-012930] [InnoDB] Plugin initialization aborted with error Generic error.
+2021-12-01T20:34:53.237147Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T20:34:53.241609Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T20:34:53.242859Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:34:53.244186Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:34:55.720408Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:34:56.482219Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:34:56.482652Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:34:56.483290Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:34:57.702197Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:36:26.714538Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10924
+2021-12-01T20:36:26.935717Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:36:26.963410Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 784
+2021-12-01T20:36:27.114821Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:36:27.456632Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:36:27.466832Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:36:30.474902Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:36:31.086798Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:36:31.087544Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:36:31.088468Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:36:32.144624Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:36:40.499159Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:36:41.967340Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:36:41.968427Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:36:41.969320Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:36:43.451384Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:39:15.215240Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16252
+2021-12-01T20:39:15.300062Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:39:15.308960Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 4244
+2021-12-01T20:39:15.366317Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:39:15.404140Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:39:15.406699Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:39:18.420419Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:39:19.381872Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:39:19.382387Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:39:19.383111Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:39:20.404161Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:39:27.605803Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:39:28.343930Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:39:28.344527Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:39:28.345395Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:39:29.614691Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:43:44.335991Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10388
+2021-12-01T20:43:44.420977Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:43:44.495609Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13108
+2021-12-01T20:43:44.529770Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:43:44.541954Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T20:43:44.542995Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T20:43:44.545098Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T20:43:44.548029Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T20:43:44.548846Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:43:44.550399Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:43:47.807616Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:43:48.588214Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:43:48.588737Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:43:48.589576Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:43:49.448269Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:47:41.739486Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 4072
+2021-12-01T20:47:41.795124Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:47:42.205568Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8272
+2021-12-01T20:47:42.275096Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:47:42.372166Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:47:42.373113Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:47:42.374433Z 1 [Warning] [MY-012093] [InnoDB] Cannot open '.\ibdata1'. Have you deleted .ibd files under a running mysqld server?
+2021-12-01T20:47:42.375244Z 1 [ERROR] [MY-013183] [InnoDB] Assertion failure: fil0fil.cc:3717:0 thread 13884
+InnoDB: We intentionally generate a memory trap.
+InnoDB: Submit a detailed bug report to http://bugs.mysql.com.
+InnoDB: If you get repeated assertion failures or crashes, even
+InnoDB: immediately after the mysqld startup, there may be
+InnoDB: corruption in the InnoDB tablespace. Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/8.0/en/forcing-innodb-recovery.html
+InnoDB: about forcing recovery.
+20:47:42 UTC - mysqld got exception 0x80000003 ;
+Most likely, you have hit a bug, but this error can also be caused by malfunctioning hardware.
+Thread pointer: 0x227b2af9f60
+Attempting backtrace. You can use the following information to find out
+where mysqld died. If you see no messages after this, something went
+terribly wrong...
+2021-12-01T20:47:42.478591Z 1 [ERROR] [MY-012884] [InnoDB] .\ib_logfile0 can't be opened in read-write mode.
+2021-12-01T20:47:42.479223Z 1 [ERROR] [MY-012930] [InnoDB] Plugin initialization aborted with error Generic error.
+2021-12-01T20:47:42.486817Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T20:47:42.496219Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T20:47:42.496894Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:47:42.498159Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+7ff654ff24b2    mysqld.exe!?my_errno@@YAHXZ()
+7fff8a80caad    ucrtbase.dll!raise()
+7fff8a80dab1    ucrtbase.dll!abort()
+7ff65521820a    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff65518ad5a    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff65518a5c1    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff6551d7e9b    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff6550cc520    mysqld.exe!?set_compression_level@Zstd_comp@compression@transaction@binary_log@@UEAAXI@Z()
+7ff6550c71ae    mysqld.exe!?set_compression_level@Zstd_comp@compression@transaction@binary_log@@UEAAXI@Z()
+7ff654f6e039    mysqld.exe!?init@Rpl_info_values@@QEAA_NXZ()
+7ff654e9ec19    mysqld.exe!?init@Rpl_info_values@@QEAA_NXZ()
+7ff6540b4e1d    mysqld.exe!?run_bootstrap_thread@bootstrap@@YA_NPEBDPEAUMYSQL_FILE@@P6A_NPEAVTHD@@@ZW4enum_thread_type@@@Z()
+7ff65540d1cf    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff654ff244c    mysqld.exe!?my_thread_self_setname@@YAXPEBD@Z()
+7fff8a7c10b2    ucrtbase.dll!_beginthreadex()
+7fff8bf67c24    KERNEL32.DLL!BaseThreadInitThunk()
+7fff8c8ed721    ntdll.dll!RtlUserThreadStart()
+
+Trying to get some variables.
+Some pointers may be invalid and cause the dump to abort.
+Query (0): 
+Connection ID (thread ID): 1
+Status: NOT_KILLED
+
+The manual page at http://dev.mysql.com/doc/mysql/en/crashing.html contains
+information that should help you find out what is causing the crash.
+2021-12-01T20:49:20.469653Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 11788
+2021-12-01T20:49:20.521633Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:49:21.185953Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10916
+2021-12-01T20:49:21.307367Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T20:49:21.339512Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T20:49:21.340154Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T20:49:24.004501Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:49:24.984373Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:49:24.984903Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:49:24.985606Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:49:25.778353Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T20:49:33.667842Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T20:49:34.620686Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T20:49:34.621107Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T20:49:34.621735Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T20:49:35.725885Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:08:38.342802Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9900
+2021-12-01T21:08:38.433254Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:08:38.440971Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16088
+2021-12-01T21:08:38.617479Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:08:39.088345Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T21:08:39.088997Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T21:08:41.978404Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:08:43.129329Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:08:43.129901Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:08:43.130737Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:08:43.834299Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:08:50.960740Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:08:51.894413Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:08:51.894994Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:08:51.895726Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:08:53.054519Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:11:09.996284Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8852
+2021-12-01T21:11:10.099435Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:11:10.557805Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 3840
+2021-12-01T21:11:10.770136Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:11:10.773035Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:11:10.773884Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:11:10.775026Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T21:11:10.797758Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T21:11:10.798351Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:11:10.799516Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:11:13.516640Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:11:14.270981Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:11:14.271541Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:11:14.272272Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:11:15.397325Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:12:05.512179Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1892
+2021-12-01T21:12:05.598008Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:12:05.844950Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 1128
+2021-12-01T21:12:06.013628Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:12:06.225042Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T21:12:06.225760Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T21:12:09.623033Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:12:10.136581Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:12:10.137326Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:12:10.138114Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:12:11.518562Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:12:18.460185Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:12:19.308564Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:12:19.309102Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:12:19.309899Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:12:20.487961Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:13:43.659167Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13380
+2021-12-01T21:13:43.724746Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:13:43.767719Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 7188
+2021-12-01T21:13:43.836276Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:13:43.894704Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T21:13:43.895398Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T21:13:46.537621Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:13:47.267314Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:13:47.267899Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:13:47.268702Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:13:48.690243Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:13:56.474285Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:13:57.330557Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:13:57.331229Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:13:57.331980Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:13:58.386698Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:14:37.100334Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16768
+2021-12-01T21:14:37.155168Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:14:37.210665Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13132
+2021-12-01T21:14:37.296467Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:14:37.673025Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T21:14:37.674157Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T21:14:37.676577Z 1 [Warning] [MY-012093] [InnoDB] Cannot open '.\ibdata1'. Have you deleted .ibd files under a running mysqld server?
+2021-12-01T21:14:37.677843Z 1 [ERROR] [MY-013183] [InnoDB] Assertion failure: fil0fil.cc:3717:0 thread 3344
+InnoDB: We intentionally generate a memory trap.
+InnoDB: Submit a detailed bug report to http://bugs.mysql.com.
+InnoDB: If you get repeated assertion failures or crashes, even
+InnoDB: immediately after the mysqld startup, there may be
+InnoDB: corruption in the InnoDB tablespace. Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/8.0/en/forcing-innodb-recovery.html
+InnoDB: about forcing recovery.
+21:14:37 UTC - mysqld got exception 0x80000003 ;
+Most likely, you have hit a bug, but this error can also be caused by malfunctioning hardware.
+Thread pointer: 0x14817fdefb0
+Attempting backtrace. You can use the following information to find out
+where mysqld died. If you see no messages after this, something went
+terribly wrong...
+2021-12-01T21:14:37.713240Z 1 [ERROR] [MY-012884] [InnoDB] .\ib_logfile0 can't be opened in read-write mode.
+2021-12-01T21:14:37.713919Z 1 [ERROR] [MY-012930] [InnoDB] Plugin initialization aborted with error Generic error.
+2021-12-01T21:14:37.720073Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T21:14:37.721548Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T21:14:37.722678Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:14:37.724016Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+7ff654ff24b2    mysqld.exe!?my_errno@@YAHXZ()
+7fff8a80caad    ucrtbase.dll!raise()
+7fff8a80dab1    ucrtbase.dll!abort()
+7ff65521820a    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff65518ad5a    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff65518a5c1    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff6551d7e9b    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff6550cc520    mysqld.exe!?set_compression_level@Zstd_comp@compression@transaction@binary_log@@UEAAXI@Z()
+7ff6550c71ae    mysqld.exe!?set_compression_level@Zstd_comp@compression@transaction@binary_log@@UEAAXI@Z()
+7ff654f6e039    mysqld.exe!?init@Rpl_info_values@@QEAA_NXZ()
+7ff654e9ec19    mysqld.exe!?init@Rpl_info_values@@QEAA_NXZ()
+7ff6540b4e1d    mysqld.exe!?run_bootstrap_thread@bootstrap@@YA_NPEBDPEAUMYSQL_FILE@@P6A_NPEAVTHD@@@ZW4enum_thread_type@@@Z()
+7ff65540d1cf    mysqld.exe!??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z()
+7ff654ff244c    mysqld.exe!?my_thread_self_setname@@YAXPEBD@Z()
+7fff8a7c10b2    ucrtbase.dll!_beginthreadex()
+7fff8bf67c24    KERNEL32.DLL!BaseThreadInitThunk()
+7fff8c8ed721    ntdll.dll!RtlUserThreadStart()
+
+Trying to get some variables.
+Some pointers may be invalid and cause the dump to abort.
+Query (0): 
+Connection ID (thread ID): 1
+Status: NOT_KILLED
+
+The manual page at http://dev.mysql.com/doc/mysql/en/crashing.html contains
+information that should help you find out what is causing the crash.
+2021-12-01T21:15:45.919929Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 15680
+2021-12-01T21:15:45.976633Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:15:46.244584Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16716
+2021-12-01T21:15:46.572888Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:15:46.574837Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:15:46.575436Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:15:46.576041Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T21:15:46.577298Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T21:15:46.578105Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:15:46.579578Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:15:48.859441Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:15:50.863578Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:15:50.864020Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:15:50.864644Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:15:52.254067Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:17:22.427147Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9036
+2021-12-01T21:17:22.460133Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:17:22.516472Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16704
+2021-12-01T21:17:22.569086Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:17:22.607231Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T21:17:22.608922Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T21:17:25.372431Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:17:26.200972Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:17:26.201532Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:17:26.202502Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:17:27.517140Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:17:35.172016Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:17:35.864427Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:17:35.864853Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:17:35.865489Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:17:37.077712Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:21:40.126453Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 17088
+2021-12-01T21:21:40.410497Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:21:40.588954Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6772
+2021-12-01T21:21:40.682455Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:21:41.022572Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T21:21:41.023657Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T21:21:43.514733Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:21:44.384928Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:21:44.385480Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:21:44.386193Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:21:45.497682Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:21:53.497816Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:21:55.063422Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:21:55.063986Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:21:55.064775Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:21:55.881522Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:24:23.548788Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13640
+2021-12-01T21:24:23.602779Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:24:23.583474Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16108
+2021-12-01T21:24:23.642976Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:24:23.701881Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T21:24:23.703127Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T21:24:26.444324Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:24:27.224448Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:24:27.225002Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:24:27.225755Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:24:28.444474Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:24:36.539712Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:24:37.303088Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:24:37.303619Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:24:37.304372Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:24:38.435425Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:25:13.999976Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 13404
+2021-12-01T21:25:14.088421Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:25:14.233228Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 9076
+2021-12-01T21:25:14.907658Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:25:14.909690Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:25:14.910394Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:25:14.911124Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T21:25:14.912279Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T21:25:14.912977Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:25:14.914213Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:25:17.506538Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:25:18.425421Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:25:18.425938Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:25:18.426664Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:25:19.316127Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:25:59.420065Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 8204
+2021-12-01T21:25:59.494143Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:25:59.803200Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16392
+2021-12-01T21:25:59.847123Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:25:59.908657Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T21:25:59.909388Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T21:26:02.877554Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:26:03.350016Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:26:03.350547Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:26:03.351294Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:26:04.860879Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:26:12.164431Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:26:13.054201Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:26:13.054643Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:26:13.055272Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:26:14.087139Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:29:26.858704Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 14708
+2021-12-01T21:29:26.932848Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:29:27.245554Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 6920
+2021-12-01T21:29:27.379187Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:29:27.381340Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:29:27.382205Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:29:27.382909Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T21:29:27.387619Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T21:29:27.388213Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:29:27.389706Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:29:30.220143Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:29:31.014864Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:29:31.015409Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:29:31.016341Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:29:32.034410Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:29:36.672523Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 5312
+2021-12-01T21:29:36.771032Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:29:37.285949Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 3624
+2021-12-01T21:29:37.385222Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:29:37.387270Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:29:37.388038Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:29:37.389643Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T21:29:37.425773Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T21:29:37.427393Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:29:37.430569Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:29:39.951330Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:29:40.851405Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:29:40.851844Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:29:40.852487Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:29:42.589965Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:39:59.036910Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10764
+2021-12-01T21:39:59.669756Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:39:59.859577Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 18828
+2021-12-01T21:40:00.023913Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:40:00.328217Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T21:40:00.328827Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T21:40:03.672749Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:40:04.613239Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:40:04.613714Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:40:04.614414Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:40:05.739481Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:40:12.746009Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:40:14.473624Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:40:14.474152Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:40:14.474936Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:40:15.689265Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:40:16.623116Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 17032
+2021-12-01T21:40:16.750990Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:40:16.967397Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 5104
+2021-12-01T21:40:17.060647Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:40:17.077579Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:40:17.078532Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:40:17.079145Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T21:40:17.081292Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T21:40:17.081873Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:40:17.083073Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:40:19.655452Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:40:20.411475Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:40:20.411987Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:40:20.412731Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:40:21.438751Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:43:17.410739Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 18028
+2021-12-01T21:43:17.480310Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:43:17.515704Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 17580
+2021-12-01T21:43:17.571508Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:43:17.576648Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:43:17.577558Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-12-01T21:43:17.578206Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-12-01T21:43:17.579508Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-12-01T21:43:17.580217Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:43:17.581436Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:43:20.613892Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:43:21.319850Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:43:21.320345Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:43:21.321053Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:43:22.435345Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:44:38.708781Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 5812
+2021-12-01T21:44:39.015919Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:44:39.193522Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 18464
+2021-12-01T21:44:39.306384Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:44:39.411227Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 32 in a file operation.
+2021-12-01T21:44:39.411844Z 1 [ERROR] [MY-012615] [InnoDB] The error means that another program is using InnoDB's files. This might be a backup or antivirus software or another instance of MySQL. Please close it to get rid of this error.
+2021-12-01T21:44:40.949278Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:44:41.767692Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:44:41.768163Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:44:41.768969Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:44:42.887150Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:44:52.117476Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:44:52.875817Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:44:52.876273Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:44:52.877048Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:44:54.176570Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:46:25.076748Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 16276
+2021-12-01T21:46:25.157768Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:46:28.347001Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:46:29.046143Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:46:29.046654Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:46:29.047361Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:46:30.149771Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:47:50.042019Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe (mysqld 8.0.27) starting as process 10076
+2021-12-01T21:47:50.110340Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:47:53.346724Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:47:54.271136Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:47:54.271666Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:47:54.272400Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:47:55.232380Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/mysql/bin/mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2021-12-01T21:49:58.498666Z 0 [System] [MY-010116] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe (mysqld 8.0.27) starting as process 15668
+2021-12-01T21:49:58.527868Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-12-01T21:50:01.756238Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysqld: File '>>>>>>> 18cf486b0271bed7f9d2c4dab3f7378f4cacbf95' not found (OS errno 2 - No such file or directory)
+2021-12-01T21:50:02.689736Z 0 [ERROR] [MY-010958] [Server] Could not open log file.
+2021-12-01T21:50:02.690183Z 0 [ERROR] [MY-010041] [Server] Can't init tc log
+2021-12-01T21:50:02.690815Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-12-01T21:50:03.584671Z 0 [System] [MY-010910] [Server] D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\mysql\bin\mysqld.exe: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.

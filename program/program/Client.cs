@@ -28,10 +28,11 @@ namespace program
         public string Domain;
         public static string WWW = "www";
         public Match FirstHead;
+        public string Interpreter_path;
 
         public bool Exist;
         private static Global global;
-        //TODO
+        
         public static HTTPHeaders Parse(Global Global, string headers)
         {
             global = Global;
@@ -48,9 +49,8 @@ namespace program
             result.QueryString = Regex.Match(headers, @"(?<=[\?\n])([^\:]+?[&%\=])+[\W\w]", RegexOptions.Multiline).Value;
             result.ContentType = Regex.Match(headers, @"(?<=^Content-Type:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
             result.ContentLength = Regex.Match(headers, @"(?<=^Content-Length:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
-            result.RealPath = $"{AppDomain.CurrentDomain.BaseDirectory}{WWW}/{result.Domain}{result.File}";
             result.Cgi = CGI;
-            if (result.QueryString != "")
+            if (result.QueryString.Length > 0)
             {
                 result.UseCGI = true;
                 result.QueryString = result.QueryString.Replace(" ", "");
@@ -62,6 +62,7 @@ namespace program
             foreach (var i in global.Alias)
                 if (i.Value == result.Domain)
                     result.Domain = i.Key;
+            result.RealPath = $"{AppDomain.CurrentDomain.BaseDirectory}{WWW}/{result.Domain}{result.File}";
             if (result.File == "/" || result.File == "\\" || result.File == " " || result.File == "" || result.File[result.File.Length - 1] == '/' || result.File[result.File.Length - 1] == '\\')
                 foreach (var ext in global.Server.Extensions)
                     if (System.IO.File.Exists($"{result.RealPath}index{ext}"))
@@ -70,6 +71,7 @@ namespace program
                         result.File = $"index{ext}";
                         break;
                     }
+            
             result.Exist = System.IO.File.Exists(result.RealPath);
             return result;
         }
@@ -153,10 +155,10 @@ Date: {DateTime.Now}");
                     }
                     else
                     {
+                        
                         string content_type = GetContentType(head);
                         FileStream fs = new FileStream(head.RealPath, FileMode.Open, FileAccess.Read, FileShare.Read);
-                        string headers = "";
-                        headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";
+                        string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";
                         // OUTPUT HEADERS
                         byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                         client.GetStream().Write(data_headers, 0, data_headers.Length);
@@ -193,7 +195,7 @@ Date: {DateTime.Now}");
                         {
                             if (i.Value.Type == "cgi")
                             {
-                                interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
+                                head.Interpreter_path = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
                                 type = i.Value.Type;
                             }
                         }
@@ -207,9 +209,12 @@ Date: {DateTime.Now}");
                         }
                     }
                 }
-                //Console.WriteLine($"Interpreter: {interpretator} - Path: {head.RealPath} - Type: {type}");
-                result = interpreter.UseInterpreter(interpretator, head.RealPath);
+                if(head.UseCGI)
+                    result = Interpreter.UseCGI(head);
+                else
+                    result = interpreter.UseInterpreter(interpretator, head.RealPath);
             }
+            //Console.WriteLine($"res =>\n{result}");
             return result;
         }
         string GetContentType(HTTPHeaders head)
