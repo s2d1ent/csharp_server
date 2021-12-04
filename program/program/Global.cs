@@ -174,7 +174,7 @@ namespace program
             p.StartInfo = info;
 
             bool pStarted = p.Start();
-            Console.WriteLine($"{pStarted} - {p.}");
+            Console.WriteLine($"mysqld: {pStarted}");
         }
         public void MySqlServerClose()
         {

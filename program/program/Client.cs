@@ -27,10 +27,8 @@ namespace program
 
         public string Domain;
         public static string WWW = "www";
-        public Match FirstHead;
         public string Interpreter_path;
 
-        public bool Exist;
         private static Global global;
         
         public static HTTPHeaders Parse(Global Global, string headers)
@@ -41,10 +39,9 @@ namespace program
         public static HTTPHeaders Parse(string headers)
         {
             HTTPHeaders result = new HTTPHeaders();
-            result.FirstHead = Regex.Match(headers, @"^\w+\s+([^\s\?]+)[^\s]*\s+HTTP/.*|", RegexOptions.Multiline);
             result.Method = Regex.Match(headers, @"\A\w[a-zA-Z]+", RegexOptions.Multiline).Value;
             result.Domain = Regex.Match(headers, @"(?<=Host:\s)[\w]+", RegexOptions.Multiline).Value;
-            result.File = Regex.Match(headers, @"(?<=\w\s)([\Wa-zA-Z0-9]+)(?=\sHTTP)", RegexOptions.Multiline).Value;
+            result.File = Regex.Match(headers, @"(?<=\w\s)([\W\w]+)(?=\sHTTP)", RegexOptions.Multiline).Value;
             result.Redirect = RedirectStatus;
             result.QueryString = Regex.Match(headers, @"(?<=[\?\n])([^\:]+?[&%\=])+[\W\w]", RegexOptions.Multiline).Value;
             result.ContentType = Regex.Match(headers, @"(?<=^Content-Type:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
@@ -71,8 +68,6 @@ namespace program
                         result.File = $"index{ext}";
                         break;
                     }
-            
-            result.Exist = System.IO.File.Exists(result.RealPath);
             return result;
         }
         public static string FileExtention(string file)
@@ -115,19 +110,22 @@ namespace program
                 return;
             }
             // Вывод информацию о подключении
-            Console.WriteLine($@"[{client.Client.RemoteEndPoint}]
+            /*Console.WriteLine($@"[{client.Client.RemoteEndPoint}]
 Path: {Headers.RealPath}
 Date: {DateTime.Now}");
+            */
             if (Headers.RealPath.IndexOf("..") != -1)
             {
                 SendError(404);
                 client.Close();
                 return;
             }
-            if (Headers.Exist)
+            if(!File.Exists(Headers.RealPath))
+                Console.WriteLine($"{request}\n{Headers.RealPath}");
+            if (File.Exists(Headers.RealPath))
                 GetSheet(Headers);
             else
-                SendError(404);
+                SendError("Not Found", 404);
             client.Close();
         }
         ~Client()
