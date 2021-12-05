@@ -83,9 +83,7 @@ namespace program
                 StreamReader error = p.StandardError;
 
                 byte[] cp866_byte = output.CurrentEncoding.GetBytes(output.ReadToEnd());
-                //Console.WriteLine(output.CurrentEncoding.Ge);
                 cp866_byte_to_utf8 = Encoding.UTF8.GetString(cp866_byte);
-                //cp866_byte_to_utf8 = output.ReadToEnd();
             }
             catch (Exception ex)
             {

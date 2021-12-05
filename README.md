@@ -13,17 +13,23 @@
 
 Название   | Реализация   | Версия      | Разрядность системы|
 :---       |   :---       |   :---:     |  :---:             |
-Php        |Implemented       | 8.0.12             | x86
-Php-cgi        |Implemented       | 8.0.12             | x86
-Python     |Partially implemented       | 3.10.0              | x86
-MySql      |Implemented                  | 5.7.36/8.0.27      | x86/x64
-Multithreaded processing   | Implemented |  -   |-
-Domain system              | Implemented |  -   |-
-Custom alias               | Implemented |  -   |-
-Multiple site              | Implemented |  -   |-
+Php        |Implemented                 | 8.0.12   | x86
+Php-cgi    |Implemented                 | 8.0.12   | x86
+Python     |Partially implemented       | 3.10.0   | x86
+MySql      |Implemented                 | 5.7.36   | x86
+Multithreaded processing  | Implemented |  -       |-
+Domain system             | Implemented |  -       |-
+Custom alias              | Implemented |  -       |-
+Multiple site             | Implemented |  -       |-
 
 <br>
 
+## Дополнительная информация
+**MySql =>**
+**user:** root@127.0.0.1
+**password:**<br>
+[Описание классов]("\tree\main\Classes.md") 
+<br><br>
 ## Список используемых библиотек проекта
 ``` csharp
 using System;

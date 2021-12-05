@@ -169,12 +169,10 @@ namespace program
             info.RedirectStandardOutput = true;
             info.CreateNoWindow = true;
 
-            //Console.WriteLine($"{AppDomain.CurrentDomain.BaseDirectory}{MySql_path[0]}");
             Process p = new Process();
             p.StartInfo = info;
 
             bool pStarted = p.Start();
-            Console.WriteLine($"mysqld: {pStarted}");
         }
         public void MySqlServerClose()
         {

@@ -21,6 +21,9 @@ namespace program
         public string ContentType;
         public string ContentLength;
         public string QueryString;
+        public string Coockie;
+        public string Status;
+        public string Location;
         private static string CGI = "CGI";
         public string Cgi;
         public bool UseCGI;
@@ -60,7 +63,7 @@ namespace program
                 if (i.Value == result.Domain)
                     result.Domain = i.Key;
             result.RealPath = $"{AppDomain.CurrentDomain.BaseDirectory}{WWW}/{result.Domain}{result.File}";
-            if (result.File == "/" || result.File == "\\" || result.File == " " || result.File == "" || result.File[result.File.Length - 1] == '/' || result.File[result.File.Length - 1] == '\\')
+            if (result.File == "/" || result.File == "\\" || result.File == " " || result.File == "" || result.File.Substring(result.File.Length-1) == "/" || result.File.Substring(result.File.Length - 1) == @"\")
                 foreach (var ext in global.Server.Extensions)
                     if (System.IO.File.Exists($"{result.RealPath}index{ext}"))
                     {
@@ -68,6 +71,32 @@ namespace program
                         result.File = $"index{ext}";
                         break;
                     }
+            return result;
+        }
+        public static HTTPHeaders ParseCGI(HTTPHeaders head, string headers)
+        {
+            HTTPHeaders result = new HTTPHeaders();
+            result.Status = Regex.Match(headers, @"(?<=Status:\s)\d+").Value;
+            result.Domain = head.Domain;
+            result.Location = Regex.Match(headers, @"(Location:\s[\W\w]+?)$").Value;
+            result.File = Regex.Match(headers, @"(?<=\w\s)([\W\w]+)(?=\sHTTP)", RegexOptions.Multiline).Value;
+            if(result.File == "")
+                result.File = Regex.Match(headers, @"(?<=Location:\s)([\W\w]+?)$", RegexOptions.Multiline).Value;
+            result.Redirect = true.ToString();
+            result.QueryString = Regex.Match(headers, @"(?<=[\?\n])([^\:]+?[&%\=])+[\W\w]", RegexOptions.Multiline).Value;
+            result.ContentType = Regex.Match(headers, @"(?<=^Content-Type:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
+            result.ContentLength = Regex.Match(headers, @"(?<=^Content-Length:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
+            if (Regex.Matches(headers, @"(Set-Cookie:\s[\w\W]+?)$", RegexOptions.Multiline).Count != 0)
+                foreach (var i in Regex.Matches(headers, @"(Set-Cookie:\s[\w\W]+?)$", RegexOptions.Multiline))
+                    result.Coockie += $"{i}";
+            if (result.QueryString != "" && result.File.IndexOf(result.QueryString) != -1)
+                result.File = result.File.Replace(result.QueryString, "");
+            if (result.File.IndexOf("?") != -1)
+                result.File = result.File.Replace("?", "");
+            foreach (var i in global.Alias)
+                if (i.Value == result.Domain)
+                    result.Domain = i.Key;
+            result.RealPath = $"{AppDomain.CurrentDomain.BaseDirectory}{WWW}/{result.Domain}{result.File}";
             return result;
         }
         public static string FileExtention(string file)
@@ -110,18 +139,18 @@ namespace program
                 return;
             }
             // Вывод информацию о подключении
-            /*Console.WriteLine($@"[{client.Client.RemoteEndPoint}]
+            Console.WriteLine($@"[{client.Client.RemoteEndPoint}]
 Path: {Headers.RealPath}
 Date: {DateTime.Now}");
-            */
+            
             if (Headers.RealPath.IndexOf("..") != -1)
             {
                 SendError(404);
                 client.Close();
                 return;
             }
-            if(!File.Exists(Headers.RealPath))
-                Console.WriteLine($"{request}\n{Headers.RealPath}");
+            /*if(!File.Exists(Headers.RealPath))
+                Console.WriteLine($"{request}\n{Headers.RealPath}");*/
             if (File.Exists(Headers.RealPath))
                 GetSheet(Headers);
             else
@@ -143,10 +172,21 @@ Date: {DateTime.Now}");
                     if (extention == "py" || extention == "php")
                     {
                         string html = AnyFile(head);
-                        //Console.WriteLine(html);
-                        string content_type = GetContentType(head);
                         int length = html.Length;
-                        string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {length}\n\n{html}";
+                        HTTPHeaders file = HTTPHeaders.ParseCGI(head, html);
+                        int status = 200;
+                        string content_type = GetContentType(head);
+                        if (int.TryParse(file.Status, out var st))
+                            status = st;
+                        string headers = $"HTTP/1.1 {status} OK";
+                        headers += $"\nContent-type: {content_type}";
+                        headers += $"\nContent-Length: {length}";
+                        if (file.Coockie != null && file.Coockie != "")
+                            headers += $"\n{file.Coockie}";
+                        Console.WriteLine(file.Location);
+                        if (file.Location != null && file.Location != "")
+                            headers += $"\n{file.Location}";
+                        headers += $"\n\n{html}";
                         // OUTPUT HEADERS
                         byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                         client.GetStream().Write(data_headers, 0, data_headers.Length);

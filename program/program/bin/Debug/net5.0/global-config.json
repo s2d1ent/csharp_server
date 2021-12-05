@@ -41,9 +41,9 @@
     }
   },
   "MySql_path": [
-    "includes/mysql/mysql/bin/mysqld.exe",
-    "includes/mysql/mysql/bin/mysqladmin.exe",
-    "includes/mysql/mysql/bin/mysql.exe"
+    "includes/mysql/bin/mysqld.exe",
+    "includes/mysql/bin/mysqladmin.exe",
+    "includes/mysql/bin/mysql.exe"
   ],
   "PoolMin_worker": "2",
   "PoolMin_async": "2",
