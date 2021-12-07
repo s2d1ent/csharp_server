@@ -115,24 +115,19 @@ namespace program
     }
     class Client
     {
-        TcpClient client;
+        Socket client;
         Server server;
         Interpreter interpreter = new Interpreter();
         HTTPHeaders Headers;
-        public Client(TcpClient c, Server s)
+        public Client(Socket c, Server s)
         {
             client = c;
             server = s;
-            client.SendTimeout = 20000;
-            client.ReceiveTimeout = 20000;
-            NetworkStream stream = client.GetStream();
+            client.Ttl = 8;
             string request = "";
             byte[] data = new byte[1024];
-            while (stream.DataAvailable)
-            {
-                stream.Read(data, 0, data.Length);
-                request += Encoding.UTF8.GetString(data);
-            }
+            client.Receive(data);
+            request += Encoding.UTF8.GetString(data);
             // Проверка на пустой запрос
             if (request == "")
             {
@@ -195,7 +190,7 @@ Date: {DateTime.Now}");*/
                         // OUTPUT HEADERS
                         byte[] data_headers = Encoding.UTF8.GetBytes(headers);
                         //client.GetStream().Write(data_headers, 0, data_headers.Length);
-                        client.Client.Send(data_headers, data_headers.Length, SocketFlags.None);
+                        client.Send(data_headers, data_headers.Length, SocketFlags.None);
                     }
                     else
                     {
@@ -205,14 +200,13 @@ Date: {DateTime.Now}");*/
                         string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";
                         // OUTPUT HEADERS
                         byte[] data_headers = Encoding.UTF8.GetBytes(headers);
-                        client.GetStream().Write(data_headers, 0, data_headers.Length);
+                        client.Send(data_headers, data_headers.Length, SocketFlags.None);
                         // OUTPUT CONTENT
                         while (fs.Position < fs.Length)
                         {
-                            byte[] data = new byte[512];
+                            byte[] data = new byte[1024];
                             int length = fs.Read(data, 0, data.Length);
-                            //client.GetStream().Write(data, 0, length);
-                            client.Client.Send(data, data.Length, SocketFlags.Partial);
+                            client.Send(data, data.Length, SocketFlags.None);
                         }
                     }
                     client.Close();
@@ -419,19 +413,17 @@ Date: {DateTime.Now}");*/
         public void SendError(int code)
         {
             string html = $"<html><head><title></title></head><body><h1>Error {code}</h1></body></html>";
-            string headers = $"HTTP/1.1 200 OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
+            string headers = $"HTTP/1.1 {code} OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
             byte[] data = Encoding.UTF8.GetBytes(headers);
-            //client.GetStream().Write(data, 0, data.Length);
-            client.Client.Send(data, data.Length, SocketFlags.None);
+            client.Send(data, data.Length, SocketFlags.None);
             client.Close();
         }
         public void SendError(string message, int code)
         {
             string html = $"<html><head><title></title></head><body><h1>Error {code}</h1><div>{message}</div></body></html>";
-            string headers = $"HTTP/1.1 200 OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
+            string headers = $"HTTP/1.1 {code} OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
             byte[] data = Encoding.UTF8.GetBytes(headers);
-            //client.GetStream().Write(data, 0, data.Length);
-            client.Client.Send(data, data.Length, SocketFlags.None);
+            client.Send(data, data.Length, SocketFlags.None);
             client.Close();
         }
     }

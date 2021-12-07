@@ -17,11 +17,11 @@ namespace program
     class Server
     {
         [JsonIgnore]
-        public IPAddress Ip;
+        public EndPoint Ip;
         [JsonIgnore]
         public int Listen { get; set; }
         [JsonIgnore]
-        TcpListener Listener;
+        Socket Listener;
         [JsonIgnore]
         public bool Active;
         [JsonIgnore]
@@ -37,14 +37,14 @@ namespace program
         public Server(int port)
         {
             this.Listen = port;
-            this.Ip = Dns.GetHostAddresses(Dns.GetHostName())[0];
-            Listener = new TcpListener(this.Ip, port);
+            this.Ip = new IPEndPoint(Dns.GetHostAddresses(Dns.GetHostName())[0], Listen);
+            Listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
         public Server(string ip, int port)
         {
             this.Listen = port;
-            this.Ip = IPAddress.Parse(ip);
-            Listener = new TcpListener(IPAddress.Parse(ip), port);
+            this.Ip = new IPEndPoint(IPAddress.Parse(ip), Listen);
+            Listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
         ~Server(){
             GC.Collect(2, GCCollectionMode.Forced);
@@ -53,8 +53,10 @@ namespace program
         {
             if (!Active)
             {
-                Listener = new TcpListener(Ip, Listen);
-                Listener.Start();
+                Listener = Listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                Listener.Bind(Ip);
+                Listener.Listen(16);
+
                 Active = true;
                 GetDomains();
                 DomainsRegister();
@@ -67,7 +69,7 @@ namespace program
                         //Console.WriteLine(1);
                         ThreadPool.QueueUserWorkItem(
                             new WaitCallback(ClientThread),
-                            new ArrayList() { Listener.AcceptTcpClient(), this }
+                            new ArrayList() { Listener.Accept(), this }
                             );
                     }
                     catch (Exception ex) { }
@@ -85,7 +87,7 @@ namespace program
             if (Active)
             {
                 DomainsClear();
-                Listener.Stop();
+                Listener.Close();
                 Active = false;
                 global.SerializeConfig();
                 global.MySqlServerClose();
@@ -119,11 +121,11 @@ Active: {Active}
         }
         public void ClientThread(object client)
         {
-            TcpClient c = (TcpClient)((ArrayList)client)[0];
+            Socket c = (Socket)((ArrayList)client)[0];
             Server s = (Server)((ArrayList)client)[1];
             new Client(c, s);
         }
-        public void ClientThread(TcpClient client, Server server)
+        public void ClientThread(Socket client, Server server)
         {
             new Client(client, server);
         }

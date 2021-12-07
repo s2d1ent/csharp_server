@@ -128,7 +128,7 @@ namespace program
         public void GetServer()
         {
             Server.global = this;
-            Server.Ip = this.Ipv4;
+            Server.Ip = new IPEndPoint(IPAddress.Parse(Ipv4.ToString()), Listen);
             Server.Listen = this.Listen ;
             GetSystem();
         }
