@@ -70,8 +70,7 @@ namespace program
                 info.EnvironmentVariables.Add("SCRIPT_FILENAME", headers.RealPath);
                 if (headers.Method == "POST" || headers.Method == "PUT")
                     info.EnvironmentVariables.Add("CONTENT_LENGTH", headers.ContentLength);
-                if (headers.Method == "GET")
-                    info.EnvironmentVariables.Add("QUERY_STRING", headers.QueryString);
+                info.EnvironmentVariables.Add("QUERY_STRING", headers.QueryString);
                 Process p = new Process();
                 p.StartInfo = info;
                 bool pStarted = p.Start();

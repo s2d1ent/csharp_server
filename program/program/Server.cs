@@ -69,7 +69,6 @@ namespace program
                             new WaitCallback(ClientThread),
                             new ArrayList() { Listener.AcceptTcpClient(), this }
                             );
-
                     }
                     catch (Exception ex) { }
                 }
@@ -123,6 +122,10 @@ Active: {Active}
             TcpClient c = (TcpClient)((ArrayList)client)[0];
             Server s = (Server)((ArrayList)client)[1];
             new Client(c, s);
+        }
+        public void ClientThread(TcpClient client, Server server)
+        {
+            new Client(client, server);
         }
         public void GetDomains()
         {

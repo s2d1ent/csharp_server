@@ -21,12 +21,6 @@
     "python": "kidalovo"
   },
   "Interpreters": {
-    "php": {
-      "Version": "x86",
-      "Name": "php",
-      "Path": "includes/php/win86/php.exe",
-      "Type": "int"
-    },
     "phpcgi": {
       "Version": "x86",
       "Name": "php",
