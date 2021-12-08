@@ -141,19 +141,17 @@ namespace program
                 client.Close();
                 return;
             }
-            Console.WriteLine(request);
+            //Console.WriteLine(request);
             // Вывод информацию о подключении
-/*Console.WriteLine($@"[{client.Client.RemoteEndPoint}]
+            Console.WriteLine($@"[{client.RemoteEndPoint}]
 Path: {Headers.RealPath}
-Date: {DateTime.Now}");*/
+Date: {DateTime.Now}");
             if (Headers.RealPath.IndexOf("..") != -1)
             {
                 SendError(404);
                 client.Close();
                 return;
             }
-/*            if(!File.Exists(Headers.RealPath))
-                Console.WriteLine($"{request}\n{Headers.RealPath}");*/
             if (File.Exists(Headers.RealPath))
                 GetSheet(Headers);
             else

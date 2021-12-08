@@ -7924,3 +7924,119 @@ Version: '5.7.36'  socket: ''  port: 3306  MySQL Community Server (GPL)
 2021-12-07T21:37:58.640682Z 0 [Note] Shutting down plugin 'binlog'
 2021-12-07T21:37:58.644718Z 0 [Note] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/bin/mysqld.exe: Shutdown complete
 
+2021-12-08T20:41:58.475358Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2021-12-08T20:41:58.476043Z 0 [Note] --secure-file-priv is set to NULL. Operations related to importing and exporting data are disabled
+2021-12-08T20:41:58.476587Z 0 [Note] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/bin/mysqld.exe (mysqld 5.7.36) starting as process 1968 ...
+2021-12-08T20:41:58.583380Z 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2021-12-08T20:41:58.584272Z 0 [Note] InnoDB: Uses event mutexes
+2021-12-08T20:41:58.584791Z 0 [Note] InnoDB: Memory barrier is not used
+2021-12-08T20:41:58.585351Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-12-08T20:41:58.586617Z 0 [Note] InnoDB: Number of pools: 1
+2021-12-08T20:41:58.587401Z 0 [Note] InnoDB: Not using CPU crc32 instructions
+2021-12-08T20:41:58.592072Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+2021-12-08T20:41:58.604303Z 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-12-08T20:41:58.803180Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+2021-12-08T20:41:59.645703Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-12-08T20:41:59.647382Z 0 [Note] InnoDB: Setting file '.\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-12-08T20:41:59.881442Z 0 [Note] InnoDB: File '.\ibtmp1' size is now 12 MB.
+2021-12-08T20:41:59.892271Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+2021-12-08T20:41:59.893403Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+2021-12-08T20:41:59.894941Z 0 [Note] InnoDB: Waiting for purge to start
+2021-12-08T20:41:59.957655Z 0 [Note] InnoDB: 5.7.36 started; log sequence number 2800817
+2021-12-08T20:41:59.959116Z 0 [Note] InnoDB: Loading buffer pool(s) from D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\data\ib_buffer_pool
+2021-12-08T20:41:59.959139Z 0 [Note] Plugin 'FEDERATED' is disabled.
+2021-12-08T20:42:00.178269Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+2021-12-08T20:42:00.179236Z 0 [Note] Skipping generation of SSL certificates as certificate files are present in data directory.
+2021-12-08T20:42:00.180140Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
+2021-12-08T20:42:00.180970Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
+2021-12-08T20:42:00.223773Z 0 [Warning] CA certificate ca.pem is self signed.
+2021-12-08T20:42:00.225702Z 0 [Note] Skipping generation of RSA key pair as key files are present in data directory.
+2021-12-08T20:42:00.271155Z 0 [Note] InnoDB: Buffer pool(s) load completed at 211208 23:42:00
+2021-12-08T20:42:00.272042Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
+2021-12-08T20:42:00.273158Z 0 [Note] IPv6 is available.
+2021-12-08T20:42:00.273653Z 0 [Note]   - '::' resolves to '::';
+2021-12-08T20:42:00.274274Z 0 [Note] Server socket created on IP: '::'.
+2021-12-08T20:42:02.142240Z 0 [Note] Event Scheduler: Loaded 0 events
+2021-12-08T20:42:02.143364Z 0 [Note] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/bin/mysqld.exe: ready for connections.
+Version: '5.7.36'  socket: ''  port: 3306  MySQL Community Server (GPL)
+2021-12-08T20:44:07.779826Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2021-12-08T20:44:07.779915Z 0 [Note] --secure-file-priv is set to NULL. Operations related to importing and exporting data are disabled
+2021-12-08T20:44:07.780596Z 0 [Note] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/bin/mysqld.exe (mysqld 5.7.36) starting as process 15544 ...
+2021-12-08T20:44:07.800195Z 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2021-12-08T20:44:07.801027Z 0 [Note] InnoDB: Uses event mutexes
+2021-12-08T20:44:07.801594Z 0 [Note] InnoDB: Memory barrier is not used
+2021-12-08T20:44:07.802154Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-12-08T20:44:07.803238Z 0 [Note] InnoDB: Number of pools: 1
+2021-12-08T20:44:07.803937Z 0 [Note] InnoDB: Not using CPU crc32 instructions
+2021-12-08T20:44:07.810374Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+2021-12-08T20:44:07.819963Z 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-12-08T20:44:07.846127Z 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2021-12-08T20:44:07.848128Z 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2021-12-08T20:44:07.848965Z 0 [ERROR] InnoDB: Plugin initialization aborted with error Generic error
+2021-12-08T20:44:08.069257Z 0 [ERROR] Plugin 'InnoDB' init function returned error.
+2021-12-08T20:44:08.070155Z 0 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+2021-12-08T20:44:08.070851Z 0 [ERROR] Failed to initialize builtin plugins.
+2021-12-08T20:44:08.071484Z 0 [ERROR] Aborting
+
+2021-12-08T20:44:08.071919Z 0 [Note] Binlog end
+2021-12-08T20:44:08.072450Z 0 [Note] Shutting down plugin 'CSV'
+2021-12-08T20:44:08.073635Z 0 [Note] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/bin/mysqld.exe: Shutdown complete
+
+2021-12-08T20:44:57.328730Z 0 [Note] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/bin/mysqld.exe: Normal shutdown
+
+2021-12-08T20:44:57.329836Z 0 [Note] Giving 0 client threads a chance to die gracefully
+2021-12-08T20:44:57.330418Z 0 [Note] Shutting down slave threads
+2021-12-08T20:44:57.330851Z 0 [Note] Forcefully disconnecting 0 remaining clients
+2021-12-08T20:44:57.331365Z 0 [Note] Event Scheduler: Purging the queue. 0 events
+2021-12-08T20:44:57.332149Z 0 [Note] Binlog end
+2021-12-08T20:44:57.333637Z 0 [Note] Shutting down plugin 'ngram'
+2021-12-08T20:44:57.334096Z 0 [Note] Shutting down plugin 'partition'
+2021-12-08T20:44:57.334535Z 0 [Note] Shutting down plugin 'BLACKHOLE'
+2021-12-08T20:44:57.334981Z 0 [Note] Shutting down plugin 'ARCHIVE'
+2021-12-08T20:44:57.335407Z 0 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+2021-12-08T20:44:57.335967Z 0 [Note] Shutting down plugin 'MRG_MYISAM'
+2021-12-08T20:44:57.336430Z 0 [Note] Shutting down plugin 'MyISAM'
+2021-12-08T20:44:57.336870Z 0 [Note] Shutting down plugin 'INNODB_SYS_VIRTUAL'
+2021-12-08T20:44:57.337526Z 0 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+2021-12-08T20:44:57.338038Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+2021-12-08T20:44:57.338632Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+2021-12-08T20:44:57.339348Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+2021-12-08T20:44:57.339853Z 0 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+2021-12-08T20:44:57.340339Z 0 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+2021-12-08T20:44:57.340832Z 0 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+2021-12-08T20:44:57.341350Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+2021-12-08T20:44:57.341898Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+2021-12-08T20:44:57.342410Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+2021-12-08T20:44:57.342923Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+2021-12-08T20:44:57.343433Z 0 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+2021-12-08T20:44:57.343913Z 0 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+2021-12-08T20:44:57.344436Z 0 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+2021-12-08T20:44:57.344927Z 0 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+2021-12-08T20:44:57.345473Z 0 [Note] Shutting down plugin 'INNODB_METRICS'
+2021-12-08T20:44:57.345941Z 0 [Note] Shutting down plugin 'INNODB_TEMP_TABLE_INFO'
+2021-12-08T20:44:57.346461Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+2021-12-08T20:44:57.346999Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+2021-12-08T20:44:57.347525Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+2021-12-08T20:44:57.348024Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+2021-12-08T20:44:57.348573Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+2021-12-08T20:44:57.349096Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+2021-12-08T20:44:57.349596Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM'
+2021-12-08T20:44:57.350059Z 0 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+2021-12-08T20:44:57.350539Z 0 [Note] Shutting down plugin 'INNODB_CMP'
+2021-12-08T20:44:57.351018Z 0 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+2021-12-08T20:44:57.351503Z 0 [Note] Shutting down plugin 'INNODB_LOCKS'
+2021-12-08T20:44:57.351957Z 0 [Note] Shutting down plugin 'INNODB_TRX'
+2021-12-08T20:44:57.352401Z 0 [Note] Shutting down plugin 'InnoDB'
+2021-12-08T20:44:57.352905Z 0 [Note] InnoDB: FTS optimize thread exiting.
+2021-12-08T20:44:57.353431Z 0 [Note] InnoDB: Starting shutdown...
+2021-12-08T20:44:57.474567Z 0 [Note] InnoDB: Dumping buffer pool(s) to D:\csharp_server\program\program\bin\Debug\net5.0\includes\mysql\data\ib_buffer_pool
+2021-12-08T20:44:57.476574Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 211208 23:44:57
+2021-12-08T20:44:58.267587Z 0 [Note] InnoDB: Shutdown completed; log sequence number 2800845
+2021-12-08T20:44:58.268765Z 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2021-12-08T20:44:58.269439Z 0 [Note] Shutting down plugin 'MEMORY'
+2021-12-08T20:44:58.269886Z 0 [Note] Shutting down plugin 'CSV'
+2021-12-08T20:44:58.270292Z 0 [Note] Shutting down plugin 'sha256_password'
+2021-12-08T20:44:58.270766Z 0 [Note] Shutting down plugin 'mysql_native_password'
+2021-12-08T20:44:58.271462Z 0 [Note] Shutting down plugin 'binlog'
+2021-12-08T20:44:58.272789Z 0 [Note] D:\csharp_server\program\program\bin\Debug\net5.0\includes/mysql/bin/mysqld.exe: Shutdown complete
+
