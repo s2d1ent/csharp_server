@@ -16,7 +16,14 @@ namespace program
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             string path = AppDomain.CurrentDomain.BaseDirectory;
-            Global global = SerialaizeGlobal($@"{path}/global-config.json");
+            Global global;
+            if (File.Exists($@"{path}/global-config.json"))
+                global = SerialaizeGlobal($@"{path}/global-config.json");
+            else
+            {
+                Console.WriteLine("global-config.json not found");
+                return;
+            }
             // min&max thread will be used
             ThreadPool.SetMinThreads(global.ThreadPoolMin_worker, global.ThreadPoolMin_async);
             ThreadPool.SetMinThreads(global.ThreadPoolMax_worker, global.ThreadPoolMax_async);

@@ -1,6 +1,7 @@
 {
   "IPv4": "127.0.0.1",
   "Listen": 80,
+  "ListenUse": false,
   "Server": {
     "Path": "www",
     "Extensions": [

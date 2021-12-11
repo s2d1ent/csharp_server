@@ -44,7 +44,9 @@ namespace program
         {
             HTTPHeaders result = new HTTPHeaders();
             result.Method = Regex.Match(headers, @"\A\w[a-zA-Z]+", RegexOptions.Multiline).Value;
-            result.Domain = Regex.Match(headers, @"(?<=Host:\s)[\w]+", RegexOptions.Multiline).Value;
+            result.Domain = Regex.Match(headers, @"(?<=Host:\s)[\w\S]+", RegexOptions.Multiline).Value;
+            if (result.Domain == global.IPv4)
+                result.Domain = "";
             result.File = Regex.Match(headers, @"(?<=\w\s)([\W\w]+)(?=\sHTTP)", RegexOptions.Multiline).Value;
             result.Redirect = RedirectStatus;
             result.QueryString = Regex.Match(headers, @"(?<=[\?\n])([^\:]+?[&%\=])+[\W\w]\S", RegexOptions.Multiline).Value;
@@ -85,7 +87,9 @@ namespace program
         {
             HTTPHeaders result = new HTTPHeaders();
             result.Status = Regex.Match(headers, @"(?<=Status:\s)\d+").Value;
-            result.Domain = head.Domain;
+            result.Domain = Regex.Match(headers, @"(?<=Host:\s)[\w\S]+", RegexOptions.Multiline).Value;
+            if (result.Domain == global.IPv4)
+                result.Domain = "";
             result.Location = Regex.Match(headers, @"(Location:\s[\W\w]+?)$").Value;
             result.File = Regex.Match(headers, @"(?<=\w\s)([\W\w]+)(?=\sHTTP)", RegexOptions.Multiline).Value;
             if(result.File == "")

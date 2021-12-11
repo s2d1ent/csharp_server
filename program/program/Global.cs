@@ -19,6 +19,7 @@ namespace program
     {
         public string IPv4 { get; set; }
         public int Listen { get; set; }
+        public bool ListenUse { get; set; }
         [JsonIgnore]
         public IPAddress Ipv4 {
             get

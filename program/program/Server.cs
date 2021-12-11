@@ -153,8 +153,16 @@ Active: {Active}
             {
                 foreach(var domain in Domains)
                 {
-                    hosts += $"\n   {Ip}       {domain}";
-                    registry += $"\n   {Ip}       {domain}";
+                    if (global.ListenUse)
+                    {
+                        hosts += $"\n   {Ip}       {domain}";
+                        registry += $"\n   {Ip}       {domain}";
+                    }
+                    else
+                    {
+                        hosts += $"\n   {global.IPv4}       {domain}";
+                        registry += $"\n   {global.IPv4}       {domain}";
+                    }
                 }
             }
 
