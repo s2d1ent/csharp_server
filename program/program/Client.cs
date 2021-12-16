@@ -54,12 +54,9 @@ namespace program
             result.ContentType = Regex.Match(headers, @"(?<=^Content-Type:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
             result.ContentLength = Regex.Match(headers, @"(?<=^Content-Length:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
             result.Cgi = CGI;
-            if (Regex.Matches(headers, @"(Set-Cookie:\s[\w\W]+?)$", RegexOptions.Multiline).Count != 0)
-                foreach (var i in Regex.Matches(headers, @"(Set-Cookie:\s[\w\W]+?)$", RegexOptions.Multiline))
-                    result.SetCoockie += $"{i}";
-            result.Coockie = Regex.Match(headers, @"(?<=Cookie:\s)([\W\w]+?\n)").Value;
-            if (result.QueryString.Length > 0 && result.QueryString[0] == '\n')
-                Console.WriteLine(@"\n in QueryString");
+            //result.Coockie = Regex.Match(headers, @"(?<=Cookie:\s)([\W\w]+?\n)").Value;
+            result.Coockie = Regex.Match(headers, @"(Cookie:\s)([\W\w]+?\n)").Value;
+            result.QueryString += result.Coockie;
             if (result.QueryString.Length > 0)
             {
                 result.UseCGI = true;
@@ -86,6 +83,7 @@ namespace program
         public static HTTPHeaders ParseCGI(HTTPHeaders head, string headers)
         {
             HTTPHeaders result = new HTTPHeaders();
+            List<string> list = new List<string>();
             result.Status = Regex.Match(headers, @"(?<=Status:\s)\d+").Value;
             result.Domain = Regex.Match(headers, @"(?<=Host:\s)[\w\S]+", RegexOptions.Multiline).Value;
             if (result.Domain == global.IPv4)
@@ -99,9 +97,16 @@ namespace program
             result.QueryString = Regex.Match(result.QueryString, @"(?<=[\?\n])([^\:]+?[&%\=])+[\W\w]", RegexOptions.Multiline).Value;
             result.ContentType = Regex.Match(headers, @"(?<=^Content-Type:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
             result.ContentLength = Regex.Match(headers, @"(?<=^Content-Length:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
-            if (Regex.Matches(headers, @"(Set-Cookie:\s[\w\W]+?)$", RegexOptions.Multiline).Count != 0)
-                foreach (var i in Regex.Matches(headers, @"(Set-Cookie:\s[\w\W]+?)$", RegexOptions.Multiline))
-                    result.Coockie += $"{i}";
+            if (headers.IndexOf("Set-Cookie") != -1)
+            {
+                MatchCollection collect = Regex.Matches(headers, @"(Set-Cookie:\s[\w\W]+?$)", RegexOptions.Multiline);
+                foreach (Match i in collect)
+                    list.Add(i.Value);
+                foreach(var i in list)
+                {
+                    result.SetCoockie += i+"\n";
+                }
+            }
             if (result.QueryString != "" && result.File.IndexOf(result.QueryString) != -1)
                 result.File = result.File.Replace(result.QueryString, "");
             if (result.File.IndexOf("?") != -1)
@@ -186,6 +191,7 @@ Date: {DateTime.Now}");
                         string headers = $"HTTP/1.1 {status} OK\nContent-type: {content_type}\nContent-Length: {length}";
                         if (file.SetCoockie != null && file.SetCoockie != "")
                             headers += $"\n{file.SetCoockie}";
+                        //Console.WriteLine(file.SetCoockie);
                         if (file.Location != null && file.Location != "")
                             headers += $"\n{file.Location}";
                         headers += $"\n\n{html}";
