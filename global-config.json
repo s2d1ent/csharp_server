@@ -1,56 +1,53 @@
 {
   "IPv4": "127.0.0.1",
   "Listen": 80,
+  "ListenUse": false,
   "Server": {
     "Path": "www",
     "Extensions": [
+      ".py",
       ".php",
       ".html",
       ".htm",
       ".xhtml"
-    ],
-    "Framework_py": null
-  },
-  "Includes": {
-    "Python": "3.9.8",
-    "PHP": "8.0.12",
-    "Intptr_python": "/includes/php",
-    "Intptr_php": "/includes/python"
+    ]
   },
   "System": {
-    "OS": "Microsoft Windows NT 10.0.18363.0",
-    "Bit": "x64",
+    "OS": "",
+    "Bit": "",
     "Processor": "",
     "RAM": ""
   },
+  "Alias": {
+    "python": "kidalovo"
+  },
   "Interpreters": {
-    "phpx64": {
-      "Error": false,
-      "Error_message": null,
-      "Version": "x64",
-      "Name": "php",
-      "Path": "includes/php/win64/php.exe",
-      "Reponse": null
-    },
-    "phpx86": {
-      "Error": false,
-      "Error_message": null,
+    "php": {
       "Version": "x86",
       "Name": "php",
       "Path": "includes/php/win86/php.exe",
-      "Reponse": null
+      "Type": "int"
     },
-    "pyx64": {
-      "Error": false,
-      "Error_message": null,
-      "Version": "x64",
+    "phpcgi": {
+      "Version": "x86",
+      "Name": "php",
+      "Path": "includes/php/win86/php-cgi.exe",
+      "Type": "cgi"
+    },
+    "python": {
+      "Version": "x86",
       "Name": "py",
-      "Path": "includes/python/win64/python.exe",
-      "Reponse": null
+      "Path": "includes/python/win86/python.exe",
+      "Type": "int"
     }
   },
+  "MySql_path": [
+    "includes/mysql/bin/mysqld.exe",
+    "includes/mysql/bin/mysqladmin.exe",
+    "includes/mysql/bin/mysql.exe"
+  ],
   "PoolMin_worker": "2",
   "PoolMin_async": "2",
-  "PoolMax_worker": "4",
-  "PoolMax_async": "4"
+  "PoolMax_worker": "2",
+  "PoolMax_async": "2"
 }
