@@ -5,14 +5,13 @@ using System.Text;
 using System.Net.Sockets;
 using System.Text.RegularExpressions;
 
-namespace program
+namespace Program
 {
-    struct HTTPHeaders
+    struct HttpHeaders
     {
         public string Method;
         public string RealPath;
         public string File;
-        private static string RedirectStatus = false.ToString();
         public string Redirect;
         public string ContentType;
         public string ContentLength;
@@ -21,35 +20,35 @@ namespace program
         public string SetCoockie;
         public string Status;
         public string Location;
-        private static string CGI = "CGI";
         public string Cgi;
         public bool UseCGI;
-
         public string Domain;
         public static string WWW = "www";
-        public string Interpreter_path;
+        public string InterpreterPath;
 
-        private static Global global;
-        
-        public static HTTPHeaders Parse(Global Global, string headers)
+        private static Global _global;
+        private static string _redirectStatus = false.ToString();
+        private static string _CGI = "CGI";
+
+        public static HttpHeaders Parse(Global Global, string headers)
         {
-            global = Global;
+            Global = Global;
             return Parse(headers);
         }
-        public static HTTPHeaders Parse(string headers)
+        public static HttpHeaders Parse(string headers)
         {
-            HTTPHeaders result = new HTTPHeaders();
+            HttpHeaders result = new HttpHeaders();
             result.Method = Regex.Match(headers, @"\A\w[a-zA-Z]+", RegexOptions.Multiline).Value;
             result.Domain = Regex.Match(headers, @"(?<=Host:\s)[\w\S]+", RegexOptions.Multiline).Value;
-            if (!global.MultipleSite || result.Domain == global.Ipv4 || result.Domain == global.Server.Ip.ToString())
+            if (!_global.MultipleSite || result.Domain == _global.Ipv4 || result.Domain == _global.Server.Ip.ToString())
                 result.Domain = "";
             result.File = Regex.Match(headers, @"(?<=\w\s)([\W\w]+)(?=\sHTTP)", RegexOptions.Multiline).Value;
-            result.Redirect = RedirectStatus;
+            result.Redirect = _redirectStatus;
             result.QueryString = Regex.Match(headers, @"(?<=[\?\n])([^\:]+?[&%\=])+[\W\w]\S", RegexOptions.Multiline).Value;
             result.QueryString = Regex.Match(result.QueryString, @"(?<=[\?\n])([^\:]+?[&%\=])+[\W\w]", RegexOptions.Multiline).Value;
             result.ContentType = Regex.Match(headers, @"(?<=^Content-Type:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
             result.ContentLength = Regex.Match(headers, @"(?<=^Content-Length:\s)[\S\s]+?(?=[\s]{0,}$)", RegexOptions.Multiline).Value;
-            result.Cgi = CGI;
+            result.Cgi = _CGI;
             //result.Coockie = Regex.Match(headers, @"(?<=Cookie:\s)([\W\w]+?\n)").Value;
             result.Coockie = Regex.Match(headers, @"(Cookie:\s)([\W\w]+?\n)").Value;
             result.QueryString += result.Coockie;
@@ -62,12 +61,12 @@ namespace program
                 result.File = result.File.Replace(result.QueryString, "");
             if (result.File.IndexOf("?") != -1)
                 result.File = result.File.Replace("?", "");
-            foreach (var i in global.Alias)
+            foreach (var i in _global.Alias)
                 if (i.Value == result.Domain)
                     result.Domain = i.Key;
             result.RealPath = $"{AppDomain.CurrentDomain.BaseDirectory}{WWW}/{result.Domain}{result.File}";
             if (result.File == "/" || result.File == "\\" || result.File == " " || result.File == "" || result.File.Substring(result.File.Length-1) == "/" || result.File.Substring(result.File.Length - 1) == @"\")
-                foreach (var ext in global.Server.Extensions)
+                foreach (var ext in _global.Server.Extensions)
                     if (System.IO.File.Exists($"{result.RealPath}index{ext}"))
                     {
                         result.RealPath += $"index{ext}";
@@ -76,13 +75,13 @@ namespace program
                     }
             return result;
         }
-        public static HTTPHeaders ParseCGI(HTTPHeaders head, string headers)
+        public static HttpHeaders ParseCGI(HttpHeaders head, string headers)
         {
-            HTTPHeaders result = new HTTPHeaders();
+            HttpHeaders result = new HttpHeaders();
             List<string> list = new List<string>();
             result.Status = Regex.Match(headers, @"(?<=Status:\s)\d+").Value;
             result.Domain = Regex.Match(headers, @"(?<=Host:\s)[\w\S]+", RegexOptions.Multiline).Value;
-            if (!global.MultipleSite || result.Domain == global.Ipv4 || result.Domain == global.Server.Ip.ToString())
+            if (!_global.MultipleSite || result.Domain == _global.Ipv4 || result.Domain == _global.Server.Ip.ToString())
                 result.Domain = "";
             result.Location = Regex.Match(headers, @"(Location:\s[\W\w]+?)$").Value;
             result.File = Regex.Match(headers, @"(?<=\w\s)([\W\w]+)(?=\sHTTP)", RegexOptions.Multiline).Value;
@@ -107,7 +106,7 @@ namespace program
                 result.File = result.File.Replace(result.QueryString, "");
             if (result.File.IndexOf("?") != -1)
                 result.File = result.File.Replace("?", "");
-            foreach (var i in global.Alias)
+            foreach (var i in _global.Alias)
                 if (i.Value == result.Domain)
                     result.Domain = i.Key;
             result.RealPath = $"{AppDomain.CurrentDomain.BaseDirectory}{WWW}/{result.Domain}{result.File}";
@@ -120,63 +119,63 @@ namespace program
     }
     class Client
     {
-        Socket client;
-        Server server;
-        Interpreter interpreter = new Interpreter();
-        HTTPHeaders Headers;
-        public Client(Socket c, Server s)
+        private Socket _client;
+        private Server _server;
+        private Interpreter _interpreter = new Interpreter();
+        private HttpHeaders _headers;
+        public Client(Socket client, Server server)
         {
-            client = c;
-            server = s;
-            client.Ttl = 10;
+            _client = client;
+            _server = server;
+            _client.Ttl = 10;
             string request = "";
-            byte[] data = new byte[client.ReceiveBufferSize];
-            client.Receive(data);
+            byte[] data = new byte[_client.ReceiveBufferSize];
+            _client.Receive(data);
             request += Encoding.UTF8.GetString(data);
             // Проверка на пустой запрос
             if (request == "")
             {
-                client.Close();
+                _client.Close();
                 return;
             }
             // Парсим заголовки
-            Headers = HTTPHeaders.Parse(server.global, request);
-            if (Headers.Method == "" || Headers.RealPath == "")
+            _headers = HttpHeaders.Parse(_server.Global, request);
+            if (_headers.Method == "" || _headers.RealPath == "")
             {
-                client.Close();
+                _client.Close();
                 return;
             }
             //Console.WriteLine(request);
             // Вывод информацию о подключении
-            Console.WriteLine($@"[{client.RemoteEndPoint}]
-Path: {Headers.RealPath}
+            Console.WriteLine($@"[{_client.RemoteEndPoint}]
+Path: {_headers.RealPath}
 Date: {DateTime.Now}");
-            if (Headers.RealPath.IndexOf("..") != -1)
+            if (_headers.RealPath.IndexOf("..") != -1)
             {
                 SendError(404);
-                client.Close();
+                _client.Close();
                 return;
             }
-            if (File.Exists(Headers.RealPath))
-                GetSheet(Headers);
+            if (File.Exists(_headers.RealPath))
+                GetSheet(_headers);
             else
                 SendError("Not Found", 404);
         }
-        public void GetSheet(HTTPHeaders head)
+        public void GetSheet(HttpHeaders head)
         {
             try
             {
-                string extention = HTTPHeaders.FileExtention(head.RealPath);
+                string extention = HttpHeaders.FileExtention(head.RealPath);
                 if (extention == "py" || extention == "php")
                 {
                     string html = AnyFile(head);
                     int length = html.Length;
-                    HTTPHeaders file = HTTPHeaders.ParseCGI(head, html);
+                    HttpHeaders file = HttpHeaders.ParseCGI(head, html);
                     int status = 200;
-                    string content_type = GetContentType(head);
+                    string contentType = GetContentType(head);
                     if (int.TryParse(file.Status, out var st))
                         status = st;
-                    string headers = $"HTTP/1.1 {status} OK\nContent-type: {content_type}\nContent-Length: {length}";
+                    string headers = $"HTTP/1.1 {status} OK\nContent-type: {contentType}\nContent-Length: {length}";
                     if (file.SetCoockie != null && file.SetCoockie != "")
                         headers += $"\n{file.SetCoockie}";
                     //Console.WriteLine(file.SetCoockie);
@@ -184,45 +183,45 @@ Date: {DateTime.Now}");
                         headers += $"\n{file.Location}";
                     headers += $"\n\n{html}";
                     // OUTPUT HEADERS
-                    byte[] data_headers = Encoding.UTF8.GetBytes(headers);
+                    byte[] dataHeaders = Encoding.UTF8.GetBytes(headers);
                     //client.GetStream().Write(data_headers, 0, data_headers.Length);
-                    client.Send(data_headers, data_headers.Length, SocketFlags.None);
+                    _client.Send(dataHeaders, dataHeaders.Length, SocketFlags.None);
                 }
                 else
                 {
-                    string content_type = GetContentType(head);
+                    string contentType = GetContentType(head);
                     FileStream fs = new FileStream(head.RealPath, FileMode.Open, FileAccess.Read, FileShare.Read);
-                    string headers = $"HTTP/1.1 200 OK\nContent-type: {content_type}\nContent-Length: {fs.Length}\n\n";
+                    string headers = $"HTTP/1.1 200 OK\nContent-type: {contentType}\nContent-Length: {fs.Length}\n\n";
                     // OUTPUT HEADERS
-                    byte[] data_headers = Encoding.UTF8.GetBytes(headers);
-                    client.Send(data_headers, data_headers.Length, SocketFlags.None);
+                    byte[] dataHeaders = Encoding.UTF8.GetBytes(headers);
+                    _client.Send(dataHeaders, dataHeaders.Length, SocketFlags.None);
                     // OUTPUT CONTENT
                     byte[] data = new byte[fs.Length];
                     fs.Read(data, 0, data.Length);
                     fs.Close();
-                    client.Send(data, data.Length, SocketFlags.None);
+                    _client.Send(data, data.Length, SocketFlags.None);
                 }
-                client.Shutdown(SocketShutdown.Receive);
-                client.Close();
+                _client.Shutdown(SocketShutdown.Receive);
+                _client.Close();
             }
             catch (Exception ex)
             {
-                client.Close();
+                _client.Close();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Func: GetSheet()    link: {head.RealPath}\nException: {ex}\nMessage: {ex.Message}");
                 Console.ForegroundColor = ConsoleColor.Gray;
             }
         }
         //TODO CGI
-        string AnyFile(HTTPHeaders head)
+        string AnyFile(HttpHeaders head)
         {
             string result = "";
             lock (new object())
             {
-                string ext = HTTPHeaders.FileExtention(head.RealPath);
+                string ext = HttpHeaders.FileExtention(head.RealPath);
                 string interpretator = "";
                 string type = "";
-                foreach (var i in server.global.Interpreters)
+                foreach (var i in _server.Global.Interpreters)
                 {
                     if (i.Value.Name == ext)
                     {
@@ -230,7 +229,7 @@ Date: {DateTime.Now}");
                         {
                             if (i.Value.Type == "cgi")
                             {
-                                head.Interpreter_path = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
+                                head.InterpreterPath = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
                                 type = i.Value.Type;
                             }
                         }
@@ -247,12 +246,12 @@ Date: {DateTime.Now}");
                 if(head.UseCGI)
                     result = Interpreter.UseCGI(head);
                 else
-                    result = interpreter.UseInterpreter(interpretator, head.RealPath);
+                    result = _interpreter.UseInterpreter(interpretator, head.RealPath);
             }
             //Console.WriteLine($"res =>\n{result}");
             return result;
         }
-        string GetContentType(HTTPHeaders head)
+        string GetContentType(HttpHeaders head)
         {
             string result = "";
             if(File.Exists(head.RealPath))
@@ -408,16 +407,16 @@ Date: {DateTime.Now}");
             string html = $"<html><head><title></title></head><body><h1>Error {code}</h1></body></html>";
             string headers = $"HTTP/1.1 {code} OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
             byte[] data = Encoding.UTF8.GetBytes(headers);
-            client.Send(data, data.Length, SocketFlags.None);
-            client.Close();
+            _client.Send(data, data.Length, SocketFlags.None);
+            _client.Close();
         }
         public void SendError(string message, int code)
         {
             string html = $"<html><head><title></title></head><body><h1>Error {code}</h1><div>{message}</div></body></html>";
             string headers = $"HTTP/1.1 {code} OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
             byte[] data = Encoding.UTF8.GetBytes(headers);
-            client.Send(data, data.Length, SocketFlags.None);
-            client.Close();
+            _client.Send(data, data.Length, SocketFlags.None);
+            _client.Close();
         }
     }
 }

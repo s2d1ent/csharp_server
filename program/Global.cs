@@ -6,7 +6,7 @@ using System.Net;
 using Newtonsoft.Json;
 using System.Diagnostics;
 
-namespace program
+namespace Program
 {
     class Global
     {
@@ -19,17 +19,17 @@ namespace program
         public Dictionary<string, string> Alias { get; set; }
 
         public Dictionary<string, Interpreter> Interpreters { get; set; }
-        public string[] MySql_path { get; set; }
+        public string[] MySqlPath { get; set; }
 
         // ThreadPool
-        public int ThreadPoolMin_worker { get; set; }
-        public int ThreadPoolMin_async { get; set; }
-        public int ThreadPoolMax_worker { get; set; }
-        public int ThreadPoolMax_async { get; set; }
+        public int MinWorker { get; set; }
+        public int MinWorkerAsync { get; set; }
+        public int ManWorker { get; set; }
+        public int ManWorkerAsync { get; set; }
         public Global(){}
         public void GetServer()
         {
-            Server.global = this;
+            Server.Global = this;
             if (Listen != 0)
                 Server.Listen = this.Listen;
             else if (Listen == 0 || Listen < 0)
@@ -74,7 +74,7 @@ namespace program
         }
         public void MySqlServerStart()
         {
-            ProcessStartInfo info = new ProcessStartInfo($"{AppDomain.CurrentDomain.BaseDirectory}{MySql_path[0]}");
+            ProcessStartInfo info = new ProcessStartInfo($"{AppDomain.CurrentDomain.BaseDirectory}{MySqlPath[0]}");
             info.UseShellExecute = false;
             info.ErrorDialog = false;
             info.RedirectStandardError = true;
@@ -89,7 +89,7 @@ namespace program
         }
         public void MySqlServerClose()
         {
-            ProcessStartInfo info = new ProcessStartInfo($"{AppDomain.CurrentDomain.BaseDirectory}{MySql_path[1]}", "-u root shutdown");
+            ProcessStartInfo info = new ProcessStartInfo($"{AppDomain.CurrentDomain.BaseDirectory}{MySqlPath[1]}", "-u root shutdown");
             info.UseShellExecute = false;
             info.ErrorDialog = false;
             info.RedirectStandardError = true;

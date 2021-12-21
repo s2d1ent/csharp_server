@@ -4,15 +4,14 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Text.Json;
 using System.Threading;
-using System.Net;
 
-namespace program
+namespace Program
 {
     class Program
     {
-        /**/
         static void Main(string[] args)
         {
+            // add new encodings
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             string path = AppDomain.CurrentDomain.BaseDirectory;
             Global global;
@@ -24,8 +23,8 @@ namespace program
                 return;
             }
             // min&max thread will be used
-            ThreadPool.SetMinThreads(global.ThreadPoolMin_worker, global.ThreadPoolMin_async);
-            ThreadPool.SetMinThreads(global.ThreadPoolMax_worker, global.ThreadPoolMax_async);
+            ThreadPool.SetMinThreads(global.MinWorker, global.MinWorkerAsync);
+            ThreadPool.SetMinThreads(global.ManWorker, global.ManWorkerAsync);
             // get server
             global.GetServer();
             Console.WriteLine(global.GetInfo());
@@ -168,8 +167,8 @@ namespace program
                         global.MySqlServerClose();
                         global.Server.Stop();
                         global = SerialaizeGlobal($@"{path}/global-config.json");
-                        ThreadPool.SetMinThreads(global.ThreadPoolMin_worker, global.ThreadPoolMin_async);
-                        ThreadPool.SetMinThreads(global.ThreadPoolMax_worker, global.ThreadPoolMax_async);
+                        ThreadPool.SetMinThreads(global.MinWorker, global.MinWorkerAsync);
+                        ThreadPool.SetMinThreads(global.ManWorker, global.ManWorkerAsync);
                         global.GetServer();
                         Console.WriteLine(global.GetInfo());
                         global.Server.StartAsync();
@@ -216,21 +215,21 @@ namespace program
             string json = File.ReadAllText(address);
             json = json.Replace("\\", "/");
             result = JsonSerializer.Deserialize<Global>(json);
-            if(result.ThreadPoolMin_worker == 1 || result.ThreadPoolMin_worker < 0)
+            if(result.MinWorker == 1 || result.MinWorker < 0)
             {
-                result.ThreadPoolMin_worker = 2;
+                result.MinWorker = 2;
             }
-            if (result.ThreadPoolMin_async == 1 || result.ThreadPoolMin_async < 0)
+            if (result.MinWorkerAsync == 1 || result.MinWorkerAsync < 0)
             {
-                result.ThreadPoolMin_async = 2;
+                result.MinWorkerAsync = 2;
             }
-            if (result.ThreadPoolMax_worker == 1 || result.ThreadPoolMax_worker < 0)
+            if (result.ManWorker == 1 || result.ManWorker < 0)
             {
-                result.ThreadPoolMax_worker = 2;
+                result.ManWorker = 2;
             }
-            if (result.ThreadPoolMax_async == 1 || result.ThreadPoolMax_async < 0)
+            if (result.ManWorkerAsync == 1 || result.ManWorkerAsync < 0)
             {
-                result.ThreadPoolMax_async = 2;
+                result.ManWorkerAsync = 2;
             }
             return result;
         }

@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Sockets;
 using Newtonsoft.Json;
 
-namespace program
+namespace Program
 {
     class Server
     {
@@ -21,14 +21,14 @@ namespace program
         [JsonIgnore]
         public bool Active;
         [JsonIgnore]
-        public Global global;
+        public Global Global;
         [JsonIgnore]
         public List<string> Domains = new List<string>();
         [JsonIgnore]
         public string Path = "www";
         public string[] Extensions { get; set; }
 
-        private string registry = "";
+        private string _registry = "";
         //private List<Task> activeTasks = new ();
         //public CancellationTokenSource ctsStop = new ();
         
@@ -37,13 +37,13 @@ namespace program
         {
             this.Listen = port;
             this.Ip = new IPEndPoint(Dns.GetHostAddresses(Dns.GetHostName())[0], Listen);
-            Listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            this.Listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
         public Server(string ip, int port)
         {
             this.Listen = port;
             this.Ip = new IPEndPoint(IPAddress.Parse(ip), Listen);
-            Listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            this.Listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
         public void Start()
         {
@@ -56,7 +56,7 @@ namespace program
                 Active = true;
                 GetDomains();
                 DomainsRegister();
-                global.MySqlServerStart();
+                this.Global.MySqlServerStart();
                 Console.WriteLine(GetInfo());
                 while (Active)
                 {
@@ -86,8 +86,8 @@ namespace program
                 //ctsStop.Cancel();
                 Listener.Close();
                 DomainsClear();
-                global.SerializeConfig();
-                global.MySqlServerClose();
+                this.Global.SerializeConfig();
+                this.Global.MySqlServerClose();
             }  
             else
                 Console.WriteLine("Server was stopped");
@@ -95,7 +95,7 @@ namespace program
         public string GetInfo()
         {
             string domain = "";
-            if(global.MultipleSite && Domains != null)
+            if(this.Global.MultipleSite && Domains != null)
             {
                 foreach(var elem in Domains)
                 {
@@ -116,11 +116,11 @@ Active: {Active}
         {
             return $"Server active: {Active}";
         }
-        public void ClientThread(object client)
+        public void ClientThread(object array)
         {
-            Socket c = (Socket)((ArrayList)client)[0];
-            Server s = (Server)((ArrayList)client)[1];
-            new Client(c, s);
+            Socket client = (Socket)((ArrayList)array)[0];
+            Server server= (Server)((ArrayList)array)[1];
+            new Client(client, server);
         }
         public void ClientThread(Socket client, Server server)
         {
@@ -128,14 +128,14 @@ Active: {Active}
         }
         public void GetDomains()
         {
-            if(global.MultipleSite)
+            if(this.Global.MultipleSite)
             {
                 foreach (var folder in Directory.GetDirectories($"{AppDomain.CurrentDomain.BaseDirectory}{Path}/"))
                 {
                     var dom = folder.Substring(folder.IndexOf("www/")).Replace("www/", "");
-                    if (global.Alias.ContainsKey(dom))
+                    if (this.Global.Alias.ContainsKey(dom))
                     {
-                        Domains.Add(global.Alias[dom]);
+                        Domains.Add(this.Global.Alias[dom]);
                         continue;
                     }
                     if (Domains.IndexOf(dom) == -1)
@@ -146,47 +146,47 @@ Active: {Active}
         public void DomainsRegister()
         {
             string hosts = "";
-            string hosts_path = @"C:\Windows\System32\drivers\etc\hosts";
-            hosts = File.ReadAllText(hosts_path);
+            string hostsPath = @"C:\Windows\System32\drivers\etc\hosts";
+            hosts = File.ReadAllText(hostsPath);
             
-            if(global.MultipleSite && Domains != null && Domains.Count != 0 )
+            if(this.Global.MultipleSite && Domains != null && Domains.Count != 0 )
             {
                 foreach(var domain in Domains)
                 {
-                    if (global.ListenUse)
+                    if (this.Global.ListenUse)
                     {
                         hosts += $"\n   {Ip}       {domain}";
-                        registry += $"\n   {Ip}       {domain}";
+                        _registry += $"\n   {Ip}       {domain}";
                     }
                     else
                     {
-                        hosts += $"\n   {global.Ipv4}       {domain}";
-                        registry += $"\n   {global.Ipv4}       {domain}";
+                        hosts += $"\n   {this.Global.Ipv4}       {domain}";
+                        _registry += $"\n   {this.Global.Ipv4}       {domain}";
                     }
                 }
             }
             else
             {
-                if (global.ListenUse)
+                if (this.Global.ListenUse)
                 {
                     hosts += $"\n   {Ip}";
-                    registry += $"\n   {Ip}";
+                    _registry += $"\n   {Ip}";
                 }
                 else
                 {
-                    hosts += $"\n   {global.Ipv4}";
-                    registry += $"\n   {global.Ipv4}";
+                    hosts += $"\n   {this.Global.Ipv4}";
+                    _registry += $"\n   {this.Global.Ipv4}";
                 }
             }
-            File.WriteAllText(hosts_path, hosts);
+            File.WriteAllText(hostsPath, hosts);
         }
         public void DomainsClear()
         {
             string hosts = "";
-            string hosts_path = @"C:\Windows\System32\drivers\etc\hosts";
-            hosts = File.ReadAllText(hosts_path);
-            hosts = hosts.Replace(registry, "");
-            File.WriteAllText(hosts_path, hosts);
+            string hostsPath = @"C:\Windows\System32\drivers\etc\hosts";
+            hosts = File.ReadAllText(hostsPath);
+            hosts = hosts.Replace(_registry, "");
+            File.WriteAllText(hostsPath, hosts);
         }
     }
 }

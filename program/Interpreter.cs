@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-namespace program
+namespace Program
 {
     class Interpreter
     {
@@ -35,9 +35,9 @@ namespace program
 
             return cp866_byte_to_utf8;
         }
-        public static string UseCGI(HTTPHeaders headers)
+        public static string UseCGI(HttpHeaders headers)
         {
-            ProcessStartInfo info = new ProcessStartInfo(headers.Interpreter_path);
+            ProcessStartInfo info = new ProcessStartInfo(headers.InterpreterPath);
             string cp866_byte_to_utf8 = "";
             
             try
