@@ -54,7 +54,12 @@ namespace Program
             }
             Global global = this;
             //string json = JsonSerializer.Serialize<Global>(global);
-            string json = JsonConvert.SerializeObject(global, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(global, 
+                Formatting.Indented,
+                new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
             File.WriteAllText(address, json);
         }
         void GetSystem()

@@ -19,7 +19,7 @@ namespace Program
         [JsonIgnore]
         Socket Listener;
         [JsonIgnore]
-        public bool Active;
+        public volatile bool Active;
         [JsonIgnore]
         public Global Global;
         [JsonIgnore]
@@ -27,6 +27,8 @@ namespace Program
         [JsonIgnore]
         public string Path = "www";
         public string[] Extensions { get; set; }
+        
+        public Modules Modules { get; set; }
 
         private string _registry = "";
         //private List<Task> activeTasks = new ();
@@ -54,6 +56,8 @@ namespace Program
                 Listener.Listen(16);
 
                 Active = true;
+                this.Modules.Start();
+                this.Modules.Active = this.Active;
                 GetDomains();
                 DomainsRegister();
                 this.Global.MySqlServerStart();
@@ -83,10 +87,12 @@ namespace Program
             if (Active)
             {
                 Active = false;
+                this.Modules.Active = this.Active;
+                this.Modules.Stop();
                 //ctsStop.Cancel();
                 Listener.Close();
                 DomainsClear();
-                this.Global.SerializeConfig();
+                //this.Global.SerializeConfig();
                 this.Global.MySqlServerClose();
             }  
             else

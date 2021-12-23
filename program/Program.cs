@@ -30,7 +30,8 @@ namespace Program
             Console.WriteLine(global.GetInfo());
             // start
             global.Server.StartAsync();
-            //global.MySqlServerStart();
+            // load user modules
+            
             while (true)
                 {
                 string cmd = Console.ReadLine();

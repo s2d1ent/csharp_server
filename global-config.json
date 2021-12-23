@@ -10,7 +10,12 @@
       ".html",
       ".htm",
       ".xhtml"
-    ]
+    ],
+    "Modules":{
+      "Dlls":[
+        "D:/Моё портфолио/C#/csharp_server_dll/csharp_server_dll/bin/Debug/netcoreapp3.1/csharp_server_dll.dll"
+      ]
+    }
   },
   "System": {
     "OS": "Microsoft Windows NT 10.0.18363.0",
