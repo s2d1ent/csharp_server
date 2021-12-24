@@ -56,8 +56,11 @@ namespace Program
                 Listener.Listen(16);
 
                 Active = true;
-                this.Modules.Start();
+
+                this.Modules.Enabled = this.Global.ModuleEnabled;
                 this.Modules.Active = this.Active;
+                this.Modules.Start();
+                
                 GetDomains();
                 DomainsRegister();
                 this.Global.MySqlServerStart();
@@ -113,7 +116,6 @@ namespace Program
                 domain = "Multiplesite mode is False";
             }
             string info = @$"Domain: {domain}
-Ip: {Ip}    Port: {Listen}
 Active: {Active}
             ";
             return info;

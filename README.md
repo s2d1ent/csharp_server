@@ -21,6 +21,7 @@ Multithreaded processing  | Implemented |  -       |-
 Domain system             | Implemented |  -       |-
 Custom alias              | Implemented |  -       |-
 Multiple site             | Implemented |  -       |-
+Extern modules            | Implemented |  -       |-
 
 <br>
 
@@ -28,20 +29,24 @@ Multiple site             | Implemented |  -       |-
 **MySql =>**
 **user:** root@127.0.0.1
 **password:**<br>
-[Описание классов]("\tree\main\Classes.md") 
+[Описание пользовательских типов данных]("\tree\main\Classes.md") 
 <br><br>
 ## Список используемых библиотек проекта
 ``` csharp
 using System;
 using System.IO;
 using System.Collections;
+using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.Loader;
 using Newtonsoft.Json;
 ```
 <br>
@@ -61,10 +66,12 @@ using Newtonsoft.Json;
 # Структура global-config.json
 ``` json
 {
-  "IPv4": "127.0.0.1",
+  "Ipv4": "127.0.0.1",
   "Listen": 80,
+  "ListenUse": false,
+  "MultipleSite": true,
+  "ModuleEnabled": true,
   "Server": {
-    "Path": "www",
     "Extensions": [
       ".py",
       ".php",
@@ -72,7 +79,12 @@ using Newtonsoft.Json;
       ".htm",
       ".xhtml"
     ],
-    "Django": true
+    "Modules":{
+      "Dlls":[
+        "/modules/csharp_server_dll.dll",
+        "/modules/dlls.dll"
+      ]
+    }
   },
   "System": {
     "OS": "Microsoft Windows NT 10.0.18363.0",
@@ -81,19 +93,19 @@ using Newtonsoft.Json;
     "RAM": ""
   },
   "Alias": {
-    "python": "newdomain"
+    "python": "kidalovo"
   },
   "Interpreters": {
     "php": {
       "Version": "x86",
       "Name": "php",
-      "Path": "includes/php/win86/php.exe",
+      "Path": "includes/php/php.exe",
       "Type": "int"
     },
     "phpcgi": {
       "Version": "x86",
       "Name": "php",
-      "Path": "includes/php/win86/php-cgi.exe",
+      "Path": "includes/php/php-cgi.exe",
       "Type": "cgi"
     },
     "python": {
@@ -103,14 +115,15 @@ using Newtonsoft.Json;
       "Type": "int"
     }
   },
-  "MySql_path": [
-    "includes/mysql/mysql/bin/mysqld.exe",
-    "includes/mysql/mysql/bin/mysqladmin.exe"
+  "MySqlPath": [
+    "includes/mysql/bin/mysqld.exe",
+    "includes/mysql/bin/mysqladmin.exe",
+    "includes/mysql/bin/mysql.exe"
   ],
-  "PoolMin_worker": "2",
-  "PoolMin_async": "2",
-  "PoolMax_worker": "2",
-  "PoolMax_async": "2"
+  "MinWorker": 2,
+  "MinWorkerAsync": 2,
+  "ManWorker": 4,
+  "ManWorkerAsync": 4
 }
 ```
 <br>

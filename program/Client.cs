@@ -32,7 +32,7 @@ namespace Program
 
         public static HttpHeaders Parse(Global Global, string headers)
         {
-            Global = Global;
+            _global = Global;
             return Parse(headers);
         }
         public static HttpHeaders Parse(string headers)

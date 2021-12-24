@@ -22,15 +22,17 @@ namespace Program
                 Console.WriteLine("global-config.json not found");
                 return;
             }
+
             // min&max thread will be used
             ThreadPool.SetMinThreads(global.MinWorker, global.MinWorkerAsync);
             ThreadPool.SetMinThreads(global.ManWorker, global.ManWorkerAsync);
+
             // get server
             global.GetServer();
             Console.WriteLine(global.GetInfo());
+
             // start
             global.Server.StartAsync();
-            // load user modules
             
             while (true)
                 {
@@ -180,15 +182,12 @@ namespace Program
                 if (cmd == "stop"  && cmd_bool)
                 {
                     global.Server.Stop();
-                    //global.MySqlServerCloseAsync();
                     cmd_bool = false;
                 }
                 if(cmd == "exit" || cmd == "-e" && cmd_bool)
                 {
-                    //global.MySqlServerClose();
                     global.Server.Stop();
                     //global.SerializeConfig();
-                    cmd_bool = false;
 
                     return;
                 }
@@ -216,22 +215,79 @@ namespace Program
             string json = File.ReadAllText(address);
             json = json.Replace("\\", "/");
             result = JsonSerializer.Deserialize<Global>(json);
+            bool save = false;
             if(result.MinWorker == 1 || result.MinWorker < 0)
             {
                 result.MinWorker = 2;
             }
+
             if (result.MinWorkerAsync == 1 || result.MinWorkerAsync < 0)
             {
                 result.MinWorkerAsync = 2;
             }
+
             if (result.ManWorker == 1 || result.ManWorker < 0)
             {
                 result.ManWorker = 2;
             }
+
             if (result.ManWorkerAsync == 1 || result.ManWorkerAsync < 0)
             {
                 result.ManWorkerAsync = 2;
             }
+
+            if (result.ListenUse == null) result.ListenUse = false;
+
+            if (result.MultipleSite == null) result.MultipleSite = true;
+
+            if (result.ModuleEnabled == null) result.ModuleEnabled = false;
+
+            if (result.Server == null)
+            {
+                result.Server = new();
+                result.Server.Extensions = new string[] { ".py", ".php", ".xhtml", ".html", ".html"  };
+                save = true;
+            }
+
+            if(result.MySqlPath == null)
+            {
+                result.MySqlPath = new string[] {
+                    "includes/mysql/bin/mysqld.exe",
+                    "includes/mysql/bin/mysqladmin.exe",
+                    "includes/mysql/bin/mysql.exe"
+                };
+                save = true;
+            }
+
+            if(result.Interpreters == null)
+            {
+                Interpreter php = new();
+                php.Version = "x86";
+                php.Name = "php";
+                php.Path = "includes/php/php.exe";
+                php.Type = "int";
+
+                Interpreter phpcgi = new();
+                php.Version = "x86";
+                php.Name = "php";
+                php.Path = "includes/php/php-cgi.exe";
+                php.Type = "cgi";
+
+                Interpreter python = new();
+                php.Version = "x86";
+                php.Name = "py";
+                php.Path = "includes/python/win86/python.exe";
+                php.Type = "int";
+
+                result.Interpreters = new System.Collections.Generic.Dictionary<string, Interpreter>() {
+                    { "php", php },
+                    { "phpcgi", phpcgi },
+                    { "python", python }
+                };
+                save = true;
+            }
+            if (save)
+                result.SerializeConfig();
             return result;
         }
     }

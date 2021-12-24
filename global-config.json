@@ -1,8 +1,9 @@
 {
-  "Ipv4": "192.168.3.3",
+  "Ipv4": "127.0.0.1",
   "Listen": 80,
   "ListenUse": false,
   "MultipleSite": true,
+  "ModuleEnabled": true,
   "Server": {
     "Extensions": [
       ".py",
@@ -13,7 +14,8 @@
     ],
     "Modules":{
       "Dlls":[
-        "D:/Моё портфолио/C#/csharp_server_dll/csharp_server_dll/bin/Debug/netcoreapp3.1/csharp_server_dll.dll"
+        "/modules/csharp_server_dll.dll",
+        "/modules/dlls.dll"
       ]
     }
   },

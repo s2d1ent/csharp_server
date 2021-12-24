@@ -14,6 +14,7 @@ namespace Program
         public int Listen { get; set; }
         public bool ListenUse { get; set; }
         public bool MultipleSite { get; set; }
+        public bool ModuleEnabled { get; set; }
         public Server Server { get; set; }
         public Dictionary<string, string> System { get; set; }
         public Dictionary<string, string> Alias { get; set; }
@@ -26,16 +27,17 @@ namespace Program
         public int MinWorkerAsync { get; set; }
         public int ManWorker { get; set; }
         public int ManWorkerAsync { get; set; }
+
+        // constructors
         public Global(){}
+
+        // methods
         public void GetServer()
         {
             Server.Global = this;
-            if (Listen != 0)
-                Server.Listen = this.Listen;
-            else if (Listen == 0 || Listen < 0)
-                Server.Listen = 80;
-            if (Ipv4 != "")
-                Server.Ip = new IPEndPoint(IPAddress.Parse(Ipv4.ToString()), Listen);
+            if (Listen != 0) Server.Listen = this.Listen;
+            else if (Listen == 0 || Listen < 0) Server.Listen = 80;
+            if (Ipv4 != "") Server.Ip = new IPEndPoint(IPAddress.Parse(Ipv4.ToString()), Listen);
             else
             {
                 IPEndPoint IP = new IPEndPoint(Dns.GetHostAddresses(Dns.GetHostName())[0], Listen);
@@ -45,6 +47,8 @@ namespace Program
             
             GetSystem();
         }
+
+
         public void SerializeConfig()
         {
             string address = $@"{AppDomain.CurrentDomain.BaseDirectory}/global-config.json";
@@ -62,6 +66,8 @@ namespace Program
                 });
             File.WriteAllText(address, json);
         }
+
+
         void GetSystem()
         {
             if (System["Bit"] == null || System["Bit"] == "")
@@ -77,6 +83,8 @@ namespace Program
             }
             
         }
+
+
         public void MySqlServerStart()
         {
             ProcessStartInfo info = new ProcessStartInfo($"{AppDomain.CurrentDomain.BaseDirectory}{MySqlPath[0]}");
@@ -107,6 +115,8 @@ namespace Program
 
             bool pStarted = p.Start();
         }
+
+
         public async void MySqlServerStartAsync()
         {
             await Task.Run(()=> { MySqlServerStart(); });
@@ -115,6 +125,8 @@ namespace Program
         {
             await Task.Run(() => { MySqlServerClose(); });
         }
+
+
         public string GetInfo()
         {
             string domains = "";

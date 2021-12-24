@@ -1,0 +1,1 @@
+<title>Lazy BOTSHOP</title>
