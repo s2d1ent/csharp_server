@@ -32,7 +32,7 @@ namespace Program
 
         private string _registry = "";
         //private List<Task> activeTasks = new ();
-        //public CancellationTokenSource ctsStop = new ();
+        public volatile CancellationTokenSource CtsStop = new ();
         
         public Server(){}
         public Server(int port)
@@ -59,6 +59,7 @@ namespace Program
 
                 this.Modules.Enabled = this.Global.ModuleEnabled;
                 this.Modules.Active = this.Active;
+                this.Modules.CancellationToken = this.CtsStop;
                 this.Modules.Start();
                 
                 GetDomains();
@@ -89,10 +90,13 @@ namespace Program
         {
             if (Active)
             {
+                if(this.Modules.Enabled) this.Modules.End();
                 Active = false;
+
+                CtsStop.Cancel();
                 this.Modules.Active = this.Active;
                 this.Modules.Stop();
-                //ctsStop.Cancel();
+
                 Listener.Close();
                 DomainsClear();
                 //this.Global.SerializeConfig();
@@ -104,6 +108,7 @@ namespace Program
         public string GetInfo()
         {
             string domain = "";
+
             if(this.Global.MultipleSite && Domains != null)
             {
                 foreach(var elem in Domains)
@@ -118,6 +123,7 @@ namespace Program
             string info = @$"Domain: {domain}
 Active: {Active}
             ";
+
             return info;
         }
         public string GetStatus()

@@ -132,12 +132,14 @@ namespace Program
             byte[] data = new byte[_client.ReceiveBufferSize];
             _client.Receive(data);
             request += Encoding.UTF8.GetString(data);
+
             // Проверка на пустой запрос
             if (request == "")
             {
                 _client.Close();
                 return;
             }
+
             // Парсим заголовки
             _headers = HttpHeaders.Parse(_server.Global, request);
             if (_headers.Method == "" || _headers.RealPath == "")
@@ -145,21 +147,22 @@ namespace Program
                 _client.Close();
                 return;
             }
-            //Console.WriteLine(request);
+
             // Вывод информацию о подключении
             Console.WriteLine($@"[{_client.RemoteEndPoint}]
 Path: {_headers.RealPath}
 Date: {DateTime.Now}");
+
             if (_headers.RealPath.IndexOf("..") != -1)
             {
-                SendError(404);
+                SendError(ServerError.NotFound);
                 _client.Close();
                 return;
             }
-            if (File.Exists(_headers.RealPath))
-                GetSheet(_headers);
-            else
-                SendError("Not Found", 404);
+
+
+            if (File.Exists(_headers.RealPath)) GetSheet(_headers);
+            else SendError(ServerError.NotFound);
         }
         public void GetSheet(HttpHeaders head)
         {
@@ -202,221 +205,221 @@ Date: {DateTime.Now}");
                     _client.Send(data, data.Length, SocketFlags.None);
                 }
                 _client.Shutdown(SocketShutdown.Receive);
-                _client.Close();
+                
             }
             catch (Exception ex)
             {
-                _client.Close();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Func: GetSheet()    link: {head.RealPath}\nException: {ex}\nMessage: {ex.Message}");
                 Console.ForegroundColor = ConsoleColor.Gray;
+            }
+            finally
+            {
+                SendError(ServerError.InternalServerError);
+                _client.Close();
             }
         }
         //TODO CGI
         string AnyFile(HttpHeaders head)
         {
             string result = "";
-            lock (new object())
+            string ext = HttpHeaders.FileExtention(head.RealPath);
+            string interpretator = "";
+            string type = "";
+            foreach (var i in _server.Global.Interpreters)
             {
-                string ext = HttpHeaders.FileExtention(head.RealPath);
-                string interpretator = "";
-                string type = "";
-                foreach (var i in _server.Global.Interpreters)
+                if (i.Value.Name == ext)
                 {
-                    if (i.Value.Name == ext)
+                    if (head.UseCGI || head.Coockie != "")
                     {
-                        if(head.UseCGI || head.Coockie != "")
+                        if (i.Value.Type == "cgi")
                         {
-                            if (i.Value.Type == "cgi")
-                            {
-                                head.InterpreterPath = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
-                                type = i.Value.Type;
-                            }
+                            head.InterpreterPath = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
+                            type = i.Value.Type;
                         }
-                        else
+                    }
+                    else
+                    {
+                        if (i.Value.Type == "int")
                         {
-                            if (i.Value.Type == "int")
-                            {
-                                interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
-                                type = i.Value.Type;
-                            }
+                            interpretator = $"{AppDomain.CurrentDomain.BaseDirectory}{i.Value.Path}";
+                            type = i.Value.Type;
                         }
                     }
                 }
-                if(head.UseCGI)
-                    result = Interpreter.UseCGI(head);
-                else
-                    result = _interpreter.UseInterpreter(interpretator, head.RealPath);
             }
-            //Console.WriteLine($"res =>\n{result}");
+            if (head.UseCGI) result = Interpreter.UseCGI(head);
+            else result = _interpreter.UseInterpreter(interpretator, head.RealPath);
+
             return result;
         }
         string GetContentType(HttpHeaders head)
         {
             string result = "";
-            if(File.Exists(head.RealPath))
+            string format = head.RealPath.Substring(head.RealPath.LastIndexOf("."));
+            format = format.Replace(".", "").ToLower();
+            switch (format)
             {
-                string format = head.RealPath.Substring(head.RealPath.LastIndexOf("."));
-                format = format.Replace(".","").ToLower();
-                switch(format)
-                {
-                    //application
-                    case "xml":
-                    case "json":
-                    case "ogg":
-                    case "pdf":
-                    case "postscript":
-                    case "zip":
-                    case "gzip":
-                    case "doc":
-                        result = $"application/{format}";
-                        break;
-                    case "EDI":
-                    case "EDI-X12":
-                    case "EDIFACT":
-                        result = $"application/{format}";
-                        break;
-                    case "atom": result = $"application/atom+xml";
-                        break;
-                    case "soap":
-                        result = $"application/soap+xml";
-                        break;
-                    case "woff":
-                        result = $"application/font-woff";
-                        break;
-                    case "xhtml":
-                        result = $"application/xhtml+xml";
-                        break;
-                    case "torrent":
-                    case "bittorrent":
-                        result = $"application/x-bittorrent";
-                        break;
-                    case "tex":
-                        result = $"application/x-tex";
-                        break;
-                    //audio
-                    case "basic":
-                    case "l24":
-                    case "mp4":
-                    case "acc":
-                    case "mpeg":
-                    case "vorbis":
-                    case "webm":
-                        result = $"audio/{format}";
-                        break;
-                    case "wma":
-                        result = $"audio/x-ms-wma";
-                        break;
-                    case "rm":
-                        result = $"audio/vnd.rn-realaudio";
-                        break;
-                    case "wav":
-                    case "wave":
-                        result = $"audio/vnd.wave";
-                        break;
-                    //image
-                    case "gif":
-                    case "jpeg":
-                    case "pjpeg":
-                    case "png":
-                    case "tiff":
-                    case "webp":
-                        result = $"image/{format}";
-                        break;
-                    case "svg":
-                        result = $"image/svg+xml";
-                        break;
-                    case "ico":
-                        result = $"image/vnd.microsoft.icon";
-                        break;
-                    case "wbmp":
-                        result = $"image/vnd.map.wbmp";
-                        break;
-                    case "jpg":
-                        result = $"image/jpeg";
-                        break;
-                    //message
-                    case "eml":
-                    case "mime":
-                    case "mth":
-                    case "mhtml":
-                        result = $"message/ftc822";
-                        break;
-                    //model
-                    case "iges":
-                    case "mesh":
-                    case "vrml":
-                    case "wrl":
-                    case "silo":
-                    case "igs":
-                    case "msh":
-                    case "example":
-                        result = $"model/{format}";
-                        break;
-                    case "x3db":
-                        result = $"model/x3d+binary";
-                        break;
-                    case "x3dv":
-                        result = $"model/x3d+vrml";
-                        break;
-                    case "x3d":
-                        result = $"model/x3d+xml";
-                        break;
-                    //multipart
-                    //text
-                    case "cmd":
-                    case "css":
-                    case "cvs":
-                    case "html":
-                    case "plain":
-                    case "markdown":
-                    case "md":
-                        result = $"text/{format}";
-                        break;
-                    case "javascript":
-                    case "js":
-                        result = $"text/javascript";
-                        break;
-                    case "php":
-                        result = $"text/html";
-                        break;
-                    case "htm":
-                        result = $"text/html";
-                        break;
-                    case "py":
-                        result = $"text/html";
-                        break;
-                    //video
-                    //vnd
-                    //x
-                    //x-pkcs
-                    default:
-                        result = "application/unknown";
-                        break;
-                }
-                //Console.WriteLine($"link: {link} format: {format} content-type: {result}");
+                //application
+                case "xml":
+                case "json":
+                case "ogg":
+                case "pdf":
+                case "postscript":
+                case "zip":
+                case "gzip":
+                case "doc":
+                    result = $"application/{format}";
+                    break;
+                case "EDI":
+                case "EDI-X12":
+                case "EDIFACT":
+                    result = $"application/{format}";
+                    break;
+                case "atom":
+                    result = $"application/atom+xml";
+                    break;
+                case "soap":
+                    result = $"application/soap+xml";
+                    break;
+                case "woff":
+                    result = $"application/font-woff";
+                    break;
+                case "xhtml":
+                    result = $"application/xhtml+xml";
+                    break;
+                case "torrent":
+                case "bittorrent":
+                    result = $"application/x-bittorrent";
+                    break;
+                case "tex":
+                    result = $"application/x-tex";
+                    break;
+                //audio
+                case "basic":
+                case "l24":
+                case "mp4":
+                case "acc":
+                case "mpeg":
+                case "vorbis":
+                case "webm":
+                    result = $"audio/{format}";
+                    break;
+                case "wma":
+                    result = $"audio/x-ms-wma";
+                    break;
+                case "rm":
+                    result = $"audio/vnd.rn-realaudio";
+                    break;
+                case "wav":
+                case "wave":
+                    result = $"audio/vnd.wave";
+                    break;
+                //image
+                case "gif":
+                case "jpeg":
+                case "pjpeg":
+                case "png":
+                case "tiff":
+                case "webp":
+                    result = $"image/{format}";
+                    break;
+                case "svg":
+                    result = $"image/svg+xml";
+                    break;
+                case "ico":
+                    result = $"image/vnd.microsoft.icon";
+                    break;
+                case "wbmp":
+                    result = $"image/vnd.map.wbmp";
+                    break;
+                case "jpg":
+                    result = $"image/jpeg";
+                    break;
+                //message
+                case "eml":
+                case "mime":
+                case "mth":
+                case "mhtml":
+                    result = $"message/ftc822";
+                    break;
+                //model
+                case "iges":
+                case "mesh":
+                case "vrml":
+                case "wrl":
+                case "silo":
+                case "igs":
+                case "msh":
+                case "example":
+                    result = $"model/{format}";
+                    break;
+                case "x3db":
+                    result = $"model/x3d+binary";
+                    break;
+                case "x3dv":
+                    result = $"model/x3d+vrml";
+                    break;
+                case "x3d":
+                    result = $"model/x3d+xml";
+                    break;
+                //multipart
+                //text
+                case "cmd":
+                case "css":
+                case "cvs":
+                case "html":
+                case "plain":
+                case "markdown":
+                case "md":
+                    result = $"text/{format}";
+                    break;
+                case "javascript":
+                case "js":
+                    result = $"text/javascript";
+                    break;
+                case "php":
+                    result = $"text/html";
+                    break;
+                case "htm":
+                    result = $"text/html";
+                    break;
+                case "py":
+                    result = $"text/html";
+                    break;
+                //video
+                //vnd
+                //x
+                //x-pkcs
+                default:
+                    result = "application/unknown";
+                    break;
             }
-            else
-            {
-                result = "application/unknown";
-            }
+
             return result;
         }
-        public void SendError(int code)
+        public void SendError(ServerError error)
         {
-            string html = $"<html><head><title></title></head><body><h1>Error {code}</h1></body></html>";
-            string headers = $"HTTP/1.1 {code} OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
+            string html = $"<html><head><title></title></head><body><h1>Error {(int)error}</h1><div>{error}</div></body></html>";
+            string headers = $"HTTP/1.1 {(int)error} OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
             byte[] data = Encoding.UTF8.GetBytes(headers);
             _client.Send(data, data.Length, SocketFlags.None);
             _client.Close();
         }
-        public void SendError(string message, int code)
+        public void SendError(ServerError error, string message)
         {
-            string html = $"<html><head><title></title></head><body><h1>Error {code}</h1><div>{message}</div></body></html>";
-            string headers = $"HTTP/1.1 {code} OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
+            string html = $"<html><head><title></title></head><body><h1>Error {(int)error}</h1><div>{message}</div></body></html>";
+            string headers = $"HTTP/1.1 {(int)error} OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
             byte[] data = Encoding.UTF8.GetBytes(headers);
             _client.Send(data, data.Length, SocketFlags.None);
             _client.Close();
         }
+    }
+    public enum ServerError
+    {
+        Unauthorized = 401,
+        Forbidden = 403,
+        NotFound = 404,
+        InternalServerError = 500
     }
 }

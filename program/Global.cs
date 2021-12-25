@@ -15,6 +15,7 @@ namespace Program
         public bool ListenUse { get; set; }
         public bool MultipleSite { get; set; }
         public bool ModuleEnabled { get; set; }
+        public Modules Modules { get; set; }
         public Server Server { get; set; }
         public Dictionary<string, string> System { get; set; }
         public Dictionary<string, string> Alias { get; set; }
@@ -25,8 +26,8 @@ namespace Program
         // ThreadPool
         public int MinWorker { get; set; }
         public int MinWorkerAsync { get; set; }
-        public int ManWorker { get; set; }
-        public int ManWorkerAsync { get; set; }
+        public int MaxWorker { get; set; }
+        public int MaxWorkerAsync { get; set; }
 
         // constructors
         public Global(){}

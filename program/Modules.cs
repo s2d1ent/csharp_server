@@ -25,27 +25,36 @@ namespace Program
             set { _enabled = value; } 
         }
 
+        [JsonIgnore]
+        public CancellationTokenSource CancellationToken {
+            get { return _cts; }
+            set { _cts = value; }
+        }
         //private property/field
         private List<ModuleStruct> _dlls = new();
         private bool _enabled;
+        private CancellationTokenSource _cts;
 
         // public methods
         public Modules() : base(isCollectible:true) { }
         public void Start()
         {
-            this.Init();
-            this.WorkModuleAsync(ModuleMode.Start);
-            this.UpdateModuleAsync(null);
+            if(Enabled && Active)
+            {
+                this.Init();
+                this.WorkAsync(ModuleMode.Start);
+                this.UpdateAsync(null);
+            }
         }
 
         public void End()
         {
-            this.WorkModuleAsync(ModuleMode.End);
+            this.WorkAsync(ModuleMode.End);
         }
 
         public void Begin()
         {
-            this.WorkModuleAsync(ModuleMode.Begin);
+            this.WorkAsync(ModuleMode.Begin);
         }
 
         public void Stop()
@@ -53,51 +62,57 @@ namespace Program
             this.Unload();
         }
 
+        public void Update()
+        {
+            this.UpdateAsync(null);
+        }
 
+        public void Init()
+        {
+            foreach (var obj in Dlls)
+            {
+                if (File.Exists(obj))
+                {
+                    this.Init2(obj);
+                }
+                if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + obj))
+                {
+                    string path = $"{AppDomain.CurrentDomain.BaseDirectory + obj}";
+                    this.Init2(path);
+                }
+                else
+                {
+                    Console.WriteLine($"Module not found\nPath: {obj}");
+                }
+            }
+        }
         // private methods
-        private async void WorkModuleAsync(ModuleMode mode)
+        private async void WorkAsync(ModuleMode mode)
         {
             await Task.Run(() => {
                 foreach (var module in _dlls)
                 {
                     if (module.Mode == mode) Task.Run(module.Activate);
                 }
-            });
-        }
-        private async void UpdateModuleAsync(object obj)
-        {
-            await Task.Run(()=> {
-                TimerCallback callback = new TimerCallback(UpdateModuleAsync);
-                Timer timer = new Timer(callback, null, 500, 0);
-                foreach (var module in _dlls)
-                {
-                    if (module.Mode == ModuleMode.Update) Task.Run(module.Activate);
-                }
-            });
+            }
+            );
         }
 
-        private void Init()
+        private async void UpdateAsync(object obj)
         {
-            if(Dlls.Length != 0 && _enabled)
-            {
-                foreach (var obj in Dlls)
+            await Task.Run(() => {
+                while (!_cts.IsCancellationRequested)
                 {
-                    if (File.Exists(obj))
+                    foreach (var module in _dlls)
                     {
-                        this.Init2(obj);
-                    }
-                    if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + obj))
-                    {
-                        string path = $"{AppDomain.CurrentDomain.BaseDirectory + obj}";
-                        this.Init2(path);
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Module not found\nPath: {obj}");
+                        if (module.Mode == ModuleMode.Update) module.Activate();
                     }
                 }
-            }
+            }, _cts.Token
+            );
         }
+
+        
 
         private void Init2(string path)
         {

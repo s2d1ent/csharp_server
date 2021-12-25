@@ -27,6 +27,13 @@ namespace Program
             ThreadPool.SetMinThreads(global.MinWorker, global.MinWorkerAsync);
             ThreadPool.SetMinThreads(global.ManWorker, global.ManWorkerAsync);
 
+            // begin dlls start
+            if(global.Modules != null && global.ModuleEnabled)
+            {
+                global.Modules.Init();
+                global.Modules.Begin();
+            }
+
             // get server
             global.GetServer();
             Console.WriteLine(global.GetInfo());
