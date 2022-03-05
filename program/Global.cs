@@ -17,11 +17,27 @@ namespace Program
         public bool ModuleEnabled { get; set; }
         public Modules Modules { get; set; }
         public Server Server { get; set; }
-        public Dictionary<string, string> System { get; set; }
         public Dictionary<string, string> Alias { get; set; }
 
         public Dictionary<string, Interpreter> Interpreters { get; set; }
         public string[] MySqlPath { get; set; }
+
+        public RemoteApi RemoteApi
+        {
+            get
+            {
+                return null;
+            }
+            set
+            {
+                if(_remoteApi == null)
+                {
+                    _remoteApi = value;
+                }
+            }
+        }
+
+        private RemoteApi _remoteApi;
 
         // ThreadPool
         public int MinWorker { get; set; }
@@ -46,7 +62,6 @@ namespace Program
                 Server.Ip = IP;
             }
             
-            GetSystem();
         }
 
 
@@ -67,24 +82,6 @@ namespace Program
                 });
             File.WriteAllText(address, json);
         }
-
-
-        void GetSystem()
-        {
-            if (System["Bit"] == null || System["Bit"] == "")
-            {
-                if (Environment.Is64BitOperatingSystem)
-                    System["Bit"] = "x64";
-                else
-                    System["Bit"] = "x86";
-            }
-            if (System["OS"] == null || System["OS"] == "")
-            {
-                System["OS"] = Environment.OSVersion.ToString();
-            }
-            
-        }
-
 
         public void MySqlServerStart()
         {

@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Text.Json;
 using System.Threading;
+using System.Diagnostics;
 
 namespace Program
 {
@@ -12,6 +13,7 @@ namespace Program
         static void Main(string[] args)
         {
             // add new encodings
+            CreateProcessIdFile();
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             string path = AppDomain.CurrentDomain.BaseDirectory;
             Global global;
@@ -19,13 +21,13 @@ namespace Program
                 global = SerialaizeGlobal($@"{path}/global-config.json");
             else
             {
-                Console.WriteLine("global-config.json not found");
+                Console.WriteLine("global-config.json not found use: program -config init");
                 return;
             }
 
             // min&max thread will be used
             ThreadPool.SetMinThreads(global.MinWorker, global.MinWorkerAsync);
-            ThreadPool.SetMinThreads(global.ManWorker, global.ManWorkerAsync);
+            ThreadPool.SetMinThreads(global.MaxWorker, global.MaxWorkerAsync);
 
             // begin dlls start
             if(global.Modules != null && global.ModuleEnabled)
@@ -39,8 +41,8 @@ namespace Program
             Console.WriteLine(global.GetInfo());
 
             // start
-            global.Server.StartAsync();
-            
+            global.Server.Start();
+            /*
             while (true)
                 {
                 string cmd = Console.ReadLine();
@@ -174,15 +176,14 @@ namespace Program
                     if (cmd == "restart")
                     {
                         Console.Clear();
-                        global.MySqlServerClose();
                         global.Server.Stop();
                         global = SerialaizeGlobal($@"{path}/global-config.json");
                         ThreadPool.SetMinThreads(global.MinWorker, global.MinWorkerAsync);
-                        ThreadPool.SetMinThreads(global.ManWorker, global.ManWorkerAsync);
+                        ThreadPool.SetMinThreads(global.MaxWorker, global.MaxWorkerAsync);
                         global.GetServer();
                         Console.WriteLine(global.GetInfo());
                         global.Server.StartAsync();
-                        global.MySqlServerStartAsync();
+                        Console.WriteLine("Server was restarted");
                     }
                     cmd_bool = false;
                 }
@@ -194,8 +195,6 @@ namespace Program
                 if(cmd == "exit" || cmd == "-e" && cmd_bool)
                 {
                     global.Server.Stop();
-                    //global.SerializeConfig();
-
                     return;
                 }
                 if(cmd.IndexOf("server") != -1 && cmd_bool)
@@ -214,7 +213,7 @@ namespace Program
                 {
                     Console.WriteLine($"Command not found use help or [command] --help\n");
                 }
-            }
+            }*/
         }
         static Global SerialaizeGlobal(string address)
         {
@@ -223,25 +222,15 @@ namespace Program
             json = json.Replace("\\", "/");
             result = JsonSerializer.Deserialize<Global>(json);
             bool save = false;
-            if(result.MinWorker == 1 || result.MinWorker < 0)
-            {
-                result.MinWorker = 2;
-            }
+            if(result.MinWorker == 1 || result.MinWorker <= 0) result.MinWorker = 2;
 
-            if (result.MinWorkerAsync == 1 || result.MinWorkerAsync < 0)
-            {
-                result.MinWorkerAsync = 2;
-            }
+            if (result.MinWorkerAsync == 1 || result.MinWorkerAsync <= 0) result.MinWorkerAsync = 2;
 
-            if (result.ManWorker == 1 || result.ManWorker < 0)
-            {
-                result.ManWorker = 2;
-            }
+            if (result.MaxWorker == 1 || result.MaxWorker <= 0) result.MaxWorker = 2;
 
-            if (result.ManWorkerAsync == 1 || result.ManWorkerAsync < 0)
-            {
-                result.ManWorkerAsync = 2;
-            }
+            if (result.MaxWorkerAsync == 1 || result.MaxWorkerAsync <= 0) result.MaxWorkerAsync = 2;
+
+
 
             if (result.ListenUse == null) result.ListenUse = false;
 
@@ -296,6 +285,54 @@ namespace Program
             if (save)
                 result.SerializeConfig();
             return result;
+        }
+        static void CreateProcessIdFile()
+        {
+            string id = Process.GetCurrentProcess().Id.ToString();
+            string appPath = AppDomain.CurrentDomain.BaseDirectory;
+            string path = appPath + @"\temp\processId.txt";
+            File.WriteAllText(path, id);
+        }
+        static void Init()
+        {
+            Global global = new();
+            global.Listen = 80;
+            global.ListenUse = false;
+            global.MultipleSite = true;
+            global.ModuleEnabled = false;
+            global.Server.Extensions = new string[] { ".py", ".php", ".xhtml", ".html", ".htm" };
+
+
+            global.MinWorker = 2;
+            global.MinWorkerAsync = 2;
+            global.MaxWorker = 2;
+            global.MaxWorkerAsync = 2;
+
+
+            Interpreter php = new();
+            php.Version = "x86";
+            php.Name = "php";
+            php.Path = "includes/php/php.exe";
+            php.Type = "int";
+
+            Interpreter phpcgi = new();
+            php.Version = "x86";
+            php.Name = "php";
+            php.Path = "includes/php/php-cgi.exe";
+            php.Type = "cgi";
+
+            Interpreter python = new();
+            php.Version = "x86";
+            php.Name = "py";
+            php.Path = "includes/python/win86/python.exe";
+            php.Type = "int";
+
+            global.Interpreters = new System.Collections.Generic.Dictionary<string, Interpreter>() {
+                    { "php", php },
+                    { "phpcgi", phpcgi },
+                    { "python", python }
+                };
+            global.SerializeConfig();
         }
     }
 }

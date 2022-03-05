@@ -400,19 +400,32 @@ Date: {DateTime.Now}");
         }
         public void SendError(ServerError error)
         {
-            string html = $"<html><head><title></title></head><body><h1>Error {(int)error}</h1><div>{error}</div></body></html>";
-            string headers = $"HTTP/1.1 {(int)error} OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
-            byte[] data = Encoding.UTF8.GetBytes(headers);
-            _client.Send(data, data.Length, SocketFlags.None);
-            _client.Close();
+            try
+            {
+                string html = $"<html><head><title></title></head><body><h1>Error {(int)error}</h1><div>{error}</div></body></html>";
+                string headers = $"HTTP/1.1 {(int)error} OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
+                byte[] data = Encoding.UTF8.GetBytes(headers);
+                _client.Send(data, data.Length, SocketFlags.None);
+            }
+            finally
+            {
+                _client.Close();
+            }
+            
         }
         public void SendError(ServerError error, string message)
         {
-            string html = $"<html><head><title></title></head><body><h1>Error {(int)error}</h1><div>{message}</div></body></html>";
-            string headers = $"HTTP/1.1 {(int)error} OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
-            byte[] data = Encoding.UTF8.GetBytes(headers);
-            _client.Send(data, data.Length, SocketFlags.None);
-            _client.Close();
+            try
+            {
+                string html = $"<html><head><title></title></head><body><h1>Error {(int)error}</h1><div>{message}</div></body></html>";
+                string headers = $"HTTP/1.1 {(int)error} OK\nContent-type: text/html\nContent-Length: {html.Length}\n\n{html}";
+                byte[] data = Encoding.UTF8.GetBytes(headers);
+                _client.Send(data, data.Length, SocketFlags.None);
+            }
+            finally
+            {
+                _client.Close();
+            }
         }
     }
     public enum ServerError
