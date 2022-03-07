@@ -55,6 +55,6 @@
   ],
   "MinWorker": 2,
   "MinWorkerAsync": 2,
-  "ManWorker": 4,
-  "ManWorkerAsync": 4
+  "MaxWorker": 4,
+  "MaxWorkerAsync": 4
 }

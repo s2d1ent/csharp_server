@@ -221,6 +221,7 @@ namespace Program
             string json = File.ReadAllText(address);
             json = json.Replace("\\", "/");
             result = JsonSerializer.Deserialize<Global>(json);
+            
             bool save = false;
             if(result.MinWorker == 1 || result.MinWorker <= 0) result.MinWorker = 2;
 
@@ -230,13 +231,13 @@ namespace Program
 
             if (result.MaxWorkerAsync == 1 || result.MaxWorkerAsync <= 0) result.MaxWorkerAsync = 2;
 
-
-
             if (result.ListenUse == null) result.ListenUse = false;
 
             if (result.MultipleSite == null) result.MultipleSite = true;
 
             if (result.ModuleEnabled == null) result.ModuleEnabled = false;
+
+            if (result.Modules.CancellationToken == null) result.Modules.CancellationToken = new();
 
             if (result.Server == null)
             {
@@ -284,6 +285,7 @@ namespace Program
             }
             if (save)
                 result.SerializeConfig();
+            result.RemoteApi = new(result);
             return result;
         }
         static void CreateProcessIdFile()

@@ -39,7 +39,7 @@ namespace Program
         public Modules() : base(isCollectible:true) { }
         public void Start()
         {
-            if(Enabled && Active)
+            if(_enabled && Active)
             {
                 this.Init();
                 this.WorkAsync(ModuleMode.Start);
@@ -59,6 +59,7 @@ namespace Program
 
         public void Stop()
         {
+            _cts.Cancel();
             this.Unload();
         }
 
@@ -94,7 +95,7 @@ namespace Program
                 {
                     if (module.Mode == mode) Task.Run(module.Activate);
                 }
-            }
+            }, _cts.Token
             );
         }
 
@@ -124,30 +125,26 @@ namespace Program
             foreach (var met in methods)
             {
                 module.Path = path;
-                if (met.Name == "Start")
+                switch(met.Name)
                 {
-                    module.Mode = ModuleMode.Start;
-                    module.MethodInfo = met;
-                    _dlls.Add(module);
+                    case "Start":
+                        module.Mode = ModuleMode.Start;
+                    break;
+                    case "Begin":
+                        module.Mode = ModuleMode.Begin;
+                    break;
+                    case "Update":
+                        module.Mode = ModuleMode.Update;
+                    break;
+                    case "End":
+                        module.Mode = ModuleMode.End;
+                    break;
+                    Default:
+                        module.Mode = ModuleMode.None;
+                    break;
                 }
-                if (met.Name == "Begin")
-                {
-                    module.Mode = ModuleMode.Begin;
-                    module.MethodInfo = met;
-                    _dlls.Add(module);
-                }
-                if (met.Name == "Update")
-                {
-                    module.Mode = ModuleMode.Update;
-                    module.MethodInfo = met;
-                    _dlls.Add(module);
-                }
-                if (met.Name == "End")
-                {
-                    module.Mode = ModuleMode.End;
-                    module.MethodInfo = met;
-                    _dlls.Add(module);
-                }
+                module.MethodInfo = met;
+                _dlls.Add(module);
             }
         }
     }

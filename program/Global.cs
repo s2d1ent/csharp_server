@@ -21,7 +21,8 @@ namespace Program
 
         public Dictionary<string, Interpreter> Interpreters { get; set; }
         public string[] MySqlPath { get; set; }
-
+        
+        [JsonIgnore]
         public RemoteApi RemoteApi
         {
             get
@@ -37,7 +38,7 @@ namespace Program
             }
         }
 
-        private RemoteApi _remoteApi;
+        private volatile RemoteApi _remoteApi;
 
         // ThreadPool
         public int MinWorker { get; set; }
