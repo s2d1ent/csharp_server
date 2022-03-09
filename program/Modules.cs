@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.Loader;
 using Newtonsoft.Json;
 
-namespace Program
+namespace Program   
 {
     public class Modules : AssemblyLoadContext
     {
@@ -117,7 +117,7 @@ namespace Program
 
         private void Init2(string path)
         {
-            Assembly externModule = this.LoadFromAssemblyPath(path);
+            Assembly externModule = LoadFromAssemblyPath(path);
             Type classModule = externModule.GetType("Module");
             ModuleStruct module = new();
             module.Path = path;

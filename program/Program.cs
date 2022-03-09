@@ -13,12 +13,14 @@ namespace Program
         static void Main(string[] args)
         {
             // add new encodings
-            CreateProcessIdFile();
+            //CreateProcessIdFile();
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             string path = AppDomain.CurrentDomain.BaseDirectory;
             Global global;
             if (File.Exists($@"{path}/global-config.json"))
+            {
                 global = SerialaizeGlobal($@"{path}/global-config.json");
+            }
             else
             {
                 Console.WriteLine("global-config.json not found use: program -config init");
@@ -237,7 +239,7 @@ namespace Program
 
             if (result.ModuleEnabled == null) result.ModuleEnabled = false;
 
-            if (result.Modules.CancellationToken == null) result.Modules.CancellationToken = new();
+            //if (result.Modules.CancellationToken == null) result.Modules.CancellationToken = new();
 
             if (result.Server == null)
             {

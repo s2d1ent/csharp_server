@@ -1,17 +1,27 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Net.Sockets;
 using System.Text;
 
 namespace Program
 {
-    class Interpreter
+    internal /* abstract */ class Interpreter
     {
         public string Version { get; set; }
         public string Name { get; set; }
         public string Path { get; set; }
         public string Type { get; set; }
+        public bool Active { get; set; }
+        protected Response _response;
         public Interpreter() {}
+        public Interpreter(Response response) 
+        {
+            this._response = response;
+        }
+
+        //public virtual string StartApp() { return ""; }
+
         public string UseInterpreter(string pathexe, string file)
         {
             ProcessStartInfo info = new ProcessStartInfo(pathexe, file);

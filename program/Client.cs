@@ -428,6 +428,12 @@ Date: {DateTime.Now}");
             }
         }
     }
+
+    public struct Response
+    {
+        public string Data;
+    }
+
     public enum ServerError
     {
         Unauthorized = 401,

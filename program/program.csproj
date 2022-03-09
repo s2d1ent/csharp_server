@@ -6,6 +6,11 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <Company>s2d1ent</Company>
+    <Authors>s2d1ent</Authors>
+    <Product>Web-Server</Product>
+    <Version>1.0.1</Version>
+    <PackageId>SWSdotNet</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

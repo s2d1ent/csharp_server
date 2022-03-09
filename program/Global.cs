@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Net;
 using Newtonsoft.Json;
@@ -18,10 +19,10 @@ namespace Program
         public Modules Modules { get; set; }
         public Server Server { get; set; }
         public Dictionary<string, string> Alias { get; set; }
-
         public Dictionary<string, Interpreter> Interpreters { get; set; }
+        public CancellationTokenSource Cts { get { return _cts; } set { _cts = value; } }
         public string[] MySqlPath { get; set; }
-        
+
         [JsonIgnore]
         public RemoteApi RemoteApi
         {
@@ -39,6 +40,7 @@ namespace Program
         }
 
         private volatile RemoteApi _remoteApi;
+        private volatile CancellationTokenSource _cts; 
 
         // ThreadPool
         public int MinWorker { get; set; }
@@ -46,10 +48,14 @@ namespace Program
         public int MaxWorker { get; set; }
         public int MaxWorkerAsync { get; set; }
 
-        // constructors
+        // Interpreters
+        public Php Php= new Php();
+        public Python Python= new Python();
+
+        // Constructors
         public Global(){}
 
-        // methods
+        // Methods
         public void GetServer()
         {
             Server.Global = this;
@@ -64,7 +70,6 @@ namespace Program
             }
             
         }
-
 
         public void SerializeConfig()
         {

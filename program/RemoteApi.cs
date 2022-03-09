@@ -22,9 +22,13 @@ namespace Program
         private Socket _listener;
         private Socket _listenerSecurity;
         private volatile Global _global;
+        
         private volatile CancellationTokenSource _cts = new();
 
-        private string[,] Users { get; set; }
+        private ApiUser _user = new();
+        private ApiUser[] _users { get; set; }
+        private ApiAccess _access = ApiAccess.None;
+        
 
         public RemoteApi(Global global)
         {
@@ -61,18 +65,64 @@ namespace Program
             _cts = new();
             Start();
         }
-        public void Help() { }
-        public void Aliases() { }
-        public void Disconnect() { }
-        public void ServerInfo() { }
-        public void RerouteResponse() 
+        public byte[] Help() 
         {
-            
+            string result = "";
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"\help";
+            if (File.Exists(path))
+            {
+                result = File.ReadAllText(path);
+            }
+            else
+            {
+                result = "basedirectory/help file not found. Plase try soon again.";
+            }
+            byte[] buffer = Encoding.UTF8.GetBytes(result);
+            return buffer;
+        }
+        public byte[] Aliases() 
+        {
+            string result = "";
+
+            foreach(var alias in _global.Alias)
+            {
+                result += $"Folder: {alias.Value} Alias: {alias.Key}\n";
+            }
+
+            byte[] buffer = Encoding.UTF8.GetBytes(result);
+            return buffer;
+        }
+        public void Disconnect() { }
+        public byte[] ServerInfo() 
+        {
+            string result = "";
+
+            result = $"C# .Net Core Server\nIp: {_global.Ipv4}:{_global.Listen}\n";
+
+            byte[] buffer = Encoding.UTF8.GetBytes(result);
+            return buffer;
+        }
+        public byte[] RerouteResponse(Response response) 
+        {
+            byte[] buffer = Encoding.UTF8.GetBytes(response.Data);
+            return buffer;
         }
         // config
-        public void GetConfig() 
+        public byte[] GetConfig() 
         {
-            
+            string result = "";
+            string path = AppDomain.CurrentDomain.BaseDirectory;
+            if (File.Exists($@"{path}/global-config.json"))
+            {
+                result = $@"{path}/global-config.json";
+            }
+            else
+            {
+                result = $"{path}global-config.json not found use: program -config init";
+                
+            }
+            byte[] buffer = Encoding.UTF8.GetBytes(result);
+            return buffer;
         }
         public void SetConfig() { }
         public byte[] DownloadConfig(string file) 
@@ -80,21 +130,39 @@ namespace Program
             string app = AppDomain.CurrentDomain.BaseDirectory;
             string path = app + @"\global-config.json";
             FileStream fs = new(path, FileMode.Open, FileAccess.Read, FileShare.Read, 4096 ,true);
+
             byte[] buffer = new byte[fs.Length];
             fs.ReadAsync(buffer, 0, buffer.Length, _cts.Token);
+
             return buffer;
         }
-        public void LoadConfig() { }
-        public void GetConnectInfo() { }
+        public void LoadConfig() 
+        { 
+        
+        }
+        public void GetConnectInfo() 
+        {
+        
+        }
         // modules
         public void LoadModule() { }
-        public void DownLoadModule() { }
-        public void UseModule() { }
+        public byte[] DownLoadModule(string file) 
+        {
+            FileStream fs = new(file, FileMode.Open, FileAccess.Read , FileShare.ReadWrite, 0, true);
+            byte[] buffer = new byte[fs.Length];
+            fs.Read(buffer, 0, buffer.Length);
+
+            return buffer;
+        }
+        public void UseModule() 
+        { 
+            
+        }
         public void NoUseModule() 
         {
             
         }
-        public string ShowModules() 
+        public byte[] ShowModules() 
         {
             string response = "";
             string app = AppDomain.CurrentDomain.BaseDirectory;
@@ -108,10 +176,11 @@ namespace Program
                 }
             }
 
-            return response;
+            byte[] buffer = Encoding.UTF8.GetBytes(response);
+            return buffer;
         }
         // includes
-        public string ShowIncludes() 
+        public byte[] ShowIncludes() 
         {
             string response = "";
             string app = AppDomain.CurrentDomain.BaseDirectory;
@@ -121,8 +190,8 @@ namespace Program
             {
                 response += folder + "\n";
             }
-
-            return response;
+            byte[] buffer = Encoding.UTF8.GetBytes(response);
+            return buffer;
         }
 
         public static void UserConnect(Socket user)
@@ -136,10 +205,39 @@ namespace Program
         }
     }
 
-    public struct ApiData
+    internal enum ApiAccess
+    {
+        None,
+        Public,
+        Private
+    }
+
+    internal struct ApiUser
+    {
+        public string Name;
+        public string Password;
+
+        public void Set(string name, string password)
+        {
+            this.Name = name;
+            this.Password = password;
+        }
+
+        public static ApiUser User(string name, string password)
+        {
+            ApiUser result = new();
+            result.Set(name, password);
+            return result;
+        }
+
+    }
+
+    internal struct ApiData
     {
         public string Rsponse { get; set; }
         public string Request { get; set; }
-        public bool isStandartCmd;
+        private bool _isStandartCmd;
+        private bool _isModuleCmd;
+        public string[] ModulesCmd { get; set; }
     }
 }

@@ -12,36 +12,29 @@
 
 Название   | Реализация   | Версия      | Разрядность системы|
 :---       |   :---       |   :---:     |  :---:             |
-Php        |Implemented                 | 8.0.12   | x86
-Php-cgi    |Implemented                 | 8.0.12   | x86
-Python     |Partially implemented       | 3.10.0   | x86
-MySql      |Implemented                 | 5.7.36   | x86
-Multithreaded processing  | Implemented |  -       |-
-Domain system             | Implemented |  -       |-
-Custom alias              | Implemented |  -       |-
-Multiple site             | Implemented |  -       |-
-Extern modules            | Implemented |  -       |-
+**Php**        |Implemented                 | 8.0.12   | x86
+**Php-cgi**    |Implemented                 | 8.0.12   | x86
+**Python**     |Partially implemented       | 3.10.0   | x86
+**MySql**      |Implemented                 | 5.7.36   | x86
+**Multithreaded processing**  | Implemented |  -       |-
+**Domain system**             | Implemented |  -       |-
+**Custom alias**              | Implemented |  -       |-
+**Multiple site**             | Implemented |  -       |-
+**Extern modules**            | Implemented |  -       |-
 
 <br>
 
 ## Документация
-- [Описание пользовательских типов]("\tree\main\Classes.md") 
-- [MySql](\tree\main\MySql.md)
-- [Внешние модули](\tree\main\Modules.md)
+- [Описание пользовательских типов](\doc\Classes.md) 
+- [MySql](\doc\MySql.md)
+- [Внешние модули](\doc\Modules.md)
+- [API](\doc\Api.md) 
+- [Дополнительные материалы](\doc\Additionally.md)
 
-# Принцип работы(в кратце)
-Данный сервер работает на основе архитектуры клиент-сервер.<br>
-В начале работы сервера инициализируется класс Global, который берет данные из global-config.json и производит основную настройку сервера инициализируя следующие классы:
-
-- Interpreter - класс, обозначает интерпритаторы которые использует сервер на Windows OS
-
-- Server - класс, представляет сервер который ведет прослушивание с помощью Socket по паре IPv4:port(127.0.0.1:80)
-
-- Client - класс, обозначает подключенного пользователя. Данный класс инициализируется в процессе прослушивания в классе Server
-
-**Если global-config.json будет отсутствовать, то сервер выдаст ошибку и не запустится**
 <br><br>
 # Структура global-config.json
+**Если global-config.json будет отсутствовать, то сервер выдаст ошибку и не запустится**
+<br><br>
 ``` json
 {
   "Ipv4": "127.0.0.1",
@@ -49,11 +42,6 @@ Extern modules            | Implemented |  -       |-
   "ListenUse": false,
   "MultipleSite": true,
   "ModuleEnabled": true,
-  "Modules":{
-    "Dlls":[
-      "/modules/dlls.dll"  
-    ]
-  },
   "Server": {
     "Extensions": [
       ".py",
@@ -64,6 +52,7 @@ Extern modules            | Implemented |  -       |-
     ],
     "Modules":{
       "Dlls":[
+        "/modules/csharp_server_dll.dll",
         "/modules/dlls.dll"
       ]
     }
@@ -93,7 +82,7 @@ Extern modules            | Implemented |  -       |-
     "python": {
       "Version": "x86",
       "Name": "py",
-      "Path": "includes/python/python.exe",
+      "Path": "includes/python/win86/python.exe",
       "Type": "int"
     }
   },
@@ -104,8 +93,8 @@ Extern modules            | Implemented |  -       |-
   ],
   "MinWorker": 2,
   "MinWorkerAsync": 2,
-  "ManWorker": 4,
-  "ManWorkerAsync": 4
+  "MaxWorker": 4,
+  "MaxWorkerAsync": 4
 }
 ```
 <br>
