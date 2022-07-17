@@ -1,60 +1,18 @@
 {
-  "Ipv4": "127.0.0.1",
-  "Listen": 80,
-  "ListenUse": false,
-  "MultipleSite": true,
-  "ModuleEnabled": true,
-  "Server": {
-    "Extensions": [
-      ".py",
-      ".php",
-      ".html",
-      ".htm",
-      ".xhtml"
-    ],
-    "Modules":{
-      "Dlls":[
-        "/modules/csharp_server_dll.dll",
-        "/modules/dlls.dll"
-      ]
-    }
-  },
-  "System": {
-    "OS": "Microsoft Windows NT 10.0.18363.0",
-    "Bit": "x64",
-    "Processor": "",
-    "RAM": ""
-  },
-  "Alias": {
-    "python": "kidalovo"
-  },
-  "Interpreters": {
-    "php": {
-      "Version": "x86",
-      "Name": "php",
-      "Path": "includes/php/php.exe",
-      "Type": "int"
-    },
-    "phpcgi": {
-      "Version": "x86",
-      "Name": "php",
-      "Path": "includes/php/php-cgi.exe",
-      "Type": "cgi"
-    },
-    "python": {
-      "Version": "x86",
-      "Name": "py",
-      "Path": "includes/python/win86/python.exe",
-      "Type": "int"
-    }
-  },
-  "MySqlPath": [
-    "includes/mysql/bin/mysqld.exe",
-    "includes/mysql/bin/mysqladmin.exe",
-    "includes/mysql/bin/mysql.exe"
-  ],
-  "MinWorker": 2,
-  "MinWorkerAsync": 2,
-  "MaxWorker": 4,
-  "MaxWorkerAsync": 4
+	"Ipv4": null,
+	"Port" : 80,
+	"Server":{
+		"Modules": {}
+	},
+	"EnabledServerModules": false,
+	"Multiple": false,
+	"Php":"/bin/",
+	"Python":null,
+	"Alias": {
+		"python":"kidalovo"
+	},
+	"MinWork": 2,
+	"MinWorkAsync": 2,
+	"MaxWork": 2,
+	"MaxWorkAsync": 2
 }

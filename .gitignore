@@ -3,7 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
-/program/bin/Debug/net5.0/www/
+./bin/
+./obj/
 
 # User-specific files
 *.rsuser
