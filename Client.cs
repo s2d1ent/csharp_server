@@ -47,10 +47,10 @@ namespace AMES
                 _client.Receive(buffer);
                 _headers = Encoding.UTF8.GetString(buffer);
 
+                Headers = Http.Parse(_headers);
+
                 // get path
-                path = Regex.Match(_headers, @"(?<=\w\s)([\W\w]+)(?=\sHTTP)").Value;
-                //Console.WriteLine(_headers);
-                //Headers = Http.Parse(_headers);
+                path = Headers["HTTP_LINK"];
 
                 // checked headers
                 if (_headers == null || _headers == "" || _headers.IndexOf("..") != -1)
@@ -89,6 +89,7 @@ namespace AMES
                             {
                                 find += "index." + value;
                             }
+
                             if(File.Exists(find))
                             {
                                 
@@ -106,10 +107,12 @@ namespace AMES
                             }
                         }
                     }
+                    
                 }
                 else
                 {
                     path = Constants.ROOT + path;
+                    path = path.Replace(@"\\", @"\").Replace(@"//", @"//");
                 }
 
                 switch(requestType)
@@ -118,6 +121,7 @@ namespace AMES
                         string requestHeaders = "";
                         byte[] html = new byte[0];
                         string contentType = GetContentType(path);
+                        path = path.Replace(@"\\", @"\").Replace(@"//", @"//");
 
                         if(fileExtensions.IndexOf("php") != -1 && _php != null)
                         {

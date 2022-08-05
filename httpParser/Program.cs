@@ -22,24 +22,8 @@ Referer: http://uppdd/signin.php
 Accept-Encoding: gzip, deflate
 Accept-Language: ru,en;q=0.9,la;q=0.8
 
-{
-	'Ipv4': null,
-	'Port' : 80,
-	'Server':{
-		'Modules': {}
-	},
-	'EnabledServerModules': false,
-	'Multiple': false,
-	'Php':'/bin/',
-	'Python':null,
-	'Alias': {
-		'python':'kidalovo'
-	},
-	'MinWork': 2,
-	'MinWorkAsync': 2,
-	'MaxWork': 2,
-	'MaxWorkAsync': 2
-}";
+name=admin&passwd=admin
+name=admin&passwd=admin";
             Dictionary<string, string> headersParsed = new();
             headersParsed = Http.Parse(headers);
 
@@ -107,84 +91,58 @@ Accept-Language: ru,en;q=0.9,la;q=0.8
             Dictionary<string, string> lines = ParseLines(headers, 0);
             int count = 0;
             
-            foreach(var elem in lines)
+            foreach(KeyValuePair<string, string> elem in lines)
             {
-                string key = "";
-                string value = elem.Value;
+                string key = elem.Key;
+                string value = elem.Value.Replace("\n", "");
+
                 if(count == 0)
                 {
-                    HttpRequestType type = Http.GetRequestType(value);
-                    string IOAddress = "";
-                    value = value.Replace($"{type}", "").TrimStart();
+                    // parse first line in headers
+                    // get path, http version and request type
+                    string type = GetRequestType(value).ToString();
+                    string link = "", httpType = "";
+                    value = value.Replace(type, "").TrimStart();
 
-                    for(int i = 0; i < value.Length; i++)
+                    for(int i = 0 ; i < value.Length; i++)
                     {
                         if(value[i] == ' ')
                         {
                             break;
                         }
-                        IOAddress += value[i];  
+                        link += value[i];
                     }
-                    
-                    value = value.Replace(IOAddress, "").Replace(" ", "");
+                    value = value.Replace(link, "").TrimStart();
 
-                    result.Add("HTTP_REQUEST_TYPE", type.ToString());
-                    result.Add("HTTP_FILE_PATH", IOAddress);
+                    result.Add("HTTP_REQUEST_TYPE", type);
+                    result.Add("HTTP_LINK", link);
                     result.Add("HTTP_VERSION", value);
-                } 
-                else if(value[0] == '{' && value[value.Length - 1] == '}')
-                {
-                   result["DATA"] = value;     
-                   continue;
+                    count++;
                 }
                 else
                 {
-                    string tempValue = "";
-                    bool hasKey = false;
+                    // other lines in headers
+                    if(key == "DATA")
+                    {
+                        continue;
+                    }
+
+                    key = "";
 
                     for(int i = 0; i < value.Length; i++)
                     {
                         if(value[i] == ':')
                         {
-                            hasKey = true;
-                            continue;
+                            break;
                         }
-                        if(!hasKey)
-                        {
-                            key += value[i];
-                        }
-                        else
-                        {
-                            tempValue += value[i];
-                        }
-                    }    
-
-                    if(key.Length != 0 && tempValue.Length != 0)
-                    {
-                        result.Add(key, tempValue);
+                        key += value[i];
                     }
-                    else
-                    {
-                        result.Add("DATA", key);
-                    }
-                }   
-                count++;
-            }
-            count--;
+                    value = value.Replace(key, "")
+                        .TrimStart(':')
+                        .TrimStart();
 
-            if(result["HTTP_REQUEST_TYPE"] == "POST")
-            {
-                string data = ParseDataPost(
-                    result["HTTP_FILE_PATH"]
-                );
-                result["DATA"] = data;   
-            }
-            else if(result["HTTP_REQUEST_TYPE"] == "GET")
-            {
-                string data = ParseDataGet(
-                    result["HTTP_FILE_PATH"]
-                );
-                result["DATA"] = data;
+                    result.Add(key, value);
+                }
             }
 
             return result;
@@ -210,18 +168,19 @@ Accept-Language: ru,en;q=0.9,la;q=0.8
             return result;
         }
 
-        private static string ParseDataPost(string line)
+        private static string ParseDataPost(string headers)
         {
             string result = "";
 
             return result;
         }
 
-        private static Dictionary<string, string> ParseLines(string headers, int count)
+        public static Dictionary<string, string> ParseLines(string headers, int count = 0)
         {
             Dictionary<string, string> result = new();
             string line = "";
             int i = 0;
+            bool segmentData = false;
             
             if(headers == null || headers.Length == 0 || headers.Length == 1)
             {
@@ -238,32 +197,37 @@ Accept-Language: ru,en;q=0.9,la;q=0.8
                 {
                     break;
                 }
+                // TODO 
                 if(headers[i] == '\n')
                 {
+                    line += headers[i];
                     break;
                 }
-                if(headers[i] == '{' && 
-                    headers[headers.Length - 1] == '}')
-                {
-                    line = headers;
-                    break;
-                }
-                
                 line += headers[i];
                 i++;
             }
+
+            if (line.Length == 2)
+            {
+                headers = headers.Replace(line, "");
+                result.Add("DATA", headers);
+                segmentData = true;
+            }
+            
             result.Add($"lines_{count}", line);
             headers = headers.Replace(line, "");
             Dictionary<string, string> tempParse = new();
             
-            if(headers.Length != 0)
+            if(headers.Length != 0 && !segmentData)
             {
                 tempParse = ParseLines(headers, ++count);
             }
             
             foreach(KeyValuePair<string, string> elem in tempParse)
             {
-                result.Add(elem.Key, elem.Value);
+                result.Add(elem.Key, 
+                    elem.Value.Replace("\n", "")
+                );
             }
             return result;
         }

@@ -6,20 +6,25 @@ namespace AMES
     {
         static void Main(string[] args)
         {
+            string configPath = $@"{AppDomain.CurrentDomain.BaseDirectory}global-config.json";
             System.Text.Encoding.RegisterProvider(
                 System.Text.CodePagesEncodingProvider.Instance
             );
 
             Configurator config = new();
             config = Configurator.Deserialize(
-                $@"{AppDomain.CurrentDomain.BaseDirectory}global-config.json"
+                    configPath
                 );
+            config.CheckedDirectories();
+
+            // RApi
+            config.RemoteApi.StartAsync();
 
             // configurate server
-            config.CheckedDirectories();
-            config.Restart();
             config.Server = config.GetServer();
             config.Server.Start();
+
+            
         }
     }
 }

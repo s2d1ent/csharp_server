@@ -32,6 +32,7 @@ namespace AMES
 
         private AMESLogger _logger = new();
         public Server Server;
+        public RemoteApi RemoteApi { get; set;}
         public string _sslPubKey = null;
         public string _sslPrivKey = null;
 
@@ -54,7 +55,7 @@ namespace AMES
             json = File.ReadAllText(file);
             result = JsonConvert.DeserializeObject<Configurator>(json);
 
-            // static data
+            // [STATIC DATA BEGIN]
             SetConstants();
             // Root directory website
             if(result.Root != null && result.Root[0] == '.')
@@ -104,6 +105,10 @@ namespace AMES
             }
 
             Constants.PHPFASTCGI = result.PhpFastcgi;
+            // [STATIC DATA END]
+            //result.GetRApi();
+            
+            result.GetIP(ref result);
 
             result._logger.SetLog(AMESModuleType.Configurator, "Deserialize config");
             return result;
@@ -118,6 +123,24 @@ namespace AMES
                 new JsonSerializerSettings() 
                 { ReferenceLoopHandling = ReferenceLoopHandling.Ignore }
             );
+        }
+
+        public void GetIP(ref Configurator configurator)
+        {
+            if(configurator.Ipv4 == null)
+            {
+                string hostname = System.Net.Dns.GetHostName();
+                System.Net.IPAddress[] pool = System.Net.Dns.GetHostAddresses(hostname);
+                
+                foreach(var elem in pool)
+                {
+                    if(elem.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                    {
+                        configurator.Ipv4 = elem.ToString();
+                        break;
+                    }
+                }
+            }
         }
 
         public static void SetConstants()
@@ -165,28 +188,11 @@ namespace AMES
 
         public Server GetServer()
         {
-            if(Ipv4 == null)
-            {
-                string hostname = System.Net.Dns.GetHostName();
-                System.Net.IPAddress[] pool = System.Net.Dns.GetHostAddresses(hostname);
-                
-                foreach(var elem in pool)
-                {
-                    if(elem.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-                    {
-                        Ipv4 = elem.ToString();
-                        break;
-                    }
-                }
-            }
-            Server server = new(Ipv4);
-
             if (Port == 0) 
             {
                 Port = 80;
             }
-
-            server.Port = Port;
+            Server server = new(Ipv4, Port);
 
             server.UsePhp = Php == null ? false : true;
             server.UsePython = Python == null ? false : true;
@@ -201,6 +207,14 @@ namespace AMES
             );
 
             return server;
+        }
+
+        public void GetRApi()
+        {
+            if(RemoteApi == null)
+            {
+                RemoteApi = new RemoteApi(Ipv4);
+            }
         }
 
         public void Init()
