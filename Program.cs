@@ -18,7 +18,7 @@ namespace AMES
             config.CheckedDirectories();
 
             // RApi
-            config.RemoteApi.StartAsync();
+            //config.RemoteApi.StartAsync();
 
             // configurate server
             config.Server = config.GetServer();

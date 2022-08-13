@@ -23,6 +23,7 @@ namespace AMES
         public string Php { get; set; }
         public string Python { get; set; }
         public Dictionary<string, string> Alias { get; set; }
+        public Cache Cache;
 
         // ThreadPool min&max options
         public int MinWork { get; set; }
@@ -30,7 +31,7 @@ namespace AMES
         public int MaxWork { get; set; }
         public int MaxWorkAsync { get; set; }
 
-        private AMESLogger _logger = new();
+        private AMESLogger _logger = new AMESLogger();
         public Server Server;
         public RemoteApi RemoteApi { get; set;}
         public string _sslPubKey = null;
@@ -51,6 +52,7 @@ namespace AMES
                 Console.WriteLine("Config not found");
                 return null;
             }
+            
 
             json = File.ReadAllText(file);
             result = JsonConvert.DeserializeObject<Configurator>(json);
@@ -106,9 +108,10 @@ namespace AMES
 
             Constants.PHPFASTCGI = result.PhpFastcgi;
             // [STATIC DATA END]
-            //result.GetRApi();
+            result.GetRApi();  
             
             result.GetIP(ref result);
+            result.Cache = new Cache();
 
             result._logger.SetLog(AMESModuleType.Configurator, "Deserialize config");
             return result;

@@ -5,6 +5,47 @@ namespace AMES
 {
     internal class Http
     {
+
+        public static HttpRequestType ParseRequestType(string requestType)
+        {
+            HttpRequestType result = HttpRequestType.NONE;
+
+            switch(requestType)
+            {
+                case "OPTIONS":
+                    result =HttpRequestType.OPTIONS;
+                break;
+                case "GET":
+                    result =HttpRequestType.GET;
+                break;
+                case "HEAD":
+                    result =HttpRequestType.HEAD;
+                break;
+                case "POST":
+                    result =HttpRequestType.POST;
+                break;
+                case "PUT":
+                    result =HttpRequestType.PUT;
+                break;
+                case "PATCH":
+                    result =HttpRequestType.PATCH;
+                break;
+                case "DELETE":
+                    result =HttpRequestType.DELETE;
+                break;
+                case "TRACE":
+                    result =HttpRequestType.TRACE;
+                break;
+                case "CONNECT":
+                    result =HttpRequestType.CONNECT;
+                break;
+                default:
+                    result = HttpRequestType.NONE;
+                break;
+            }
+
+            return result;
+        }
         public static HttpRequestType GetRequestType(string header)
         {
             HttpRequestType result = HttpRequestType.NONE;
@@ -54,7 +95,8 @@ namespace AMES
             return result;
         }
 
-        public static Dictionary<string, string> Parse(string headers)
+
+        public static Dictionary<string, string> Parse(ref string headers)
         {
             Dictionary<string, string> result = new();
             Dictionary<string, string> lines = ParseLines(headers, 0);
@@ -81,6 +123,15 @@ namespace AMES
                         }
                         link += value[i];
                     }
+
+                    if(link.IndexOf('?') != -1)
+                    {
+                        string data = GetData(link);
+                        link = link.Replace(data, "");
+
+                        result.Add("DATA", data);
+                    }
+
                     value = value.Replace(link, "").TrimStart();
 
                     result.Add("HTTP_REQUEST_TYPE", type);
@@ -93,6 +144,7 @@ namespace AMES
                     // other lines in headers
                     if(key == "DATA")
                     {
+                        result.Add(key, value);
                         continue;
                     }
 
@@ -111,6 +163,26 @@ namespace AMES
                         .TrimStart();
 
                     result.Add(key, value);
+                }
+            }
+            headers = null;
+            return result;
+        }
+
+        private static string GetData(string headers)
+        {
+            string result = "";
+            bool read = false;
+
+            for(int i = 0; i < headers.Length; i++)
+            {
+                if(read)
+                {
+                    result += headers[i];
+                }
+                else
+                {
+                    read = headers[i] == '?' ? true : false;
                 }
             }
 

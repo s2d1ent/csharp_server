@@ -10,29 +10,32 @@ namespace AMES
 {
     internal class AMESLogger
     {
-        public string Path { get; set; }
+        public string Path;
         
-        private Mutex _mutex;
-        private Semaphore _semaphore;
+        private Mutex _mutex;        
 
         public AMESLogger()
         {
-            Path = Constants.PATH + $"logs/{DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}.log.txt";
             _mutex = new();
-            _semaphore = new(1,1);
         }
 
         public void SetLog(AMESModuleType amesModule, string message)
         {
-            _semaphore.WaitOne();
+            _mutex.WaitOne();
             try
             {
+                if(Path == null || Path == "")
+                {
+                    Path = Constants.PATH + $"logs/{DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}.log.txt";
+                }
+
                 TimeSpan dateTime = DateTime.Now.TimeOfDay;
-            
+
                 if(!File.Exists(Path))
                 {
-                    File.Create(Path);    
+                    File.Create(Path);
                 }
+
                 message = message + "\n";
                 string append = $"[{dateTime}]:{amesModule.ToString()} {message}";
                 byte[] buffer = Encoding.Default.GetBytes(append);
@@ -48,7 +51,7 @@ namespace AMES
             }
             finally
             {
-               _semaphore.Release();
+               _mutex.ReleaseMutex();
             }
         }
     }

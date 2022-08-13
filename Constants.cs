@@ -13,25 +13,25 @@ namespace AMES
         public static string ROOT = "";
         public static bool PHPFASTCGI = false;
         public static string[] EXTENSIONS = new string[10];
-        public static string PATH 
-        {
-            get
-            {
-                return _path;
-            }
-            set
-            {
-                if(_path == null)
-                {
-                    _path = value;
-                }
-                else
-                {
-                    AMESException exception = new();
-                    throw exception;
-                }
-            }
-        }
+        public static string PATH = "";
+        // {
+        //     get
+        //     {
+        //         return _path;
+        //     }
+        //     set
+        //     {
+        //         if(_path == null)
+        //         {
+        //             _path = value;
+        //         }
+        //         else
+        //         {
+        //             AMESException exception = new();
+        //             throw exception;
+        //         }
+        //     }
+        // }
         public static string PATH_WWW 
         {
             get

@@ -8,22 +8,19 @@ namespace Program
     {
         static void main()
         {
-            string headers = @"POST /php/auth.php?name=admin&passwd=admin HTTP/1.1
-Host: uppdd
-Connection: keep-alive
-Content-Length: 62
-Cache-Control: max-age=0
-Upgrade-Insecure-Requests: 1
-Origin: http://uppdd
-Content-Type: application/x-www-form-urlencoded
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.85 YaBrowser/21.11.1.212 Yowser/2.5 Safari/537.36
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
-Referer: http://uppdd/signin.php
-Accept-Encoding: gzip, deflate
-Accept-Language: ru,en;q=0.9,la;q=0.8
+            string headers = @"PUT /index.htm HTTP/1.1
+Host: viktor
+Content-Type: text/plain
+Content-Length: 83
 
-name=admin&passwd=admin
-name=admin&passwd=admin";
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1>Hello, World!</h1>
+</body>
+</html>";
             Dictionary<string, string> headersParsed = new();
             headersParsed = Http.Parse(headers);
 
@@ -95,7 +92,6 @@ name=admin&passwd=admin";
             {
                 string key = elem.Key;
                 string value = elem.Value.Replace("\n", "");
-
                 if(count == 0)
                 {
                     // parse first line in headers
@@ -124,6 +120,7 @@ name=admin&passwd=admin";
                     // other lines in headers
                     if(key == "DATA")
                     {
+                        result.Add(key, value);
                         continue;
                     }
 

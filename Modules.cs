@@ -11,9 +11,22 @@ namespace AMES
 {
     internal class Modules
     {
-        public void Begin() { }
-        public void Start() { }
-        public void End() { }
-        public void Stop() { }
+        public void Begin() 
+        {
+
+
+        }
+        public void Start() 
+        {
+
+        }
+        public void End() 
+        {
+
+        }
+        public void Stop() 
+        {
+
+        }
     }
 }

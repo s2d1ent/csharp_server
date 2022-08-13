@@ -35,7 +35,7 @@
 //     {
 //         byte[] head = {1, 1, 1, 8, 0};
 //         /*
-//             struct head
+//             struct
 //             {
 //                 char protocolVersion;
 //                 char type;
@@ -46,7 +46,7 @@
 //         */
 //         byte[] body = {1, 0};
 //         /*
-//             scruct body
+//             scruct
 //             {
 //                 char role;
 //                 char flag;
