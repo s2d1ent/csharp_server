@@ -32,7 +32,7 @@ namespace AMES
             _python = Constants.PATH_PYTHON == null || Constants.PATH_PYTHON == "" ? null : new Python();
         }
 
-        // Begine work with client request 
+        // Start work with client request 
         public void Start()
         {
             string path = "";
@@ -69,7 +69,7 @@ namespace AMES
                 // If path equal to /? that choice index file
                 if(path == @"\" || path == "/")
                 {
-                    if(Configurator.Multiple)
+                    if(Configurator.ServerMode == ServerMode.Multiple)
                     {
 
                     }   

@@ -12,6 +12,7 @@ namespace AMES
     {
         public string Ipv4 { get; set; }
         public int Port { get; set; }
+        public ServerMode ServerMode { get; set; }
         public string SslPubKey { get; set; }
         public string SslPrivKey { get; set; }
         public string[] Extensions { get; set; }
@@ -19,7 +20,6 @@ namespace AMES
         public bool EnabledServerModules { get; set; }
         public bool Multiple { get; set; }
         public bool PhpFastcgi { get; set; }
-        public string Index { get; set; }
         public string Php { get; set; }
         public string Python { get; set; }
         public Dictionary<string, string> Alias { get; set; }
@@ -270,6 +270,17 @@ namespace AMES
                 Directory.CreateDirectory(error);
             }
         }
+    }
+
+    internal enum ServerMode
+    {
+        NONE,
+        // when in dir './www' can be only one site; './www' is root dir
+        Single,
+        // when in dir './www' can be multiple dir, when each dir is site
+        Multiple,
+        // when in dir './www' can be multiple dir and under dir configurator create self listener
+        Container
     }
 
 }
