@@ -12,6 +12,7 @@ namespace AMES
     {
         public string Ipv4 { get; set; }
         public int Port { get; set; }
+        public ServerMode ServerMode { get; set; }
         public string SslPubKey { get; set; }
         public string SslPrivKey { get; set; }
         public string[] Extensions { get; set; }
@@ -19,10 +20,10 @@ namespace AMES
         public bool EnabledServerModules { get; set; }
         public bool Multiple { get; set; }
         public bool PhpFastcgi { get; set; }
-        public string Index { get; set; }
         public string Php { get; set; }
         public string Python { get; set; }
         public Dictionary<string, string> Alias { get; set; }
+        public Cache Cache;
 
         // ThreadPool min&max options
         public int MinWork { get; set; }
@@ -30,8 +31,9 @@ namespace AMES
         public int MaxWork { get; set; }
         public int MaxWorkAsync { get; set; }
 
-        private AMESLogger _logger = new();
+        private AMESLogger _logger = new AMESLogger();
         public Server Server;
+        public RemoteApi RemoteApi { get; set;}
         public string _sslPubKey = null;
         public string _sslPrivKey = null;
 
@@ -50,11 +52,12 @@ namespace AMES
                 Console.WriteLine("Config not found");
                 return null;
             }
+            
 
             json = File.ReadAllText(file);
             result = JsonConvert.DeserializeObject<Configurator>(json);
 
-            // static data
+            // [STATIC DATA BEGIN]
             SetConstants();
             // Root directory website
             if(result.Root != null && result.Root[0] == '.')
@@ -104,6 +107,11 @@ namespace AMES
             }
 
             Constants.PHPFASTCGI = result.PhpFastcgi;
+            // [STATIC DATA END]
+            result.GetRApi();  
+            
+            result.GetIP(ref result);
+            result.Cache = new Cache();
 
             result._logger.SetLog(AMESModuleType.Configurator, "Deserialize config");
             return result;
@@ -118,6 +126,24 @@ namespace AMES
                 new JsonSerializerSettings() 
                 { ReferenceLoopHandling = ReferenceLoopHandling.Ignore }
             );
+        }
+
+        public void GetIP(ref Configurator configurator)
+        {
+            if(configurator.Ipv4 == null)
+            {
+                string hostname = System.Net.Dns.GetHostName();
+                System.Net.IPAddress[] pool = System.Net.Dns.GetHostAddresses(hostname);
+                
+                foreach(var elem in pool)
+                {
+                    if(elem.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                    {
+                        configurator.Ipv4 = elem.ToString();
+                        break;
+                    }
+                }
+            }
         }
 
         public static void SetConstants()
@@ -165,28 +191,11 @@ namespace AMES
 
         public Server GetServer()
         {
-            if(Ipv4 == null)
-            {
-                string hostname = System.Net.Dns.GetHostName();
-                System.Net.IPAddress[] pool = System.Net.Dns.GetHostAddresses(hostname);
-                
-                foreach(var elem in pool)
-                {
-                    if(elem.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-                    {
-                        Ipv4 = elem.ToString();
-                        break;
-                    }
-                }
-            }
-            Server server = new(Ipv4);
-
             if (Port == 0) 
             {
                 Port = 80;
             }
-
-            server.Port = Port;
+            Server server = new(Ipv4, Port);
 
             server.UsePhp = Php == null ? false : true;
             server.UsePython = Python == null ? false : true;
@@ -201,6 +210,14 @@ namespace AMES
             );
 
             return server;
+        }
+
+        public void GetRApi()
+        {
+            if(RemoteApi == null)
+            {
+                RemoteApi = new RemoteApi(Ipv4);
+            }
         }
 
         public void Init()
@@ -253,6 +270,17 @@ namespace AMES
                 Directory.CreateDirectory(error);
             }
         }
+    }
+
+    internal enum ServerMode
+    {
+        NONE,
+        // when in dir './www' can be only one site; './www' is root dir
+        Single,
+        // when in dir './www' can be multiple dir, when each dir is site
+        Multiple,
+        // when in dir './www' can be multiple dir and under dir configurator create self listener
+        Container
     }
 
 }

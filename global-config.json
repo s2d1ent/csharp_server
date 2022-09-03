@@ -1,13 +1,21 @@
 {
 	"Ipv4": null,
 	"Port" : 80,
+	"Root": null,
+	"PhpFastcgi": false,
+	"Index": "index.html",
+	"RemoteApi": {
+		"Ip": "127.0.1.1",
+		"Port": 1000
+	},
 	"Server":{
 		"Modules": {}
 	},
+	"Extensions": ["php","html", "htm"],
 	"EnabledServerModules": false,
 	"Multiple": false,
-	"Php":"/bin/",
-	"Python":null,
+	"Php": "/usr/bin/",
+	"Python": "/usr/bin/",
 	"Alias": {
 		"python":"kidalovo"
 	},

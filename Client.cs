@@ -30,47 +30,51 @@ namespace AMES
             _logger = new();
             _php = Constants.PATH_PHP == null || Constants.PATH_PHP == "" ? null : new Php();
             _python = Constants.PATH_PYTHON == null || Constants.PATH_PYTHON == "" ? null : new Python();
-            Console.WriteLine(Constants.PATH_PHP);
         }
 
-        // Begine work with client request 
+        // Start work with client request 
         public void Start()
         {
+            string path = "";
+            string fileExtensions = "";
+            byte[] buffer = new byte[_client.ReceiveBufferSize];
+            HttpRequestType requestType = HttpRequestType.NONE;
+
             try
             {
-                string path = "";
-                string fileExtensions = "";
-                byte[] buffer = new byte[_client.ReceiveBufferSize];
-                HttpRequestType requestType = HttpRequestType.NONE;
-
                 // get headers
                 _client.Receive(buffer);
                 _headers = Encoding.UTF8.GetString(buffer);
 
+                Headers = Http.Parse(ref _headers);
+
+                foreach(KeyValuePair<string, string> elem in Headers)
+                {
+                    //Console.WriteLine($"{elem.Key} - {elem.Value}");
+                }
+
                 // get path
-                path = Regex.Match(_headers, @"(?<=\w\s)([\W\w]+)(?=\sHTTP)").Value;
-                //Console.WriteLine(_headers);
-                //Headers = Http.Parse(_headers);
+                path = Headers["HTTP_LINK"];
 
                 // checked headers
-                if (_headers == null || _headers == "" || _headers.IndexOf("..") != -1)
+                if (path.IndexOf("..") != -1)
                 {
                     Error(HttpCodes.BadRequest);
                     _client.Close();
                     return;
                 }
 
-                requestType = Http.GetRequestType(_headers);
+                requestType = Http.ParseRequestType(Headers["HTTP_REQUEST_TYPE"]);
+
                 // If path equal to /? that choice index file
                 if(path == @"\" || path == "/")
                 {
-                    if(Configurator.Multiple)
+                    if(Configurator.ServerMode == ServerMode.Multiple)
                     {
 
                     }   
                     else
                     {
-
                         for(int i = 0; i < Constants.EXTENSIONS.Length; i++)
                         {
                             string value = Constants.EXTENSIONS[i];
@@ -89,6 +93,7 @@ namespace AMES
                             {
                                 find += "index." + value;
                             }
+
                             if(File.Exists(find))
                             {
                                 
@@ -106,26 +111,43 @@ namespace AMES
                             }
                         }
                     }
+                    
                 }
                 else
                 {
                     path = Constants.ROOT + path;
+                    path = path.Replace(@"\\", @"\").Replace(@"//", @"//");
                 }
 
                 switch(requestType)
                 {
                     case HttpRequestType.GET:
                         string requestHeaders = "";
+                        bool hasCache = false;
                         byte[] html = new byte[0];
                         string contentType = GetContentType(path);
+                        path = path.Replace(@"\\", @"\").Replace(@"//", @"//");
 
-                        if(fileExtensions.IndexOf("php") != -1 && _php != null)
+                        if(!File.Exists(path))
                         {
-                            html = _php.GetFile(path);    
+                            Error(HttpCodes.BadRequest);
+                            break;
+                        }
+
+                        if(!hasCache)
+                        {
+                            if(fileExtensions.IndexOf("php") != -1 && _php != null)
+                            {
+                                html = _php.GetFile(path);    
+                            }
+                            else
+                            {
+                                html = _html.GetFile(path);
+                            }
                         }
                         else
                         {
-                            html = _html.GetFile(path);
+                            html = Configurator.Cache.GetPage(path);
                         }
 
                         requestHeaders = "HTTP/1.1 200 OK\n"+
@@ -168,6 +190,9 @@ namespace AMES
             finally
             {
                 _client.Close();
+
+                // cache add page
+                Configurator.Cache.Add(path);
             }
         }
 
@@ -336,28 +361,47 @@ namespace AMES
             _client.Send(buffer, SocketFlags.None);
         }
 
-        //TODO FILE DATA
+        // TODO FILE DATA
+        // HANG UP CLIENT
         // HTTP PUT request
         private void HttpPut(string path)
         {
             try
             {
+                path = path.Replace(@"//", @"/");
                 HttpCodes code = HttpCodes.NONE;
-                byte[] buffer;
+                byte[] buffer = new byte[0];
                 string headers = "";
 
                 if(!File.Exists(path))
                 {
                     code = HttpCodes.Created;
                     File.Create(path);
+                    if(Headers.TryGetValue("DATA", out string val))
+                    {
+                        File.WriteAllText(
+                            path, 
+                            Headers["DATA"]
+                        );
+                    }
                 }
                 else
                 {
+                    if(Headers.TryGetValue("DATA", out string val))
+                    {
+                        File.WriteAllText(
+                            path, 
+                            Headers["DATA"]
+                        );
+                    }
                     code = HttpCodes.OK;
                 }
 
                 headers = $"HTTP/1.1 {(int)code} {code}\n"+
                 $"Content-Location: {path}\n\n";
+
+                buffer = Encoding.UTF8.GetBytes(headers);
+                _client.Send(buffer);
             }
             catch
             {

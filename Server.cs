@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -59,6 +58,7 @@ namespace AMES
         private Socket _listener;
         private volatile CancellationTokenSource _cts;
         private List<string> Domains;
+        private DateTime _startServer;
 
         private AMESLogger _logger;
 
@@ -79,6 +79,7 @@ namespace AMES
             this._cts = new();
             this._listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             this._logger = new();
+            this._startServer = DateTime.Now;
         }
         public Server(string ip)
         {
@@ -91,6 +92,7 @@ namespace AMES
             this._cts = new();
             this._listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             this._logger = new();
+            this._startServer = DateTime.Now;
         }
 
          public Server(string ip, int port)
@@ -104,6 +106,7 @@ namespace AMES
             this._cts = new();
             this._listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             this._logger = new();
+            this._startServer = DateTime.Now;
         }
 
         public void Start() 
@@ -113,7 +116,6 @@ namespace AMES
                 Active = true;
                 _listener.Bind(_ip);
                 _listener.Listen();
-
                 Console.WriteLine(GetInfo());
 
                 _logger.SetLog(
