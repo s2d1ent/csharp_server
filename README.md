@@ -1,16 +1,34 @@
 # AMES Web-Server C# .Net Core
-**Подготовил:** студент 3ИСП Тюменев Виктор<br>
-**Код специальности:**  09.02.07<br>
-**Специальность:**  СПО «Информационные системы и программирование»<br>
-**Год:** 2021 <br>
-**Описание проекта:**<br>
-Данный проект представляет собой реализацию Веб-сервера на платформе C#.Net Core, созданный с целью преобретения нового опыта в разработке сетевого и многопоточного ПО.
+**Development:** student 3ISP Tyumenev Viktor<br>
+**Specialty code:**  09.02.07<br>
+**Speciality:**  Secondary vocational education "Information systems and programming"<br>
+**Year:** 2021 <br>
+**Description:**<br>
+This project is a web server implementation on the C# .Net Core platform, created with the aim of gaining new experience in developing network and multi-threaded software. I am a textbook for vocational students.
 <br>
 
-## LICENSE
-
-## Дополнительные сведения
-[Внешние модули]("\tree\main\doc\modules.md")<br>
+## Additional information
+[External modules]("\tree\main\doc\modules.md")<br>
 [Config]("\tree\main\doc\config.md")<br>
-[README RU]("\tree\main\doc\README.md")<br>
-[README EN]("\tree\main\README.md")<br>
+[README RU]("\tree\main\doc\README.md")<br><br>
+My code may look terribly written in your eyes, but please be understanding, because I am not a professional developer. If you have any comments, ideas or suggestions about this project, you can send them to my email vornfrost@mail.com , with a subject in the name of which will be the name of the repository. You can also make a pull-request, preferably if you email me with a description of your changes.
+<br> <br>
+
+## Dependencies
+Dotnet 5.0 must be installed before using the software.
+
+```
+apt-get install dotnet dotnet-sdk-5.0
+apt-get install dotnet dotnet-runtime-5.0
+```
+<br>
+
+## Compiling
+Before compiling, you need to go to the terminal and go to the directory with the project, then run the following commands:
+```
+dotnet build -f net5.0 
+```
+<br>
+
+# License
+This project uses license GPL v3 - see [LICENSE](./LICENSE) for details.
