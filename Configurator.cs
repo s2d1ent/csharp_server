@@ -1,4 +1,23 @@
-﻿using System;
+﻿//     AMES(Application Modular Extensible Server) This is a simple web server which is a tutorial
+//     Copyright (C) 2022 Viktor Tyumenev
+//
+//     This program is free software: you can redistribute it and/or modify
+//     it under the terms of the GNU General Public License as published by
+//     the Free Software Foundation, either version 3 of the License, or
+//     (at your option) any later version.
+//
+//     This program is distributed in the hope that it will be useful,
+//     but WITHOUT ANY WARRANTY; without even the implied warranty of
+//     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//     GNU General Public License for more details.
+//
+//     You should have received a copy of the GNU General Public License
+//     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+//      Email: tumenev33@mail.ru
+//      Email: vornfrost@gmail.com
+
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +37,6 @@ namespace AMES
         public string[] Extensions { get; set; }
         public string Root { get; set; }
         public bool EnabledServerModules { get; set; }
-        public bool Multiple { get; set; }
         public bool PhpFastcgi { get; set; }
         public string Php { get; set; }
         public string Python { get; set; }
@@ -33,6 +51,7 @@ namespace AMES
 
         private AMESLogger _logger = new AMESLogger();
         public Server Server;
+        public List<Server> Containers { get; set; }
         public RemoteApi RemoteApi { get; set;}
         public string _sslPubKey = null;
         public string _sslPrivKey = null;
@@ -95,12 +114,12 @@ namespace AMES
             {
                 
             }
-            if(Constants.OS == "Linux")
+            if(Constants.OS == OperationsSystem.Linux)
             {
                 Constants.PATH_PHP += Constants.PATH_PHP != null ? "php" : null;
                 Constants.PATH_PYTHON += Constants.PATH_PYTHON != null ? "python" : null;
             }
-            else if (Constants.OS == "Windows")
+            else if (Constants.OS == OperationsSystem.Windows)
             {
                 Constants.PATH_PHP += Constants.PATH_PHP != null ? "php.exe" : null;
                 Constants.PATH_PYTHON += Constants.PATH_PYTHON != null ? "python.exe" : null;
@@ -153,40 +172,49 @@ namespace AMES
 
             if(OperatingSystem.IsLinux())
             {
-                Constants.OS = "Linux";
+                Constants.OS = OperationsSystem.Linux;
             }
             else if(OperatingSystem.IsWindows())
             {
-                Constants.OS = "Windows";
+                Constants.OS =  OperationsSystem.Windows;
             }
             else if(OperatingSystem.IsAndroid())
             {
-                Constants.OS = "Adnroid";
+                Constants.OS = OperationsSystem.Android;
             }
             else if(OperatingSystem.IsMacOS())
             {
-                Constants.OS = "MaOS";
+                Constants.OS = OperationsSystem.MacOS;
             }
             else if(OperatingSystem.IsIOS())
             {
-                Constants.OS = "IOS";
+                Constants.OS = OperationsSystem.IOS;
             }
             else if(OperatingSystem.IsTvOS())
             {
-                Constants.OS = "TvOS";
+                Constants.OS = OperationsSystem.TvOs;
             }
             else if(OperatingSystem.IsWatchOS())
             {
-                Constants.OS = "WatchOS";
+                Constants.OS = OperationsSystem.watchOS;
             }
             else if(OperatingSystem.IsBrowser())
             {
-                Constants.OS = "Browser";
+                Constants.OS = OperationsSystem.Browser;
             }
             else if(OperatingSystem.IsFreeBSD())
             {
-                Constants.OS = "FreeBSD";
+                Constants.OS = OperationsSystem.FreeBSD;
             }
+            else
+            {
+                Constants.OS = OperationsSystem.NONE;
+            }
+        }
+
+        public void InitContainers()
+        {
+
         }
 
         public Server GetServer()
@@ -200,7 +228,6 @@ namespace AMES
             server.UsePhp = Php == null ? false : true;
             server.UsePython = Python == null ? false : true;
 
-            server.Multiple = Multiple;
             server.EnabledModules = EnabledServerModules;
             server.Configurator = this;
             
@@ -239,42 +266,49 @@ namespace AMES
             string logs = $@"{path}logs";
             string temp = $@"{path}temp";
             string error = $@"{path}error";
+            string hosts = $@"{path}hosts.txt";
 
-            if (!File.Exists(doc))
+            if (!Directory.Exists(doc))
             {
                 Directory.CreateDirectory(doc);
             }
 
-            if (!File.Exists(includes))
+            if (!Directory.Exists(includes))
             {
                 Directory.CreateDirectory(includes);
             }
 
-            if (!File.Exists(modules))
+            if (!Directory.Exists(modules))
             {
                 Directory.CreateDirectory(modules);
             }
 
-            if (!File.Exists(logs))
+            if (!Directory.Exists(logs))
             {
                 Directory.CreateDirectory(logs);
             }
 
-            if (!File.Exists(temp))
+            if (!Directory.Exists(temp))
             {
                 Directory.CreateDirectory(temp);
             }
 
-            if (!File.Exists(error))
+            if (!Directory.Exists(error))
             {
                 Directory.CreateDirectory(error);
+            }
+
+            if (!File.Exists(hosts))
+            {
+                File.Create(hosts);
             }
         }
     }
 
     internal enum ServerMode
     {
-        NONE,
+        // NONE
+        NONE = 0,
         // when in dir './www' can be only one site; './www' is root dir
         Single,
         // when in dir './www' can be multiple dir, when each dir is site
@@ -283,4 +317,17 @@ namespace AMES
         Container
     }
 
+    internal enum OperationsSystem
+    {
+        NONE,
+        Linux,
+        Windows,
+        FreeBSD,
+        Android,
+        MacOS,
+        IOS,
+        TvOs,
+        watchOS,
+        Browser
+    }
 }

@@ -1,4 +1,24 @@
-﻿using System;
+﻿//     AMES(Application Modular Extensible Server) This is a simple web server which is a tutorial
+//     Copyright (C) 2022 Viktor Tyumenev
+//
+//     This program is free software: you can redistribute it and/or modify
+//     it under the terms of the GNU General Public License as published by
+//     the Free Software Foundation, either version 3 of the License, or
+//     (at your option) any later version.
+//
+//     This program is distributed in the hope that it will be useful,
+//     but WITHOUT ANY WARRANTY; without even the implied warranty of
+//     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//     GNU General Public License for more details.
+//
+//     You should have received a copy of the GNU General Public License
+//     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+//      Email: tumenev33@mail.ru
+//      Email: vornfrost@gmail.com
+
+using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
@@ -23,9 +43,6 @@ namespace AMES
         public bool Active;
         [JsonIgnore]
         public bool EnabledModules;
-        [JsonIgnore]
-        public bool Multiple { get; set; }
-        public string Index { get; set; }
         [JsonIgnore]
         public Configurator Configurator {get;set;}
         [JsonIgnore]
@@ -116,6 +133,10 @@ namespace AMES
                 Active = true;
                 _listener.Bind(_ip);
                 _listener.Listen();
+                if(Configurator.ServerMode == ServerMode.Multiple)
+                {
+                    InitMultiple();
+                }
                 Console.WriteLine(GetInfo());
 
                 _logger.SetLog(
@@ -151,7 +172,10 @@ namespace AMES
                 Active = false;
                 _listener.Close();
                 _modules.Stop();
-
+                if(Configurator.ServerMode == ServerMode.Multiple)
+                {
+                    UninitMultiple();
+                }
                 _logger.SetLog(
                     AMESModuleType.Server,
                     $"Stop the server {this.Ipv4}:{this.Port}"
@@ -168,8 +192,11 @@ namespace AMES
         }
         public string GetInfo()
         {
-            
-            string result = $"{Constants.FULLNAME}({Constants.NAME})\n";
+            string result = "AMES  Copyright (C) 2022  Viktor Tyumenev\n";
+            result += "This program comes with ABSOLUTELY NO WARRANTY; for details type `--license'.\n";
+            result += "This is free software, and you are welcome to redistribute it\n";
+            result += "under certain conditions; type `--license' for details.\n\n";
+            result += $"{Constants.FULLNAME}({Constants.NAME})\n";
             result += $"{Constants.NAME} v{Constants.VERSION}\n";
             result += $"License {Constants.LICENSE}\n";
             result += $"Dev files: {Constants.DISTRIBUTIVE} \n";
@@ -180,6 +207,57 @@ namespace AMES
         {
             Client client = new Client(socket, configurator);
             client.Start();
+        }
+
+        private void InitMultiple()
+        {
+            string hosts = "";
+            string appendText = "";
+            string[] directories = Directory.GetDirectories("./www/");
+            
+            hosts = (Constants.OS == OperationsSystem.Linux || Constants.OS == OperationsSystem.MacOS 
+            || Constants.OS == OperationsSystem.FreeBSD || Constants.OS == OperationsSystem.NONE
+            || Constants.OS == OperationsSystem.Android || Constants.OS == OperationsSystem.IOS) ? "/etc/hosts" :
+            (
+                (Constants.OS == OperationsSystem.Windows) ? "C:\\Windows\\System32\\drivers\\etc\\hosts" : "/etc/hosts"
+            );
+
+            if(File.Exists("./hosts.txt"))
+            {
+                appendText = File.ReadAllText("./hosts.txt");
+                File.WriteAllText(hosts, 
+                    File.ReadAllText(hosts).Replace(appendText, "")
+                );
+                appendText = "";
+            }
+
+            foreach(string val in directories)
+            {
+                appendText += Ipv4 + " " + new DirectoryInfo(val).Name + '\n';
+            }
+
+            File.AppendAllText(hosts, appendText);
+            using(File.Create("./hosts.txt"));
+            File.AppendAllText("./hosts.txt", appendText);
+        }
+
+        private void UninitMultiple()
+        {
+            string hosts = "";
+            string hostsText = "";
+            string appendText = "";
+            
+            hosts = (Constants.OS == OperationsSystem.Linux || Constants.OS == OperationsSystem.MacOS 
+            || Constants.OS == OperationsSystem.FreeBSD || Constants.OS == OperationsSystem.NONE
+            || Constants.OS == OperationsSystem.Android || Constants.OS == OperationsSystem.IOS) ? "/etc/hosts" :
+            (
+                (Constants.OS == OperationsSystem.Windows) ? "C:\\Windows\\System32\\drivers\\etc\\hosts" : "/etc/hosts"
+            );
+            appendText = File.ReadAllText("./hosts.txt");
+            hostsText = File.ReadAllText(hosts);
+            hostsText = hostsText.Replace(appendText, "");
+
+            File.AppendAllText(hosts, appendText);
         }
     }
 }

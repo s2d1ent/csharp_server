@@ -1,4 +1,23 @@
-﻿using System;
+﻿//     AMES(Application Modular Extensible Server) This is a simple web server which is a tutorial
+//     Copyright (C) 2022 Viktor Tyumenev
+//
+//     This program is free software: you can redistribute it and/or modify
+//     it under the terms of the GNU General Public License as published by
+//     the Free Software Foundation, either version 3 of the License, or
+//     (at your option) any later version.
+//
+//     This program is distributed in the hope that it will be useful,
+//     but WITHOUT ANY WARRANTY; without even the implied warranty of
+//     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//     GNU General Public License for more details.
+//
+//     You should have received a copy of the GNU General Public License
+//     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+//      Email: tumenev33@mail.ru
+//      Email: vornfrost@gmail.com
+
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,11 +67,6 @@ namespace AMES
 
                 Headers = Http.Parse(ref _headers);
 
-                foreach(KeyValuePair<string, string> elem in Headers)
-                {
-                    //Console.WriteLine($"{elem.Key} - {elem.Value}");
-                }
-
                 // get path
                 path = Headers["HTTP_LINK"];
 
@@ -67,58 +81,8 @@ namespace AMES
                 requestType = Http.ParseRequestType(Headers["HTTP_REQUEST_TYPE"]);
 
                 // If path equal to /? that choice index file
-                if(path == @"\" || path == "/")
-                {
-                    if(Configurator.ServerMode == ServerMode.Multiple)
-                    {
-
-                    }   
-                    else
-                    {
-                        for(int i = 0; i < Constants.EXTENSIONS.Length; i++)
-                        {
-                            string value = Constants.EXTENSIONS[i];
-                            string find = Constants.ROOT;
-
-                            if(value == "")
-                            {
-                                break;
-                            }
-
-                            if(value[0] == '.')
-                            {
-                                find += "index" + value;
-                            }
-                            else
-                            {
-                                find += "index." + value;
-                            }
-
-                            if(File.Exists(find))
-                            {
-                                
-                                path = find;
-                                if(value.IndexOf("php") != -1 && _php == null)
-                                {
-                                    continue;
-                                }
-                                else if(value.IndexOf("py") != -1 && _python == null)
-                                {
-                                    continue;
-                                }
-                                fileExtensions = value;
-                                break;
-                            }
-                        }
-                    }
-                    
-                }
-                else
-                {
-                    path = Constants.ROOT + path;
-                    path = path.Replace(@"\\", @"\").Replace(@"//", @"//");
-                }
-
+                GetValidPath(path, out path);
+                GetExtension(ref path, out fileExtensions);
                 switch(requestType)
                 {
                     case HttpRequestType.GET:
@@ -194,6 +158,63 @@ namespace AMES
                 // cache add page
                 Configurator.Cache.Add(path);
             }
+        }
+
+        //
+        //
+        // TODO
+        //
+        //
+        private void GetValidPath(string path, out string pathout)
+        {
+            if(path == @"\" || path == "/")
+            {
+                if(Configurator.ServerMode != ServerMode.Container)
+                {
+                    for(int i = 0; i < Constants.EXTENSIONS.Length; i++)
+                    {
+                        string value = Constants.EXTENSIONS[i];
+                        string find = (Configurator.ServerMode == ServerMode.Single) ? Constants.ROOT : (Constants.ROOT + Headers["Host"]) ;
+                        if(value == "")
+                        {
+                            break;
+                        }
+                        if(value[0] == '.')
+                        {
+                            find += "index" + value;
+                        }
+                        else
+                        {
+                            find +=  "index." + value;
+                        }
+                        if(File.Exists(find))
+                        {
+                            
+                            path = find;
+                            if(value.IndexOf("php") != -1 && _php == null)
+                            {
+                                continue;
+                            }
+                            else if(value.IndexOf("py") != -1 && _python == null)
+                            {
+                                continue;
+                            }
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+
+                }
+                
+            }
+            else
+            {
+                path = Constants.ROOT + path;
+                path = path.Replace(@"\\", @"\").Replace(@"//", @"//");
+            }
+            pathout = path;
         }
 
         // Return content-type
@@ -359,6 +380,18 @@ namespace AMES
 
             buffer = Encoding.UTF8.GetBytes(headers);
             _client.Send(buffer, SocketFlags.None);
+        }
+
+        private void GetExtension(ref string inputString, out string outputString)
+        {
+            int dot = inputString.LastIndexOf('.');
+            string res = "";
+            for(int i = dot; i < inputString.Length; ++i)
+            {
+                res += inputString[i];
+            }
+
+            outputString = res;
         }
 
         // TODO FILE DATA

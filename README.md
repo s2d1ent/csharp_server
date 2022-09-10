@@ -10,7 +10,6 @@
 ## LICENSE
 
 ## Дополнительные сведения
-[LICENSE]("\tree\main\LICENSE\")<br>
 [Внешние модули]("\tree\main\doc\modules.md")<br>
 [Config]("\tree\main\doc\config.md")<br>
 [README RU]("\tree\main\doc\README.md")<br>
