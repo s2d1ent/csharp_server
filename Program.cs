@@ -24,6 +24,7 @@ namespace AMES
     internal class Program
     {
         static private string configPath = $@"{AppDomain.CurrentDomain.BaseDirectory}global-config.json";
+        static private bool m_startProgram;
         static void Main(string[] args)
         {
             OptionsChecker(ref args);

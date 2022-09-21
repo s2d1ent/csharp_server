@@ -184,8 +184,23 @@ namespace AMES
                     result.Add(key, value);
                 }
             }
+            result["Host"] = ValidHost(result["Host"]);
             headers = null;
             return result;
+        }
+
+        private static string ValidHost(string host)
+        {
+            if(host.IndexOf(':') != -1)
+            {
+                return host.Substring(0,
+                    host.IndexOf(':')
+                );
+            }
+            else
+            {
+                return host;
+            }
         }
 
         private static string GetData(string headers)

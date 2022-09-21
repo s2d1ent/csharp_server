@@ -78,6 +78,11 @@ namespace AMES
                     return;
                 }
 
+                foreach(KeyValuePair<string, string> elem in Headers)
+                {
+                    Console.WriteLine($"{elem.Key}: {elem.Value}");
+                }
+
                 requestType = Http.ParseRequestType(Headers["HTTP_REQUEST_TYPE"]);
 
                 // If path equal to /? that choice index file
@@ -159,12 +164,7 @@ namespace AMES
                 Configurator.Cache.Add(path);
             }
         }
-
-        //
-        //
-        // TODO
-        //
-        //
+        
         private void GetValidPath(string path, out string pathout)
         {
             if(path == @"\" || path == "/")
@@ -174,23 +174,27 @@ namespace AMES
                     for(int i = 0; i < Constants.EXTENSIONS.Length; i++)
                     {
                         string value = Constants.EXTENSIONS[i];
-                        string find = (Configurator.ServerMode == ServerMode.Single) ? Constants.ROOT : (Constants.ROOT + Headers["Host"]) ;
+                        string link = (Configurator.ServerMode == ServerMode.Single 
+                        || Configurator.ServerMode == ServerMode.NONE) ? Constants.ROOT : (Constants.ROOT + Headers["Host"] + '/') ;
+                        string find;
                         if(value == "")
                         {
                             break;
                         }
                         if(value[0] == '.')
                         {
-                            find += "index" + value;
+                            find = link + "index" + value;
                         }
                         else
                         {
-                            find +=  "index." + value;
+                            find = link + "index." + value;
                         }
+                        Console.WriteLine(find + "\t" + File.Exists(find));
                         if(File.Exists(find))
                         {
                             
                             path = find;
+                            
                             if(value.IndexOf("php") != -1 && _php == null)
                             {
                                 continue;
@@ -199,6 +203,7 @@ namespace AMES
                             {
                                 continue;
                             }
+                            
                             break;
                         }
                     }

@@ -308,7 +308,7 @@ namespace AMES
     internal enum ServerMode
     {
         // NONE
-        NONE = 0,
+        NONE,
         // when in dir './www' can be only one site; './www' is root dir
         Single,
         // when in dir './www' can be multiple dir, when each dir is site

@@ -17,29 +17,36 @@
 //      Email: tumenev33@mail.ru
 //      Email: vornfrost@gmail.com
 
+/*
+    Documentation FastCGI - https://fastcgi-archives.github.io/FastCGI_Specification.html#S1
+*/
 
 using System;
 using System.Text;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
-////////////////////////////////////////////////////////
-// string ip = "127.0.0.1";
-// int port = 9000;
 
-// FastCgi fcgi = new FastCgi(ip, port);
-// fcgi.Open();
+class Program1
+{
+    static void main()
+    {
+        string ip = "127.0.0.1";
+        int port = 9000;
 
+        FCGI fcgi = new FCGI(ip, port);
+        fcgi.Open();
+    }
+}
 
-////////////////////////////////////////////////////////
-public class FastCgi
+public class FCGI
 {
     public string Ip { get; set; }
     public int Port { get; set; }
     private Socket _socket;
     private IPEndPoint _ip;
 
-    public FastCgi(string ip, int port)
+    public FCGI(string ip, int port)
     {
         this.Ip = ip;
         this.Port = port;
@@ -53,29 +60,19 @@ public class FastCgi
 
     public void Open()
     {
-        byte[] head = {1, 1, 1, 8, 0};
-        /*
-            struct
-            {
-                char protocolVersion;
-                char type;
-                char id;
-                char contentLength;
-                char alignment;
-            }
-        */
-        byte[] body = {1, 0};
-        /*
-            scruct
-            {
-                char role;
-                char flag;
-            }
-        */
-        _socket.Connect(
-            IPAddress.Parse(Ip), Port
-        );
-        _socket.Send(head);
-        _socket.Send(body);
+        
     }
+}
+
+struct FCGI_Record{
+    char version;
+    char type;
+    char requestIdB1;
+    char requestIdB0;
+    char contentLengthB1;
+    char contentLengthB0;
+    char paddingLength;
+    char reserved;
+    char[] contentData;
+    char[] paddingData;
 }

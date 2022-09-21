@@ -222,23 +222,26 @@ namespace AMES
                 (Constants.OS == OperationsSystem.Windows) ? "C:\\Windows\\System32\\drivers\\etc\\hosts" : "/etc/hosts"
             );
 
-            if(File.Exists("./hosts.txt"))
-            {
-                appendText = File.ReadAllText("./hosts.txt");
-                File.WriteAllText(hosts, 
-                    File.ReadAllText(hosts).Replace(appendText, "")
-                );
-                appendText = "";
-            }
+            // if(File.Exists("./hosts.txt"))
+            // {
+            //     appendText = File.ReadAllText("./hosts.txt");
+            //     if(appendText.Length != 0)
+            //     {
+            //         File.WriteAllText(hosts, 
+            //             File.ReadAllText(hosts).Replace(appendText, "")
+            //         );
+            //         appendText = "";
+            //     }
+            // }
 
-            foreach(string val in directories)
-            {
-                appendText += Ipv4 + " " + new DirectoryInfo(val).Name + '\n';
-            }
+            // foreach(string val in directories)
+            // {
+            //     appendText += Ipv4 + " " + new DirectoryInfo(val).Name + '\n';
+            // }
 
-            File.AppendAllText(hosts, appendText);
-            using(File.Create("./hosts.txt"));
-            File.AppendAllText("./hosts.txt", appendText);
+            // File.AppendAllText(hosts, appendText);
+            // using(File.Create("./hosts.txt"));
+            // File.AppendAllText("./hosts.txt", appendText);
         }
 
         private void UninitMultiple()
