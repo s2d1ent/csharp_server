@@ -85,14 +85,13 @@ namespace AMES
 
                 requestType = Http.ParseRequestType(Headers["HTTP_REQUEST_TYPE"]);
 
-                // If path equal to /? that choice index file
-                GetValidPath(path, out path);
+                path = GetValidPath(path);
                 GetExtension(ref path, out fileExtensions);
                 switch(requestType)
                 {
                     case HttpRequestType.GET:
                         string requestHeaders = "";
-                        bool hasCache = false;
+                        bool hasCache = false, isFile = File.Exists(path), isDir = Directory.Exists(path);
                         byte[] html = new byte[0];
                         string contentType = GetContentType(path);
                         path = path.Replace(@"\\", @"\").Replace(@"//", @"//");
@@ -105,7 +104,7 @@ namespace AMES
 
                         if(!hasCache)
                         {
-                            if(fileExtensions.IndexOf("php") != -1 && _php != null)
+                            if(fileExtensions.IndexOf("php") != -1)
                             {
                                 html = _php.GetFile(path);    
                             }
@@ -164,62 +163,84 @@ namespace AMES
                 Configurator.Cache.Add(path);
             }
         }
-        
-        private void GetValidPath(string path, out string pathout)
-        {
-            if(path == @"\" || path == "/")
-            {
-                if(Configurator.ServerMode != ServerMode.Container)
-                {
-                    for(int i = 0; i < Constants.EXTENSIONS.Length; i++)
-                    {
-                        string value = Constants.EXTENSIONS[i];
-                        string link = (Configurator.ServerMode == ServerMode.Single 
-                        || Configurator.ServerMode == ServerMode.NONE) ? Constants.ROOT : (Constants.ROOT + Headers["Host"] + '/') ;
-                        string find;
-                        if(value == "")
-                        {
-                            break;
-                        }
-                        if(value[0] == '.')
-                        {
-                            find = link + "index" + value;
-                        }
-                        else
-                        {
-                            find = link + "index." + value;
-                        }
-                        Console.WriteLine(find + "\t" + File.Exists(find));
-                        if(File.Exists(find))
-                        {
-                            
-                            path = find;
-                            
-                            if(value.IndexOf("php") != -1 && _php == null)
-                            {
-                                continue;
-                            }
-                            else if(value.IndexOf("py") != -1 && _python == null)
-                            {
-                                continue;
-                            }
-                            
-                            break;
-                        }
-                    }
-                }
-                else
-                {
 
+        private string GetIndexPath(string path)
+        {
+            string result = "";
+            for(int i = 0; i < Constants.EXTENSIONS.Length; i++)
+            {
+                string extension = Constants.EXTENSIONS[i];
+                string dirn = (path[path.Length - 1] == '/' && path != "/") ? path : "";
+                string dir = (Configurator.ServerMode == ServerMode.NONE || Configurator.ServerMode == ServerMode.Single) ? 
+                Constants.ROOT + dirn : Constants.ROOT + dirn + Headers["Host"] + '/';
+                string find;
+
+                if(extension == "")
+                {
+                    continue;
                 }
+                find = dir + (extension[0] == '.' ? "index" : "index.") + extension;
                 
+                if(extension.IndexOf("php") != -1 && _php == null)
+                {
+                    continue;
+                }
+                else if(extension.IndexOf("py") != -1 && _python == null)
+                {
+                    continue;
+                }
+
+                result = find;
+                break;
+            }
+            return result;
+        }
+        
+        /*
+            Bug
+        */
+        private string GetValidPath(string path)
+        {
+            string result;
+
+            if(path == "/" || path[path.Length - 1] == '/')
+            {
+                switch(Configurator.ServerMode)
+                {
+                    case ServerMode.NONE:
+                    case ServerMode.Single:
+                    case ServerMode.Multiple:
+                        result = GetIndexPath(path);
+                        break;
+                    case ServerMode.Container:
+                        result = path;
+                        break;
+                    default:
+                        result = path;
+                        break;
+                }
             }
             else
             {
-                path = Constants.ROOT + path;
-                path = path.Replace(@"\\", @"\").Replace(@"//", @"//");
+                switch(Configurator.ServerMode)
+                {
+                    case ServerMode.NONE:
+                    case ServerMode.Single:
+                        result = Constants.ROOT + path;
+                        break;
+                    case ServerMode.Multiple:
+                        result = Constants.ROOT + Headers["Host"] + '/' + path;
+                        break;
+                    case ServerMode.Container:
+                        result = path;
+                        break;
+                    default:
+                        result = path;
+                        break;
+                }
             }
-            pathout = path;
+
+            return result;
         }
 
         // Return content-type

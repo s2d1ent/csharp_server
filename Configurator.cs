@@ -35,6 +35,7 @@ namespace AMES
         public string SslPubKey { get; set; }
         public string SslPrivKey { get; set; }
         public string[] Extensions { get; set; }
+        /* Custom 'www' directories */
         public string Root { get; set; }
         public bool EnabledServerModules { get; set; }
         public bool PhpFastcgi { get; set; }

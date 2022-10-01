@@ -209,39 +209,50 @@ namespace AMES
             client.Start();
         }
 
+        /*
+            Write alias in /etc/hosts. Only sudo.
+        */
         private void InitMultiple()
         {
             string hosts = "";
             string appendText = "";
-            string[] directories = Directory.GetDirectories("./www/");
-            
-            hosts = (Constants.OS == OperationsSystem.Linux || Constants.OS == OperationsSystem.MacOS 
-            || Constants.OS == OperationsSystem.FreeBSD || Constants.OS == OperationsSystem.NONE
-            || Constants.OS == OperationsSystem.Android || Constants.OS == OperationsSystem.IOS) ? "/etc/hosts" :
-            (
-                (Constants.OS == OperationsSystem.Windows) ? "C:\\Windows\\System32\\drivers\\etc\\hosts" : "/etc/hosts"
-            );
+            string[] directories;
+            try
+            {
+                directories = Directory.GetDirectories("./www/");
 
-            // if(File.Exists("./hosts.txt"))
-            // {
-            //     appendText = File.ReadAllText("./hosts.txt");
-            //     if(appendText.Length != 0)
-            //     {
-            //         File.WriteAllText(hosts, 
-            //             File.ReadAllText(hosts).Replace(appendText, "")
-            //         );
-            //         appendText = "";
-            //     }
-            // }
+                hosts = (Constants.OS == OperationsSystem.Linux || Constants.OS == OperationsSystem.MacOS 
+                || Constants.OS == OperationsSystem.FreeBSD || Constants.OS == OperationsSystem.NONE
+                || Constants.OS == OperationsSystem.Android || Constants.OS == OperationsSystem.IOS) ? "/etc/hosts" :
+                (
+                    (Constants.OS == OperationsSystem.Windows) ? "C:\\Windows\\System32\\drivers\\etc\\hosts" : "/etc/hosts"
+                );
 
-            // foreach(string val in directories)
-            // {
-            //     appendText += Ipv4 + " " + new DirectoryInfo(val).Name + '\n';
-            // }
+                if(File.Exists("./hosts.txt"))
+                {
+                    appendText = File.ReadAllText("./hosts.txt");
+                    if(appendText.Length != 0)
+                    {
+                        File.WriteAllText(hosts, 
+                            File.ReadAllText(hosts).Replace(appendText, "")
+                        );
+                        appendText = "";
+                    }
+                }
 
-            // File.AppendAllText(hosts, appendText);
-            // using(File.Create("./hosts.txt"));
-            // File.AppendAllText("./hosts.txt", appendText);
+                foreach(string val in directories)
+                {
+                    appendText += Ipv4 + " " + new DirectoryInfo(val).Name + '\n';
+                }
+
+                File.AppendAllText(hosts, appendText);
+                using(File.Create("./hosts.txt"));
+                File.AppendAllText("./hosts.txt", appendText);
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
 
         private void UninitMultiple()
