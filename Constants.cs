@@ -27,53 +27,14 @@ namespace AMES
         public const string DISTRIBUTIVE = "https://github.com/s2d1ent/csharp_server.git";
         public const string LICENSE = "GNU/GPL v3";
         public const string ALLOW_HTTP_OPTIONS = "GET, POST, DELETE, OPTIONS, TRACE, PUT";  
+        public const string DEFAULT_WWW_PATH = "/var/www/";
         public static string PATH_PHP = "";
         public static string PATH_PYTHON = "";
         public static string ROOT = "";
         public static bool PHPFASTCGI = false;
         public static string[] EXTENSIONS = new string[10];
         public static string PATH = "";
-        // {
-        //     get
-        //     {
-        //         return _path;
-        //     }
-        //     set
-        //     {
-        //         if(_path == null)
-        //         {
-        //             _path = value;
-        //         }
-        //         else
-        //         {
-        //             AMESException exception = new();
-        //             throw exception;
-        //         }
-        //     }
-        // }
-        public static string PATH_WWW 
-        {
-            get
-            {
-                return _path_www;
-            }
-            set
-            {
-                if(_path_www == null)
-                {
-                    _path_www = value;
-                }
-                else
-                {
-                    AMESException exception = new();
-                    throw exception;
-                }
-            }
-        }
         public static OperationsSystem OS = OperationsSystem.NONE;
-
-        private static string _path = null;
-        private static string _path_www = null;
 
     }
 }

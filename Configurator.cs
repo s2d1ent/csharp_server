@@ -35,13 +35,13 @@ namespace AMES
         public string SslPubKey { get; set; }
         public string SslPrivKey { get; set; }
         public string[] Extensions { get; set; }
+
         /* Custom 'www' directories */
         public string Root { get; set; }
         public bool EnabledServerModules { get; set; }
         public bool PhpFastcgi { get; set; }
         public string Php { get; set; }
         public string Python { get; set; }
-        public Dictionary<string, string> Alias { get; set; }
         public Cache Cache;
 
         // ThreadPool min&max options
@@ -49,13 +49,11 @@ namespace AMES
         public int MinWorkAsync { get; set; }
         public int MaxWork { get; set; }
         public int MaxWorkAsync { get; set; }
-
-        private AMESLogger _logger = new AMESLogger();
+        
+        [JsonIgnore]
+        public AMESLogger Logger = new AMESLogger();
         public Server Server;
         public List<Server> Containers { get; set; }
-        public RemoteApi RemoteApi { get; set;}
-        public string _sslPubKey = null;
-        public string _sslPrivKey = null;
 
         public Configurator() { }
         public void Restart()
@@ -80,24 +78,15 @@ namespace AMES
             // [STATIC DATA BEGIN]
             SetConstants();
             // Root directory website
-            if(result.Root != null && result.Root[0] == '.')
+            if(result.Root == "" || result.Root == null)
             {
-                result.Root = result.Root.Remove(0, 2);
-                result.Root = Constants.PATH + result.Root;
-            }
-            else if(result.Root == "" || result.Root == null)
-            {
-                result.Root = Constants.PATH_WWW;
+                result.Root = Constants.DEFAULT_WWW_PATH;
             }
             Constants.ROOT = result.Root;
-            if(Constants.ROOT[Constants.ROOT.Length - 1] != '/')
-            {
-                Constants.ROOT += '/';
-            }
             // Static extensions
             if(result.Extensions == null || result.Extensions.Length == 0)
             {
-                throw new Exception();
+                throw new Exception("Not writeabled extensions");
             }
             for(int i = 0; i < result.Extensions.Length; i++)
             {
@@ -111,10 +100,6 @@ namespace AMES
             Constants.PATH_PHP = result.Php == "" || result.Php == null ? null : result.Php;
             Constants.PATH_PYTHON = result.Python == "" || result.Python == null ? null : result.Python;
 
-            if(Constants.PATH_PHP != null || Constants.PATH_PHP != "")
-            {
-                
-            }
             if(Constants.OS == OperationsSystem.Linux)
             {
                 Constants.PATH_PHP += Constants.PATH_PHP != null ? "php" : null;
@@ -128,12 +113,10 @@ namespace AMES
 
             Constants.PHPFASTCGI = result.PhpFastcgi;
             // [STATIC DATA END]
-            result.GetRApi();  
-            
-            result.GetIP(ref result);
+            result.Ipv4 = (result.Ipv4 == null || result.Ipv4 == "") ? "127.0.0.1" : result.Ipv4;
             result.Cache = new Cache();
 
-            result._logger.SetLog(AMESModuleType.Configurator, "Deserialize config");
+            result.Logger.SetLog(AMESModuleType.Configurator, "Deserialize config");
             return result;
         }
         public void Serialize() 
@@ -148,28 +131,9 @@ namespace AMES
             );
         }
 
-        public void GetIP(ref Configurator configurator)
-        {
-            if(configurator.Ipv4 == null)
-            {
-                string hostname = System.Net.Dns.GetHostName();
-                System.Net.IPAddress[] pool = System.Net.Dns.GetHostAddresses(hostname);
-                
-                foreach(var elem in pool)
-                {
-                    if(elem.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-                    {
-                        configurator.Ipv4 = elem.ToString();
-                        break;
-                    }
-                }
-            }
-        }
-
         public static void SetConstants()
         {
-            Constants.PATH = AppDomain.CurrentDomain.BaseDirectory;
-            Constants.PATH_WWW = AppDomain.CurrentDomain.BaseDirectory + "www";            
+            Constants.PATH = AppDomain.CurrentDomain.BaseDirectory;        
 
             if(OperatingSystem.IsLinux())
             {
@@ -226,26 +190,15 @@ namespace AMES
             }
             Server server = new(Ipv4, Port);
 
-            server.UsePhp = Php == null ? false : true;
-            server.UsePython = Python == null ? false : true;
-
             server.EnabledModules = EnabledServerModules;
             server.Configurator = this;
             
-            _logger.SetLog(
+            Logger.SetLog(
                 AMESModuleType.Configurator,
                 "Configurate server"
             );
 
             return server;
-        }
-
-        public void GetRApi()
-        {
-            if(RemoteApi == null)
-            {
-                RemoteApi = new RemoteApi(Ipv4);
-            }
         }
 
         public void Init()

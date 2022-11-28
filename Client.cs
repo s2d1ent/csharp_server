@@ -39,14 +39,12 @@ namespace AMES
         private Html _html = new();
         private Php _php { get; set; }
         private Python _python { get; set; }
-        private AMESLogger _logger;
 
         public Client(Socket socket, Configurator configurator)
         {
             Configurator = configurator;
             _client = socket;
             _client.Ttl = 30;
-            _logger = new();
             _php = Constants.PATH_PHP == null || Constants.PATH_PHP == "" ? null : new Php();
             _python = Constants.PATH_PYTHON == null || Constants.PATH_PYTHON == "" ? null : new Python();
         }
@@ -54,6 +52,7 @@ namespace AMES
         // Start work with client request 
         public void Start()
         {
+            bool keepAlive = false;
             string path = "";
             string fileExtensions = "";
             byte[] buffer = new byte[_client.ReceiveBufferSize];
@@ -61,94 +60,106 @@ namespace AMES
 
             try
             {
-                // get headers
-                _client.Receive(buffer);
-                _headers = Encoding.UTF8.GetString(buffer);
-
-                Headers = Http.Parse(ref _headers);
-
-                // get path
-                path = Headers["HTTP_LINK"];
-
-                // checked headers
-                if (path.IndexOf("..") != -1)
+                do
                 {
-                    Error(HttpCodes.BadRequest);
-                    _client.Close();
-                    return;
-                }
+                    // get headers
+                    _client.Receive(buffer);
+                    _headers = Encoding.UTF8.GetString(buffer);
 
-                foreach(KeyValuePair<string, string> elem in Headers)
-                {
-                    Console.WriteLine($"{elem.Key}: {elem.Value}");
-                }
+                    Headers = Http.Parse(ref _headers);
 
-                requestType = Http.ParseRequestType(Headers["HTTP_REQUEST_TYPE"]);
+                    // get path
+                    path = Headers["HTTP_LINK"];
 
-                path = GetValidPath(path);
-                GetExtension(ref path, out fileExtensions);
-                switch(requestType)
-                {
-                    case HttpRequestType.GET:
-                        string requestHeaders = "";
-                        bool hasCache = false, isFile = File.Exists(path), isDir = Directory.Exists(path);
-                        byte[] html = new byte[0];
-                        string contentType = GetContentType(path);
-                        path = path.Replace(@"\\", @"\").Replace(@"//", @"//");
+                    // checked headers
+                    if (path.IndexOf("..") != -1)
+                    {
+                        Error(HttpCodes.BadRequest);
+                        _client.Close();
+                        return;
+                    }
 
-                        if(!File.Exists(path))
-                        {
-                            Error(HttpCodes.BadRequest);
-                            break;
-                        }
+                    foreach(KeyValuePair<string, string> elem in Headers)
+                    {
+                        Console.WriteLine($"{elem.Key}: {elem.Value}");
+                    }
 
-                        if(!hasCache)
-                        {
-                            if(fileExtensions.IndexOf("php") != -1)
+                    requestType = Http.ParseRequestType(Headers["HTTP_REQUEST_TYPE"]);
+
+                    path = GetValidPath(path);
+                    GetExtension(ref path, out fileExtensions);
+                    switch(requestType)
+                    {
+                        case HttpRequestType.GET:
+                            string requestHeaders = "";
+                            bool hasCache = false, isFile = File.Exists(path), isDir = Directory.Exists(path);
+                            byte[] html = new byte[0];
+                            string contentType = GetContentType(path);
+                            path = path.Replace(@"\\", @"\").Replace(@"//", @"//");
+
+                            if(!File.Exists(path))
                             {
-                                html = _php.GetFile(path);    
+                                Error(HttpCodes.BadRequest);
+                                break;
+                            }
+
+                            if(!hasCache)
+                            {
+                                if(fileExtensions.IndexOf("php") != -1)
+                                {
+                                    html = _php.GetFile(path);    
+                                }
+                                else
+                                {
+                                    html = _html.GetFile(path);
+                                }
                             }
                             else
                             {
-                                html = _html.GetFile(path);
+                                html = Configurator.Cache.GetPage(path);
                             }
-                        }
-                        else
-                        {
-                            html = Configurator.Cache.GetPage(path);
-                        }
 
-                        requestHeaders = "HTTP/1.1 200 OK\n"+
-                        $"Content-Type: {contentType}\n" +
-                        $"Content-Length: {html.Length}\n\n";
+                            requestHeaders = "HTTP/1.1 200 OK\n"+
+                            $"Content-Type: {contentType}\n" +
+                            $"Content-Length: {html.Length}\n\n";
 
-                        buffer = Encoding.UTF8.GetBytes(requestHeaders);
+                            buffer = Encoding.UTF8.GetBytes(requestHeaders);
 
-                        _client.Send(
-                            buffer, SocketFlags.None
-                        );
-                         _client.Send(
-                            html, SocketFlags.None
-                        );
-                    break;
-                    case HttpRequestType.DELETE:
-                        HttpCodes requestDelete = Interpreter.Delete(path);
-                        HttpDelete(requestDelete);
-                    break;
-                    case HttpRequestType.OPTIONS:
-                        HttpOptions();
-                    break;
-                    case HttpRequestType.TRACE:
-                        HttpTrace(_headers);    
-                    break;
-                    case HttpRequestType.PUT:
-                        HttpPut(path);    
-                    break;
-                    default:
-                        Error(HttpCodes.BadRequest);
-                    break;
+                            _client.Send(
+                                buffer, SocketFlags.None
+                            );
+                             _client.Send(
+                                html, SocketFlags.None
+                            );
+                        break;
+                        case HttpRequestType.DELETE:
+                            HttpCodes requestDelete = Interpreter.Delete(path);
+                            HttpDelete(requestDelete);
+                        break;
+                        case HttpRequestType.OPTIONS:
+                            HttpOptions();
+                        break;
+                        case HttpRequestType.TRACE:
+                            HttpTrace(_headers);    
+                        break;
+                        case HttpRequestType.PUT:
+                            HttpPut(path);    
+                        break;
+                        default:
+                            Error(HttpCodes.BadRequest);
+                        break;
+                    }
+
+                    // if(Headers["Connection"] == "keep-alive")
+                    // {
+                    //     keepAlive = true;
+                    // }
+                    // else
+                    // {
+                    //     keepAlive = false;
+                    // }
                 }
-
+                while(keepAlive);
             }
             catch(Exception ex)
             {
@@ -164,21 +175,25 @@ namespace AMES
             }
         }
 
+        /*
+            TODO
+        */
         private string GetIndexPath(string path)
         {
-            string result = "";
+            string result = "NONE";
             for(int i = 0; i < Constants.EXTENSIONS.Length; i++)
             {
                 string extension = Constants.EXTENSIONS[i];
+                if(extension == "")
+                {
+                    continue;
+                }
+
                 string dirn = (path[path.Length - 1] == '/' && path != "/") ? path : "";
                 string dir = (Configurator.ServerMode == ServerMode.NONE || Configurator.ServerMode == ServerMode.Single) ? 
                 Constants.ROOT + dirn : Constants.ROOT + dirn + Headers["Host"] + '/';
                 string find;
 
-                if(extension == "")
-                {
-                    continue;
-                }
                 find = dir + (extension[0] == '.' ? "index" : "index.") + extension;
                 
                 if(extension.IndexOf("php") != -1 && _php == null)
@@ -189,6 +204,8 @@ namespace AMES
                 {
                     continue;
                 }
+
+                if(!File.Exists(find)) continue;
 
                 result = find;
                 break;
@@ -390,7 +407,7 @@ namespace AMES
             {
              string log = "Function \"GetContentType\" catched exception";
                  Error(HttpCodes.InternalServer);
-                 _logger.SetLog(AMESModuleType.Client, log);
+                 Configurator.Logger.SetLog(AMESModuleType.Client, log);
                  return "application/unknown"; 
             }
 
@@ -466,7 +483,7 @@ namespace AMES
             {
                 string log = $"Client: {_client.RemoteEndPoint} HTTP: PUT error";
                 Error(HttpCodes.InternalServer);
-                 _logger.SetLog(AMESModuleType.Client, log); 
+                 Configurator.Logger.SetLog(AMESModuleType.Client, log); 
             }
         }
 
@@ -487,14 +504,14 @@ namespace AMES
             catch(Exception ex)
             {
                 string catchLog = $"Error catch HttpTrace {ex.Message}";
-                _logger.SetLog(AMESModuleType.Client, catchLog);
+                Configurator.Logger.SetLog(AMESModuleType.Client, catchLog);
                 Error(HttpCodes.InternalServer);
                 _client.Close();    
             }
             finally
             {
                 string log = $"Client: {_client.RemoteEndPoint} HTTP: TRACE";
-                _logger.SetLog(AMESModuleType.Client, log);
+                Configurator.Logger.SetLog(AMESModuleType.Client, log);
             }
         }
 
@@ -527,7 +544,7 @@ namespace AMES
             catch(Exception ex)
             {
                 string catchLog = $"Error catch HttpDelete {ex.Message}";
-                _logger.SetLog(AMESModuleType.Client, catchLog);
+                Configurator.Logger.SetLog(AMESModuleType.Client, catchLog);
                 Error(HttpCodes.InternalServer);
                 _client.Close();    
             }
@@ -554,7 +571,7 @@ namespace AMES
             catch(Exception ex)
             {
                 string catchLog = $"Error catch OptionMessage {ex.Message}";
-                _logger.SetLog(AMESModuleType.Client, catchLog);
+                Configurator.Logger.SetLog(AMESModuleType.Client, catchLog);
                 Error(HttpCodes.InternalServer);
                 _client.Close();    
             }
@@ -582,7 +599,7 @@ namespace AMES
             catch(Exception ex)
             {
                 string catchLog = $"Error catch OptionMessage {ex.Message}";
-                _logger.SetLog(AMESModuleType.Client, catchLog);
+                Configurator.Logger.SetLog(AMESModuleType.Client, catchLog);
                 Error(HttpCodes.InternalServer);
                 _client.Close();    
             }

@@ -79,12 +79,6 @@ namespace AMES
 
         private AMESLogger _logger;
 
-        // extensions
-        [JsonIgnore]
-        public bool UsePhp { get; set; }
-        [JsonIgnore]
-        public bool UsePython { get; set; }
-
         public Server()
         {
             this.Ipv4 = "127.0.0.1";

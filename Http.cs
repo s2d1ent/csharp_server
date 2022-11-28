@@ -80,31 +80,31 @@ namespace AMES
             switch(type)
             {
                 case "OPTIONS":
-                    result =HttpRequestType.OPTIONS;
+                    result = HttpRequestType.OPTIONS;
                 break;
                 case "GET":
-                    result =HttpRequestType.GET;
+                    result = HttpRequestType.GET;
                 break;
                 case "HEAD":
-                    result =HttpRequestType.HEAD;
+                    result = HttpRequestType.HEAD;
                 break;
                 case "POST":
-                    result =HttpRequestType.POST;
+                    result = HttpRequestType.POST;
                 break;
                 case "PUT":
-                    result =HttpRequestType.PUT;
+                    result = HttpRequestType.PUT;
                 break;
                 case "PATCH":
-                    result =HttpRequestType.PATCH;
+                    result = HttpRequestType.PATCH;
                 break;
                 case "DELETE":
-                    result =HttpRequestType.DELETE;
+                    result = HttpRequestType.DELETE;
                 break;
                 case "TRACE":
-                    result =HttpRequestType.TRACE;
+                    result = HttpRequestType.TRACE;
                 break;
                 case "CONNECT":
-                    result =HttpRequestType.CONNECT;
+                    result = HttpRequestType.CONNECT;
                 break;
                 default:
                     result = HttpRequestType.NONE;
