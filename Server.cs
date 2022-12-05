@@ -127,10 +127,6 @@ namespace AMES
                 Active = true;
                 _listener.Bind(_ip);
                 _listener.Listen();
-                if(Configurator.ServerMode == ServerMode.Multiple)
-                {
-                    InitMultiple();
-                }
                 Console.WriteLine(GetInfo());
 
                 _logger.SetLog(
@@ -166,10 +162,6 @@ namespace AMES
                 Active = false;
                 _listener.Close();
                 _modules.Stop();
-                if(Configurator.ServerMode == ServerMode.Multiple)
-                {
-                    UninitMultiple();
-                }
                 _logger.SetLog(
                     AMESModuleType.Server,
                     $"Stop the server {this.Ipv4}:{this.Port}"
@@ -194,78 +186,13 @@ namespace AMES
             result += $"{Constants.NAME} v{Constants.VERSION}\n";
             result += $"License {Constants.LICENSE}\n";
             result += $"Dev files: {Constants.DISTRIBUTIVE} \n";
-            result += $"Addres: {this.Ipv4} Port: {this.Port}\n";
+            result += $"Addresы: {this.Ipv4} Port: {this.Port}\n";
             return result;
         }
         private void Client(Socket socket, Configurator configurator)
         {
             Client client = new Client(socket, configurator);
             client.Start();
-        }
-
-        /*
-            Write alias in /etc/hosts. Only sudo.
-        */
-        private void InitMultiple()
-        {
-            string hosts = "";
-            string appendText = "";
-            string[] directories;
-            try
-            {
-                directories = Directory.GetDirectories("./www/");
-
-                hosts = (Constants.OS == OperationsSystem.Linux || Constants.OS == OperationsSystem.MacOS 
-                || Constants.OS == OperationsSystem.FreeBSD || Constants.OS == OperationsSystem.NONE
-                || Constants.OS == OperationsSystem.Android || Constants.OS == OperationsSystem.IOS) ? "/etc/hosts" :
-                (
-                    (Constants.OS == OperationsSystem.Windows) ? "C:\\Windows\\System32\\drivers\\etc\\hosts" : "/etc/hosts"
-                );
-
-                if(File.Exists("./hosts.txt"))
-                {
-                    appendText = File.ReadAllText("./hosts.txt");
-                    if(appendText.Length != 0)
-                    {
-                        File.WriteAllText(hosts, 
-                            File.ReadAllText(hosts).Replace(appendText, "")
-                        );
-                        appendText = "";
-                    }
-                }
-
-                foreach(string val in directories)
-                {
-                    appendText += Ipv4 + " " + new DirectoryInfo(val).Name + '\n';
-                }
-
-                File.AppendAllText(hosts, appendText);
-                using(File.Create("./hosts.txt"));
-                File.AppendAllText("./hosts.txt", appendText);
-            }
-            catch(Exception ex)
-            {
-
-            }
-        }
-
-        private void UninitMultiple()
-        {
-            string hosts = "";
-            string hostsText = "";
-            string appendText = "";
-            
-            hosts = (Constants.OS == OperationsSystem.Linux || Constants.OS == OperationsSystem.MacOS 
-            || Constants.OS == OperationsSystem.FreeBSD || Constants.OS == OperationsSystem.NONE
-            || Constants.OS == OperationsSystem.Android || Constants.OS == OperationsSystem.IOS) ? "/etc/hosts" :
-            (
-                (Constants.OS == OperationsSystem.Windows) ? "C:\\Windows\\System32\\drivers\\etc\\hosts" : "/etc/hosts"
-            );
-            appendText = File.ReadAllText("./hosts.txt");
-            hostsText = File.ReadAllText(hosts);
-            hostsText = hostsText.Replace(appendText, "");
-
-            File.AppendAllText(hosts, appendText);
         }
     }
 }

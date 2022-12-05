@@ -61,7 +61,7 @@ namespace AMES
 
         }
 
-        // This func wiil be init config file './gloval-config.json'
+        // This func wiil be init config file './global-config.json'
         static void Init()
         {
 

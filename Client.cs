@@ -20,11 +20,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 
@@ -87,6 +83,7 @@ namespace AMES
                     requestType = Http.ParseRequestType(Headers["HTTP_REQUEST_TYPE"]);
 
                     path = GetValidPath(path);
+
                     GetExtension(ref path, out fileExtensions);
                     switch(requestType)
                     {
@@ -164,7 +161,9 @@ namespace AMES
             catch(Exception ex)
             {
                 Error(HttpCodes.InternalServer);
+                Console.WriteLine("");
                 Console.WriteLine(ex.Message);
+                Console.WriteLine("");
             }
             finally
             {
@@ -175,9 +174,44 @@ namespace AMES
             }
         }
 
+
         /*
             TODO
         */
+
+        private string GetIndexPathSingle(string path){
+            string result = "NONE";
+
+            for(int i = 0; i < Constants.EXTENSIONS.Length; ++i)
+            {
+                string extension = Constants.EXTENSIONS[i];
+                if(extension == "")
+                {
+                    continue;
+                }
+                if(extension.IndexOf("php") != -1 && _php == null)
+                {
+                    continue;
+                }
+                else if(extension.IndexOf("py") != -1 && _python == null)
+                {
+                    continue;
+                }
+
+
+            }
+
+            return result;
+        }
+
+        private string GetIndexPathMultiple(string path){
+            string result = "NONE";
+
+            
+
+            return result;
+        }
+
         private string GetIndexPath(string path)
         {
             string result = "NONE";
@@ -188,14 +222,14 @@ namespace AMES
                 {
                     continue;
                 }
-
+                // 
                 string dirn = (path[path.Length - 1] == '/' && path != "/") ? path : "";
+                // 
                 string dir = (Configurator.ServerMode == ServerMode.NONE || Configurator.ServerMode == ServerMode.Single) ? 
-                Constants.ROOT + dirn : Constants.ROOT + dirn + Headers["Host"] + '/';
-                string find;
-
-                find = dir + (extension[0] == '.' ? "index" : "index.") + extension;
-                
+                            Constants.ROOT + dirn : Constants.ROOT + Headers["Host"] + dirn + '/';
+                // final find result
+                string find = dir + (extension[0] == '.' ? "index" : "index.") + extension;
+                find = find.Replace("//", "/").Replace(@"\\", "\\");
                 if(extension.IndexOf("php") != -1 && _php == null)
                 {
                     continue;
@@ -204,17 +238,18 @@ namespace AMES
                 {
                     continue;
                 }
-
+                Console.WriteLine(find);
                 if(!File.Exists(find)) continue;
 
                 result = find;
                 break;
             }
+            
             return result;
         }
         
         /*
-            Bug
+            Bug: multiple mode
         */
         private string GetValidPath(string path)
         {
@@ -405,10 +440,10 @@ namespace AMES
             }
             catch
             {
-             string log = "Function \"GetContentType\" catched exception";
-                 Error(HttpCodes.InternalServer);
-                 Configurator.Logger.SetLog(AMESModuleType.Client, log);
-                 return "application/unknown"; 
+                string log = "Function \"GetContentType\" catched exception";
+                Error(HttpCodes.InternalServer);
+                Configurator.Logger.SetLog(AMESModuleType.Client, log);
+                return "application/unknown"; 
             }
 
             return result;

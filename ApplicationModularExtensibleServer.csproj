@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>AMES</AssemblyName>
+    <AssemblyName>amesd</AssemblyName>
     <RootNamespace>AMES</RootNamespace>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <Nullable>enable</Nullable>
