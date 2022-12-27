@@ -68,7 +68,7 @@ namespace AMES
                     path = Headers["HTTP_LINK"];
 
                     // checked headers
-                    if (path.IndexOf("..") != -1)
+                    if (path.IndexOf("..") != -1 || path.IndexOf(@"\") != -1)
                     {
                         Error(HttpCodes.BadRequest);
                         _client.Close();
@@ -185,9 +185,14 @@ namespace AMES
             for(int i = 0; i < Constants.EXTENSIONS.Length; ++i)
             {
                 string extension = Constants.EXTENSIONS[i];
+                string find = Constants.ROOT + (extension[0] == '.' ? "index" : "index.") + extension;
                 if(extension == "")
                 {
                     continue;
+                }
+                while(find.IndexOf("//") != -1)
+                {
+                    find = find.Replace("//", "/");
                 }
                 if(extension.IndexOf("php") != -1 && _php == null)
                 {
@@ -197,39 +202,29 @@ namespace AMES
                 {
                     continue;
                 }
-
-
+                
+                if(!File.Exists(find)) continue;
+                result = find;
+                break;
             }
-
             return result;
         }
 
         private string GetIndexPathMultiple(string path){
             string result = "NONE";
 
-            
-
-            return result;
-        }
-
-        private string GetIndexPath(string path)
-        {
-            string result = "NONE";
-            for(int i = 0; i < Constants.EXTENSIONS.Length; i++)
+            for(int i = 0; i < Constants.EXTENSIONS.Length; ++i)
             {
                 string extension = Constants.EXTENSIONS[i];
+                string find = Constants.ROOT + Headers["Host"] + '/' + (extension[0] == '.' ? "index" : "index.") + extension;
                 if(extension == "")
                 {
                     continue;
                 }
-                // 
-                string dirn = (path[path.Length - 1] == '/' && path != "/") ? path : "";
-                // 
-                string dir = (Configurator.ServerMode == ServerMode.NONE || Configurator.ServerMode == ServerMode.Single) ? 
-                            Constants.ROOT + dirn : Constants.ROOT + Headers["Host"] + dirn + '/';
-                // final find result
-                string find = dir + (extension[0] == '.' ? "index" : "index.") + extension;
-                find = find.Replace("//", "/").Replace(@"\\", "\\");
+                while(find.IndexOf("//") != -1)
+                {
+                    find = find.Replace("//", "/");
+                }
                 if(extension.IndexOf("php") != -1 && _php == null)
                 {
                     continue;
@@ -238,13 +233,10 @@ namespace AMES
                 {
                     continue;
                 }
-                Console.WriteLine(find);
-                if(!File.Exists(find)) continue;
-
+              //  if(!File.Exists(find)) continue;
                 result = find;
                 break;
             }
-            
             return result;
         }
         
@@ -259,16 +251,16 @@ namespace AMES
             {
                 switch(Configurator.ServerMode)
                 {
-                    case ServerMode.NONE:
-                    case ServerMode.Single:
                     case ServerMode.Multiple:
-                        result = GetIndexPath(path);
+                        result = GetIndexPathMultiple(path);
                         break;
                     case ServerMode.Container:
                         result = path;
                         break;
+                    case ServerMode.NONE:
+                    case ServerMode.Single:
                     default:
-                        result = path;
+                        result = GetIndexPathSingle(path);
                         break;
                 }
             }
@@ -276,22 +268,20 @@ namespace AMES
             {
                 switch(Configurator.ServerMode)
                 {
-                    case ServerMode.NONE:
-                    case ServerMode.Single:
-                        result = Constants.ROOT + path;
-                        break;
                     case ServerMode.Multiple:
                         result = Constants.ROOT + Headers["Host"] + '/' + path;
                         break;
                     case ServerMode.Container:
                         result = path;
                         break;
+                    case ServerMode.NONE:
+                    case ServerMode.Single:
                     default:
-                        result = path;
+                        result = Constants.ROOT + path;
                         break;
                 }
             }
-
+            Console.WriteLine(result);
             return result;
         }
 
