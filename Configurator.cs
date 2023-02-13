@@ -54,6 +54,8 @@ namespace AMES
         public AMESLogger Logger = new AMESLogger();
         public Server Server;
         public List<Server> Containers { get; set; }
+        [JsonIgnore]
+        public Dictionary<string, List<string>> Files;
 
         public Configurator() { }
         public void Restart()
@@ -115,6 +117,9 @@ namespace AMES
             // [STATIC DATA END]
             result.Ipv4 = (result.Ipv4 == null || result.Ipv4 == "") ? "127.0.0.1" : result.Ipv4;
             result.Cache = new Cache();
+            result.Files = new Dictionary<string, List<string>>();
+
+            CheckData(result);
 
             result.Logger.SetLog(AMESModuleType.Configurator, "Deserialize config");
             return result;
@@ -129,6 +134,19 @@ namespace AMES
                 new JsonSerializerSettings() 
                 { ReferenceLoopHandling = ReferenceLoopHandling.Ignore }
             );
+        }
+
+        public static void CheckData(Configurator configurator)
+        {
+            // Extension check
+            int length = configurator.Extensions.Length;
+            string[] array = configurator.Extensions;
+            for(int i = 0; i < length; ++i)
+            {
+                if(array[i].IndexOf('.') != -1){
+                    throw new Exception($"String({array[i]}) have invalid char '.'. Must remove invalid char.");
+                }
+            }
         }
 
         public static void SetConstants()
@@ -256,6 +274,13 @@ namespace AMES
             {
                 File.Create(hosts);
             }
+        }
+// TODO
+        void GetServerFiles(){
+            foreach(string dirs in Directory.GetDirectories(Constants.ROOT)){
+                Files.Add(dirs, new List<string>());
+            }
+            
         }
     }
 

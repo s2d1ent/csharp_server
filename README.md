@@ -2,9 +2,9 @@
 **Development:** student 3ISP Tyumenev Viktor<br>
 **Specialty code:**  09.02.07<br>
 **Speciality:**  Secondary vocational education "Information systems and programming"<br>
-**Year:** 2021 <br>
+**Year:** 2021 - 2023 <br>
 **Description:**<br>
-This project is a web server implementation on the C# .Net Core platform, created with the aim of gaining new experience in developing network and multi-threaded software. I am a textbook for vocational students.
+This project is a web server implementation on the C# .Net Core platform, created with the aim of gaining new experience in developing network and multi-threaded software.
 <br>
 
 ## Additional information

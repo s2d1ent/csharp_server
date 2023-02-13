@@ -161,9 +161,7 @@ namespace AMES
             catch(Exception ex)
             {
                 Error(HttpCodes.InternalServer);
-                Console.WriteLine("");
-                Console.WriteLine(ex.Message);
-                Console.WriteLine("");
+                Console.WriteLine("\n" + ex.Message + "\n");
             }
             finally
             {
@@ -176,65 +174,47 @@ namespace AMES
 
 
         /*
-            TODO
+            TODO: invalid address
         */
-
         private string GetIndexPathSingle(string path){
             string result = "NONE";
-
+            StringBuilder find = new StringBuilder();
+            string host = "";
+            Headers.TryGetValue("Host", out host)ж
             for(int i = 0; i < Constants.EXTENSIONS.Length; ++i)
             {
                 string extension = Constants.EXTENSIONS[i];
-                string find = Constants.ROOT + (extension[0] == '.' ? "index" : "index.") + extension;
+                find.Append(Constants.ROOT);
+                if(Configurator.ServerMode == ServerMode.Multiple)
+                {
+                    find.Append("/");
+                }
+                find.Append("index.").Append(extension);
+                
                 if(extension == "")
                 {
                     continue;
                 }
-                while(find.IndexOf("//") != -1)
+                while(find.ToString().IndexOf("//") != -1)
                 {
                     find = find.Replace("//", "/");
                 }
-                if(extension.IndexOf("php") != -1 && _php == null)
+                if(extension == "php" && _php == null)
                 {
                     continue;
                 }
-                else if(extension.IndexOf("py") != -1 && _python == null)
+                else if(extension == "py" && _python == null)
                 {
                     continue;
                 }
                 
-                if(!File.Exists(find)) continue;
-                result = find;
-                break;
-            }
-            return result;
-        }
-
-        private string GetIndexPathMultiple(string path){
-            string result = "NONE";
-
-            for(int i = 0; i < Constants.EXTENSIONS.Length; ++i)
-            {
-                string extension = Constants.EXTENSIONS[i];
-                string find = Constants.ROOT + Headers["Host"] + '/' + (extension[0] == '.' ? "index" : "index.") + extension;
-                if(extension == "")
+                if(!File.Exists(find.ToString()))
                 {
+                    find.Clear();
                     continue;
                 }
-                while(find.IndexOf("//") != -1)
-                {
-                    find = find.Replace("//", "/");
-                }
-                if(extension.IndexOf("php") != -1 && _php == null)
-                {
-                    continue;
-                }
-                else if(extension.IndexOf("py") != -1 && _python == null)
-                {
-                    continue;
-                }
-              //  if(!File.Exists(find)) continue;
-                result = find;
+                result = find.ToString();
+                Console.WriteLine(find);
                 break;
             }
             return result;
@@ -246,19 +226,16 @@ namespace AMES
         private string GetValidPath(string path)
         {
             string result;
-
             if(path == "/" || path[path.Length - 1] == '/')
             {
                 switch(Configurator.ServerMode)
                 {
-                    case ServerMode.Multiple:
-                        result = GetIndexPathMultiple(path);
-                        break;
                     case ServerMode.Container:
                         result = path;
                         break;
                     case ServerMode.NONE:
                     case ServerMode.Single:
+                    case ServerMode.Multiple:
                     default:
                         result = GetIndexPathSingle(path);
                         break;
@@ -281,7 +258,6 @@ namespace AMES
                         break;
                 }
             }
-            Console.WriteLine(result);
             return result;
         }
 
