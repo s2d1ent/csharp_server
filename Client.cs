@@ -180,7 +180,7 @@ namespace AMES
             string result = "NONE";
             StringBuilder find = new StringBuilder();
             string host = "";
-            Headers.TryGetValue("Host", out host)ж
+            Headers.TryGetValue("Host", out host);
             for(int i = 0; i < Constants.EXTENSIONS.Length; ++i)
             {
                 string extension = Constants.EXTENSIONS[i];
